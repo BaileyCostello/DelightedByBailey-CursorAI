@@ -16,12 +16,11 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Hi, I'm{' '}
+                Hi, I&apos;m{' '}
                 <span className="text-indigo-600">Bailey</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Senior UX & Product Designer crafting delightful digital experiences 
-                that solve real problems and bring joy to users.
+              I&apos;m a Senior UX & Product Designer passionate about creating digital experiences that make a real difference in people&apos;s lives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
@@ -184,9 +183,7 @@ export default function Home() {
                 About My Design Philosophy
               </h2>
               <p className="text-lg text-gray-600 mb-6">
-                I believe great design happens when we truly understand the people we're designing for. 
-                My approach combines user research, strategic thinking, and creative problem-solving 
-                to create experiences that are both beautiful and functional.
+                I believe great design happens when we truly understand the people we&apos;re designing for.
               </p>
               <Link
                 href="/about"

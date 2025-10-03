@@ -187,8 +187,7 @@ export default function ANLessonPlanningCaseStudy() {
                 <div className="bg-purple-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-2">User Quotes</h4>
                   <blockquote className="text-gray-600 italic">
-                    "I spend more time planning than actually teaching. I need something 
-                    that understands my students and curriculum requirements."
+                  &quot;We&apos;re constantly putting out fires instead of preventing them.I spend more time planning than actually teaching. I need something that understands my students and curriculum requirements.&quot;
                   </blockquote>
                 </div>
               </div>

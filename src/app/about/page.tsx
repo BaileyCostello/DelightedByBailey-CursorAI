@@ -18,8 +18,7 @@ export default function About() {
               About Me
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              I'm a Senior UX & Product Designer passionate about creating digital experiences 
-              that make a real difference in people's lives.
+            I&apos;m a Senior UX & Product Designer passionate about creating digital experiences that make a real difference in people&apos;s lives.
             </p>
           </motion.div>
         </div>
@@ -40,9 +39,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
-                  With over 8 years of experience in UX and Product Design, I've had the privilege 
-                  of working with startups and Fortune 500 companies to create digital experiences 
-                  that users love.
+                With over 8 years of experience in UX and Product Design, I&apos;ve had the privilege
                 </p>
                 <p>
                   My journey began in graphic design, but I quickly discovered my passion for 
@@ -51,9 +48,7 @@ export default function About() {
                   my creative skills with analytical thinking.
                 </p>
                 <p>
-                  Today, I focus on creating products that not only look beautiful but also 
-                  solve real problems and bring joy to users' daily lives. I believe great 
-                  design happens when we truly understand the people we're designing for.
+                solve real problems and bring joy to users&apos; daily lives. I believe great design happens when we truly understand the people we&apos;re designing for. 
                 </p>
               </div>
             </motion.div>

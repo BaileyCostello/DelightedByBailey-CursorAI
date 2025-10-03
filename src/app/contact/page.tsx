@@ -36,11 +36,10 @@ export default function Contact() {
             className="text-center"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Let's Work Together
+            Let&apos;s Work Together
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Have a project in mind? I'd love to hear about it. 
-              Let's create something amazing together.
+            Have a project in mind? I&apos;d love to hear about it. Let&apos;s create something amazing together.
             </p>
           </motion.div>
         </div>
