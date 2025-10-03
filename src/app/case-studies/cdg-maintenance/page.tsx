@@ -186,8 +186,7 @@ export default function CDGMaintenanceCaseStudy() {
                 <div className="bg-blue-50 rounded-lg p-4">
                   <h4 className="font-semibold text-gray-900 mb-2">User Quotes</h4>
                   <blockquote className="text-gray-600 italic">
-                    "We're constantly putting out fires instead of preventing them. 
-                    I need a system that helps me stay ahead of equipment issues."
+                  &quot;We&apos;re constantly putting out fires instead of preventing them. I need a system that helps me stay ahead of equipment issues.&quot;
                   </blockquote>
                 </div>
               </div>
