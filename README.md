@@ -21,4 +21,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-This site is automatically deployed to GitHub Pages using GitHub Actions.
+This site is automatically deployed to GitHub Pages using GitHub Actions.# Trigger deployment
