@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20 lg:py-32">
+      <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 lg:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -17,7 +17,7 @@ export default function Home() {
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Hi, I&apos;m{' '}
-                <span className="text-indigo-600">Bailey</span>
+                <span className="text-blue-600">Bailey</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               I&apos;m a Senior UX & Product Designer passionate about creating digital experiences that make a real difference in people&apos;s lives.
@@ -25,13 +25,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/work"
-                  className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors text-center"
+                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center shadow-md hover:shadow-lg"
                 >
                   View My Work
                 </Link>
                 <Link
                   href="/contact"
-                  className="border border-indigo-600 text-indigo-600 px-8 py-3 rounded-lg font-semibold hover:bg-indigo-50 transition-colors text-center"
+                  className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
                 >
                   Get In Touch
                 </Link>
@@ -94,9 +94,9 @@ export default function Home() {
               className="group cursor-pointer"
             >
               <Link href="/case-studies/an-lesson-planning">
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-200">
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
                       <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
@@ -108,7 +108,7 @@ export default function Home() {
                       AI-powered tool that helps educators create engaging lesson plans 
                       with personalized recommendations and curriculum alignment.
                     </p>
-                    <span className="text-purple-600 font-semibold group-hover:text-purple-700">
+                    <span className="text-purple-600 font-semibold group-hover:text-purple-700 transition-colors duration-200">
                       View Case Study →
                     </span>
                   </div>
@@ -125,9 +125,9 @@ export default function Home() {
               className="group cursor-pointer"
             >
               <Link href="/case-studies/cdg-maintenance">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover:shadow-xl transition-shadow">
+                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-blue-100 hover:border-blue-200">
                   <div className="mb-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                    <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
                       <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -140,7 +140,7 @@ export default function Home() {
                       Streamlined maintenance workflow system for facility managers 
                       to track, schedule, and optimize equipment maintenance.
                     </p>
-                    <span className="text-blue-600 font-semibold group-hover:text-blue-700">
+                    <span className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-200">
                       View Case Study →
                     </span>
                   </div>
@@ -158,7 +158,7 @@ export default function Home() {
           >
             <Link
               href="/work"
-              className="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold"
+              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200"
             >
               View All Projects
               <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +187,7 @@ export default function Home() {
               </p>
               <Link
                 href="/about"
-                className="text-indigo-600 hover:text-indigo-700 font-semibold"
+                className="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200"
               >
                 Learn More About Me →
               </Link>

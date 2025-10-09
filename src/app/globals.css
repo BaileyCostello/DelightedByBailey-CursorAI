@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Design System Colors - from Figma */
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F1F3F5;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #2C3441;
+  --color-gray-800: #19212C;
+  --color-gray-900: #000000;
+  
+  --color-yellow-50: #FAF6F3;
+  --color-yellow-100: #F8EBE7;
+  --color-yellow-200: #EEE2D8;
+  --color-yellow-300: #E8CEBE;
+  --color-yellow-400: #E0B799;
+  --color-yellow-500: #DAA676;
+  --color-yellow-600: #CF8D57;
+  --color-yellow-700: #AA6D2C;
+  --color-yellow-800: #864015;
+  --color-yellow-900: #4C1F09;
+  
+  --color-red-50: #FFF8FB;
+  --color-red-100: #F9EFF4;
+  --color-red-200: #DECFD5;
+  --color-red-300: #BBA9B0;
+  --color-red-400: #B791A0;
+  --color-red-500: #B77B8D;
+  --color-red-600: #994E63;
+  --color-red-700: #7C3B4D;
+  --color-red-800: #5F2A39;
+  --color-red-900: #411B26;
+  
+  --color-pink-50: #FFF2F8;
+  --color-pink-100: #FFE0EE;
+  --color-pink-200: #FFB2D3;
+  --color-pink-300: #FF80B6;
+  --color-pink-400: #FF5BA2;
+  --color-pink-500: #FB006D;
+  --color-pink-600: #D3005B;
+  --color-pink-700: #A40047;
+  --color-pink-800: #63082B;
+  --color-pink-900: #2F0616;
+  
+  --color-purple-50: #F5F3FF;
+  --color-purple-100: #EDE9FE;
+  --color-purple-200: #DDD6FE;
+  --color-purple-300: #C4B5FD;
+  --color-purple-400: #A78BFA;
+  --color-purple-500: #8B5CF6;
+  --color-purple-600: #7C3AED;
+  --color-purple-700: #6D28D9;
+  --color-purple-800: #5B21B6;
+  --color-purple-900: #4C1D95;
+  
+  --color-blue-50: #EFF6FF;
+  --color-blue-100: #DBEAFE;
+  --color-blue-200: #BFDBFE;
+  --color-blue-300: #93C5FD;
+  --color-blue-400: #60A5FA;
+  --color-blue-500: #3B82F6;
+  --color-blue-600: #2563EB;
+  --color-blue-700: #1D4ED8;
+  --color-blue-800: #1E40AF;
+  --color-blue-900: #1E3A8A;
+  
+  --color-green-50: #ECFDF5;
+  --color-green-100: #D1FAE5;
+  --color-green-200: #A7F3D0;
+  --color-green-300: #6EE7B7;
+  --color-green-400: #34D399;
+  --color-green-500: #10B981;
+  --color-green-600: #059669;
+  --color-green-700: #047857;
+  --color-green-800: #065F46;
+  --color-green-900: #064E3B;
+  
+  --color-indigo-50: #F3F5FF;
+  --color-indigo-100: #E9EAFE;
+  --color-indigo-200: #DBD6FE;
+  --color-indigo-300: #C4BDF7;
+  --color-indigo-400: #9B8FF2;
+  --color-indigo-500: #7B5CF6;
+  --color-indigo-600: #6A3AED;
+  --color-indigo-700: #5728D9;
+  --color-indigo-800: #4121B6;
+  --color-indigo-900: #2B287D;
+  
+  --color-white: #FFFFFF;
+  --color-black: #000000;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-plus-jakarta-sans), system-ui, sans-serif;
+  font-optical-sizing: auto;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  font-variation-settings: normal;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
