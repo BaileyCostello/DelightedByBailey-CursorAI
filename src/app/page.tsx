@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Link from 'next/link';
+import Image from 'next/image';
 import Button from '@/components/Button';
 import { useState, useEffect } from 'react';
 
@@ -199,10 +199,12 @@ export default function Home() {
                     }}
                     className="w-full h-full"
                   >
-                    <img 
+                    <Image 
                       alt="Dr.Treat App Mockup" 
                       className="w-full h-full object-cover object-center" 
-                      src="/Dr-Treat-Mockup.png" 
+                      src="/Dr-Treat-Mockup.png"
+                      width={245}
+                      height={412}
                     />
                   </motion.div>
                 </motion.div>
@@ -225,10 +227,12 @@ export default function Home() {
                     }}
                     className="w-full h-full"
                   >
-                    <img 
+                    <Image 
                       alt="VolunTime App Mockup" 
                       className="w-full h-full object-cover object-center" 
-                      src="/VolunTime-Mockup.png" 
+                      src="/VolunTime-Mockup.png"
+                      width={245}
+                      height={413}
                     />
                   </motion.div>
                 </motion.div>
@@ -288,10 +292,12 @@ export default function Home() {
 
             {/* Mobile Layout - Image (appears after title, before badges) */}
             <div className="h-[520px] relative order-3 lg:hidden">
-              <img 
+              <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png" 
+                src="/CDG Mockup.png"
+                width={600}
+                height={520}
               />
             </div>
 
@@ -353,10 +359,12 @@ export default function Home() {
 
             {/* Desktop Layout - Right Column (Image) */}
             <div className="hidden lg:block h-[600px] relative order-2">
-              <img 
+              <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png" 
+                src="/CDG Mockup.png"
+                width={600}
+                height={600}
               />
             </div>
           </motion.div>
@@ -374,7 +382,7 @@ export default function Home() {
             className="flex flex-col gap-6"
           >
             <p className="text-5xl font-bold text-pink-500 leading-normal">
-              "You're a very good listener. If only we had been able to work with you full time - the possibilities would have been endless."
+              &ldquo;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&rdquo;
             </p>
             <div className="flex justify-between items-center">
               <div className="text-pink-700 font-normal leading-6 text-sm">
@@ -401,16 +409,18 @@ export default function Home() {
             <div className="flex flex-col isolate items-start pb-4 pt-0 px-0 relative shrink-0 w-full">
               <div className="flex flex-col gap-4 mb-[-16px] relative shrink-0 w-full z-[2]">
                 <p className="text-4xl font-bold text-yellow-50 leading-tight max-w-[400px]">
-                  There's so much more to talk about
+                  There&apos;s so much more to talk about
                 </p>
               </div>
               <div className="flex flex-col gap-10 lg:flex-row lg:gap-10 lg:items-end">
                 {/* Image */}
                 <div className="h-[289px] w-[286px] rounded-3xl overflow-hidden relative shrink-0 z-[1]">
-                  <img 
+                  <Image 
                     alt="Bailey Costello Headshot" 
                     className="w-full h-full object-cover" 
-                    src="/Headshot.png" 
+                    src="/Headshot.png"
+                    width={286}
+                    height={289}
                   />
                 </div>
 
