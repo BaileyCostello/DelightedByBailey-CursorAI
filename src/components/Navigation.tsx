@@ -63,7 +63,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10 pr-6">
+          <div className="hidden md:flex items-center pr-6">
             {navItems.map((item) => {
               const isActive = pathname === item.href || pathname === item.href + '/';
               return (
@@ -80,12 +80,14 @@ export default function Navigation() {
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              className="bg-black text-yellow-50 px-4 py-3 text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
-            >
-              Contact
-            </Link>
+            <div className="ml-6">
+              <Link
+                href="/contact"
+                className="bg-black text-yellow-50 px-4 py-3 text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+              >
+                Contact
+              </Link>
+            </div>
           </div>
 
           {/* Mobile menu button */}
