@@ -8,21 +8,43 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-                Hi, I&apos;m{' '}
-                <span className="text-blue-600">Bailey</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              I&apos;m a Senior UX & Product Designer passionate about creating digital experiences that make a real difference in people&apos;s lives.
+      <section className="relative bg-white h-[90vh] flex items-center pt-8 pb-14 px-6 lg:px-32 lg:pt-8 lg:pb-14">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end"
+          >
+            {/* Left Column - Main Heading */}
+            <div className="flex flex-col">
+              <p className="text-base text-gray-700 mb-0 leading-6">
+                Hi, I am a
               </p>
+              <div className="text-7xl font-bold leading-none text-black">
+                <p className="mb-0">Strategic</p>
+                <p className="mb-0">Analytical</p>
+                <p className="mb-0">Curious</p>
+                <p className="text-pink-500 mb-0">Designer</p>
+              </div>
+            </div>
+            
+            {/* Right Column - Description and Buttons */}
+            <div className="flex flex-col gap-10 mt-16">
+              <div className="text-base text-gray-700 leading-6 max-w-md">
+                <p className="mb-0">
+                  8 years experience as a UX and Product Designer - last seen leading projects and delighting clients with compelling solutions backed by research.
+                </p>
+                <p className="mb-0">&nbsp;</p>
+                <p>
+                  <span>I am also proudly a </span>
+                  <span className="underline font-semibold">
+                    Certified Professional in Accessibility Core Competencies
+                  </span>
+                  <span> (IAAP)</span>
+                </p>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   href="/work"
@@ -43,32 +65,59 @@ export default function Home() {
                   Get In Touch
                 </Button>
               </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg p-4">
-                    <div className="space-y-2">
-                      <div className="h-4 bg-indigo-200 rounded w-3/4"></div>
-                      <div className="h-4 bg-indigo-200 rounded w-1/2"></div>
-                      <div className="h-4 bg-indigo-200 rounded w-2/3"></div>
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Mockups Section */}
+      <section className="bg-yellow-200 py-14 px-6 md:px-16 lg:pl-32 lg:pr-96 xl:pl-32 xl:pr-96">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col gap-16"
+          >
+            {/* Section Title */}
+            <div className="flex flex-col items-start pb-4">
+              <h2 className="text-4xl font-bold text-pink-500 leading-tight text-left">
+                Design Meet Product Strategy
+              </h2>
+            </div>
+
+            {/* First Mockup - Dr.Treat */}
+            <div className="flex items-end justify-between">
+              <div className="flex flex-col gap-2 items-end justify-end flex-1">
+                <p className="text-pink-700 text-sm text-right">
+                  Pet Telehealth App, Dr.Treat
+                </p>
               </div>
-            </motion.div>
-          </div>
+              <div className="h-[412px] w-[245px] relative shrink-0">
+                <img 
+                  alt="Dr.Treat App Mockup" 
+                  className="w-full h-full object-cover object-center" 
+                  src="/Dr-Treat-Mockup.png" 
+                />
+              </div>
+            </div>
+
+            {/* Second Mockup - VolunTime */}
+            <div className="flex items-end justify-between">
+              <div className="h-[413px] w-[245px] relative shrink-0">
+                <img 
+                  alt="VolunTime App Mockup" 
+                  className="w-full h-full object-cover object-center" 
+                  src="/VolunTime-Mockup.png" 
+                />
+              </div>
+              <div className="flex flex-col gap-2 items-start justify-end flex-1">
+                <p className="text-pink-700 text-sm">
+                  Student Volunteering App, VolunTIME Keepers
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
