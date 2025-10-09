@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div className="h-8 w-auto">
               <Image 
-                src="/DelightedByBailey-CursorAI/Logo-Dark.png"
+                src="/Logo-Dark.png"
                 alt="Delighted By Bailey Logo"
                 width={52}
                 height={32}
