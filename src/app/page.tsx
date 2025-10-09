@@ -3,7 +3,45 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Button from '@/components/Button';
+import { useState, useEffect } from 'react';
 
+// Animated text cycling component
+const AnimatedHeadlines = () => {
+  const headlines = [
+    "Turned successful projects into long-term partnerships",
+    "Helped secure funding for multiple start-ups", 
+    "Turned a conference presentation into a first-click test",
+    "Reduced usability related support tickets by 18%",
+    "Helped rescue a client from an impossible deadline"
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % headlines.length);
+        setIsVisible(true);
+      }, 1600); // Wait for complete fade out before fade in
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [headlines.length]);
+
+  return (
+    <motion.p 
+      className="text-xl font-bold text-yellow-50 max-w-[356px]"
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+    >
+      {headlines[currentIndex]}
+    </motion.p>
+  );
+};
 
 export default function Home() {
   return (
@@ -382,9 +420,7 @@ export default function Home() {
                     <p className="text-base text-red-200 font-normal">
                       Like that time I
                     </p>
-                    <p className="text-xl font-bold text-yellow-50">
-                      Helped secure funding and partnerships for 2 start-ups
-                    </p>
+                    <AnimatedHeadlines />
                   </div>
                   <div className="flex justify-start">
                     <Button
