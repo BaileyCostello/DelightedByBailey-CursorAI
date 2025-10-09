@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
@@ -52,9 +53,11 @@ export default function Navigation() {
                <div className="flex justify-between items-center h-18">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <img 
-              src="/assets/Logo-Light.png"
+            <Image 
+              src="/Logo-Light.png"
               alt="Delighted By Bailey Logo"
+              width={32}
+              height={32}
               className="h-8 w-auto"
             />
           </Link>
