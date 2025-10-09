@@ -136,8 +136,8 @@ export default function Home() {
                 <motion.div 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 2.5, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "5%" }}
+                  transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-88px" }}
                   className="h-[413px] w-[245px] relative shrink-0"
                 >
                   <motion.div
