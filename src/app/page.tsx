@@ -211,161 +211,199 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Work Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Complex Projects Callout Section */}
+      <section className="bg-black py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="flex flex-col gap-6"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Featured Work
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A selection of projects that showcase my approach to user-centered design 
-              and problem-solving.
+            <p className="text-4xl font-bold text-yellow-50 leading-tight">
+              Complex problems invite creative solutions
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* AN Lesson Planning Assistant */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="group cursor-pointer"
-            >
-              <Link href="/case-studies/an-lesson-planning">
-                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-purple-100 hover:border-purple-200">
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors duration-300">
-                      <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      AN Lesson Planning Assistant
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      AI-powered tool that helps educators create engaging lesson plans 
-                      with personalized recommendations and curriculum alignment.
-                    </p>
-                    <span className="text-purple-600 font-semibold group-hover:text-purple-700 transition-colors duration-200">
-                      View Case Study →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-
-            {/* CDG Maintenance Management App */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="group cursor-pointer"
-            >
-              <Link href="/case-studies/cdg-maintenance">
-                <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border border-blue-100 hover:border-blue-200">
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors duration-300">
-                      <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                      CDG Maintenance Management App
-                    </h3>
-                    <p className="text-gray-600 mb-4">
-                      Streamlined maintenance workflow system for facility managers 
-                      to track, schedule, and optimize equipment maintenance.
-                    </p>
-                    <span className="text-blue-600 font-semibold group-hover:text-blue-700 transition-colors duration-200">
-                      View Case Study →
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </motion.div>
-          </div>
-
+      {/* Featured Case Study - CDG Section */}
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mt-12"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
           >
-            <Link
-              href="/work"
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200"
-            >
-              View All Projects
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            {/* Mobile Layout - Featured Case Study Label */}
+            <p className="text-base text-pink-700 font-normal leading-6 order-1 lg:hidden">
+              Featured Case Study
+            </p>
+
+            {/* Mobile Layout - H2 Title */}
+            <p className="text-4xl font-bold text-pink-500 leading-tight order-2 lg:hidden">
+              Driving operations most valued metric - efficiency
+            </p>
+
+            {/* Mobile Layout - Image (appears after title, before badges) */}
+            <div className="h-[520px] relative order-3 lg:hidden">
+              <img 
+                alt="CDG iPad Mockup" 
+                className="w-full h-full object-contain object-center" 
+                src="/CDG Mockup.png" 
+              />
+            </div>
+
+            {/* Mobile Layout - Badges */}
+            <div className="flex flex-wrap gap-2 order-4 lg:hidden">
+              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
+            </div>
+
+            {/* Mobile Layout - Description */}
+            <p className="text-sm text-pink-700 font-normal leading-6 order-5 lg:hidden">
+              Maintenance Operations App, CMMS Data Group
+            </p>
+
+            {/* Mobile Layout - Button */}
+            <div className="flex lg:hidden justify-start order-6">
+              <Button
+                href="/case-studies/cdg-maintenance"
+                variant="secondary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
+              >
+                Read Case Study
+              </Button>
+            </div>
+
+            {/* Desktop Layout - Left Column (Text Content) */}
+            <div className="hidden lg:flex flex-col gap-6 order-1">
+              <p className="text-base text-pink-700 font-normal leading-6">
+                Featured Case Study
+              </p>
+              <p className="text-4xl font-bold text-pink-500 leading-tight">
+                Driving operations most valued metric - efficiency
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
+              </div>
+              <p className="text-sm text-pink-700 font-normal leading-6">
+                Maintenance Operations App, CMMS Data Group
+              </p>
+              <div className="flex justify-start">
+                <Button
+                  href="/case-studies/cdg-maintenance"
+                  variant="secondary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
+                >
+                  Read Case Study
+                </Button>
+              </div>
+            </div>
+
+            {/* Desktop Layout - Right Column (Image) */}
+            <div className="hidden lg:block h-[600px] relative order-2">
+              <img 
+                alt="CDG iPad Mockup" 
+                className="w-full h-full object-contain object-center" 
+                src="/CDG Mockup.png" 
+              />
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* About Preview Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                About My Design Philosophy
-              </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                I believe great design happens when we truly understand the people we&apos;re designing for.
-              </p>
-              <Link
-                href="/about"
-                className="text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200"
-              >
-                Learn More About Me →
-              </Link>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
-            >
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">User Research</h3>
-                <p className="text-sm text-gray-600">Understanding user needs through interviews, surveys, and usability testing.</p>
+      {/* Testimonials Section */}
+      <section className="bg-[#eee2d8] py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-6"
+          >
+            <p className="text-5xl font-bold text-pink-500 leading-normal">
+              "You're a very good listener. If only we had been able to work with you full time - the possibilities would have been endless."
+            </p>
+            <div className="flex justify-between items-center">
+              <div className="text-pink-700 font-normal leading-6 text-sm">
+                <p className="font-semibold mb-0">Gillian Kradin</p>
+                <p className="mb-0">Director of Product</p>
+                <p>Achievement Network, Client</p>
               </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">Strategic Design</h3>
-                <p className="text-sm text-gray-600">Aligning design decisions with business goals and user objectives.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">Prototyping</h3>
-                <p className="text-sm text-gray-600">Rapid iteration and testing of design concepts before development.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm">
-                <h3 className="font-semibold text-gray-900 mb-2">Collaboration</h3>
-                <p className="text-sm text-gray-600">Working closely with developers, PMs, and stakeholders throughout the process.</p>
-              </div>
-            </motion.div>
-          </div>
+            </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Final CTA Section */}
+      <section className="bg-black py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col gap-10"
+          >
+            {/* Header Text and Image Row */}
+            <div className="flex flex-col isolate items-start pb-4 pt-0 px-0 relative shrink-0 w-full">
+              <div className="flex flex-col gap-4 mb-[-16px] relative shrink-0 w-full z-[2]">
+                <p className="text-4xl font-bold text-yellow-50 leading-tight max-w-[400px]">
+                  There's so much more to talk about
+                </p>
+              </div>
+              <div className="flex flex-col gap-10 lg:flex-row lg:gap-10 lg:items-end">
+                {/* Image */}
+                <div className="h-[289px] w-[286px] rounded-3xl overflow-hidden relative shrink-0 z-[1]">
+                  <img 
+                    alt="Bailey Costello Headshot" 
+                    className="w-full h-full object-cover" 
+                    src="/Headshot.png" 
+                  />
+                </div>
+
+                {/* Text and Button */}
+                <div className="flex flex-col gap-10 items-start justify-end h-[289px] relative flex-1">
+                  <div className="flex flex-col gap-1 items-start leading-6 relative shrink-0 w-full">
+                    <p className="text-base text-red-200 font-normal">
+                      Like that time I
+                    </p>
+                    <p className="text-xl font-bold text-yellow-50">
+                      Helped secure funding and partnerships for 2 start-ups
+                    </p>
+                  </div>
+                  <div className="flex justify-start">
+                    <Button
+                      href="/contact"
+                      variant="primary"
+                      size="medium"
+                      background="light"
+                      trailingIcon={true}
+                    >
+                      Get In Touch
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   );
 }
