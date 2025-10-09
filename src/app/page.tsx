@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Button from '@/components/Button';
 
 export default function Home() {
   return (
@@ -23,18 +24,24 @@ export default function Home() {
               I&apos;m a Senior UX & Product Designer passionate about creating digital experiences that make a real difference in people&apos;s lives.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
+                <Button
                   href="/work"
-                  className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center shadow-md hover:shadow-lg"
+                  variant="primary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
                 >
                   View My Work
-                </Link>
-                <Link
+                </Button>
+                <Button
                   href="/contact"
-                  className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center"
+                  variant="outline"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
                 >
                   Get In Touch
-                </Link>
+                </Button>
               </div>
             </motion.div>
             

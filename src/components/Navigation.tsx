@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import Button from './Button';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,23 +82,29 @@ export default function Navigation() {
               );
             })}
             <div className="ml-6">
-              <Link
+              <Button
                 href="/contact"
-                className="bg-black text-yellow-50 px-4 py-3 text-base font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+                variant="secondary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
               >
                 Contact
-              </Link>
+              </Button>
             </div>
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-6">
-            <Link
+            <Button
               href="/contact"
-              className="bg-black text-yellow-50 px-4 py-3 text-base font-semibold rounded-full shadow-lg"
+              variant="secondary"
+              size="medium"
+              background="light"
+              trailingIcon={true}
             >
               Contact
-            </Link>
+            </Button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
