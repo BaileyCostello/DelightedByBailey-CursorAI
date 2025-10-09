@@ -53,7 +53,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <img 
-              src="/Logo-Light.png"
+              src="./Logo-Light.png"
               alt="Delighted By Bailey Logo"
               className="h-8 w-auto"
             />
