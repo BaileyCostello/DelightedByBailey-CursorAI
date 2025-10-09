@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Button from '@/components/Button';
 
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -22,16 +23,49 @@ export default function Home() {
                 Hi, I am a
               </p>
               <div className="text-7xl font-bold leading-none text-black">
-                <p className="mb-0">Strategic</p>
-                <p className="mb-0">Analytical</p>
-                <p className="mb-0">Curious</p>
-                <p className="text-pink-500 mb-0">Designer</p>
+                <motion.p 
+                  className="mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0 }}
+                >
+                  Strategic
+                </motion.p>
+                <motion.p 
+                  className="mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                >
+                  Analytical
+                </motion.p>
+                <motion.p 
+                  className="mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                >
+                  Curious
+                </motion.p>
+                <motion.p 
+                  className="text-pink-500 mb-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.5 }}
+                >
+                  Designer
+                </motion.p>
               </div>
             </div>
             
             {/* Right Column - Description and Buttons */}
             <div className="flex flex-col gap-10 mt-16">
-              <div className="text-base text-gray-700 leading-6 max-w-md">
+              <motion.div 
+                className="text-base text-gray-700 leading-6 max-w-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.0 }}
+              >
                 <p className="mb-0">
                   8 years experience as a UX and Product Designer - last seen leading projects and delighting clients with compelling solutions backed by research.
                 </p>
@@ -43,9 +77,14 @@ export default function Home() {
                   </span>
                   <span> (IAAP)</span>
                 </p>
-              </div>
+              </motion.div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 2.0 }}
+              >
                 <Button
                   href="/work"
                   variant="primary"
@@ -64,7 +103,7 @@ export default function Home() {
                 >
                   Get In Touch
                 </Button>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
