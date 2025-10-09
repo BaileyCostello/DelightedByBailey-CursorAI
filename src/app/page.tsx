@@ -189,7 +189,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
-                  className="h-[412px] w-[245px] relative shrink-0"
+                  className="h-[520px] w-[310px] relative shrink-0"
                 >
                   <motion.div
                     initial={{ y: 0 }}
@@ -203,8 +203,8 @@ export default function Home() {
                       alt="Dr.Treat App Mockup" 
                       className="w-full h-full object-cover object-center" 
                       src="./Dr-Treat-Mockup.png"
-                      width={245}
-                      height={412}
+                      width={310}
+                      height={520}
                     />
                   </motion.div>
                 </motion.div>
@@ -217,7 +217,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-88px" }}
-                  className="h-[413px] w-[245px] relative shrink-0"
+                  className="h-[520px] w-[310px] relative shrink-0"
                 >
                   <motion.div
                     initial={{ y: 0 }}
@@ -231,8 +231,8 @@ export default function Home() {
                       alt="VolunTime App Mockup" 
                       className="w-full h-full object-cover object-center" 
                       src="./VolunTime-Mockup.png"
-                      width={245}
-                      height={413}
+                      width={310}
+                      height={520}
                     />
                   </motion.div>
                 </motion.div>
@@ -358,13 +358,13 @@ export default function Home() {
             </div>
 
             {/* Desktop Layout - Right Column (Image) */}
-            <div className="hidden lg:block h-[600px] relative order-2">
+            <div className="hidden lg:block h-[700px] relative order-2">
               <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
                 src="./CDG Mockup.png"
-                width={600}
-                height={600}
+                width={700}
+                height={700}
               />
             </div>
           </motion.div>
