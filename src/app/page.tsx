@@ -202,7 +202,7 @@ export default function Home() {
                     <Image 
                       alt="Dr.Treat App Mockup" 
                       className="w-full h-full object-cover object-center" 
-                      src="/Dr-Treat-Mockup.png"
+                      src="./Dr-Treat-Mockup.png"
                       width={245}
                       height={412}
                     />
@@ -230,7 +230,7 @@ export default function Home() {
                     <Image 
                       alt="VolunTime App Mockup" 
                       className="w-full h-full object-cover object-center" 
-                      src="/VolunTime-Mockup.png"
+                      src="./VolunTime-Mockup.png"
                       width={245}
                       height={413}
                     />
@@ -295,7 +295,7 @@ export default function Home() {
               <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png"
+                src="./CDG Mockup.png"
                 width={600}
                 height={520}
               />
@@ -362,7 +362,7 @@ export default function Home() {
               <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png"
+                src="./CDG Mockup.png"
                 width={600}
                 height={600}
               />
@@ -418,7 +418,7 @@ export default function Home() {
                   <Image 
                     alt="Bailey Costello Headshot" 
                     className="w-full h-full object-cover" 
-                    src="/Headshot.png"
+                    src="./Headshot.png"
                     width={286}
                     height={289}
                   />
