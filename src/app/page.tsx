@@ -8,11 +8,11 @@ import { useState, useEffect } from 'react';
 // Animated text cycling component
 const AnimatedHeadlines = () => {
   const headlines = [
-    "Turned successful projects into long-term partnerships",
+    "Helped rescue a client's project to meet a critical deadline",
+    "Reduced usability related support tickets by 18%",
     "Helped secure funding for multiple start-ups", 
     "Turned a conference presentation into a first-click test",
-    "Reduced usability related support tickets by 18%",
-    "Helped rescue a client from an impossible deadline"
+    "Turned successful projects into long-term partnerships",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,8 +25,8 @@ const AnimatedHeadlines = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % headlines.length);
         setIsVisible(true);
-      }, 1600); // Wait for complete fade out before fade in
-    }, 4000); // Change every 4 seconds
+      }, 1000); // Wait for complete fade out before fade in
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
   }, [headlines.length]);
@@ -36,7 +36,7 @@ const AnimatedHeadlines = () => {
       className="text-xl font-bold text-yellow-50 max-w-[356px]"
       initial={{ opacity: 1 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       {headlines[currentIndex]}
     </motion.p>
