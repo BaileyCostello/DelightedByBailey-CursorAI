@@ -174,11 +174,14 @@ export default function Home() {
               {/* First Mockup - Dr.Treat */}
               <div className="flex items-end justify-between mb-[-144px]">
                 <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                   viewport={{ once: true, margin: "5%" }}
-                  className="flex flex-col gap-2 items-end justify-end flex-1 mr-[-16px]"
+                  style={{
+                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, 100])
+                  }}
+                  className="flex flex-col gap-2 items-end justify-end flex-1 mr-[-48px]"
                 >
                   <p className="text-pink-700 text-sm text-right max-w-[188px] pb-6">
                     Pet Telehealth App,<br />Dr.Treat
@@ -189,6 +192,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
+                  style={{
+                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, 80])
+                  }}
                   className="h-[520px] w-[310px] relative shrink-0"
                 >
                   <motion.div
@@ -217,6 +223,9 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-88px" }}
+                  style={{
+                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, -80])
+                  }}
                   className="h-[520px] w-[310px] relative shrink-0"
                 >
                   <motion.div
@@ -237,11 +246,14 @@ export default function Home() {
                   </motion.div>
                 </motion.div>
                 <motion.div 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                   viewport={{ once: true, margin: "5%" }}
-                  className="flex flex-col gap-2 items-start justify-end flex-1 ml-[-16px]"
+                  style={{
+                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, -100])
+                  }}
+                  className="flex flex-col gap-2 items-start justify-end flex-1 ml-[-48px]"
                 >
                   <p className="text-pink-700 text-sm max-w-[188px] pb-6">
                     Student Volunteering App,<br />VolunTIME Keepers
