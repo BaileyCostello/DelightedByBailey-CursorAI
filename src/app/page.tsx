@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Button from '@/components/Button';
 
@@ -71,50 +71,101 @@ export default function Home() {
       </section>
 
       {/* Mockups Section */}
-      <section className="bg-yellow-200 py-14 px-6 md:px-16 lg:pl-32 lg:pr-96 xl:pl-32 xl:pr-96">
+      <section className="bg-yellow-200 py-14 pb-[144px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col gap-16"
+            className="flex flex-col"
           >
             {/* Section Title */}
-            <div className="flex flex-col items-start pb-4">
+            <motion.div 
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-200px" }}
+              className="flex flex-col items-start pb-4 mb-[-16px] relative z-10"
+            >
               <h2 className="text-4xl font-bold text-pink-500 leading-tight text-left">
                 Design Meet Product Strategy
               </h2>
-            </div>
+            </motion.div>
 
-            {/* First Mockup - Dr.Treat */}
-            <div className="flex items-end justify-between">
-              <div className="flex flex-col gap-2 items-end justify-end flex-1">
-                <p className="text-pink-700 text-sm text-right">
-                  Pet Telehealth App, Dr.Treat
-                </p>
+            {/* Mockups Container with Overlapping Layout */}
+            <div className="relative">
+              {/* First Mockup - Dr.Treat */}
+              <div className="flex items-end justify-between mb-[-144px]">
+                <motion.div 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  viewport={{ once: true, margin: "5%" }}
+                  className="flex flex-col gap-2 items-end justify-end flex-1 mr-[-16px]"
+                >
+                  <p className="text-pink-700 text-sm text-right max-w-[188px] pb-6">
+                    Pet Telehealth App,<br />Dr.Treat
+                  </p>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, y: -100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="h-[412px] w-[245px] relative shrink-0"
+                >
+                  <motion.div
+                    initial={{ y: 0 }}
+                    animate={{ y: 0 }}
+                    style={{
+                      y: useTransform(useScroll().scrollYProgress, [0, 1], [0, -50])
+                    }}
+                    className="w-full h-full"
+                  >
+                    <img 
+                      alt="Dr.Treat App Mockup" 
+                      className="w-full h-full object-cover object-center" 
+                      src="/Dr-Treat-Mockup.png" 
+                    />
+                  </motion.div>
+                </motion.div>
               </div>
-              <div className="h-[412px] w-[245px] relative shrink-0">
-                <img 
-                  alt="Dr.Treat App Mockup" 
-                  className="w-full h-full object-cover object-center" 
-                  src="/Dr-Treat-Mockup.png" 
-                />
-              </div>
-            </div>
 
-            {/* Second Mockup - VolunTime */}
-            <div className="flex items-end justify-between">
-              <div className="h-[413px] w-[245px] relative shrink-0">
-                <img 
-                  alt="VolunTime App Mockup" 
-                  className="w-full h-full object-cover object-center" 
-                  src="/VolunTime-Mockup.png" 
-                />
-              </div>
-              <div className="flex flex-col gap-2 items-start justify-end flex-1">
-                <p className="text-pink-700 text-sm">
-                  Student Volunteering App, VolunTIME Keepers
-                </p>
+              {/* Second Mockup - VolunTime */}
+              <div className="flex items-end justify-between">
+                <motion.div 
+                  initial={{ opacity: 0, y: -100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 2.5, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "5%" }}
+                  className="h-[413px] w-[245px] relative shrink-0"
+                >
+                  <motion.div
+                    initial={{ y: 0 }}
+                    animate={{ y: 0 }}
+                    style={{
+                      y: useTransform(useScroll().scrollYProgress, [0, 1], [0, -30])
+                    }}
+                    className="w-full h-full"
+                  >
+                    <img 
+                      alt="VolunTime App Mockup" 
+                      className="w-full h-full object-cover object-center" 
+                      src="/VolunTime-Mockup.png" 
+                    />
+                  </motion.div>
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true, margin: "5%" }}
+                  className="flex flex-col gap-2 items-start justify-end flex-1 ml-[-16px]"
+                >
+                  <p className="text-pink-700 text-sm max-w-[188px] pb-6">
+                    Student Volunteering App,<br />VolunTIME Keepers
+                  </p>
+                </motion.div>
               </div>
             </div>
           </motion.div>
