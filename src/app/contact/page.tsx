@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@/components/Button';
 import { Square2StackIcon } from '@heroicons/react/24/outline';
 
@@ -38,6 +38,22 @@ export default function Contact() {
       console.error('Failed to copy email: ', err);
     }
   };
+
+  // Load Calendly script
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -90,10 +106,12 @@ export default function Contact() {
 
             {/* Tab Content */}
             {activeTab === 'call' ? (
-              <div className="bg-gray-50 rounded-3xl p-6 h-[325px] flex items-center justify-center">
-                <p className="text-[#282828] text-sm font-['Plus_Jakarta_Sans',_sans-serif]">
-                  Calendly Integration
-                </p>
+              <div className="mt-6">
+                <div 
+                  className="calendly-inline-widget" 
+                  data-url="https://calendly.com/bailey-costello/15min" 
+                  style={{minWidth: '320px', height: '700px'}}
+                />
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
