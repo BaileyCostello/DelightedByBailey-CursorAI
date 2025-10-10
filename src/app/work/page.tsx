@@ -38,7 +38,7 @@ export default function Work() {
               <Image
                 alt="ANet FOCUS - Standards Page"
                 className="w-full h-auto"
-                src="/ANet FOCUS - Standards Page.png"
+                src="./ANet FOCUS - Standards Page.png"
                 width={400}
                 height={300}
               />
@@ -69,7 +69,7 @@ export default function Work() {
               <Image
                 alt="ANet FOCUS - Standards Page"
                 className="w-full h-full object-cover object-center"
-                src="/ANet FOCUS - Standards Page.png"
+                src="./ANet FOCUS - Standards Page.png"
                 width={600}
                 height={600}
               />
@@ -124,7 +124,7 @@ export default function Work() {
               <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png"
+                src="./CDG Mockup.png"
                 width={600}
                 height={520}
               />
@@ -188,7 +188,7 @@ export default function Work() {
               <Image 
                 alt="CDG iPad Mockup" 
                 className="w-full h-full object-contain object-center" 
-                src="/CDG Mockup.png"
+                src="./CDG Mockup.png"
                 width={700}
                 height={700}
               />

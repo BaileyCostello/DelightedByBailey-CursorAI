@@ -32,7 +32,7 @@ export default function About() {
         <motion.div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url("/Brooklyn Image.png")',
+            backgroundImage: 'url("./Brooklyn Image.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center 60%',
             backgroundRepeat: 'no-repeat',
