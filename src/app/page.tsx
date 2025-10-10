@@ -360,7 +360,7 @@ export default function Home() {
 
             {/* Mobile Layout - Description */}
             <div className="order-4 lg:hidden">
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
                 Lesson Planning Assistant, Achievement Network
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
@@ -397,7 +397,7 @@ export default function Home() {
               <p className="text-4xl font-bold text-pink-500 leading-tight">
                 &ldquo;I feel like every teacher across the country could use this.&rdquo;
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm text-pink-700 font-normal leading-6">
                 Lesson Planning Assistant, Achievement Network
               </p>
               <div className="flex flex-wrap gap-2">
