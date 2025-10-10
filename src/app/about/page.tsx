@@ -2,12 +2,10 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useState, useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Button from '@/components/Button';
 import {
   LightBulbIcon,
   BeakerIcon,
-  UserGroupIcon,
   RocketLaunchIcon,
   HandRaisedIcon,
   FaceSmileIcon
@@ -71,6 +69,23 @@ export default function About() {
 
   // Calculate tilts whenever mouse position changes (only when cards are in view)
   useEffect(() => {
+    const calculateTilt = (cardRef: React.RefObject<HTMLDivElement | null>) => {
+      if (!cardRef.current) return { rotateX: 0, rotateY: 0 };
+      
+      const rect = cardRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      
+      const deltaX = mousePosition.x - centerX;
+      const deltaY = mousePosition.y - centerY;
+      
+      // Simple calculation with stronger multiplier - no constraints
+      const rotateX = (deltaY / rect.height) * -5; // Slightly stronger tilt
+      const rotateY = (deltaX / rect.width) * 5; // Slightly stronger tilt
+      
+      return { rotateX, rotateY };
+    };
+
     if (!cardsInView) {
       // Reset tilts when cards are not in view
       setCardTilts({
@@ -94,22 +109,6 @@ export default function About() {
     setCardTilts(newTilts);
   }, [mousePosition, cardsInView]);
 
-  const calculateTilt = (cardRef: React.RefObject<HTMLDivElement>) => {
-    if (!cardRef.current) return { rotateX: 0, rotateY: 0 };
-    
-    const rect = cardRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-    
-    const deltaX = mousePosition.x - centerX;
-    const deltaY = mousePosition.y - centerY;
-    
-    // Simple calculation with stronger multiplier - no constraints
-    const rotateX = (deltaY / rect.height) * -5; // Slightly stronger tilt
-    const rotateY = (deltaX / rect.width) * 5; // Slightly stronger tilt
-    
-    return { rotateX, rotateY };
-  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -299,7 +298,7 @@ export default function About() {
                 </motion.div>
               </div>
           </div>
-            <p className="text-[#2c3441] text-base">
+            <p className="text-gray-500 text-base">
               <span className="font-bold"> </span>I know because I asked  <span className="text-lg">😉</span>
             </p>
           </div>
