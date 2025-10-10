@@ -1,13 +1,14 @@
 'use client';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Button from '@/components/Button';
-import { 
-  LightBulbIcon, 
-  BeakerIcon, 
-  UserGroupIcon, 
-  RocketLaunchIcon, 
+import {
+  LightBulbIcon,
+  BeakerIcon,
+  UserGroupIcon,
+  RocketLaunchIcon,
   HandRaisedIcon,
   FaceSmileIcon
 } from '@heroicons/react/24/outline';
@@ -15,6 +16,60 @@ import {
 export default function About() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [cardTilts, setCardTilts] = useState({
+    brightIdeas: { rotateX: 0, rotateY: 0 },
+    leanResearch: { rotateX: 0, rotateY: 0 },
+    clientRelationships: { rotateX: 0, rotateY: 0 },
+    adaptableLearner: { rotateX: 0, rotateY: 0 },
+    accessibility: { rotateX: 0, rotateY: 0 }
+  });
+
+  // Create refs for each card
+  const brightIdeasRef = useRef<HTMLDivElement>(null);
+  const leanResearchRef = useRef<HTMLDivElement>(null);
+  const clientRelationshipsRef = useRef<HTMLDivElement>(null);
+  const adaptableLearnerRef = useRef<HTMLDivElement>(null);
+  const accessibilityRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Calculate tilts whenever mouse position changes
+  useEffect(() => {
+    const newTilts = {
+      brightIdeas: calculateTilt(brightIdeasRef),
+      leanResearch: calculateTilt(leanResearchRef),
+      clientRelationships: calculateTilt(clientRelationshipsRef),
+      adaptableLearner: calculateTilt(adaptableLearnerRef),
+      accessibility: calculateTilt(accessibilityRef)
+    };
+    
+    setCardTilts(newTilts);
+  }, [mousePosition]);
+
+  const calculateTilt = (cardRef: React.RefObject<HTMLDivElement>) => {
+    if (!cardRef.current) return { rotateX: 0, rotateY: 0 };
+    
+    const rect = cardRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    const deltaX = mousePosition.x - centerX;
+    const deltaY = mousePosition.y - centerY;
+    
+    // Simple calculation with stronger multiplier - no constraints
+    const rotateX = (deltaY / rect.height) * -5; // Slightly stronger tilt
+    const rotateY = (deltaX / rect.width) * 5; // Slightly stronger tilt
+    
+    return { rotateX, rotateY };
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -23,13 +78,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto">
           <h1 className="text-7xl font-bold text-black leading-none">
             About
-          </h1>
+            </h1>
         </div>
       </section>
 
       {/* Hero Image Section */}
       <section className="relative h-[500px] px-6 lg:px-32 py-20 overflow-hidden">
-        <motion.div
+            <motion.div
           className="absolute inset-0 w-full h-full"
           style={{
             backgroundImage: 'url("./Brooklyn Image.png")',
@@ -47,7 +102,7 @@ export default function About() {
                 <svg className="w-full h-full" viewBox="0 0 24 24" fill="none">
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#a40047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <circle cx="12" cy="10" r="3" stroke="#a40047" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                    </svg>
               </div>
               <p className="font-semibold text-pink-700 text-base">
                 Based in Brooklyn, NYC
@@ -96,7 +151,7 @@ export default function About() {
               </p>
               <p>
                 <span className="font-bold">Analytical</span><br />
-                I love solving usability problems - some of my favorite work is simplifying technical systems that leave room for confusion.
+                I love solving usability problems - some of my favorite work relates to quickly understanding and simplifying technical systems that leave room for confusion.
               </p>
               <p>
                 <span className="font-bold">Curious</span><br />
@@ -121,32 +176,77 @@ export default function About() {
             <div className="grid grid-cols-2 gap-2 mb-4">
               {/* Left Column Cards */}
               <div className="flex flex-col gap-2">
-                <div className="bg-[#a40047] p-4 rounded-2xl shadow-lg">
-                  <LightBulbIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                  <p className="text-[#faf6f3] text-base">Bright Ideas</p>
-                </div>
-                <div className="bg-[#63082b] p-4 rounded-2xl shadow-lg">
-                  <BeakerIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                  <p className="text-[#faf6f3] text-base">Lean Research</p>
-                </div>
-                <div className="bg-[#420920] p-4 rounded-2xl shadow-lg">
-                  <FaceSmileIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                  <p className="text-[#faf6f3] text-base">Client and Team Relationships</p>
-                </div>
+                <motion.div 
+                  ref={brightIdeasRef}
+                  className="bg-[#a40047] p-4 rounded-2xl shadow-lg relative overflow-hidden"
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: `perspective(1000px) rotateX(${cardTilts.brightIdeas.rotateX}deg) rotateY(${cardTilts.brightIdeas.rotateY}deg) scale(1.02)`,
+                    boxShadow: `${Math.sin(cardTilts.brightIdeas.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.brightIdeas.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.brightIdeas.rotateX) + Math.abs(cardTilts.brightIdeas.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+                  }}
+                >
+                  <LightBulbIcon className="w-6 h-6 mb-4 text-[#faf6f3] relative z-10" />
+                  <p className="text-[#faf6f3] text-base relative z-10">Bright Ideas</p>
+          </motion.div>
+                <motion.div 
+                  ref={leanResearchRef}
+                  className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden"
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: `perspective(1000px) rotateX(${cardTilts.leanResearch.rotateX}deg) rotateY(${cardTilts.leanResearch.rotateY}deg) scale(1.02)`,
+                    boxShadow: `${Math.sin(cardTilts.leanResearch.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.leanResearch.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.leanResearch.rotateX) + Math.abs(cardTilts.leanResearch.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+                  }}
+                >
+                  <BeakerIcon className="w-6 h-6 mb-4 text-[#faf6f3] relative z-10" />
+                  <p className="text-[#faf6f3] text-base relative z-10">Lean Research</p>
+                </motion.div>
+                <motion.div 
+                  ref={clientRelationshipsRef}
+                  className="bg-[#420920] p-4 rounded-2xl shadow-lg relative overflow-hidden"
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: `perspective(1000px) rotateX(${cardTilts.clientRelationships.rotateX}deg) rotateY(${cardTilts.clientRelationships.rotateY}deg) scale(1.02)`,
+                    boxShadow: `${Math.sin(cardTilts.clientRelationships.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.clientRelationships.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.clientRelationships.rotateX) + Math.abs(cardTilts.clientRelationships.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+                  }}
+                >
+                  <FaceSmileIcon className="w-6 h-6 mb-4 text-[#faf6f3] relative z-10" />
+                  <p className="text-[#faf6f3] text-base relative z-10">Client and Team Relationships</p>
+                </motion.div>
               </div>
               
               {/* Right Column Cards */}
               <div className="flex flex-col gap-2">
-                <div className="bg-[#63082b] p-4 rounded-2xl shadow-lg">
-                  <RocketLaunchIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                  <p className="text-[#faf6f3] text-base">Adaptable and Quick Learner</p>
-                </div>
-                <div className="bg-[#2f0616] p-4 rounded-2xl shadow-lg flex-1 flex flex-col justify-between">
-                  <div>
+                <motion.div 
+                  ref={adaptableLearnerRef}
+                  className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden"
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: `perspective(1000px) rotateX(${cardTilts.adaptableLearner.rotateX}deg) rotateY(${cardTilts.adaptableLearner.rotateY}deg) scale(1.02)`,
+                    boxShadow: `${Math.sin(cardTilts.adaptableLearner.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.adaptableLearner.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.adaptableLearner.rotateX) + Math.abs(cardTilts.adaptableLearner.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+                  }}
+                >
+                  <RocketLaunchIcon className="w-6 h-6 mb-4 text-[#faf6f3] relative z-10" />
+                  <p className="text-[#faf6f3] text-base relative z-10">Adaptable and Quick Learner</p>
+            </motion.div>
+                <motion.div 
+                  ref={accessibilityRef}
+                  className="bg-[#2f0616] p-4 rounded-2xl shadow-lg flex-1 flex flex-col justify-between relative overflow-hidden"
+                  style={{ 
+                    transformStyle: "preserve-3d",
+                    transform: `perspective(1000px) rotateX(${cardTilts.accessibility.rotateX}deg) rotateY(${cardTilts.accessibility.rotateY}deg) scale(1.02)`,
+                    boxShadow: `${Math.sin(cardTilts.accessibility.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.accessibility.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.accessibility.rotateX) + Math.abs(cardTilts.accessibility.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
+                  }}
+                >
+                  <div className="relative z-10">
                     <HandRaisedIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
                     <p className="text-[#faf6f3] text-base">Accessibility</p>
                   </div>
-                  <p className="text-[#decfd5] text-sm mt-2">
+                  <p className="text-[#decfd5] text-sm mt-2 relative z-10">
                     <a 
                       href="https://www.accessibilityassociation.org/cpacc" 
                       target="_blank" 
@@ -156,9 +256,9 @@ export default function About() {
                       Certified Professional in Accessibility Core Competencies (IAAP)
                     </a>
                   </p>
-                </div>
+                </motion.div>
               </div>
-            </div>
+          </div>
             <p className="text-[#2c3441] text-base">
               <span className="font-bold"> </span>I know because I asked  <span className="text-lg">😉</span>
             </p>
