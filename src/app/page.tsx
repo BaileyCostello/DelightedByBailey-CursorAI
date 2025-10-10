@@ -5,6 +5,66 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import { useState, useEffect } from 'react';
 
+// Animated testimonials cycling component
+const AnimatedTestimonials = () => {
+  const testimonials = [
+    {
+      quote: "You're a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.",
+      name: "Gillian Kradin",
+      title: "Director of Product",
+      company: "Achievement Network, Client"
+    },
+    {
+      quote: "Bailey is the perfect blend of humble and opinionated. Any company would be lucky to have her.",
+      name: "Alex Agoado", 
+      title: "VP of Product",
+      company: "Exago, Former Boss"
+    }
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        setIsVisible(true);
+      }, 1000); // Wait for complete fade out before fade in
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  return (
+    <motion.div
+      key={currentIndex}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={`flex flex-col gap-4 h-full ${testimonials[currentIndex].quote.length > 100 ? 'justify-start' : 'justify-center'}`}
+    >
+      {/* Quote text */}
+      <div className="flex flex-col font-bold">
+        <p className="text-5xl font-bold text-pink-500 leading-normal">
+          &ldquo;{testimonials[currentIndex].quote}&rdquo;
+        </p>
+      </div>
+      
+      {/* Author info */}
+      <div className="flex justify-between items-center">
+        <div className="text-pink-700 font-normal leading-6 text-sm">
+          <p className="font-semibold mb-0">{testimonials[currentIndex].name}</p>
+          <p className="mb-0">{testimonials[currentIndex].title}</p>
+          <p>{testimonials[currentIndex].company}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 // Animated text cycling component
 const AnimatedHeadlines = () => {
   const headlines = [
@@ -266,6 +326,100 @@ export default function Home() {
       </section>
 
       {/* Complex Projects Callout Section */}
+
+      {/* Featured Case Study - ANet Section */}
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+          >
+            {/* Mobile Layout - Featured Case Study Label */}
+            <p className="text-base text-pink-700 font-normal leading-6 order-1 lg:hidden">
+              Featured Case Study
+            </p>
+
+            {/* Mobile Layout - H2 Title */}
+            <p className="text-4xl font-bold text-pink-500 leading-tight order-2 lg:hidden">
+              &ldquo;I feel like every teacher across the country could use this.&rdquo;
+            </p>
+
+            {/* Mobile Layout - Image */}
+            <div className="order-3 lg:hidden overflow-visible">
+              <Image
+                alt="ANet FOCUS - Standards Page"
+                className="w-full h-auto"
+                src="./ANet FOCUS - Standards Page.png"
+                width={400}
+                height={300}
+              />
+            </div>
+
+            {/* Mobile Layout - Description */}
+            <div className="order-4 lg:hidden">
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Lesson Planning Assistant, Achievement Network
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              </div>
+              <Button
+                href="/case-studies/anet-lesson-planning"
+                variant="secondary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
+              >
+                Read Case Study
+              </Button>
+            </div>
+
+            {/* Desktop Layout - Image */}
+            <div className="hidden lg:block h-[600px] relative order-2 overflow-visible">
+              <Image
+                alt="ANet FOCUS - Standards Page"
+                className="w-full h-full object-cover object-center"
+                src="./ANet FOCUS - Standards Page.png"
+                width={600}
+                height={600}
+              />
+            </div>
+
+            {/* Desktop Layout - Left Column (Text Content) */}
+            <div className="hidden lg:flex flex-col gap-6 order-1">
+              <p className="text-base text-pink-700 font-normal leading-6">
+                Featured Case Study
+              </p>
+              <p className="text-4xl font-bold text-pink-500 leading-tight">
+                &ldquo;I feel like every teacher across the country could use this.&rdquo;
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Lesson Planning Assistant, Achievement Network
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              </div>
+              <div className="flex justify-start">
+                <Button
+                  href="/case-studies/anet-lesson-planning"
+                  variant="secondary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
+                >
+                  Read Case Study
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Jupiter Prototype Section */}
       <section className="bg-black py-42 px-6 lg:py-32 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -399,6 +553,7 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Featured Case Study - CDG Section */}
       <section className="bg-gray-50 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -432,10 +587,10 @@ export default function Home() {
 
             {/* Mobile Layout - Badges */}
             <div className="flex flex-wrap gap-2 order-4 lg:hidden">
-              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
-              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
-              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
             </div>
 
             {/* Mobile Layout - Description */}
@@ -465,10 +620,10 @@ export default function Home() {
                 Driving operations most valued metric - efficiency
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
-                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
-                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-                <span className="bg-pink-800/16 px-2 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
               </div>
               <p className="text-sm text-pink-700 font-normal leading-6">
                 Maintenance Operations App, CMMS Data Group
@@ -501,25 +656,16 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-[#eee2d8] py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+      <section className="bg-[#eee2d8] py-14 pb-[112px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 h-[400px]"
           >
-            <p className="text-5xl font-bold text-pink-500 leading-normal">
-              &ldquo;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&rdquo;
-            </p>
-            <div className="flex justify-between items-center">
-              <div className="text-pink-700 font-normal leading-6 text-sm">
-                <p className="font-semibold mb-0">Gillian Kradin</p>
-                <p className="mb-0">Director of Product</p>
-                <p>Achievement Network, Client</p>
-              </div>
-            </div>
+            <AnimatedTestimonials />
           </motion.div>
         </div>
       </section>
