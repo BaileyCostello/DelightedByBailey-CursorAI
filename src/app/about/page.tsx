@@ -24,6 +24,7 @@ export default function About() {
     adaptableLearner: { rotateX: 0, rotateY: 0 },
     accessibility: { rotateX: 0, rotateY: 0 }
   });
+  const [cardsInView, setCardsInView] = useState(false);
 
   // Create refs for each card
   const brightIdeasRef = useRef<HTMLDivElement>(null);
@@ -31,6 +32,7 @@ export default function About() {
   const clientRelationshipsRef = useRef<HTMLDivElement>(null);
   const adaptableLearnerRef = useRef<HTMLDivElement>(null);
   const accessibilityRef = useRef<HTMLDivElement>(null);
+  const cardsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -41,8 +43,46 @@ export default function About() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Calculate tilts whenever mouse position changes
+  // Viewport detection for cards
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // Cards are in view when 10% visible
+          setCardsInView(entry.intersectionRatio >= 0.1);
+        });
+      },
+      {
+        threshold: 0.1, // Trigger when 10% visible
+        rootMargin: '0px'
+      }
+    );
+
+    if (cardsContainerRef.current) {
+      observer.observe(cardsContainerRef.current);
+    }
+
+    return () => {
+      if (cardsContainerRef.current) {
+        observer.unobserve(cardsContainerRef.current);
+      }
+    };
+  }, []);
+
+  // Calculate tilts whenever mouse position changes (only when cards are in view)
+  useEffect(() => {
+    if (!cardsInView) {
+      // Reset tilts when cards are not in view
+      setCardTilts({
+        brightIdeas: { rotateX: 0, rotateY: 0 },
+        leanResearch: { rotateX: 0, rotateY: 0 },
+        clientRelationships: { rotateX: 0, rotateY: 0 },
+        adaptableLearner: { rotateX: 0, rotateY: 0 },
+        accessibility: { rotateX: 0, rotateY: 0 }
+      });
+      return;
+    }
+
     const newTilts = {
       brightIdeas: calculateTilt(brightIdeasRef),
       leanResearch: calculateTilt(leanResearchRef),
@@ -52,7 +92,7 @@ export default function About() {
     };
     
     setCardTilts(newTilts);
-  }, [mousePosition]);
+  }, [mousePosition, cardsInView]);
 
   const calculateTilt = (cardRef: React.RefObject<HTMLDivElement>) => {
     if (!cardRef.current) return { rotateX: 0, rotateY: 0 };
@@ -173,7 +213,7 @@ export default function About() {
           {/* Right Column - Why my peers love working with me */}
           <div className="flex-1 order-1 lg:order-2">
             <h2 className="text-base font-bold text-black mb-6 pb-4">Why my peers love working with me</h2>
-            <div className="grid grid-cols-2 gap-2 mb-4">
+            <div ref={cardsContainerRef} className="grid grid-cols-2 gap-2 mb-4">
               {/* Left Column Cards */}
               <div className="flex flex-col gap-2">
                 <motion.div 
