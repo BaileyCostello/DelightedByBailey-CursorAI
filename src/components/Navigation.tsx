@@ -39,8 +39,8 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'My Work', href: '/work' },
-    { name: 'About', href: '/about' },
+    { name: 'My Work', href: '/work/' },
+    { name: 'About', href: '/about/' },
   ];
 
   return (
@@ -83,7 +83,7 @@ export default function Navigation() {
             })}
             <div className="ml-6">
               <Button
-                href="/contact"
+                href="/contact/"
                 variant="secondary"
                 size="medium"
                 background="light"
@@ -97,7 +97,7 @@ export default function Navigation() {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center space-x-6">
             <Button
-              href="/contact"
+              href="/contact/"
               variant="secondary"
               size="medium"
               background="light"

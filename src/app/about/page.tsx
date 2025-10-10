@@ -105,7 +105,7 @@ export default function About() {
             </div>
             <div className="mt-6 pt-4">
               <Button 
-                href="/contact" 
+                href="/contact/" 
                 variant="secondary" 
                 size="medium"
                 trailingIcon={true}
@@ -147,7 +147,14 @@ export default function About() {
                     <p className="text-[#faf6f3] text-base">Accessibility</p>
                   </div>
                   <p className="text-[#decfd5] text-sm mt-2">
-                    Certified Professional in Accessibility Core Competencies (IAAP)
+                    <a 
+                      href="https://www.accessibilityassociation.org/cpacc" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-[#decfd5] hover:text-white underline"
+                    >
+                      Certified Professional in Accessibility Core Competencies (IAAP)
+                    </a>
                   </p>
                 </div>
               </div>

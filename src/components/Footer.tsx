@@ -27,13 +27,13 @@ export default function Footer() {
               <Link href="/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
                 Home
               </Link>
-              <Link href="/work" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
+              <Link href="/work/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
                 My Work
               </Link>
-              <Link href="/about" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
+              <Link href="/about/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
                 About
               </Link>
-              <Link href="/contact" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
+              <Link href="/contact/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
                 Contact
               </Link>
             </div>

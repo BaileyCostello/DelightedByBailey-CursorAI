@@ -440,7 +440,7 @@ export default function ANLessonPlanningCaseStudy() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <Link
-              href="/work"
+              href="/work/"
               className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-4 sm:mb-0"
             >
               <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

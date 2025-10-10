@@ -455,7 +455,7 @@ export default function CDGMaintenanceCaseStudy() {
               Previous Case Study
             </Link>
             <Link
-              href="/work"
+              href="/work/"
               className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold"
             >
               Back to My Work

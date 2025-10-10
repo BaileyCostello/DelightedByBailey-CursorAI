@@ -171,7 +171,14 @@ export default function Home() {
                 <p>
                   <span>I am also proudly a </span>
                   <span className="underline font-semibold">
-                    Certified Professional in Accessibility Core Competencies
+                    <a 
+                      href="https://www.accessibilityassociation.org/cpacc" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-pink-700 hover:text-pink-600 underline"
+                    >
+                      Certified Professional in Accessibility Core Competencies
+                    </a>
                   </span>
                   <span> (IAAP)</span>
                 </p>
@@ -184,7 +191,7 @@ export default function Home() {
                 transition={{ duration: 0.6, delay: 2.0 }}
               >
                 <Button
-                  href="/work"
+                  href="/work/"
                   variant="primary"
                   size="medium"
                   background="light"
@@ -193,13 +200,13 @@ export default function Home() {
                   View My Work
                 </Button>
                 <Button
-                  href="/contact"
+                  href="/contact/"
                   variant="outline"
                   size="medium"
                   background="light"
                   trailingIcon={true}
                 >
-                  Get In Touch
+                  Let&apos;s Talk
                 </Button>
               </motion.div>
             </div>
@@ -709,13 +716,13 @@ export default function Home() {
                   </div>
                   <div className="flex justify-start">
                     <Button
-                      href="/contact"
+                      href="/contact/"
                       variant="primary"
                       size="medium"
                       background="light"
                       trailingIcon={true}
                     >
-                      Get In Touch
+                      Let&apos;s Talk
                     </Button>
                   </div>
                 </div>
