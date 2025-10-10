@@ -167,7 +167,7 @@ export default function Navigation() {
             );
           })}
           <Link
-            href="/contact"
+            href="/contact/"
             className="block px-6 py-4 text-base font-normal transition-all duration-200 border-b-2 text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200"
             onClick={() => setIsOpen(false)}
           >

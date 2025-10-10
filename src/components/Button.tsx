@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -146,7 +147,7 @@ export default function Button({
 
   if (href) {
     return (
-      <a
+      <Link
         href={href}
         className={buttonClasses}
         onMouseDown={handleMouseDown}
@@ -154,7 +155,7 @@ export default function Button({
         onMouseLeave={handleMouseLeave}
       >
         {buttonContent}
-      </a>
+      </Link>
     );
   }
 
