@@ -266,7 +266,8 @@ export default function Home() {
       </section>
 
       {/* Complex Projects Callout Section */}
-      <section className="bg-black py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+      {/* Jupiter Prototype Section */}
+      <section className="bg-black py-42 px-6 lg:py-32 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -275,9 +276,125 @@ export default function Home() {
             viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
-            <p className="text-4xl font-bold text-yellow-50 leading-tight">
+            {/* Animated Circles */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="flex flex-row items-center justify-start pb-2 mb-0"
+            >
+              {[1, 2, 3, 4].map((index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: 0.3 + (index * 0.2),
+                    ease: "easeOut"
+                  }}
+                  viewport={{ once: true }}
+                  className="w-8 h-8 -ml-2 relative shrink-0"
+                >
+                  {index === 1 ? (
+                    <img 
+                      alt="" 
+                      className="block max-w-none size-full -rotate-90" 
+                      src="http://localhost:3845/assets/f93e3ea266e5591b8964d18277e1051807b8b043.svg" 
+                    />
+                  ) : index === 2 ? (
+                    <img 
+                      alt="" 
+                      className="block max-w-none size-full -rotate-90" 
+                      src="http://localhost:3845/assets/b053d3a3129da0f97a613306e460df1f25caf840.svg" 
+                    />
+                  ) : index === 3 ? (
+                    <img 
+                      alt="" 
+                      className="block max-w-none size-full -rotate-90" 
+                      src="http://localhost:3845/assets/3c1690cd218185e9b420f8d1bc40c03332b9d18f.svg" 
+                    />
+                  ) : (
+                    <img 
+                      alt="" 
+                      className="block max-w-none size-full -rotate-90" 
+                      src="http://localhost:3845/assets/f8ed10c80e052df2bf1b702f7da6b38d34e6f529.svg" 
+                    />
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold text-yellow-50 leading-tight max-w-[426px] relative z-10"
+            >
               Complex problems invite creative solutions
-            </p>
+            </motion.p>
+
+            {/* MacBook Device with Video */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="relative max-w-4xl mx-auto mt-4 md:max-w-4xl w-[108vw] -mx-[4vw] left-1/2 -translate-x-1/2 md:w-auto md:mx-auto md:left-auto md:translate-x-0"
+            >
+              <motion.div 
+                className="relative"
+                style={{
+                  opacity: useTransform(useScroll().scrollYProgress, [0, 0.1, 0.15, 1], [0, 0, 1, 1]),
+                  scale: useTransform(useScroll().scrollYProgress, [0, 0.05, 0.16, 1], [0.4, 0.4, 1, 1.5])
+                }}
+              >
+                <Image
+                  src="./MacBook Pro Dark Device Screen.png"
+                  alt="MacBook Pro Device"
+                  width={800}
+                  height={483}
+                  className="w-full h-auto"
+                />
+                
+                {/* Video Overlay */}
+                <motion.div 
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{
+                    opacity: useTransform(useScroll().scrollYProgress, [0, 0.2, 0.5, 1], [0, 0, 1, 1])
+                  }}
+                >
+                  <div className="w-[79.5%] h-[85.5%] relative overflow-hidden rounded-lg -translate-y-[5px]">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-contain"
+                    >
+                      <source src="./JupiterAnimated.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* Project Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              viewport={{ once: true }}
+              className="text-sm text-red-200 font-normal leading-6"
+              style={{
+                y: useTransform(useScroll().scrollYProgress, [0, 0.16, 1], [0, 0, 124])
+              }}
+            >
+              Climate Risk Analysis, Jupiter Intel
+            </motion.p>
           </motion.div>
         </div>
       </section>
