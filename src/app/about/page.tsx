@@ -80,218 +80,85 @@ export default function About() {
         </div>
       </section>
 
-      {/* Industries List */}
-      <section className="bg-[#eee2d8] px-6 lg:px-32 py-6 pb-14">
-        <div className="max-w-7xl mx-auto">
-          <div className="space-y-2 text-gray-700 text-sm">
-            <p>B2B / Software as a Service</p>
-            <p>Business Intelligence & Data Analytics</p>
-            <p>Start Ups</p>
-            <p>Marketing & Sales</p>
-            <p>Law</p>
-            <p>Education</p>
-            <p>Accounting, Lending & Banks</p>
-            <p>Operations Management</p>
-            <p>Travel</p>
+      {/* What makes me a great fit & Why my peers love working with me */}
+      <section className="bg-[#eee2d8] px-6 lg:px-32 py-14">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
+          {/* Left Column - What makes me a great fit */}
+          <div className="flex-1 order-2 lg:order-1">
+            <h2 className="text-base font-bold text-black mb-6 pb-4">What makes me a great fit</h2>
+            <div className="space-y-4 text-[#2c3441] text-base">
+              <p>
+                I&apos;m a product-focused designer and ideas person. I believe great design is equal parts creativity, usability, and strategic thinking - and I bring all three to the table.
+              </p>
+              <p>
+                <span className="font-bold">Competitive</span><br />
+                I am my mother&apos;s daughter <span className="text-lg">😂</span>. Driven by strategy and differentiation - I love building brands that stand out.
+              </p>
+              <p>
+                <span className="font-bold">Analytical</span><br />
+                I love solving usability problems - some of my favorite work is simplifying technical systems that leave room for confusion.
+              </p>
+              <p>
+                <span className="font-bold">Curious</span><br />
+                I love learning about unique, sometimes complex industries, business strategies, and how to delight audiences.
+              </p>
+            </div>
+            <div className="mt-6 pt-4">
+              <Button 
+                href="/contact" 
+                variant="secondary" 
+                size="medium"
+                trailingIcon={true}
+              >
+                Let&apos;s Talk
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Column - Why my peers love working with me */}
+          <div className="flex-1 order-1 lg:order-2">
+            <h2 className="text-base font-bold text-black mb-6 pb-4">Why my peers love working with me</h2>
+            <div className="grid grid-cols-2 gap-2 mb-4">
+              {/* Left Column Cards */}
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#a40047] p-4 rounded-2xl shadow-lg">
+                  <LightBulbIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
+                  <p className="text-[#faf6f3] text-base">Bright Ideas</p>
+                </div>
+                <div className="bg-[#63082b] p-4 rounded-2xl shadow-lg">
+                  <BeakerIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
+                  <p className="text-[#faf6f3] text-base">Lean Research</p>
+                </div>
+                <div className="bg-[#420920] p-4 rounded-2xl shadow-lg">
+                  <FaceSmileIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
+                  <p className="text-[#faf6f3] text-base">Client and Team Relationships</p>
+                </div>
+              </div>
+              
+              {/* Right Column Cards */}
+              <div className="flex flex-col gap-2">
+                <div className="bg-[#63082b] p-4 rounded-2xl shadow-lg">
+                  <RocketLaunchIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
+                  <p className="text-[#faf6f3] text-base">Adaptable and Quick Learner</p>
+                </div>
+                <div className="bg-[#2f0616] p-4 rounded-2xl shadow-lg flex-1 flex flex-col justify-between">
+                  <div>
+                    <HandRaisedIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
+                    <p className="text-[#faf6f3] text-base">Accessibility</p>
+                  </div>
+                  <p className="text-[#decfd5] text-sm mt-2">
+                    Certified Professional in Accessibility Core Competencies (IAAP)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p className="text-[#2c3441] text-base">
+              <span className="font-bold"> </span>I know because I asked  <span className="text-lg">😉</span>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Bento Grid Section */}
-      <section className="bg-white px-6 lg:px-48 py-14">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-black leading-tight mb-10">
-            My peers love working with me for my
-          </h2>
-          
-          <div className="grid grid-cols-2 gap-2 mb-20 h-[400px]">
-            {/* Left Column */}
-            <div className="flex flex-col gap-2">
-              <motion.div 
-                className="bg-pink-700 p-10 rounded-2xl shadow-lg flex-1"
-                whileHover="hover"
-                variants={{
-                  hover: { scale: 1.02 }
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 15;
-                  const rotateY = (centerX - x) / 15;
-                  
-                  // Calculate shadow offset based on rotation
-                  const shadowX = Math.sin(rotateY * Math.PI / 180) * 20;
-                  const shadowY = Math.sin(rotateX * Math.PI / 180) * 20;
-                  const shadowBlur = 20 + Math.abs(rotateX) + Math.abs(rotateY);
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  e.currentTarget.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.3)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                }}
-                style={{ transformStyle: "preserve-3d", transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out" }}
-              >
-                <LightBulbIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                <p className="text-[#faf6f3] text-base">Bright Ideas</p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-pink-800 p-10 rounded-2xl shadow-lg flex-1"
-                whileHover="hover"
-                variants={{
-                  hover: { scale: 1.02 }
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 15;
-                  const rotateY = (centerX - x) / 15;
-                  
-                  // Calculate shadow offset based on rotation
-                  const shadowX = Math.sin(rotateY * Math.PI / 180) * 20;
-                  const shadowY = Math.sin(rotateX * Math.PI / 180) * 20;
-                  const shadowBlur = 20 + Math.abs(rotateX) + Math.abs(rotateY);
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  e.currentTarget.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.3)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                }}
-                style={{ transformStyle: "preserve-3d", transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out" }}
-              >
-                <BeakerIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                <p className="text-[#faf6f3] text-base">Lean Research</p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-[#420920] p-10 rounded-2xl shadow-lg flex-1"
-                whileHover="hover"
-                variants={{
-                  hover: { scale: 1.02 }
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 15;
-                  const rotateY = (centerX - x) / 15;
-                  
-                  // Calculate shadow offset based on rotation
-                  const shadowX = Math.sin(rotateY * Math.PI / 180) * 20;
-                  const shadowY = Math.sin(rotateX * Math.PI / 180) * 20;
-                  const shadowBlur = 20 + Math.abs(rotateX) + Math.abs(rotateY);
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  e.currentTarget.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.3)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                }}
-                style={{ transformStyle: "preserve-3d", transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out" }}
-              >
-                <FaceSmileIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                <p className="text-[#faf6f3] text-base">Client and Team Relationships</p>
-              </motion.div>
-            </div>
-            
-            {/* Right Column */}
-            <div className="flex flex-col gap-2">
-              <motion.div 
-                className="bg-pink-800 p-10 rounded-2xl shadow-lg flex-1"
-                whileHover="hover"
-                variants={{
-                  hover: { scale: 1.02 }
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 15;
-                  const rotateY = (centerX - x) / 15;
-                  
-                  // Calculate shadow offset based on rotation
-                  const shadowX = Math.sin(rotateY * Math.PI / 180) * 20;
-                  const shadowY = Math.sin(rotateX * Math.PI / 180) * 20;
-                  const shadowBlur = 20 + Math.abs(rotateX) + Math.abs(rotateY);
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  e.currentTarget.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.3)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                }}
-                style={{ transformStyle: "preserve-3d", transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out" }}
-              >
-                <RocketLaunchIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                <p className="text-[#faf6f3] text-base">Adaptability</p>
-              </motion.div>
-              
-              <motion.div 
-                className="bg-pink-900 p-10 rounded-2xl shadow-lg flex-1"
-                whileHover="hover"
-                variants={{
-                  hover: { scale: 1.02 }
-                }}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  const centerX = rect.width / 2;
-                  const centerY = rect.height / 2;
-                  const rotateX = (y - centerY) / 15;
-                  const rotateY = (centerX - x) / 15;
-                  
-                  // Calculate shadow offset based on rotation
-                  const shadowX = Math.sin(rotateY * Math.PI / 180) * 20;
-                  const shadowY = Math.sin(rotateX * Math.PI / 180) * 20;
-                  const shadowBlur = 20 + Math.abs(rotateX) + Math.abs(rotateY);
-                  
-                  e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
-                  e.currentTarget.style.boxShadow = `${shadowX}px ${shadowY}px ${shadowBlur}px rgba(0, 0, 0, 0.3)`;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.1)';
-                }}
-                style={{ transformStyle: "preserve-3d", transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out" }}
-              >
-                <HandRaisedIcon className="w-6 h-6 mb-4 text-[#faf6f3]" />
-                <p className="text-[#faf6f3] text-base">Accessibility</p>
-                <p className="text-[#decfd5] text-sm mt-2">
-                  Certified Professional in Accessibility Core Competencies (IAAP)
-                </p>
-              </motion.div>
-            </div>
-          </div>
-          
-          <div className="mt-6">
-            <Button 
-            href="/contact" 
-            variant="secondary" 
-            size="medium"
-            trailingIcon={true}
-          >
-            Let&apos;s Work Together
-          </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
