@@ -53,7 +53,7 @@ export default function Work() {
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
               </div>
               <Button
-                href="/case-studies/anet-lesson-planning"
+                href="/case-studies/an-lesson-planning"
                 variant="secondary"
                 size="medium"
                 background="light"
