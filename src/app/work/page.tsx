@@ -76,7 +76,7 @@ export default function Work() {
                       </div>
 
             {/* Desktop Layout - Left Column (Text Content) */}
-            <div className="hidden lg:flex flex-col gapx-6 py-5 order-1">
+            <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
               <p className="text-4xl font-semibold text-gray-900 leading-tight">
                 Helping Teachers Reclaim Time to Focus on Student Outcomes
               </p>
@@ -157,7 +157,7 @@ export default function Work() {
             </div>
 
             {/* Desktop Layout - Left Column (Text Content) */}
-            <div className="hidden lg:flex flex-col gapx-6 py-5 order-1">
+            <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
               <p className="text-4xl font-semibold text-gray-900 leading-tight">
                 Driving operations most valued metric - efficiency
               </p>
