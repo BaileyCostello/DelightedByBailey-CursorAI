@@ -1,11 +1,10 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
 
 export default function Work() {
-  const { scrollYProgress } = useScroll();
 
   return (
     <div className="min-h-screen bg-white">

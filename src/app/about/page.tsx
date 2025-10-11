@@ -56,13 +56,14 @@ export default function About() {
       }
     );
 
-    if (cardsContainerRef.current) {
-      observer.observe(cardsContainerRef.current);
+    const currentRef = cardsContainerRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (cardsContainerRef.current) {
-        observer.unobserve(cardsContainerRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);

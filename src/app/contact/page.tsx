@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Button from '@/components/Button';
 import { Square2StackIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
   const [activeTab, setActiveTab] = useState<'call' | 'email'>('call');
-  const [showToast, setShowToast] = useState(false);
+  const [showToast] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -28,16 +27,6 @@ export default function Contact() {
     console.log('Form submitted:', formData);
   };
 
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText('bqacos@gmail.com');
-      setShowToast(true);
-      // Hide toast after 2 seconds
-      setTimeout(() => setShowToast(false), 2000);
-    } catch (err) {
-      console.error('Failed to copy email: ', err);
-    }
-  };
 
   // Load Calendly script
   useEffect(() => {

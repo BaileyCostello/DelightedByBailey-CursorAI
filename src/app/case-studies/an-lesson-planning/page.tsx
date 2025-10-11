@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import Button from '@/components/Button';
 
 export default function ANetLessonPlanning() {
 
@@ -137,9 +136,9 @@ export default function ANetLessonPlanning() {
               <h3 className="text-3xl font-semibold text-gray-900 mb-6">
                 We spoke with over 30 teachers across the US
               </h3>
-              <p className="text-base text-gray-700 leading-6">
-                We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we refined our questions to dig deeper into lesson planning. Teachers shared stories of working late into the night, even during their children's sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
-              </p>
+               <p className="text-base text-gray-700 leading-6">
+                 We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we refined our questions to dig deeper into lesson planning. Teachers shared stories of working late into the night, even during their children&apos;s sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
+               </p>
             </div>
             <div>
               <Image
@@ -192,7 +191,7 @@ export default function ANetLessonPlanning() {
               We carefully refined our problem statement after each new insight, over time we set very specific goals for our solution:
             </p>
             <p className="text-xl font-bold text-gray-900 leading-6">
-              As a teacher, I need immediate and actionable resources that I trust to help me address student misunderstandings for content I've recently taught, so that I can adjust instruction and provide individual support
+              As a teacher, I need immediate and actionable resources that I trust to help me address student misunderstandings for content I&apos;ve recently taught, so that I can adjust instruction and provide individual support
             </p>
           </motion.div>
         </div>
@@ -224,7 +223,7 @@ export default function ANetLessonPlanning() {
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Video Library</h3>
                 <p className="text-base text-gray-700 leading-6 text-center">
-                  Teachers liked videos, but sometimes reading was faster or they weren't in a place where they could watch a video.
+                  Teachers liked videos, but sometimes reading was faster or they weren&apos;t in a place where they could watch a video.
                 </p>
               </motion.div>
               <motion.div
@@ -270,7 +269,7 @@ export default function ANetLessonPlanning() {
               >
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Chat Bot Assistant</h3>
                 <p className="text-base text-gray-700 leading-6 text-center">
-                  Teachers generally didn't care for chatbots, but liked content around student pitfalls and misunderstandings.
+                  Teachers generally didn&apos;t care for chatbots, but liked content around student pitfalls and misunderstandings.
                 </p>
               </motion.div>
             </div>
@@ -355,7 +354,7 @@ export default function ANetLessonPlanning() {
             className="max-w-4xl mx-auto"
           >
             <blockquote className="text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
-              "I feel like every teacher across the country could use this."
+              &quot;I feel like every teacher across the country could use this.&quot;
             </blockquote>
             <p className="text-base text-gray-600">
               One of the many delighted teachers we spoke with
@@ -376,7 +375,7 @@ export default function ANetLessonPlanning() {
           >
             <p className="text-base font-normal text-pink-700 mb-6">Solution</p>
             <p className="text-base text-gray-700 leading-6 max-w-4xl mb-8">
-              Every inch of the resource library has intention behind it, thoughtfully inspired by teacher's favorite resources, built for teacher's fast-paced environment, and based on Universal Design for Learning (UDL) to support diverse students who might otherwise fall behind.
+              Every inch of the resource library has intention behind it, thoughtfully inspired by teacher&apos;s favorite resources, built for teacher&apos;s fast-paced environment, and based on Universal Design for Learning (UDL) to support diverse students who might otherwise fall behind.
             </p>
             <Image
               alt="ANet FOCUS - Standards Page"
@@ -395,7 +394,7 @@ export default function ANetLessonPlanning() {
               viewport={{ once: true }}
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Each section flows naturally with teacher's lesson planning process.
+                Each section flows naturally with teacher&apos;s lesson planning process.
               </h3>
               <p className="text-base text-gray-700 leading-6">
                 Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
@@ -434,7 +433,7 @@ export default function ANetLessonPlanning() {
               An undeniable differentiator in the education market
             </h3>
             <p className="text-base text-gray-700 leading-6">
-              Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom. The success of the project reached Achievement Network's Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept. Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
+              Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom. The success of the project reached Achievement Network&apos;s Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept. Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
             </p>
           </motion.div>
         </div>
@@ -451,7 +450,7 @@ export default function ANetLessonPlanning() {
             className="max-w-3xl"
           >
             <blockquote className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
-              "You're a very good listener. If only we had been able to work with you full time - the possibilities would have been endless."
+              &quot;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&quot;
             </blockquote>
             <div className="text-base text-gray-600">
               <p className="font-medium">Gillian Kradin</p>
