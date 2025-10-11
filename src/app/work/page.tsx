@@ -89,7 +89,7 @@ export default function Work() {
               </div>
               <div className="flex justify-start">
                 <Button
-                  href="/case-studies/anet-lesson-planning"
+                  href="/case-studies/an-lesson-planning"
                   variant="secondary"
                   size="medium"
                   background="light"

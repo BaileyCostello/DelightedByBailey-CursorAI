@@ -1,463 +1,464 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Image from 'next/image';
+import Button from '@/components/Button';
 
-export default function ANLessonPlanningCaseStudy() {
+export default function ANetLessonPlanning() {
+
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gray-100 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            viewport={{ once: true }}
+            className="max-w-4xl"
           >
-            <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Case Study
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              AN Lesson Planning Assistant
+            <h1 className="text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-6">
+              Helping Teachers Reclaim Time to Focus on Student Outcomes
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              AI-powered tool that helps educators create engaging lesson plans with 
-              personalized recommendations and curriculum alignment.
+            <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
+              Lesson Planning Resource, Achievement Network
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-              <span className="bg-white px-3 py-1 rounded-full">UX Research</span>
-              <span className="bg-white px-3 py-1 rounded-full">Product Design</span>
-              <span className="bg-white px-3 py-1 rounded-full">AI Integration</span>
-              <span className="bg-white px-3 py-1 rounded-full">Education Technology</span>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
             </div>
+            <p className="text-base text-gray-900 leading-6">
+              I led the product design and research for an online resource to help teachers build high quality lesson plans, remediate misunderstandings in the classroom, and support Universal Design for Learning (UDL).
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Hero Image */}
+      <section className="bg-gray-100 py-8 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <Image
+              alt="ANet FOCUS - Standards Page"
+              className="w-full h-auto rounded-2xl shadow-2xl"
+              src="./ANet FOCUS - Standards Page.png"
+              width={1200}
+              height={800}
+            />
           </motion.div>
         </div>
       </section>
 
       {/* Overview Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Project Overview
-              </h2>
-              <div className="space-y-4 text-lg text-gray-600">
-                <p>
-                  The AN Lesson Planning Assistant was designed to address the time-consuming 
-                  and often overwhelming task of creating effective lesson plans. Teachers 
-                  were spending 3-4 hours per week on lesson planning, often feeling 
-                  overwhelmed by curriculum requirements and lack of resources.
-                </p>
-                <p>
-                  Our goal was to create an AI-powered tool that would reduce planning time 
-                  by 60% while improving lesson quality through personalized recommendations 
-                  and curriculum alignment.
-                </p>
-              </div>
+              <p className="text-base font-normal text-pink-700 mb-6">Overview</p>
+              <p className="text-base text-gray-700 leading-6">
+                We started without a solution, or even a particular problem in mind. We simply knew we wanted to focus on teachers - thinking they would have the biggest impact on student learning.
+              </p>
             </motion.div>
-            
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Key Metrics</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Planning Time Reduction</span>
-                  <span className="font-bold text-purple-600">60%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">User Satisfaction</span>
-                  <span className="font-bold text-purple-600">4.8/5</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Adoption Rate</span>
-                  <span className="font-bold text-purple-600">85%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Time to First Lesson</span>
-                  <span className="font-bold text-purple-600">15 min</span>
-                </div>
-              </div>
+              <p className="text-base font-normal text-pink-700 mb-6">Goals</p>
+              <ul className="space-y-4">
+                <li className="text-base text-gray-700 leading-6">
+                  Enable teachers to improve outcomes for 1 million students nationwide
+                </li>
+                <li className="text-base text-gray-700 leading-6">
+                  Leverage rough ideas and qualitative research to understand what the market needs
+                </li>
+              </ul>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Role Highlights */}
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              The Problem
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Teachers were struggling with time-consuming lesson planning that often 
-              resulted in suboptimal learning experiences.
-            </p>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Role</h3>
+              <p className="text-base text-gray-700">Lead UX Designer & Researcher</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Tools</h3>
+              <p className="text-base text-gray-700">Figma, Zoom</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Team</h3>
+              <p className="text-base text-gray-700">1 Product Owner<br />1 Team of Educational Coaches</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Timeline</h3>
+              <p className="text-base text-gray-700">4 months</p>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Time Constraints',
-                description: 'Teachers spend 3-4 hours per week on lesson planning, often working late into the evening.',
-                icon: '⏰',
-              },
-              {
-                title: 'Resource Overload',
-                description: 'Overwhelming amount of curriculum materials and resources to sift through and organize.',
-                icon: '📚',
-              },
-              {
-                title: 'Quality Concerns',
-                description: 'Rushed planning often leads to less engaging and effective lesson content.',
-                icon: '📉',
-              },
-            ].map((problem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-sm text-center"
-              >
-                <div className="text-4xl mb-4">{problem.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Research Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Research & Discovery
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Understanding the needs and pain points of educators through comprehensive research.
+            <div>
+              <p className="text-base font-normal text-pink-700 mb-6">Interviews</p>
+              <h3 className="text-3xl font-semibold text-gray-900 mb-6">
+                We spoke with over 30 teachers across the US
+              </h3>
+              <p className="text-base text-gray-700 leading-6">
+                We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we refined our questions to dig deeper into lesson planning. Teachers shared stories of working late into the night, even during their children's sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
+              </p>
+            </div>
+            <div>
+              <Image
+                alt="Teacher Persona"
+                className="w-full h-auto rounded-2xl shadow-lg mb-6"
+                src="./ANet Persona.png"
+                width={600}
+                height={400}
+              />
+              <p className="text-base text-gray-700 leading-6">
+                Meet our persona: I captured our teachers most common shared goals, likes, and pains for quick re-alignment.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Scrolling Text Section */}
+      <section className="h-screen flex flex-col justify-center">
+        <div className="w-full">
+          <div className="overflow-hidden">
+            <div className="flex whitespace-nowrap">
+              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
+              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
+              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
+            </div>
+          </div>
+          <div className="overflow-hidden mt-48">
+            <div className="flex whitespace-nowrap">
+              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
+              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
+              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Statement Section */}
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-3xl"
+          >
+            <p className="text-base font-normal text-pink-700 mb-6">Our North Star</p>
+            <p className="text-base text-gray-700 leading-6 mb-8">
+              We carefully refined our problem statement after each new insight, over time we set very specific goals for our solution:
+            </p>
+            <p className="text-xl font-bold text-gray-900 leading-6">
+              As a teacher, I need immediate and actionable resources that I trust to help me address student misunderstandings for content I've recently taught, so that I can adjust instruction and provide individual support
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Concept Testing Section */}
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-base font-normal text-pink-700 mb-6">3 Imperfect Concepts</p>
+            <p className="text-base text-gray-700 leading-6 max-w-3xl">
+              Next, we set out to get rapid feedback on rough ideas. None of them perfect, but each helped shape the final solution.
             </p>
           </motion.div>
 
+          <div className="bg-gray-50 p-8 rounded-2xl mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Video Library</h3>
+                <p className="text-base text-gray-700 leading-6 text-center">
+                  Teachers liked videos, but sometimes reading was faster or they weren't in a place where they could watch a video.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  alt="Video Library Concept"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  src="./ANet Concept 1.png"
+                  width={600}
+                  height={400}
+                />
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 p-8 rounded-2xl mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="lg:order-1"
+              >
+                <Image
+                  alt="Chat Bot Concept"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  src="./ANet Concept 2.png"
+                  width={600}
+                  height={400}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="lg:order-2"
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Chat Bot Assistant</h3>
+                <p className="text-base text-gray-700 leading-6 text-center">
+                  Teachers generally didn't care for chatbots, but liked content around student pitfalls and misunderstandings.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+
+          <div className="bg-gray-50 p-8 rounded-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Mobile App</h3>
+                <p className="text-base text-gray-700 leading-6 text-center">
+                  Teachers liked the library of resources, but lesson planning was easiest done on a computer.
+                </p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  alt="Mobile App Concept"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  src="./ANet Concept 3.png"
+                  width={600}
+                  height={400}
+                />
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Further Refinement Section */}
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">User Interviews</h3>
-              <div className="space-y-4">
-                <div className="bg-gray-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Insights</h4>
-                  <ul className="text-gray-600 space-y-2">
-                    <li>• 78% of teachers feel overwhelmed by curriculum requirements</li>
-                    <li>• 65% struggle to find relevant resources quickly</li>
-                    <li>• 82% want personalized recommendations</li>
-                    <li>• 71% prefer visual lesson planning tools</li>
-                  </ul>
-                </div>
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">User Quotes</h4>
-                  <blockquote className="text-gray-600 italic">
-                  &quot;We&apos;re constantly putting out fires instead of preventing them.I spend more time planning than actually teaching. I need something that understands my students and curriculum requirements.&quot;
-                  </blockquote>
-                </div>
-              </div>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Further Refinement</h2>
+              <p className="text-base text-gray-700 leading-6 mb-6">
+                We continued to tweak the solution for another 5 rounds of feedback.
+              </p>
+              <p className="text-base text-gray-700 leading-6">
+                The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
+              </p>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Competitive Analysis</h3>
-              <div className="space-y-4">
-                <div className="bg-white border border-gray-200 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Existing Solutions</h4>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <div className="flex justify-between">
-                      <span>PlanbookEdu</span>
-                      <span className="text-yellow-500">★★★☆☆</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Common Curriculum</span>
-                      <span className="text-yellow-500">★★★☆☆</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Planboard</span>
-                      <span className="text-yellow-500">★★☆☆☆</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-purple-50 rounded-lg p-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Opportunity</h4>
-                  <p className="text-gray-600">
-                    No existing solution combines AI-powered recommendations with 
-                    intuitive design and curriculum alignment.
-                  </p>
-                </div>
-              </div>
+              <Image
+                alt="ANet Hero Image"
+                className="w-full h-auto rounded-2xl shadow-lg"
+                src="./ANet Hero Image.png"
+                width={600}
+                height={400}
+              />
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Quote Section */}
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <blockquote className="text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
+              "I feel like every teacher across the country could use this."
+            </blockquote>
+            <p className="text-base text-gray-600">
+              One of the many delighted teachers we spoke with
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-12"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              The Solution
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              An AI-powered lesson planning assistant that combines intelligent recommendations 
-              with an intuitive, visual planning interface.
+            <p className="text-base font-normal text-pink-700 mb-6">Solution</p>
+            <p className="text-base text-gray-700 leading-6 max-w-4xl mb-8">
+              Every inch of the resource library has intention behind it, thoughtfully inspired by teacher's favorite resources, built for teacher's fast-paced environment, and based on Universal Design for Learning (UDL) to support diverse students who might otherwise fall behind.
             </p>
+            <Image
+              alt="ANet FOCUS - Standards Page"
+              className="w-full h-auto rounded-2xl shadow-2xl"
+              src="./ANet FOCUS - Standards Page.png"
+              width={1200}
+              height={800}
+            />
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: 'AI-Powered Recommendations',
-                    description: 'Personalized lesson suggestions based on curriculum, student needs, and teaching style.',
-                  },
-                  {
-                    title: 'Visual Planning Interface',
-                    description: 'Drag-and-drop lesson builder with timeline visualization and resource management.',
-                  },
-                  {
-                    title: 'Curriculum Alignment',
-                    description: 'Automatic alignment with state standards and learning objectives.',
-                  },
-                  {
-                    title: 'Resource Library',
-                    description: 'Curated collection of activities, materials, and assessments.',
-                  },
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Each section flows naturally with teacher's lesson planning process.
+              </h3>
+              <p className="text-base text-gray-700 leading-6">
+                Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
+              </p>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4">
-                  <div className="space-y-3">
-                    <div className="h-4 bg-purple-200 rounded w-3/4"></div>
-                    <div className="h-4 bg-purple-200 rounded w-1/2"></div>
-                    <div className="h-4 bg-purple-200 rounded w-2/3"></div>
-                  </div>
-                </div>
-                <div className="text-center text-sm text-gray-500">
-                  AI Lesson Planning Interface
-                </div>
-              </div>
+              <Image
+                alt="ANet Concept 4"
+                className="w-full h-auto rounded-2xl shadow-lg"
+                src="./ANet Concept 4.png"
+                width={600}
+                height={400}
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Outcomes Section */}
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="max-w-3xl"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Design Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A structured approach to creating an intuitive and powerful lesson planning tool.
+            <p className="text-base font-normal text-pink-700 mb-6">Outcomes</p>
+            <h3 className="text-3xl font-semibold text-gray-900 mb-6">
+              An undeniable differentiator in the education market
+            </h3>
+            <p className="text-base text-gray-700 leading-6">
+              Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom. The success of the project reached Achievement Network's Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept. Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'User Research',
-                description: 'Conducted interviews with 25 teachers to understand pain points and needs.',
-              },
-              {
-                step: '02',
-                title: 'Wireframing',
-                description: 'Created low-fidelity wireframes to explore different interface approaches.',
-              },
-              {
-                step: '03',
-                title: 'Prototyping',
-                description: 'Built interactive prototypes to test user flows and interactions.',
-              },
-              {
-                step: '04',
-                title: 'Testing & Iteration',
-                description: 'Conducted usability testing with 15 teachers and iterated based on feedback.',
-              },
-            ].map((process, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-purple-600 mb-4">{process.step}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* Results Section */}
-      <section className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Final Quote */}
+      <section className="py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="max-w-3xl"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Results & Impact
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The AN Lesson Planning Assistant successfully transformed how teachers plan their lessons.
-            </p>
+            <blockquote className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+              "You're a very good listener. If only we had been able to work with you full time - the possibilities would have been endless."
+            </blockquote>
+            <div className="text-base text-gray-600">
+              <p className="font-medium">Gillian Kradin</p>
+              <p>Director of Product</p>
+              <p>Achievement Network, Client</p>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                metric: '60%',
-                label: 'Reduction in Planning Time',
-                description: 'Teachers now spend 1.5 hours instead of 3-4 hours per week on lesson planning.',
-              },
-              {
-                metric: '4.8/5',
-                label: 'User Satisfaction Score',
-                description: 'High satisfaction with AI recommendations and interface usability.',
-              },
-              {
-                metric: '85%',
-                label: 'Teacher Adoption Rate',
-                description: 'Strong adoption rate within the first 3 months of launch.',
-              },
-              {
-                metric: '15 min',
-                label: 'Time to First Lesson',
-                description: 'Teachers can create their first lesson plan in just 15 minutes.',
-              },
-            ].map((result, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 text-center shadow-sm"
-              >
-                <div className="text-4xl font-bold text-purple-600 mb-2">{result.metric}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{result.label}</h3>
-                <p className="text-gray-600 text-sm">{result.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Navigation */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <Link
-              href="/work/"
-              className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-4 sm:mb-0"
-            >
-              <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Back to My Work
-            </Link>
-            <Link
-              href="/case-studies/cdg-maintenance"
-              className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold"
-            >
-              Next Case Study
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
         </div>
       </section>
     </div>

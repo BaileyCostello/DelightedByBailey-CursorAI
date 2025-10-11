@@ -117,3 +117,14 @@ body {
 .animate-scroll-smooth {
   animation: scroll-smooth 45s linear infinite;
 }
+
+/* Scrolling text animations */
+@keyframes scroll-text {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
