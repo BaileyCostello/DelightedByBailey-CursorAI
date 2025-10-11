@@ -46,9 +46,9 @@ export default function ANetLessonPlanning() {
             className="relative"
           >
             <Image
-              alt="ANet FOCUS - Standards Page"
+              alt="ANet Hero Image"
               className="w-full h-auto rounded-2xl shadow-2xl"
-              src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
+              src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
               width={1200}
               height={800}
             />
@@ -143,7 +143,7 @@ export default function ANetLessonPlanning() {
             <div>
               <Image
                 alt="Teacher Persona"
-                className="w-full h-auto rounded-2xl shadow-lg mb-6"
+                className="w-full h-auto rounded-2xl mb-6"
                 src="/DelightedByBailey-CursorAI/ANet Persona.png"
                 width={600}
                 height={400}
@@ -177,7 +177,7 @@ export default function ANetLessonPlanning() {
       </section>
 
       {/* Problem Statement Section */}
-      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+      <section className="bg-white py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -198,7 +198,7 @@ export default function ANetLessonPlanning() {
       </section>
 
       {/* Concept Testing Section */}
-      <section className="py-14 px-6 lg:px-32">
+      <section className="bg-gray-50 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export default function ANetLessonPlanning() {
             </p>
           </motion.div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl mb-12">
+          <div className="p-8 rounded-2xl mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -221,8 +221,8 @@ export default function ANetLessonPlanning() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Video Library</h3>
-                <p className="text-base text-gray-700 leading-6 text-center">
+                <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">1. Video Library</h3>
+                <p className="text-base text-gray-700 leading-6 text-left">
                   Teachers liked videos, but sometimes reading was faster or they weren&apos;t in a place where they could watch a video.
                 </p>
               </motion.div>
@@ -234,7 +234,7 @@ export default function ANetLessonPlanning() {
               >
                 <Image
                   alt="Video Library Concept"
-                  className="w-full h-auto rounded-2xl shadow-lg"
+                  className="w-full h-auto rounded-2xl"
                   src="/DelightedByBailey-CursorAI/ANet Concept 1.png"
                   width={600}
                   height={400}
@@ -243,7 +243,7 @@ export default function ANetLessonPlanning() {
             </div>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl mb-12">
+          <div className="p-8 rounded-2xl mb-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -254,7 +254,7 @@ export default function ANetLessonPlanning() {
               >
                 <Image
                   alt="Chat Bot Concept"
-                  className="w-full h-auto rounded-2xl shadow-lg"
+                  className="w-full h-auto rounded-2xl"
                   src="/DelightedByBailey-CursorAI/ANet Concept 2.png"
                   width={600}
                   height={400}
@@ -267,8 +267,8 @@ export default function ANetLessonPlanning() {
                 viewport={{ once: true }}
                 className="lg:order-2"
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Chat Bot Assistant</h3>
-                <p className="text-base text-gray-700 leading-6 text-center">
+                  <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">2. Chat Bot Assistant</h3>
+                  <p className="text-base text-gray-700 leading-6 text-left">
                   Teachers generally didn&apos;t care for chatbots, but liked content around student pitfalls and misunderstandings.
                 </p>
               </motion.div>
@@ -283,8 +283,8 @@ export default function ANetLessonPlanning() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 text-center">Mobile App</h3>
-                <p className="text-base text-gray-700 leading-6 text-center">
+                  <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">3. Mobile App</h3>
+                  <p className="text-base text-gray-700 leading-6 text-left">
                   Teachers liked the library of resources, but lesson planning was easiest done on a computer.
                 </p>
               </motion.div>
@@ -296,7 +296,7 @@ export default function ANetLessonPlanning() {
               >
                 <Image
                   alt="Mobile App Concept"
-                  className="w-full h-auto rounded-2xl shadow-lg"
+                  className="w-full h-auto rounded-2xl"
                   src="/DelightedByBailey-CursorAI/ANet Concept 3.png"
                   width={600}
                   height={400}
@@ -304,13 +304,9 @@ export default function ANetLessonPlanning() {
               </motion.div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Further Refinement Section */}
-      <section className="py-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gray-50 p-8 rounded-2xl">
+          {/* Further Refinement Subsection */}
+          <div className="p-8 rounded-2xl">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -321,7 +317,7 @@ export default function ANetLessonPlanning() {
               >
                 <Image
                   alt="ANet Hero Image"
-                  className="w-full h-auto rounded-2xl shadow-lg"
+                  className="w-full h-auto rounded-2xl"
                   src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
                   width={600}
                   height={400}
@@ -334,11 +330,11 @@ export default function ANetLessonPlanning() {
                 viewport={{ once: true }}
                 className="lg:order-2"
               >
-                <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Further Refinement</h2>
-                <p className="text-base text-gray-700 leading-6 text-center mb-6">
+                <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">4. Further Refinement</h3>
+                <p className="text-base text-gray-700 leading-6 text-left mb-6">
                   We continued to tweak the solution for another 5 rounds of feedback.
                 </p>
-                <p className="text-base text-gray-700 leading-6 text-center">
+                <p className="text-base text-gray-700 leading-6 text-left">
                   The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
                 </p>
               </motion.div>
@@ -347,22 +343,28 @@ export default function ANetLessonPlanning() {
         </div>
       </section>
 
+
       {/* Quote Section */}
-      <section className="py-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
           >
-            <blockquote className="text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-8">
-              &quot;I feel like every teacher across the country could use this.&quot;
-            </blockquote>
-            <p className="text-base text-gray-600">
-              One of the many delighted teachers we spoke with
-            </p>
+            <div className="text-left">
+              <blockquote className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
+                &quot;I feel like every teacher across the country could use this.&quot;
+              </blockquote>
+              <p className="text-base text-pink-700">
+                One of the many delighted teachers we spoke with
+              </p>
+            </div>
+            <div>
+              {/* Empty right column for better text wrapping */}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -381,85 +383,115 @@ export default function ANetLessonPlanning() {
             <p className="text-base text-gray-700 leading-6 max-w-4xl mb-8">
               Every inch of the resource library has intention behind it, thoughtfully inspired by teacher&apos;s favorite resources, built for teacher&apos;s fast-paced environment, and based on Universal Design for Learning (UDL) to support diverse students who might otherwise fall behind.
             </p>
-            <Image
-              alt="ANet FOCUS - Standards Page"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-              src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
-              width={1200}
-              height={800}
-            />
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Each section flows naturally with teacher&apos;s lesson planning process.
-              </h3>
-              <p className="text-base text-gray-700 leading-6">
-                Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                alt="ANet Concept 4"
-                className="w-full h-auto rounded-2xl shadow-lg"
-                src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
-                width={600}
-                height={400}
-              />
-            </motion.div>
-          </div>
+            {/* Two-column layout with image and annotations */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Left column - Image (spans 2 columns) */}
+              <div className="lg:col-span-2 relative">
+                <div className="relative -ml-6 lg:-ml-16">
+                  <Image
+                    alt="ANet FOCUS - Standards Page"
+                    className="w-full h-auto rounded-2xl shadow-2xl"
+                    src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
+                    width={1200}
+                    height={800}
+                  />
+                </div>
+              </div>
+
+              {/* Right column - Annotations */}
+              <div className="lg:col-span-1 space-y-6">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                  <p className="text-sm text-gray-700">
+                    Each section flows naturally with teacher&apos;s lesson planning process.
+                  </p>
+                </div>
+
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                  <p className="text-sm text-gray-700">
+                    Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
+                  </p>
+                </div>
+
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                  <p className="text-sm text-gray-700 mb-3">
+                    I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
+                  </p>
+                  <Image
+                    alt="Old Vertical Progression"
+                    className="w-full h-auto rounded"
+                    src="/DelightedByBailey-CursorAI/OLD Vertical Progression.png"
+                    width={200}
+                    height={150}
+                  />
+                </div>
+
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                  <p className="text-sm text-gray-700 mb-3">
+                    We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
+                  </p>
+                  <Image
+                    alt="Helpful Solution"
+                    className="w-full h-auto rounded"
+                    src="/DelightedByBailey-CursorAI/Helpful Solution.png"
+                    width={200}
+                    height={100}
+                  />
+                </div>
+              </div>
+            </div>
         </div>
       </section>
 
       {/* Outcomes Section */}
-      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+      <section className="bg-white py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-3xl"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
           >
-            <p className="text-base font-normal text-pink-700 mb-6">Outcomes</p>
-            <h3 className="text-3xl font-semibold text-gray-900 mb-6">
-              An undeniable differentiator in the education market
-            </h3>
-            <p className="text-base text-gray-700 leading-6">
-              Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom. The success of the project reached Achievement Network&apos;s Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept. Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
-            </p>
+            <div className="text-left">
+              <p className="text-base font-normal text-pink-700 mb-6">Outcomes</p>
+              <h3 className="text-3xl font-semibold text-gray-900 mb-6">
+                An undeniable differentiator in the education market
+              </h3>
+              <p className="text-base text-gray-700 leading-6">
+                Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom.<br /><br /> The success of the project reached Achievement Network&apos;s Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept.<br /><br /> Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
+              </p>
+            </div>
+            <div>
+              {/* Empty right column for better text wrapping */}
+            </div>
           </motion.div>
         </div>
       </section>
 
       {/* Final Quote */}
-      <section className="py-14 px-6 lg:px-32">
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-3xl"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
           >
-            <blockquote className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
-              &quot;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&quot;
-            </blockquote>
-            <div className="text-base text-gray-600">
-              <p className="font-medium">Gillian Kradin</p>
-              <p>Director of Product</p>
-              <p>Achievement Network, Client</p>
+            <div className="text-left">
+              <blockquote className="text-4xl lg:text-5xl font-bold text-pink-500 leading-tight mb-8">
+                &quot;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&quot;
+              </blockquote>
+              <div className="text-base text-pink-700">
+                <p className="font-semibold">Gillian Kradin</p>
+                <p>Director of Product</p>
+                <p>Achievement Network, Client</p>
+              </div>
+            </div>
+            <div>
+              {/* Empty right column for better text wrapping */}
             </div>
           </motion.div>
         </div>
