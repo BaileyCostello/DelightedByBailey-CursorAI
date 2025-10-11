@@ -214,7 +214,7 @@ export default function Work() {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url("/Mountains.png")',
+            backgroundImage: 'url("/DelightedByBailey-CursorAI/Mountains.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
@@ -256,7 +256,7 @@ export default function Work() {
                   <Image
                     alt="Dr.Treat App Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Dr.Treat Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Dr-Treat-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -272,7 +272,7 @@ export default function Work() {
                   <Image
                     alt="Exago Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Exago Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Exago-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -288,7 +288,7 @@ export default function Work() {
                   <Image
                     alt="Hanover Research Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Hanover Research Brand Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -304,7 +304,7 @@ export default function Work() {
                   <Image
                     alt="First Mid Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/First Mid Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/First-Mid-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -320,7 +320,7 @@ export default function Work() {
                   <Image
                     alt="Morgan Lewis Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Morgan Lewis Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Morgan-Lewis-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -336,7 +336,7 @@ export default function Work() {
                   <Image
                     alt="RISA Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/RISA Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/RISA-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -352,7 +352,7 @@ export default function Work() {
                   <Image
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Hanover Research Brand Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -370,7 +370,7 @@ export default function Work() {
                   <Image
                     alt="Dr.Treat App Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Dr.Treat Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Dr-Treat-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -386,7 +386,7 @@ export default function Work() {
                   <Image
                     alt="Exago Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Exago Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Exago-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -402,7 +402,7 @@ export default function Work() {
                   <Image
                     alt="Hanover Research Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Hanover Research Brand Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -418,7 +418,7 @@ export default function Work() {
                   <Image
                     alt="First Mid Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/First Mid Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/First-Mid-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -434,7 +434,7 @@ export default function Work() {
                   <Image
                     alt="Morgan Lewis Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Morgan Lewis Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Morgan-Lewis-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -450,7 +450,7 @@ export default function Work() {
                   <Image
                     alt="RISA Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/RISA Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/RISA-Preview-Image.png"
                     width={400}
                     height={300}
                   />
@@ -466,7 +466,7 @@ export default function Work() {
                   <Image
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="/Hanover Research Brand Preview Image.png"
+                    src="/DelightedByBailey-CursorAI/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
