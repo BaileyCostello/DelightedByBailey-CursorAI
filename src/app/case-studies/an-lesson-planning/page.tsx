@@ -48,7 +48,7 @@ export default function ANetLessonPlanning() {
             <Image
               alt="ANet FOCUS - Standards Page"
               className="w-full h-auto rounded-2xl shadow-2xl"
-              src="./ANet FOCUS - Standards Page.png"
+              src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
               width={1200}
               height={800}
             />
@@ -144,7 +144,7 @@ export default function ANetLessonPlanning() {
               <Image
                 alt="Teacher Persona"
                 className="w-full h-auto rounded-2xl shadow-lg mb-6"
-                src="./ANet Persona.png"
+                src="/DelightedByBailey-CursorAI/ANet Persona.png"
                 width={600}
                 height={400}
               />
@@ -235,7 +235,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Video Library Concept"
                   className="w-full h-auto rounded-2xl shadow-lg"
-                  src="./ANet Concept 1.png"
+                  src="/DelightedByBailey-CursorAI/ANet Concept 1.png"
                   width={600}
                   height={400}
                 />
@@ -255,7 +255,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Chat Bot Concept"
                   className="w-full h-auto rounded-2xl shadow-lg"
-                  src="./ANet Concept 2.png"
+                  src="/DelightedByBailey-CursorAI/ANet Concept 2.png"
                   width={600}
                   height={400}
                 />
@@ -297,7 +297,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Mobile App Concept"
                   className="w-full h-auto rounded-2xl shadow-lg"
-                  src="./ANet Concept 3.png"
+                  src="/DelightedByBailey-CursorAI/ANet Concept 3.png"
                   width={600}
                   height={400}
                 />
@@ -308,37 +308,41 @@ export default function ANetLessonPlanning() {
       </section>
 
       {/* Further Refinement Section */}
-      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+      <section className="py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Further Refinement</h2>
-              <p className="text-base text-gray-700 leading-6 mb-6">
-                We continued to tweak the solution for another 5 rounds of feedback.
-              </p>
-              <p className="text-base text-gray-700 leading-6">
-                The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                alt="ANet Hero Image"
-                className="w-full h-auto rounded-2xl shadow-lg"
-                src="./ANet Hero Image.png"
-                width={600}
-                height={400}
-              />
-            </motion.div>
+          <div className="bg-gray-50 p-8 rounded-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="lg:order-1"
+              >
+                <Image
+                  alt="ANet Hero Image"
+                  className="w-full h-auto rounded-2xl shadow-lg"
+                  src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
+                  width={600}
+                  height={400}
+                />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="lg:order-2"
+              >
+                <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Further Refinement</h2>
+                <p className="text-base text-gray-700 leading-6 text-center mb-6">
+                  We continued to tweak the solution for another 5 rounds of feedback.
+                </p>
+                <p className="text-base text-gray-700 leading-6 text-center">
+                  The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
+                </p>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -380,7 +384,7 @@ export default function ANetLessonPlanning() {
             <Image
               alt="ANet FOCUS - Standards Page"
               className="w-full h-auto rounded-2xl shadow-2xl"
-              src="./ANet FOCUS - Standards Page.png"
+              src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
               width={1200}
               height={800}
             />
@@ -409,7 +413,7 @@ export default function ANetLessonPlanning() {
               <Image
                 alt="ANet Concept 4"
                 className="w-full h-auto rounded-2xl shadow-lg"
-                src="./ANet Concept 4.png"
+                src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
                 width={600}
                 height={400}
               />
