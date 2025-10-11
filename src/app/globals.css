@@ -103,3 +103,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Auto-scrolling carousel animation */
+@keyframes scroll-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-450px * 7 - 32px * 6));
+  }
+}
+
+.animate-scroll-smooth {
+  animation: scroll-smooth 45s linear infinite;
+}
