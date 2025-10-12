@@ -235,11 +235,11 @@ export default function Work() {
           </motion.div>
 
           {/* Preview Images Carousel */}
-          <motion.div
+            <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+              viewport={{ once: true }}
             className="relative -mx-6 lg:-mx-32"
           >
             <div 
@@ -475,8 +475,8 @@ export default function Work() {
                 </div>
               </div>
 
-            </div>
-          </motion.div>
+              </div>
+            </motion.div>
 
           {/* CTA Button */}
             <motion.div

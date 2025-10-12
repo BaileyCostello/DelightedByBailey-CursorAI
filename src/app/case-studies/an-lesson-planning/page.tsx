@@ -31,9 +31,6 @@ export default function ANetLessonPlanning() {
               <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
               <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
             </div>
-            <p className="text-base text-gray-900 leading-6">
-              I led the product design and research for an online resource to help teachers build high quality lesson plans, remediate misunderstandings in the classroom, and support Universal Design for Learning (UDL).
-            </p>
           </motion.div>
         </div>
       </section>
@@ -140,7 +137,7 @@ export default function ANetLessonPlanning() {
                 We spoke with over 30 teachers across the US
               </h3>
                <p className="text-base text-gray-700 leading-6">
-                 We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we dug deeper into lesson planning. Teachers shared stories of working late into the night, even during their children&apos;s sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
+                 We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we dug deeper into problems around lesson planning. Teachers shared stories of working late into the night, even during their children&apos;s sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
                </p>
             </div>
             <div>
@@ -151,8 +148,8 @@ export default function ANetLessonPlanning() {
                 width={600}
                 height={400}
               />
-              <p className="text-base text-gray-700 leading-6">
-                Meet our persona, built for quick re-alignment
+              <p className="text-base text-gray-500 leading-6">
+                Meet our persona Jada, created for quick re-alignment
               </p>
             </div>
           </motion.div>
@@ -160,7 +157,7 @@ export default function ANetLessonPlanning() {
       </section>
 
       {/* Scrolling Text Section */}
-      <section className="h-screen flex flex-col justify-center">
+      <section className="min-h-screen flex flex-col pt-32 pb-32">
         <div className="w-full">
           <div className="wrapper">
             <div ref={slowMarqueeRef} className="marquee marquee-slow">
@@ -168,35 +165,39 @@ export default function ANetLessonPlanning() {
               <p className="text-2xl font-bold text-gray-900 mr-6">I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;</p>
             </div>
           </div>
-          <div className="wrapper mt-48">
+          <div className="wrapper mt-16">
             <div ref={fastMarqueeRef} className="marquee marquee-fast">
               <p className="text-[128px] font-bold text-gray-900">But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;</p>
               <p className="text-[128px] font-bold text-gray-900">But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;</p>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Problem Statement Section */}
-      <section className="bg-white py-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-3xl"
-          >
-            <p className="text-base font-normal text-pink-700 mb-6">Our North Star</p>
-            <p className="text-base text-gray-700 leading-6 mb-8">
-              We carefully refined our problem statement after each new insight, over time we set very specific goals for our solution:
-            </p>
-            <p className="text-xl font-bold text-gray-900 leading-6">
-              As a teacher, I need immediate and actionable resources that I trust to help me address student misunderstandings for content I&apos;ve recently taught, so that I can adjust instruction and provide individual support
-            </p>
-          </motion.div>
+        
+        {/* Our North Star Content */}
+        <div className="px-6 lg:px-32 mt-14">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-3xl"
+              >
+                <p className="text-base font-normal text-pink-700 mb-6">Our North Star</p>
+                <p className="text-base text-gray-700 leading-6 mb-8">
+                  We carefully refined our problem statement after each new insight, over time we set very specific goals for our solution:
+                </p>
+                <p className="text-xl font-bold text-gray-900 leading-6">
+                  As a teacher, I need immediate and actionable resources that I trust to help me address student misunderstandings, so that I can adjust instruction and provide individual support
+                </p>
+              </motion.div>
+              <div></div>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/* Concept Testing Section */}
       <section className="bg-gray-50 py-14 px-6 lg:px-32">
