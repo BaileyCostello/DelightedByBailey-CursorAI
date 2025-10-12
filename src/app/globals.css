@@ -128,3 +128,39 @@ body {
   }
 }
 
+/* Continuous scrolling text animations - Second solution from Stack Overflow */
+.wrapper {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee p {
+  display: inline-block;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Slower marquee for "I used to think..." */
+.marquee-slow {
+  animation: marquee 40s linear infinite;
+}
+
+/* Faster marquee for "But now I think..." */
+.marquee-fast {
+  animation: marquee 50s linear infinite;
+}
+

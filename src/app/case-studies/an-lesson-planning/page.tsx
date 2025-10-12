@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 export default function ANetLessonPlanning() {
+  const slowMarqueeRef = useRef<HTMLDivElement>(null);
+  const fastMarqueeRef = useRef<HTMLDivElement>(null);
 
 
   return (
@@ -137,7 +140,7 @@ export default function ANetLessonPlanning() {
                 We spoke with over 30 teachers across the US
               </h3>
                <p className="text-base text-gray-700 leading-6">
-                 We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we refined our questions to dig deeper into lesson planning. Teachers shared stories of working late into the night, even during their children&apos;s sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
+                 We discussed a wide range of challenges and quickly saw the burnout. Teachers everywhere struggling to meet unique student needs and keep them engaged during lessons. As themes emerged, we dug deeper into lesson planning. Teachers shared stories of working late into the night, even during their children&apos;s sporting events, just to stay prepared. They described gaps in curriculum and the countless hours spent searching for meaningful content online.
                </p>
             </div>
             <div>
@@ -149,7 +152,7 @@ export default function ANetLessonPlanning() {
                 height={400}
               />
               <p className="text-base text-gray-700 leading-6">
-                Meet our persona: I captured our teachers most common shared goals, likes, and pains for quick re-alignment.
+                Meet our persona, built for quick re-alignment
               </p>
             </div>
           </motion.div>
@@ -159,18 +162,16 @@ export default function ANetLessonPlanning() {
       {/* Scrolling Text Section */}
       <section className="h-screen flex flex-col justify-center">
         <div className="w-full">
-          <div className="overflow-hidden">
-            <div className="flex whitespace-nowrap">
-              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
-              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
-              <span className="text-2xl font-bold text-gray-900 mr-8">I used to think ...</span>
+          <div className="wrapper">
+            <div ref={slowMarqueeRef} className="marquee marquee-slow">
+              <p className="text-2xl font-bold text-gray-900 mr-6">I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;</p>
+              <p className="text-2xl font-bold text-gray-900 mr-6">I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;&nbsp;&nbsp;&nbsp;I used to think ...&nbsp;</p>
             </div>
           </div>
-          <div className="overflow-hidden mt-48">
-            <div className="flex whitespace-nowrap">
-              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
-              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
-              <span className="text-[128px] font-bold text-gray-900 mr-12">But now I think ...</span>
+          <div className="wrapper mt-48">
+            <div ref={fastMarqueeRef} className="marquee marquee-fast">
+              <p className="text-[128px] font-bold text-gray-900">But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;</p>
+              <p className="text-[128px] font-bold text-gray-900">But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;&nbsp;&nbsp;&nbsp;But now I think ...&nbsp;</p>
             </div>
           </div>
         </div>
