@@ -412,13 +412,13 @@ export default function ANetLessonPlanning() {
 
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                   <p className="text-sm text-gray-700">
-                    Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
+                    <p style={{ marginTop: '200px' }}>Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.</p>
                   </p>
                 </div>
 
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                   <p className="text-sm text-gray-700 mb-3">
-                    I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
+                    <p style={{ marginTop: '760px' }}>I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:</p>
                   </p>
                   <Image
                     alt="Old Vertical Progression"
@@ -431,7 +431,7 @@ export default function ANetLessonPlanning() {
 
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                   <p className="text-sm text-gray-700 mb-3">
-                    We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
+                    <p style={{ marginTop: '730px' }}>We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.</p>
                   </p>
                   <Image
                     alt="Helpful Solution"
