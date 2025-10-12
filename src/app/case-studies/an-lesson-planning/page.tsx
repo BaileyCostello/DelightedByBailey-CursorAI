@@ -404,21 +404,21 @@ export default function ANetLessonPlanning() {
 
               {/* Right column - Annotations */}
               <div className="col-span-1 space-y-6 relative z-10">
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '380px' }}>
                   <p className="text-sm text-gray-700">
-                    <p style={{ marginTop: '380px' }}>Each section flows naturally with teacher&apos;s lesson planning process.</p>
+                    Each section flows naturally with teacher&apos;s lesson planning process.
                   </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '200px' }}>
                   <p className="text-sm text-gray-700">
-                    <p style={{ marginTop: '200px' }}>Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.</p>
+                    Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
                   </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '760px' }}>
                   <p className="text-sm text-gray-700 mb-3">
-                    <p style={{ marginTop: '760px' }}>I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:</p>
+                    I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
                   </p>
                   <Image
                     alt="Old Vertical Progression"
@@ -429,9 +429,9 @@ export default function ANetLessonPlanning() {
                   />
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '730px' }}>
                   <p className="text-sm text-gray-700 mb-3">
-                    <p style={{ marginTop: '730px' }}>We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.</p>
+                    We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
                   </p>
                   <Image
                     alt="Helpful Solution"
