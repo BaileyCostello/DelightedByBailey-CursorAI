@@ -394,7 +394,7 @@ export default function ANetLessonPlanning() {
                 <div className="relative -ml-6 -mr-6 lg:-ml-16 lg:mr-0">
                   <Image
                     alt="ANet FOCUS - Standards Page"
-                    className="w-full h-auto rounded-2xl shadow-2xl -ml-16 sm:-ml-24 md:-ml-32 lg:ml-0"
+                    className="w-full h-auto rounded-2xl shadow-2xl -ml-16 sm:-ml-24 md:-ml-32 lg:ml-0 scale-150 sm:scale-125 md:scale-110 lg:scale-100"
                     src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
                     width={1200}
                     height={800}
@@ -403,10 +403,10 @@ export default function ANetLessonPlanning() {
               </div>
 
               {/* Right column - Annotations */}
-              <div className="col-span-1 space-y-6">
+              <div className="col-span-1 space-y-6 relative z-10">
                 <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg">
                   <p className="text-sm text-gray-700">
-                    Each section flows naturally with teacher&apos;s lesson planning process.
+                    <p style={{ marginTop: '380px' }}>Each section flows naturally with teacher&apos;s lesson planning process.</p>
                   </p>
                 </div>
 
