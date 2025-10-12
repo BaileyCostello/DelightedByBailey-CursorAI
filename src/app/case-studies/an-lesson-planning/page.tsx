@@ -38,21 +38,13 @@ export default function ANetLessonPlanning() {
       {/* Hero Image */}
       <section className="bg-gray-100 py-8 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <Image
-              alt="ANet Hero Image"
-              className="w-full h-auto rounded-2xl shadow-2xl"
-              src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
-              width={1200}
-              height={800}
-            />
-          </motion.div>
+          <Image
+            alt="ANet Hero Image"
+            className="w-full h-auto rounded-2xl shadow-2xl"
+            src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
+            width={1200}
+            height={800}
+          />
         </div>
       </section>
 
@@ -318,9 +310,9 @@ export default function ANetLessonPlanning() {
                 className="lg:order-1"
               >
                 <Image
-                  alt="ANet Hero Image"
+                  alt="ANet Concept 4"
                   className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
+                  src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
                   width={600}
                   height={400}
                 />
