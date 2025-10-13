@@ -208,23 +208,28 @@ export default function ANetLessonPlanning() {
           </motion.div>
 
           <div className="p-8 rounded-2xl mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Header and Description - left column on desktop, first on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+                className="order-1 lg:order-1"
               >
                 <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">1. Video Library</h3>
                 <p className="text-base text-gray-700 leading-6 text-left">
                   Teachers liked videos, but sometimes reading was faster or they weren&apos;t in a place where they could watch a video.
                 </p>
               </motion.div>
+              
+              {/* Image - right column on desktop, second on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
+                className="order-2 lg:order-2"
               >
                 <Image
                   alt="Video Library Concept"
@@ -238,13 +243,28 @@ export default function ANetLessonPlanning() {
           </div>
 
           <div className="p-8 rounded-2xl mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Header and Description - right column on desktop, first on mobile */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="order-1 lg:order-2"
+              >
+                <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">2. Chat Bot Assistant</h3>
+                <p className="text-base text-gray-700 leading-6 text-left">
+                  Teachers generally didn&apos;t care for chatbots, but liked content around student pitfalls and misunderstandings.
+                </p>
+              </motion.div>
+              
+              {/* Image - left column on desktop, second on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="lg:order-1"
+                className="order-2 lg:order-1"
               >
                 <Image
                   alt="Chat Bot Concept"
@@ -254,39 +274,32 @@ export default function ANetLessonPlanning() {
                   height={400}
                 />
               </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="lg:order-2"
-              >
-                  <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">2. Chat Bot Assistant</h3>
-                  <p className="text-base text-gray-700 leading-6 text-left">
-                  Teachers generally didn&apos;t care for chatbots, but liked content around student pitfalls and misunderstandings.
-                </p>
-              </motion.div>
             </div>
           </div>
 
           <div className="bg-gray-50 p-8 rounded-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Header and Description - left column on desktop, first on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
+                className="order-1 lg:order-1"
               >
-                  <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">3. Mobile App</h3>
-                  <p className="text-base text-gray-700 leading-6 text-left">
+                <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">3. Mobile App</h3>
+                <p className="text-base text-gray-700 leading-6 text-left">
                   Teachers liked the library of resources, but lesson planning was easiest done on a computer.
                 </p>
               </motion.div>
+              
+              {/* Image - right column on desktop, second on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
+                className="order-2 lg:order-2"
               >
                 <Image
                   alt="Mobile App Concept"
@@ -301,28 +314,14 @@ export default function ANetLessonPlanning() {
 
           {/* Further Refinement Subsection */}
           <div className="p-8 rounded-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+              {/* Header and Description - right column on desktop, first on mobile */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="lg:order-1"
-              >
-                <Image
-                  alt="ANet Concept 4"
-                  className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
-                  width={600}
-                  height={400}
-                />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="lg:order-2"
+                className="order-1 lg:order-2"
               >
                 <h3 className="text-base font-semibold text-gray-900 mb-4 text-left">4. Further Refinement</h3>
                 <p className="text-base text-gray-700 leading-6 text-left mb-6">
@@ -331,6 +330,23 @@ export default function ANetLessonPlanning() {
                 <p className="text-base text-gray-700 leading-6 text-left">
                   The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
                 </p>
+              </motion.div>
+              
+              {/* Image - left column on desktop, second on mobile */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="order-2 lg:order-1"
+              >
+                <Image
+                  alt="ANet Concept 4"
+                  className="w-full h-auto rounded-2xl"
+                  src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
+                  width={600}
+                  height={400}
+                />
               </motion.div>
             </div>
           </div>
@@ -392,21 +408,21 @@ export default function ANetLessonPlanning() {
               {/* Annotations positioned absolutely over the image */}
               <div className="absolute top-[15%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-pink-700 relative z-10">
+                <p className="text-sm text-gray-700 relative z-10">
                   Each section flows naturally with teacher&apos;s lesson planning process.
                 </p>
               </div>
 
               <div className="absolute top-[25%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-pink-700 relative z-10">
+                <p className="text-sm text-gray-700 relative z-10">
                   With a sea bad resources, quality content was key to earning teacher&apos;s trust. They found live classroom videos and addressing student misunderstandings especially helpful.
                 </p>
               </div>
 
               <div className="absolute top-[50%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ transform: 'translateY(40px)', backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-pink-700 mb-3 relative z-10">
+                <p className="text-sm text-gray-700 mb-3 relative z-10">
                   I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
                 </p>
                 <Image
@@ -420,7 +436,7 @@ export default function ANetLessonPlanning() {
 
               <div className="absolute bottom-0 -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-pink-700 mb-3 relative z-10">
+                <p className="text-sm text-gray-700 mb-3 relative z-10">
                   We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
                 </p>
                 <Image
