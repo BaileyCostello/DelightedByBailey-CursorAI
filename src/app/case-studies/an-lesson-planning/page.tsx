@@ -386,7 +386,7 @@ export default function ANetLessonPlanning() {
                 <div className="relative -ml-6 -mr-6 lg:-ml-16 lg:mr-0">
                   <Image
                     alt="ANet FOCUS - Standards Page"
-                    className="w-full h-auto rounded-2xl shadow-2xl -ml-16 sm:-ml-24 md:-ml-32 lg:ml-0 scale-150 sm:scale-125 md:scale-110 lg:scale-100"
+                    className="w-full h-auto rounded-2xl shadow-2xl -ml-2 sm:-ml-4 md:-ml-6 lg:ml-0 scale-150 sm:scale-125 md:scale-110 lg:scale-100"
                     src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
                     width={1200}
                     height={800}
@@ -396,19 +396,19 @@ export default function ANetLessonPlanning() {
 
               {/* Right column - Annotations */}
               <div className="col-span-1 space-y-6 relative z-10">
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '380px' }}>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '25%' }}>
                   <p className="text-sm text-gray-700">
                     Each section flows naturally with teacher&apos;s lesson planning process.
                   </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '200px' }}>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '15%' }}>
                   <p className="text-sm text-gray-700">
-                    Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content that proactively diagnosed common misunderstandings especially helpful.
+                    Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content on common misunderstandings especially helpful.
                   </p>
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '760px' }}>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '50%' }}>
                   <p className="text-sm text-gray-700 mb-3">
                     I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
                   </p>
@@ -421,7 +421,7 @@ export default function ANetLessonPlanning() {
                   />
                 </div>
 
-                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '730px' }}>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg" style={{ marginTop: '48%' }}>
                   <p className="text-sm text-gray-700 mb-3">
                     We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
                   </p>
