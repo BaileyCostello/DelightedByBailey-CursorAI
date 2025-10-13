@@ -390,13 +390,13 @@ export default function ANetLessonPlanning() {
               />
               
               {/* Annotations positioned absolutely over the image */}
-              <div className="absolute top-[25%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs">
+              <div className="absolute top-[15%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs">
                 <p className="text-sm text-gray-700">
                   Each section flows naturally with teacher&apos;s lesson planning process.
                 </p>
               </div>
 
-              <div className="absolute top-[15%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs">
+              <div className="absolute top-[25%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs">
                 <p className="text-sm text-gray-700">
                   Teachers lamented over the sea of bad resources online - building trust and quality content was key. They found live classroom videos and content on common misunderstandings especially helpful.
                 </p>
@@ -415,7 +415,7 @@ export default function ANetLessonPlanning() {
                 />
               </div>
 
-              <div className="absolute top-[48%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs">
+              <div className="absolute top-[50%] -right-8 bg-white/90 backdrop-blur-sm p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ transform: 'translateY(40px)' }}>
                 <p className="text-sm text-gray-700 mb-3">
                   We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
                 </p>
