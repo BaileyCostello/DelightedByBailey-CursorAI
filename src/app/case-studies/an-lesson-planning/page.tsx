@@ -406,23 +406,23 @@ export default function ANetLessonPlanning() {
               />
               
               {/* Annotations positioned absolutely over the image */}
-              <div className="absolute top-[15%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+              <div className="absolute top-[15%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-gray-700 relative z-10">
+                <p className="text-sm text-pink-700 relative z-10">
                   Each section flows naturally with teacher&apos;s lesson planning process.
                 </p>
               </div>
 
-              <div className="absolute top-[25%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+              <div className="absolute top-[25%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-gray-700 relative z-10">
+                <p className="text-sm text-pink-700 relative z-10">
                   With a sea bad resources, quality content was key to earning teacher&apos;s trust. They found live classroom videos and addressing student misunderstandings especially helpful.
                 </p>
               </div>
 
-              <div className="absolute top-[50%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ transform: 'translateY(40px)', backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+              <div className="absolute top-[50%] -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ transform: 'translateY(40px)', backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-gray-700 mb-3 relative z-10">
+                <p className="text-sm text-pink-700 mb-3 relative z-10">
                   I redesigned highly praised content to be more easily understood and actionable - adding a new layer to guide teachers on how to prioritize their time in the classroom. Old:
                 </p>
                 <Image
@@ -434,9 +434,9 @@ export default function ANetLessonPlanning() {
                 />
               </div>
 
-              <div className="absolute bottom-0 -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
+              <div className="absolute bottom-0 -right-8 backdrop-blur-lg p-4 rounded-lg shadow-lg w-1/2 sm:max-w-xs" style={{ backgroundColor: 'rgba(255, 255, 255, 0.4)' }}>
                 <div style={{ backgroundColor: 'rgba(232, 215, 200, 0.3)' }} className="absolute inset-0 rounded-lg"></div>
-                <p className="text-sm text-gray-700 mb-3 relative z-10">
+                <p className="text-sm text-pink-700 mb-3 relative z-10">
                   We learned that teachers primarily trusted other teachers, so I created a simple solution for the community to provide feedback.
                 </p>
                 <Image
