@@ -60,7 +60,7 @@ export default function CDGMaintenanceCaseStudy() {
             <div className="flex flex-col">
               <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative" style={{ aspectRatio: '3/4' }}>
                 <img 
-                  src="/Flat-iPad.png" 
+                  src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
                   alt="iPad device frame"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
@@ -73,7 +73,7 @@ export default function CDGMaintenanceCaseStudy() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="/CDG Movie.mp4" type="video/mp4" />
+                      <source src="/DelightedByBailey-CursorAI/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
