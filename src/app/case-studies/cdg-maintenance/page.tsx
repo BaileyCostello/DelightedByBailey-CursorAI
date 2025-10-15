@@ -45,7 +45,6 @@ export default function CDGMaintenanceCaseStudy() {
                 />
                 <video 
                   src="/CDG App Before .mp4" 
-                  alt="Before: A blank canvas, created by a single developer"
                   className="absolute inset-0 w-full h-full object-cover object-center"
                   style={{ objectPosition: 'center center', clipPath: 'inset(24px 54px 80px 54px)', transform: 'translateY(-24px)' }}
                   autoPlay
@@ -99,7 +98,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <p className="text-[#a40047] text-lg mb-4">Overview</p>
               <p className="text-[#2c3441] text-lg leading-relaxed">
-                My client's SaaS solution for managing maintenance team's work in warehouses, hospitals, and municipalities was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
+                My client&apos;s SaaS solution for managing maintenance team&apos;s work in warehouses, hospitals, and municipalities was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
               </p>
             </motion.div>
             
@@ -112,7 +111,7 @@ export default function CDGMaintenanceCaseStudy() {
               <p className="text-[#a40047] text-lg mb-4">Goals</p>
               <div className="space-y-4 text-[#2c3441] text-lg leading-relaxed">
                 <p>
-                  <span className="font-bold">Convert sales and build trust in buyers</span> who didn't trust the mobile app's quality or usability
+                  <span className="font-bold">Convert sales and build trust in buyers</span> who didn&apos;t trust the mobile app&apos;s quality or usability
                 </p>
                 <p>
                   <span className="font-bold">Increase adoption</span> so that maintenance teams can leverage the timesaving, efficient workflow that the mobile app enabled
@@ -351,7 +350,7 @@ export default function CDGMaintenanceCaseStudy() {
               I was invited to visit one of the most efficient operations in the country
             </h2>
             <p className="text-xl text-[#2c3441] max-w-3xl">
-              An American Eagle distribution center, boasting 97.3% efficiency and our client's biggest champion of the app.
+              An American Eagle distribution center, boasting 97.3% efficiency and our client&apos;s biggest champion of the app.
             </p>
             <p className="text-lg text-[#2c3441] mt-4">
               Previously unplanned, I organized our team to take full advantage of meeting the technicians and performed moderated usability testing.
@@ -591,7 +590,7 @@ export default function CDGMaintenanceCaseStudy() {
               </h2>
               <div className="space-y-6 text-lg text-[#2c3441]">
                 <p>
-                  The project was delivered on time and under budget, which created room for usability testing. While development is still underway, the testing brought confidence to the solution's effectiveness and projected outcomes:
+                  The project was delivered on time and under budget, which created room for usability testing. While development is still underway, the testing brought confidence to the solution&apos;s effectiveness and projected outcomes:
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start">
@@ -600,7 +599,7 @@ export default function CDGMaintenanceCaseStudy() {
                   </li>
                   <li className="flex items-start">
                     <span className="font-bold text-gray-900">15–25% uplift in adoption amongst existing customers</span>
-                    <span className="text-gray-500 ml-2">based on Userpilot's product adoption benchmarks</span>
+                    <span className="text-gray-500 ml-2">based on Userpilot&apos;s product adoption benchmarks</span>
                   </li>
                   <li className="flex items-start">
                     <span className="font-bold text-gray-900">30–90 seconds saved per work order</span>
@@ -640,7 +639,7 @@ export default function CDGMaintenanceCaseStudy() {
             className="text-center"
           >
             <blockquote className="text-3xl lg:text-4xl font-bold text-[#fb006d] mb-8 max-w-4xl mx-auto">
-              "We were highly impressed with Bailey's communication, thoroughness, and willingness to collaborate. The process was fun, and it was energizing to work with her."
+              &quot;We were highly impressed with Bailey&apos;s communication, thoroughness, and willingness to collaborate. The process was fun, and it was energizing to work with her.&quot;
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <div className="text-left">
