@@ -474,11 +474,15 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="relative w-screen left-1/2 -translate-x-1/2 overflow-hidden">
+              <div className="relative w-full overflow-hidden">
                 <img
                   src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
                   alt="CDG Wireframes"
-                  className="h-auto w-full"
+                  className="h-auto"
+                  style={{ 
+                    width: '800px',
+                    marginLeft: '-24px'
+                  }}
                 />
               </div>
             </motion.div>
