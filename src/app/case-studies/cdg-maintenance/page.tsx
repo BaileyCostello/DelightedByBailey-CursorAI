@@ -388,9 +388,9 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+              className="relative z-10"
             >
-              <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-6">
+              <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-6 w-[596px]">
                 <p className="text-lg text-gray-700 mb-6">
                   With <span className="font-semibold">90% of technician&apos;s tasks being performed outside of the app</span>, I mapped out multiple workflows to help us:
                 </p>
@@ -422,12 +422,14 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div>
-                <img
-                  src="/DelightedByBailey-CursorAI/CDG User Flow.png"
-                  alt="CDG User Flow"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+              <div className="absolute h-[489px] left-[calc(50%+6px)] top-[4px] translate-x-[-50%] w-[1280px] z-0">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <img
+                    src="/DelightedByBailey-CursorAI/CDG User Flow.png"
+                    alt="CDG User Flow"
+                    className="absolute h-[160%] left-[-21%] max-w-none top-[-15%] w-[255%]"
+                  />
+                </div>
               </div>
             </motion.div>
           )}
