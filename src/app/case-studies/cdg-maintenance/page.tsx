@@ -69,7 +69,7 @@ export default function CDGMaintenanceCaseStudy() {
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
                     <video
                       autoPlay
                       loop
