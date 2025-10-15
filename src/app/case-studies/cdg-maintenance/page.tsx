@@ -274,7 +274,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <div>
                 <p className="text-lg text-gray-700 mb-6">
-                  We asked 6, high level "right questions" to:
+                  We asked 6, high level &quot;right questions&quot; to:
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-4 p-4 rounded-2xl">
@@ -296,7 +296,7 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
                 <div className="mt-6">
                   <p className="text-base text-gray-500 leading-relaxed">
-                    "Right questions are thought-provoking. They are rarely simple or easy to answer. They have many sides that need to be surfaced, and typically lead to more questions to expand on ideas."
+                    &quot;Right questions are thought-provoking. They are rarely simple or easy to answer. They have many sides that need to be surfaced, and typically lead to more questions to expand on ideas.&quot;
                   </p>
                   <p className="text-base text-gray-500 mt-2">
                     - <a href="https://medium.com/@jenbluntly/how-to-start-asking-the-right-questions-bf865ce4ca75#:~:text=Right%20questions%20are%20thought%2Dprovoking,questions%20to%20expand%20on%20ideas." className="text-gray-500 hover:text-gray-700">Jennifer Blunt</a>
@@ -384,7 +384,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-6">
                 <p className="text-lg text-gray-700 mb-6">
-                  With <span className="font-semibold">90% of technician's tasks being performed outside of the app</span>, I mapped out multiple workflows to help us:
+                  With <span className="font-semibold">90% of technician&apos;s tasks being performed outside of the app</span>, I mapped out multiple workflows to help us:
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center space-x-4 p-4 rounded-2xl">
