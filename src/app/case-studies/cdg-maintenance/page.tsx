@@ -37,21 +37,25 @@ export default function CDGMaintenanceCaseStudy() {
         <div className="max-w-7xl mx-auto px-6 lg:px-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="flex flex-col">
-              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative" style={{ aspectRatio: '3/4' }}>
+              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
                 <img 
-                  src="/Flat-iPad.png" 
+                  src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
                   alt="iPad device frame"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-contain object-center"
                 />
-                <video 
-                  src="/CDG App Before .mp4" 
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                  style={{ objectPosition: 'center center', clipPath: 'inset(24px 54px 80px 54px)', transform: 'translateY(-24px)' }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                    <video 
+                      src="/DelightedByBailey-CursorAI/CDG-App-Before.mp4" 
+                      className="w-full h-full object-cover object-center"
+                      style={{ objectPosition: 'center center', clipPath: 'inset(24px 54px 80px 54px)', transform: 'translateY(-24px)' }}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  </div>
+                </div>
               </div>
               <p className="text-gray-500">
                 <span className="font-bold">Before:</span> A blank canvas, created by a single developer
