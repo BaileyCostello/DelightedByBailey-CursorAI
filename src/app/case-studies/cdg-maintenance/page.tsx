@@ -422,14 +422,12 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="absolute h-[489px] left-[calc(50%+6px)] top-[4px] translate-x-[-50%] w-[1280px] z-0">
-                <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                  <img
-                    src="/DelightedByBailey-CursorAI/CDG User Flow.png"
-                    alt="CDG User Flow"
-                    className="absolute h-[160%] left-[-21%] max-w-none top-[-15%] w-[255%]"
-                  />
-                </div>
+              <div className="absolute inset-0 w-full h-full z-0">
+                <img
+                  src="/DelightedByBailey-CursorAI/CDG User Flow.png"
+                  alt="CDG User Flow"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           )}
