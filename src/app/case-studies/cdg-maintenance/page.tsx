@@ -474,7 +474,7 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="relative w-full overflow-hidden">
+              <div className="relative w-full overflow-hidden -mx-4 sm:-mx-6 lg:-mx-8">
                 <img
                   src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
                   alt="CDG Wireframes"
