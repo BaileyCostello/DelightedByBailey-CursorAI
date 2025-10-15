@@ -124,7 +124,7 @@ export default function Work() {
                 <Image 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
-                  src="/CDG Mockup.png"
+                  src="/Flat-iPad.png"
                   width={600}
                   height={520}
                 />
@@ -204,7 +204,7 @@ export default function Work() {
                 <Image 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
-                  src="/CDG Mockup.png"
+                  src="/Flat-iPad.png"
                   width={700}
                   height={700}
                 />
