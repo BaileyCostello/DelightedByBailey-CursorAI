@@ -363,15 +363,15 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="relative h-[434px] w-[484px]">
-                <div className="absolute h-[339px] left-0 top-0 w-[400px]">
+              <div className="relative h-[500px] w-[580px]">
+                <div className="absolute h-[400px] left-0 top-0 w-[480px]">
                   <img
                     src="/DelightedByBailey-CursorAI/30 - Persona_Clerk.png"
                     alt="Persona - Clerk"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="absolute bottom-[-1px] h-[327px] right-[-1px] w-[400px]">
+                <div className="absolute bottom-[-1px] h-[390px] right-[-1px] w-[480px]">
                   <img
                     src="/DelightedByBailey-CursorAI/30 - Persona_Tech.png"
                     alt="Persona - Tech"
@@ -474,7 +474,7 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="relative w-full overflow-hidden">
+              <div className="relative w-[150%] overflow-hidden">
                 <img
                   src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
                   alt="CDG Wireframes"
