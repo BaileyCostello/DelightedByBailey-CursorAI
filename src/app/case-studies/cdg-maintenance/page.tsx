@@ -2,28 +2,10 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 export default function CDGMaintenanceCaseStudy() {
   const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
-  const [showSecondContent, setShowSecondContent] = useState(false);
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (sectionRef.current) {
-        const rect = sectionRef.current.getBoundingClientRect();
-        const sectionHeight = sectionRef.current.offsetHeight;
-        const scrollProgress = Math.max(0, Math.min(1, -rect.top / (sectionHeight - window.innerHeight)));
-        
-        // Show second content when scrolled 50% through the section
-        setShowSecondContent(scrollProgress > 0.5);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -507,13 +489,13 @@ export default function CDGMaintenanceCaseStudy() {
       </section>
 
       {/* On-site & Usability Testing Section */}
-      <section ref={sectionRef} className="py-20 bg-white relative min-h-screen">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* First Content - "I was invited..." */}
           <motion.div
-            initial={{ opacity: 1 }}
-            animate={{ opacity: showSecondContent ? 0 : 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
             className="mb-16"
           >
             <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
@@ -528,53 +510,65 @@ export default function CDGMaintenanceCaseStudy() {
             </p>
           </motion.div>
 
-          {/* Second Content - "We tested..." */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: showSecondContent ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-20 left-0 right-0"
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 We tested the principle workflow, where 4 of 5 technicians completed it with little to no help
-              </h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <div className="space-y-6">
-                  <img 
-                    src="/DelightedByBailey-CursorAI/CDG Usability Testing Image.png" 
-                    alt="Usability testing in progress"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                  <img 
-                    src="/DelightedByBailey-CursorAI/CDG Usability Testing.JPG" 
-                    alt="Testing session with technicians"
-                    className="w-full h-auto rounded-lg shadow-lg"
-                  />
-                </div>
+              </h3>
+              <div className="space-y-4 text-lg text-[#2c3441]">
+                <p>
+                  Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
+                </p>
+                <p>
+                  Their initial aversion to change dissipated and feedback turned to finding important information. As a result, we highlighted and restructured content.
+                </p>
+              </div>
+            </motion.div>
 
-                <div>
-                  <div className="space-y-4 text-lg text-[#2c3441]">
-                    <p>
-                      Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
-                    </p>
-                    <p>
-                      Their initial aversion to change dissipated and feedback turned to finding important information. As a result, we highlighted and restructured content.
-                    </p>
-                  </div>
-                  
-                  <div className="mt-8">
-                    <img 
-                      src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
-                      alt="iPad showing the app interface"
-                      className="w-full h-auto rounded-lg shadow-lg"
-                    />
-                  </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-4"
+            >
+              {/* Top row - two images side by side */}
+              <div className="space-y-4">
+                <div className="aspect-video">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover rounded-lg shadow-lg"
+                  >
+                    <source src="/DelightedByBailey-CursorAI/CDG DistributionLine.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div className="aspect-video">
+                  <img 
+                    src="/DelightedByBailey-CursorAI/CDG On-site Computer.png" 
+                    alt="On-site computer setup"
+                    className="w-full h-full object-cover rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
-            </div>
-          </motion.div>
+              
+              {/* Bottom row - single image spanning full width */}
+              <div className="col-span-2">
+                <img 
+                  src="/DelightedByBailey-CursorAI/CDG Usability Testing.JPG" 
+                  alt="Usability testing session with technicians"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
