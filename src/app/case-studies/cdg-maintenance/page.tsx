@@ -48,6 +48,7 @@ export default function CDGMaintenanceCaseStudy() {
                     <video 
                       src="/DelightedByBailey-CursorAI/CDG-App-Before.mp4" 
                       className="w-full h-full object-cover"
+                      style={{ clipPath: 'inset(0 40px 0 40px)' }}
                       autoPlay
                       loop
                       muted
