@@ -58,11 +58,11 @@ export default function CDGMaintenanceCaseStudy() {
               </p>
             </div>
             <div className="flex flex-col">
-              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative" style={{ aspectRatio: '3/4' }}>
+              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
                 <img 
                   src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
                   alt="iPad device frame"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-contain object-center"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
