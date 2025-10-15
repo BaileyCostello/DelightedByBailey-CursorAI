@@ -118,15 +118,31 @@ export default function Work() {
               Driving operations most valued metric - efficiency
             </p>
 
-            {/* Mobile Layout - Image (appears after title, before badges) */}
+            {/* Mobile Layout - Image with Video Overlay (appears after title, before badges) */}
             <div className="h-[520px] relative order-2 lg:hidden">
-              <Image 
-                alt="CDG iPad Mockup" 
-                className="w-full h-full object-contain object-center" 
-                src="./CDG Mockup.png"
-                width={600}
-                height={520}
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  alt="CDG iPad Mockup" 
+                  className="w-full h-full object-contain object-center" 
+                  src="/Flat iPad.png"
+                  width={600}
+                  height={520}
+                />
+                {/* Video Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="./CDG Movie.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Mobile Layout - Badges */}
@@ -182,15 +198,31 @@ export default function Work() {
               </div>
             </div>
 
-            {/* Desktop Layout - Right Column (Image) */}
+            {/* Desktop Layout - Right Column (Image with Video Overlay) */}
             <div className="hidden lg:block h-[700px] relative order-2">
-              <Image 
-                alt="CDG iPad Mockup" 
-                className="w-full h-full object-contain object-center" 
-                src="./CDG Mockup.png"
-                width={700}
-                height={700}
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  alt="CDG iPad Mockup" 
+                  className="w-full h-full object-contain object-center" 
+                  src="/Flat iPad.png"
+                  width={700}
+                  height={700}
+                />
+                {/* Video Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="./CDG Movie.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
             </div>
               </motion.div>
         </div>

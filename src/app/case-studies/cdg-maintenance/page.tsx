@@ -7,59 +7,100 @@ export default function CDGMaintenanceCaseStudy() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-[#f1f3f5] py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            viewport={{ once: true }}
+            className="max-w-4xl"
           >
-            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              Case Study
-            </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              CDG Maintenance Management App
+            <h1 className="text-4xl lg:text-5xl font-semibold text-black leading-tight mb-6">
+              Driving Operations Most Valued Metric, Efficiency
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Streamlined maintenance workflow system for facility managers to track, 
-              schedule, and optimize equipment maintenance.
+            <p className="text-sm text-[#a40047] font-normal leading-6 mb-6">
+              Maintenance Management App, CMMS Data Group
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-              <span className="bg-white px-3 py-1 rounded-full">Enterprise UX</span>
-              <span className="bg-white px-3 py-1 rounded-full">Workflow Design</span>
-              <span className="bg-white px-3 py-1 rounded-full">Data Visualization</span>
-              <span className="bg-white px-3 py-1 rounded-full">Facility Management</span>
+            <div className="flex flex-wrap gap-2 mb-6">
+              <span className="bg-[rgba(222,207,213,0.88)] text-[#63082b] px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[14px] text-nowrap whitespace-pre">Technical</span>
+              <span className="bg-[rgba(222,207,213,0.88)] text-[#63082b] px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+              <span className="bg-[rgba(222,207,213,0.88)] text-[#63082b] px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[14px] text-nowrap whitespace-pre">Research</span>
+              <span className="bg-[rgba(222,207,213,0.88)] text-[#63082b] px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[14px] text-nowrap whitespace-pre">Team Management</span>
             </div>
           </motion.div>
         </div>
       </section>
 
+      {/* Before & After Images */}
+      <section className="py-16 bg-[#f1f3f5]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+            <div className="flex flex-col">
+              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative" style={{ aspectRatio: '3/4' }}>
+                <img 
+                  src="/Flat iPad.png" 
+                  alt="iPad device frame"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <video 
+                  src="/CDG App Before .mp4" 
+                  alt="Before: A blank canvas, created by a single developer"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  style={{ objectPosition: 'center center', clipPath: 'inset(24px 54px 80px 54px)', transform: 'translateY(-24px)' }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
+              <p className="text-gray-500">
+                <span className="font-bold">Before:</span> A blank canvas, created by a single developer
+              </p>
+            </div>
+            <div className="flex flex-col">
+              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative" style={{ aspectRatio: '3/4' }}>
+                <img 
+                  src="/Flat iPad.png" 
+                  alt="iPad device frame"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src="/CDG Movie.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-500">
+                <span className="font-bold">After:</span> A simple app that conforms neatly into technicians workflows, saves time, and improves response rates
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Overview Section */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Project Overview
-              </h2>
-              <div className="space-y-4 text-lg text-gray-600">
-                <p>
-                  The CDG Maintenance Management App was designed to address the complex 
-                  challenges faced by facility managers in tracking and scheduling 
-                  equipment maintenance across multiple locations.
-                </p>
-                <p>
-                  Our goal was to create a comprehensive system that would reduce 
-                  equipment downtime by 40% and improve maintenance efficiency through 
-                  intelligent scheduling and real-time tracking.
-                </p>
-              </div>
+              <p className="text-[#a40047] text-lg mb-4">Overview</p>
+              <p className="text-[#2c3441] text-lg leading-relaxed">
+                My client's SaaS solution for managing maintenance team's work in warehouses, hospitals, and municipalities was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
+              </p>
             </motion.div>
             
             <motion.div
@@ -67,82 +108,303 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Key Metrics</h3>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Downtime Reduction</span>
-                  <span className="font-bold text-blue-600">40%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Task Completion Rate</span>
-                  <span className="font-bold text-blue-600">95%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">User Efficiency</span>
-                  <span className="font-bold text-blue-600">+65%</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">Cost Savings</span>
-                  <span className="font-bold text-blue-600">$2.3M</span>
-                </div>
+              <p className="text-[#a40047] text-lg mb-4">Goals</p>
+              <div className="space-y-4 text-[#2c3441] text-lg leading-relaxed">
+                <p>
+                  <span className="font-bold">Convert sales and build trust in buyers</span> who didn't trust the mobile app's quality or usability
+                </p>
+                <p>
+                  <span className="font-bold">Increase adoption</span> so that maintenance teams can leverage the timesaving, efficient workflow that the mobile app enabled
+                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 bg-gray-50">
+      {/* Role Highlights Section */}
+      <section className="py-20 bg-[#e8d7c8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-semibold text-[#2c3441] text-lg mb-2">Role</p>
+              <p className="text-[#2c3441]">Lead UX Designer</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-semibold text-[#2c3441] text-lg mb-2">Tools</p>
+              <p className="text-[#2c3441]">Figma, JIRA</p>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-semibold text-[#2c3441] text-lg mb-2">Team</p>
+              <div className="text-[#2c3441]">
+                <p>3 UX Designers,</p>
+                <p>1 Business Analyst</p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <p className="font-semibold text-[#2c3441] text-lg mb-2">Timeline</p>
+              <p className="text-[#2c3441]">4 months</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Double Diamond Section */}
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              The Challenge
+            <p className="text-[#decfd5] text-lg mb-8">Project Phases</p>
+            <div className="relative max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-8">
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
+                  <p className="text-[#faf6f3] text-lg">Discover</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
+                  <p className="text-[#faf6f3] text-lg">Concept</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
+                  <p className="text-[#faf6f3] text-lg">Iterate</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
+                  <p className="text-[#faf6f3] text-lg">Deliver</p>
+                </div>
+              </div>
+              <div className="flex justify-center space-x-8 mt-4">
+                <div className="bg-[#a40047] border border-[#2f0616] rounded-full px-4 py-2">
+                  <p className="text-[#faf6f3] text-sm">Test</p>
+                </div>
+                <div className="bg-[#a40047] border border-[#2f0616] rounded-full px-4 py-2">
+                  <p className="text-[#faf6f3] text-sm">Build</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Discovery Workshops Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <p className="text-[#a40047] text-lg mb-4">Discovery Workshops</p>
+            <p className="text-[#2c3441] text-lg mb-8">
+              I designed probing, structured conversations to effectively steer group discussions through a user-centric lens.
+            </p>
+            <div className="flex flex-wrap gap-2 mb-8">
+              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">User Research</span>
+              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">Personas</span>
+              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">User Flow</span>
+              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">Wireframes</span>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Workshop Goals</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Identify the primary users of the app</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Understand usage, needs, and pain points</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Architect the app around their processes</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Explore scenarios and fill in missing details</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Identify the most critical and painful points in their workflow</h4>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Workshop Outcomes</h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Build mutual understanding of concepts</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Experiment with ideas</h4>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Quickly shape the bones of the app</h4>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="mt-8">
+                <img 
+                  src="/CDG Wireframes.png" 
+                  alt="Wireframes showing the app structure"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* On-site & Usability Testing Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              I was invited to visit one of the most efficient operations in the country
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Facility managers were struggling with inefficient maintenance processes 
-              that led to equipment failures and increased costs.
+            <p className="text-xl text-[#2c3441] max-w-3xl">
+              An American Eagle distribution center, boasting 97.3% efficiency and our client's biggest champion of the app.
+            </p>
+            <p className="text-lg text-[#2c3441] mt-4">
+              Previously unplanned, I organized our team to take full advantage of meeting the technicians and performed moderated usability testing.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Reactive Maintenance',
-                description: 'Equipment failures were addressed only after breakdowns occurred, leading to costly emergency repairs.',
-                icon: '⚠️',
-              },
-              {
-                title: 'Poor Visibility',
-                description: 'No centralized view of maintenance schedules, equipment status, or technician availability.',
-                icon: '👁️',
-              },
-              {
-                title: 'Inefficient Scheduling',
-                description: 'Manual scheduling processes resulted in conflicts, missed appointments, and resource waste.',
-                icon: '📅',
-              },
-            ].map((problem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-sm text-center"
-              >
-                <div className="text-4xl mb-4">{problem.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-6">
+                <img 
+                  src="/CDG Usability Testing Image.png" 
+                  alt="Usability testing in progress"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+                <img 
+                  src="/CDG Usability Testing.JPG" 
+                  alt="Testing session with technicians"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                We tested the principle workflow, where 4 of 5 technicians completed it with little to no help
+              </h3>
+              <div className="space-y-4 text-lg text-[#2c3441]">
+                <p>
+                  Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
+                </p>
+                <p>
+                  Their initial aversion to change dissipated and feedback turned to finding important information. As a result, we highlighted and restructured content.
+                </p>
+              </div>
+              
+              <div className="mt-8">
+                <img 
+                  src="/Flat iPad.png" 
+                  alt="iPad showing the app interface"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -237,61 +499,117 @@ export default function CDGMaintenanceCaseStudy() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              The Solution
+            <p className="text-[#a40047] text-lg mb-4">Solution</p>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              A comprehensive mobile app that streamlines maintenance workflows
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A comprehensive maintenance management platform that transforms reactive 
-              maintenance into proactive, data-driven operations.
+            <p className="text-xl text-[#2c3441] max-w-3xl">
+              The solution focused on creating an intuitive mobile experience that technicians could easily adopt and use in their daily workflows.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-xl p-6"
+            >
+              <img 
+                src="/CDG Solution Mockup 1.png" 
+                alt="Dashboard view of the mobile app"
+                className="w-full h-auto rounded-lg mb-4"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Dashboard</h3>
+              <p className="text-gray-600 text-sm">
+                Clean, intuitive dashboard showing work orders, progress tracking, and quick actions for technicians.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-xl p-6"
+            >
+              <img 
+                src="/CDG Solution Mockup 2.png" 
+                alt="Parts and tools management"
+                className="w-full h-auto rounded-lg mb-4"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Parts & Tools</h3>
+              <p className="text-gray-600 text-sm">
+                Easy access to required parts and tools with inventory tracking and availability status.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-50 rounded-xl p-6"
+            >
+              <img 
+                src="/CDG Solution Mockup 3.png" 
+                alt="Work order details and tracking"
+                className="w-full h-auto rounded-lg mb-4"
+              />
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Work Order Details</h3>
+              <p className="text-gray-600 text-sm">
+                Comprehensive work order information with offline capabilities and real-time updates.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Outcomes Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: 'Predictive Scheduling',
-                    description: 'AI-powered maintenance scheduling based on equipment usage, history, and failure patterns.',
-                  },
-                  {
-                    title: 'Real-time Dashboard',
-                    description: 'Centralized view of all maintenance activities, equipment status, and technician locations.',
-                  },
-                  {
-                    title: 'Mobile Technician App',
-                    description: 'Field technicians can access work orders, update status, and document completed tasks.',
-                  },
-                  {
-                    title: 'Analytics & Reporting',
-                    description: 'Comprehensive insights into maintenance performance, costs, and equipment health.',
-                  },
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900">{feature.title}</h4>
-                      <p className="text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
+              <p className="text-[#a40047] text-lg mb-6">Outcomes</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8">
+                Existing customers expressed excitement, and prospective buyers viewed the updates as a clear competitive advantage
+              </h2>
+              <div className="space-y-6 text-lg text-[#2c3441]">
+                <p>
+                  The project was delivered on time and under budget, which created room for usability testing. While development is still underway, the testing brought confidence to the solution's effectiveness and projected outcomes:
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="font-bold text-gray-900">8–12% increase in new sales year over year</span>
+                    <span className="text-gray-500 ml-2">based on SaaS conversion benchmarks</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-bold text-gray-900">15–25% uplift in adoption amongst existing customers</span>
+                    <span className="text-gray-500 ml-2">based on Userpilot's product adoption benchmarks</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-bold text-gray-900">30–90 seconds saved per work order</span>
+                    <span className="text-gray-500 ml-2">Roughly one work week saved per technician annually</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="font-bold text-gray-900">~1.5x faster emergency response</span>
+                  </li>
+                </ul>
               </div>
             </motion.div>
 
@@ -300,144 +618,38 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl shadow-xl p-8"
             >
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                </div>
-                <div className="bg-gray-100 rounded-lg p-4">
-                  <div className="space-y-3">
-                    <div className="h-4 bg-blue-200 rounded w-3/4"></div>
-                    <div className="h-4 bg-blue-200 rounded w-1/2"></div>
-                    <div className="h-4 bg-blue-200 rounded w-2/3"></div>
-                  </div>
-                </div>
-                <div className="text-center text-sm text-gray-500">
-                  Maintenance Dashboard Interface
-                </div>
-              </div>
+              <img 
+                src="/CDG Login Held.png" 
+                alt="Mobile app login screen showing the final design"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Design Process Section */}
-      <section className="py-20 bg-white">
+      {/* Final Quote Section */}
+      <section className="py-20 bg-[#e8d7c8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Design Process
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A systematic approach to creating an intuitive and powerful maintenance management system.
-            </p>
+            <blockquote className="text-3xl lg:text-4xl font-bold text-[#fb006d] mb-8 max-w-4xl mx-auto">
+              "We were highly impressed with Bailey's communication, thoroughness, and willingness to collaborate. The process was fun, and it was energizing to work with her."
+            </blockquote>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="text-left">
+                <p className="font-semibold text-[#a40047] text-lg">Alexis Lellios</p>
+                <p className="text-[#a40047]">Product Manager</p>
+                <p className="text-[#a40047]">CMMS Data Group, Client</p>
+              </div>
+            </div>
           </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Stakeholder Interviews',
-                description: 'Conducted interviews with facility managers, technicians, and maintenance coordinators.',
-              },
-              {
-                step: '02',
-                title: 'Information Architecture',
-                description: 'Designed the system structure and navigation to support complex workflows.',
-              },
-              {
-                step: '03',
-                title: 'Prototyping & Testing',
-                description: 'Created interactive prototypes and conducted usability testing sessions.',
-              },
-              {
-                step: '04',
-                title: 'Implementation Support',
-                description: 'Worked closely with development team to ensure design fidelity and user experience.',
-              },
-            ].map((process, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 rounded-xl p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-blue-600 mb-4">{process.step}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{process.title}</h3>
-                <p className="text-gray-600">{process.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Results & Impact
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The CDG Maintenance Management App transformed facility operations and 
-              delivered significant business value.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                metric: '40%',
-                label: 'Reduction in Equipment Downtime',
-                description: 'Proactive maintenance scheduling prevented equipment failures.',
-              },
-              {
-                metric: '95%',
-                label: 'Task Completion Rate',
-                description: 'Improved scheduling and communication increased completion rates.',
-              },
-              {
-                metric: '65%',
-                label: 'Increase in User Efficiency',
-                description: 'Streamlined workflows and better visibility improved productivity.',
-              },
-              {
-                metric: '$2.3M',
-                label: 'Annual Cost Savings',
-                description: 'Reduced emergency repairs and improved equipment lifespan.',
-              },
-            ].map((result, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 text-center shadow-sm"
-              >
-                <div className="text-4xl font-bold text-blue-600 mb-2">{result.metric}</div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{result.label}</h3>
-                <p className="text-gray-600 text-sm">{result.description}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
