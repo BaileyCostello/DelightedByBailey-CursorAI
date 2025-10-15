@@ -2,8 +2,11 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function CDGMaintenanceCaseStudy() {
+  const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -216,79 +219,276 @@ export default function CDGMaintenanceCaseStudy() {
 
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit">
-              <button className="px-4 py-2 bg-white text-gray-900 rounded-md shadow-sm font-medium">
+            <div className="flex gap-4">
+              <button
+                onClick={() => setActiveTab('audience')}
+                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
+                  activeTab === 'audience'
+                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
+                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
+                }`}
+              >
                 Audience Analysis
               </button>
-              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+              <button
+                onClick={() => setActiveTab('personas')}
+                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
+                  activeTab === 'personas'
+                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
+                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
+                }`}
+              >
                 Personas
               </button>
-              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+              <button
+                onClick={() => setActiveTab('userflow')}
+                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
+                  activeTab === 'userflow'
+                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
+                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
+                }`}
+              >
                 User Flow
               </button>
-              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+              <button
+                onClick={() => setActiveTab('wireframes')}
+                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
+                  activeTab === 'wireframes'
+                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
+                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
+                }`}
+              >
                 Wireframes
               </button>
             </div>
           </div>
 
-          {/* Tab Content - Audience Analysis */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-          >
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Audience Analysis</h3>
-              <p className="text-lg text-gray-700 mb-6">
-                Understanding the diverse user base was crucial for designing an app that works for everyone from field technicians to facility managers.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+          {/* Tab Content */}
+          {activeTab === 'audience' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Audience Analysis</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Understanding the diverse user base was crucial for designing an app that works for everyone from field technicians to facility managers.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Identified key user personas</h4>
+                      <p className="text-gray-600 text-sm">Field technicians, supervisors, and facility managers</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Identified key user personas</h4>
-                    <p className="text-gray-600 text-sm">Field technicians, supervisors, and facility managers</p>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Mapped user journeys</h4>
+                      <p className="text-gray-600 text-sm">From work order creation to completion</p>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Mapped user journeys</h4>
-                    <p className="text-gray-600 text-sm">From work order creation to completion</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Analyzed pain points</h4>
-                    <p className="text-gray-600 text-sm">Communication gaps and workflow inefficiencies</p>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Analyzed pain points</h4>
+                      <p className="text-gray-600 text-sm">Communication gaps and workflow inefficiencies</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <div className="relative">
-              <img
-                src="/DelightedByBailey-CursorAI/Audience Analysis Questions 1-3.png"
-                alt="Audience Analysis Questions 1-3"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
-              <img
-                src="/DelightedByBailey-CursorAI/Audience Analysis Questions 4-6.png"
-                alt="Audience Analysis Questions 4-6"
-                className="absolute inset-0 w-full h-auto rounded-lg shadow-lg"
-              />
-            </div>
-          </motion.div>
+              <div className="relative">
+                <img
+                  src="/DelightedByBailey-CursorAI/Audience Analysis Questions 1-3.png"
+                  alt="Audience Analysis Questions 1-3"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+                <img
+                  src="/DelightedByBailey-CursorAI/Audience Analysis Questions 4-6.png"
+                  alt="Audience Analysis Questions 4-6"
+                  className="absolute inset-0 w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          )}
+
+          {activeTab === 'personas' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Personas</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Detailed user personas help ensure the app serves the needs of all stakeholders in the maintenance workflow.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Field Technicians</h4>
+                      <p className="text-gray-600 text-sm">Primary users who need quick access to work orders and updates</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Supervisors</h4>
+                      <p className="text-gray-600 text-sm">Need oversight and coordination capabilities</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Facility Managers</h4>
+                      <p className="text-gray-600 text-sm">Require reporting and strategic insights</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <img
+                  src="/DelightedByBailey-CursorAI/30 - Persona_Clerk.png"
+                  alt="Persona - Clerk"
+                  className="w-full h-auto rounded-lg shadow-lg mb-4"
+                />
+                <img
+                  src="/DelightedByBailey-CursorAI/30 - Persona_Tech.png"
+                  alt="Persona - Tech"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          )}
+
+          {activeTab === 'userflow' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">User Flow</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Mapping the complete user journey from work order creation to completion ensures a seamless experience.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Work Order Creation</h4>
+                      <p className="text-gray-600 text-sm">Streamlined process for reporting issues</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Assignment & Dispatch</h4>
+                      <p className="text-gray-600 text-sm">Automatic routing to appropriate technicians</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Progress Tracking</h4>
+                      <p className="text-gray-600 text-sm">Real-time updates and status monitoring</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <img
+                  src="/DelightedByBailey-CursorAI/CDG User Flow.png"
+                  alt="CDG User Flow"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          )}
+
+          {activeTab === 'wireframes' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+            >
+              <div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Wireframes</h3>
+                <p className="text-lg text-gray-700 mb-6">
+                  Low-fidelity wireframes help establish the app structure and user interface before visual design.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Information Architecture</h4>
+                      <p className="text-gray-600 text-sm">Organized content hierarchy and navigation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">User Interface Layout</h4>
+                      <p className="text-gray-600 text-sm">Component placement and interaction patterns</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Responsive Design</h4>
+                      <p className="text-gray-600 text-sm">Mobile-first approach for field technicians</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <img
+                  src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
+                  alt="CDG Wireframes"
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+            </motion.div>
+          )}
         </div>
       </section>
 
