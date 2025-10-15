@@ -363,17 +363,21 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div>
-                <img
-                  src="/DelightedByBailey-CursorAI/30 - Persona_Clerk.png"
-                  alt="Persona - Clerk"
-                  className="w-full h-auto rounded-lg shadow-lg mb-4"
-                />
-                <img
-                  src="/DelightedByBailey-CursorAI/30 - Persona_Tech.png"
-                  alt="Persona - Tech"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+              <div className="relative h-[434px] w-[484px]">
+                <div className="absolute bg-white h-[339px] left-0 rounded-lg shadow-lg top-0 w-[400px]">
+                  <img
+                    src="/DelightedByBailey-CursorAI/30 - Persona_Clerk.png"
+                    alt="Persona - Clerk"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+                <div className="absolute bg-white bottom-[-1px] h-[327px] right-[-1px] rounded-lg shadow-lg w-[400px]">
+                  <img
+                    src="/DelightedByBailey-CursorAI/30 - Persona_Tech.png"
+                    alt="Persona - Tech"
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
               </div>
             </motion.div>
           )}
