@@ -517,13 +517,7 @@ export default function CDGMaintenanceCaseStudy() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                We tested the principle workflow, where 4 of 5 technicians completed it with little to no help
-              </h3>
               <div className="space-y-4 text-lg text-[#2c3441]">
-                <p>
-                  Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
-                </p>
                 <p>
                   Their initial aversion to change dissipated and feedback turned to finding important information. As a result, we highlighted and restructured content.
                 </p>
