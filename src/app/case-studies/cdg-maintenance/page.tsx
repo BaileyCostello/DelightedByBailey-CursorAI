@@ -44,11 +44,10 @@ export default function CDGMaintenanceCaseStudy() {
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
+                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
                     <video 
                       src="/DelightedByBailey-CursorAI/CDG-App-Before.mp4" 
-                      className="w-full h-full object-cover object-center"
-                      style={{ objectPosition: 'center center', clipPath: 'inset(24px 54px 80px 54px)', transform: 'translateY(-24px)' }}
+                      className="w-full h-full object-cover"
                       autoPlay
                       loop
                       muted
