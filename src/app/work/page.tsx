@@ -136,7 +136,7 @@ export default function Work() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="./CDG Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -214,7 +214,7 @@ export default function Work() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="./CDG Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
