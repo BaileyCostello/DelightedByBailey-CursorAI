@@ -474,12 +474,18 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="flex gap-6 items-start justify-center overflow-hidden relative">
+              <div className="relative w-full overflow-hidden">
                 <img
                   src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
                   alt="CDG Wireframes"
-                  className="h-auto rounded-lg shadow-lg"
-                  style={{ width: '1200px', minWidth: '1200px' }}
+                  className="h-auto"
+                  style={{ 
+                    width: '1400px', 
+                    minWidth: '1400px',
+                    position: 'absolute',
+                    left: '0',
+                    top: '0'
+                  }}
                 />
               </div>
             </motion.div>
