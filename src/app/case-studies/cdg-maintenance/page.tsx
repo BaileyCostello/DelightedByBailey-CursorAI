@@ -212,109 +212,83 @@ export default function CDGMaintenanceCaseStudy() {
             <p className="text-[#2c3441] text-lg mb-8">
               I designed probing, structured conversations to effectively steer group discussions through a user-centric lens.
             </p>
-            <div className="flex flex-wrap gap-2 mb-8">
-              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">User Research</span>
-              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">Personas</span>
-              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">User Flow</span>
-              <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm">Wireframes</span>
-            </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Workshop Goals</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Identify the primary users of the app</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Understand usage, needs, and pain points</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Architect the app around their processes</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Explore scenarios and fill in missing details</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Identify the most critical and painful points in their workflow</h4>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Workshop Outcomes</h3>
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Build mutual understanding of concepts</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Experiment with ideas</h4>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Quickly shape the bones of the app</h4>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="mt-8">
-                <img 
-                  src="/CDG Wireframes.png" 
-                  alt="Wireframes showing the app structure"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
-              </div>
-            </motion.div>
+          {/* Tab Navigation */}
+          <div className="mb-8">
+            <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit">
+              <button className="px-4 py-2 bg-white text-gray-900 rounded-md shadow-sm font-medium">
+                Audience Analysis
+              </button>
+              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+                Personas
+              </button>
+              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+                User Flow
+              </button>
+              <button className="px-4 py-2 text-gray-600 hover:text-gray-900">
+                Wireframes
+              </button>
+            </div>
           </div>
+
+          {/* Tab Content - Audience Analysis */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+          >
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Audience Analysis</h3>
+              <p className="text-lg text-gray-700 mb-6">
+                Understanding the diverse user base was crucial for designing an app that works for everyone from field technicians to facility managers.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Identified key user personas</h4>
+                    <p className="text-gray-600 text-sm">Field technicians, supervisors, and facility managers</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Mapped user journeys</h4>
+                    <p className="text-gray-600 text-sm">From work order creation to completion</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Analyzed pain points</h4>
+                    <p className="text-gray-600 text-sm">Communication gaps and workflow inefficiencies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <img
+                src="/DelightedByBailey-CursorAI/Audience Analysis Questions 1-3.png"
+                alt="Audience Analysis Questions 1-3"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+              <img
+                src="/DelightedByBailey-CursorAI/Audience Analysis Questions 4-6.png"
+                alt="Audience Analysis Questions 4-6"
+                className="absolute inset-0 w-full h-auto rounded-lg shadow-lg"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
