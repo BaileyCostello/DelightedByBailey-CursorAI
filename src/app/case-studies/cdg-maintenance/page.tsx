@@ -482,7 +482,7 @@ export default function CDGMaintenanceCaseStudy() {
                     marginLeft: '0px'
                   }}
                 />
-              </div>
+          </div>
             </motion.div>
           )}
         </div>
@@ -491,25 +491,6 @@ export default function CDGMaintenanceCaseStudy() {
       {/* On-site & Usability Testing Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              I was invited to visit one of the most efficient operations in the country
-            </h2>
-            <p className="text-xl text-[#2c3441] max-w-3xl">
-              An American Eagle distribution center, boasting 97.3% efficiency and our client&apos;s biggest champion of the app.
-            </p>
-            <p className="text-lg text-[#2c3441] mt-4">
-              Previously unplanned, I organized our team to take full advantage of meeting the technicians and performed moderated usability testing.
-            </p>
-          </motion.div>
-
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -517,11 +498,16 @@ export default function CDGMaintenanceCaseStudy() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="space-y-4 text-lg text-[#2c3441]">
-                <p>
-                  Their initial aversion to change dissipated and feedback turned to finding important information. As a result, we highlighted and restructured content.
-                </p>
-              </div>
+              <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                I was invited to visit one of the most efficient operations in the country
+              </h2>
+              <p className="text-lg text-[#2c3441] max-w-3xl">
+                An American Eagle distribution center, boasting 97.3% efficiency and our client&apos;s biggest champion of the app.
+              </p>
+              <p className="text-lg text-[#2c3441] mt-4">
+                Previously unplanned, I organized our team to take full advantage of meeting the technicians and performed moderated usability testing.
+              </p>
             </motion.div>
 
             <motion.div
@@ -532,25 +518,23 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-2 gap-4"
             >
               {/* Top row - two images side by side */}
-              <div className="space-y-4">
-                <div className="aspect-video">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  >
-                    <source src="/DelightedByBailey-CursorAI/CDG DistributionLine.mp4" type="video/mp4" />
-                  </video>
-                </div>
-                <div className="aspect-video">
-                  <img 
-                    src="/DelightedByBailey-CursorAI/CDG On-site Computer.png" 
-                    alt="On-site computer setup"
-                    className="w-full h-full object-cover rounded-lg shadow-lg"
-                  />
-                </div>
+              <div className="aspect-video">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                >
+                  <source src="/DelightedByBailey-CursorAI/CDG DistributionLine.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div className="aspect-video">
+                <img 
+                  src="/DelightedByBailey-CursorAI/CDG On-site Computer.png" 
+                  alt="On-site computer setup"
+                  className="w-full h-full object-cover rounded-lg shadow-lg"
+                />
               </div>
               
               {/* Bottom row - single image spanning full width */}
@@ -804,8 +788,8 @@ export default function CDGMaintenanceCaseStudy() {
                 <p className="font-semibold text-[#a40047] text-lg">Alexis Lellios</p>
                 <p className="text-[#a40047]">Product Manager</p>
                 <p className="text-[#a40047]">CMMS Data Group, Client</p>
-              </div>
-            </div>
+          </div>
+        </div>
           </motion.div>
         </div>
       </section>
