@@ -309,14 +309,14 @@ export default function CDGMaintenanceCaseStudy() {
                   <img
                     src="/DelightedByBailey-CursorAI/Audience Analysis Questions 1-3.png"
                     alt="Audience Analysis Questions 1-3"
-                    className="absolute h-full left-[-21%] max-w-none top-[-0.3%] w-[211%]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bg-white h-[343px] left-[86px] overflow-hidden rounded-lg shadow-lg top-[90px] w-[567px]">
                   <img
                     src="/DelightedByBailey-CursorAI/Audience Analysis Questions 4-6.png"
                     alt="Audience Analysis Questions 4-6"
-                    className="absolute h-full left-[-118%] max-w-none top-[-0.3%] w-[211%]"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               </div>
