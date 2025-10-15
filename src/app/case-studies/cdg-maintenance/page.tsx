@@ -329,38 +329,32 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <div>
                 <p className="text-lg text-gray-700 mb-6">
-                  Detailed user personas help ensure the app serves the needs of all stakeholders in the maintenance workflow.
+                  Next, we used personas to dig into our primary users, <span className="font-bold">old-school technicians</span>:
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Field Technicians</p>
-                    </div>
+                    <p className="text-yellow-900 font-normal">Not tech-savvy and easily frustrated by tech</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Supervisors</p>
-                    </div>
+                    <p className="text-yellow-900 font-normal">On-the-go environment, carrying a cart of tools and a small tablet</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Facility Managers</p>
-                    </div>
+                    <p className="text-yellow-900 font-normal">Poor usability meant low team adoption, resulting in disorganization</p>
                   </div>
                 </div>
               </div>
