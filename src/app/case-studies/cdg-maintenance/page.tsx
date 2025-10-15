@@ -57,7 +57,7 @@ export default function CDGMaintenanceCaseStudy() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-500">
+              <p className="text-gray-500 pl-6" style={{ marginTop: '-56px' }}>
                 <span className="font-bold">Before:</span> A blank canvas, created by a single developer
               </p>
             </div>
@@ -82,7 +82,7 @@ export default function CDGMaintenanceCaseStudy() {
                   </div>
                 </div>
               </div>
-              <p className="text-gray-500">
+              <p className="text-gray-500 pl-6" style={{ marginTop: '-56px' }}>
                 <span className="font-bold">After:</span> A simple app that conforms neatly into technicians workflows, saves time, and improves response rates
               </p>
             </div>
