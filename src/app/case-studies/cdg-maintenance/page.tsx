@@ -273,36 +273,38 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Audience Analysis</h3>
                 <p className="text-lg text-gray-700 mb-6">
                   Understanding the diverse user base was crucial for designing an app that works for everyone from field technicians to facility managers.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Identified key user personas</h4>
-                      <p className="text-gray-600 text-sm">Field technicians, supervisors, and facility managers</p>
+                      <p className="text-yellow-900 font-medium">Identified key user personas</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Mapped user journeys</h4>
-                      <p className="text-gray-600 text-sm">From work order creation to completion</p>
+                      <p className="text-yellow-900 font-medium">Mapped user journeys</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Analyzed pain points</h4>
-                      <p className="text-gray-600 text-sm">Communication gaps and workflow inefficiencies</p>
+                      <p className="text-yellow-900 font-medium">Analyzed pain points</p>
                     </div>
                   </div>
                 </div>
@@ -332,36 +334,38 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Personas</h3>
                 <p className="text-lg text-gray-700 mb-6">
                   Detailed user personas help ensure the app serves the needs of all stakeholders in the maintenance workflow.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Field Technicians</h4>
-                      <p className="text-gray-600 text-sm">Primary users who need quick access to work orders and updates</p>
+                      <p className="text-yellow-900 font-medium">Field Technicians</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Supervisors</h4>
-                      <p className="text-gray-600 text-sm">Need oversight and coordination capabilities</p>
+                      <p className="text-yellow-900 font-medium">Supervisors</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-green-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Facility Managers</h4>
-                      <p className="text-gray-600 text-sm">Require reporting and strategic insights</p>
+                      <p className="text-yellow-900 font-medium">Facility Managers</p>
                     </div>
                   </div>
                 </div>
@@ -391,36 +395,38 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">User Flow</h3>
                 <p className="text-lg text-gray-700 mb-6">
                   Mapping the complete user journey from work order creation to completion ensures a seamless experience.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Work Order Creation</h4>
-                      <p className="text-gray-600 text-sm">Streamlined process for reporting issues</p>
+                      <p className="text-yellow-900 font-medium">Work Order Creation</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Assignment & Dispatch</h4>
-                      <p className="text-gray-600 text-sm">Automatic routing to appropriate technicians</p>
+                      <p className="text-yellow-900 font-medium">Assignment & Dispatch</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Progress Tracking</h4>
-                      <p className="text-gray-600 text-sm">Real-time updates and status monitoring</p>
+                      <p className="text-yellow-900 font-medium">Progress Tracking</p>
                     </div>
                   </div>
                 </div>
@@ -445,36 +451,38 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Wireframes</h3>
                 <p className="text-lg text-gray-700 mb-6">
                   Low-fidelity wireframes help establish the app structure and user interface before visual design.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Information Architecture</h4>
-                      <p className="text-gray-600 text-sm">Organized content hierarchy and navigation</p>
+                      <p className="text-yellow-900 font-medium">Information Architecture</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">User Interface Layout</h4>
-                      <p className="text-gray-600 text-sm">Component placement and interaction patterns</p>
+                      <p className="text-yellow-900 font-medium">User Interface Layout</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Responsive Design</h4>
-                      <p className="text-gray-600 text-sm">Mobile-first approach for field technicians</p>
+                      <p className="text-yellow-900 font-medium">Responsive Design</p>
                     </div>
                   </div>
                 </div>
