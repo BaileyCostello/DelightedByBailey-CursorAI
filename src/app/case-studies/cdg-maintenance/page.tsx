@@ -188,32 +188,11 @@ export default function CDGMaintenanceCaseStudy() {
           >
             <p className="text-[#decfd5] text-lg mb-8">Project Phases</p>
             <div className="relative max-w-4xl mx-auto">
-              <div className="flex items-center justify-center space-x-8">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
-                  <p className="text-[#faf6f3] text-lg">Discover</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
-                  <p className="text-[#faf6f3] text-lg">Concept</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
-                  <p className="text-[#faf6f3] text-lg">Iterate</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-[#63082b] rounded-lg shadow-lg mb-4"></div>
-                  <p className="text-[#faf6f3] text-lg">Deliver</p>
-                </div>
-              </div>
-              <div className="flex justify-center space-x-8 mt-4">
-                <div className="bg-[#a40047] border border-[#2f0616] rounded-full px-4 py-2">
-                  <p className="text-[#faf6f3] text-sm">Test</p>
-                </div>
-                <div className="bg-[#a40047] border border-[#2f0616] rounded-full px-4 py-2">
-                  <p className="text-[#faf6f3] text-sm">Build</p>
-                </div>
-              </div>
+              <img 
+                src="/DelightedByBailey-CursorAI/Double Diamond Approach.png" 
+                alt="Double Diamond Approach - Project Phases"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </div>
           </motion.div>
         </div>
