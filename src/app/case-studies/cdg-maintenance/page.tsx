@@ -422,7 +422,7 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
 
-              <div className="absolute inset-0 w-full h-full z-0">
+              <div className="absolute inset-0 w-full h-full -z-10" style={{ top: '144px' }}>
                 <img
                   src="/DelightedByBailey-CursorAI/CDG User Flow.png"
                   alt="CDG User Flow"
