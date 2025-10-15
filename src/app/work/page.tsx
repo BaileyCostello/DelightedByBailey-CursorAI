@@ -121,12 +121,10 @@ export default function Work() {
             {/* Mobile Layout - Image with Video Overlay (appears after title, before badges) */}
             <div className="h-[520px] relative order-2 lg:hidden">
               <div className="relative w-full h-full">
-                <Image 
+                <img 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
                   src="/Flat-iPad.png"
-                  width={600}
-                  height={520}
                 />
                 {/* Video Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -201,12 +199,10 @@ export default function Work() {
             {/* Desktop Layout - Right Column (Image with Video Overlay) */}
             <div className="hidden lg:block h-[700px] relative order-2">
               <div className="relative w-full h-full">
-                <Image 
+                <img 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
                   src="/Flat-iPad.png"
-                  width={700}
-                  height={700}
                 />
                 {/* Video Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
