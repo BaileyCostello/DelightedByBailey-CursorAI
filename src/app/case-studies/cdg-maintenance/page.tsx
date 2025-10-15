@@ -274,39 +274,33 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <div>
                 <p className="text-lg text-gray-700 mb-6">
-                  Understanding the diverse user base was crucial for designing an app that works for everyone from field technicians to facility managers.
+                  We asked 6, high level "right questions" to:
                 </p>
-                <div className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Identified key user personas</p>
-                    </div>
+                    <p className="text-yellow-900 font-normal">Identify the primary users of the app</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Mapped user journeys</p>
-                    </div>
+                    <p className="text-yellow-900 font-normal">Understand usage, needs, and pain points</p>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-yellow-900 font-medium">Analyzed pain points</p>
-                    </div>
-                  </div>
+                </div>
+                <div className="mt-6">
+                  <p className="text-base text-gray-500 leading-relaxed">
+                    "Right questions are thought-provoking. They are rarely simple or easy to answer. They have many sides that need to be surfaced, and typically lead to more questions to expand on ideas."
+                  </p>
+                  <p className="text-base text-gray-500 mt-2">
+                    - <a href="https://medium.com/@jenbluntly/how-to-start-asking-the-right-questions-bf865ce4ca75#:~:text=Right%20questions%20are%20thought%2Dprovoking,questions%20to%20expand%20on%20ideas." className="text-gray-500 hover:text-gray-700">Jennifer Blunt</a>
+                  </p>
                 </div>
               </div>
 
