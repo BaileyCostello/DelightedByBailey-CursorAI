@@ -480,8 +480,8 @@ export default function CDGMaintenanceCaseStudy() {
                   alt="CDG Wireframes"
                   className="h-auto"
                   style={{ 
-                    width: '800px',
-                    marginLeft: '-24px'
+                    width: '1000px',
+                    marginLeft: '0px'
                   }}
                 />
               </div>
