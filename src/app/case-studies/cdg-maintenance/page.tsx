@@ -500,7 +500,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                I was invited to visit one of the most efficient operations in the country
+                I was invited to one of the most efficient operations in the country
               </h2>
               <p className="text-lg text-[#2c3441] max-w-3xl">
                 An American Eagle distribution center, boasting 97.3% efficiency and our client&apos;s biggest champion of the app.
@@ -577,11 +577,12 @@ export default function CDGMaintenanceCaseStudy() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
               className="self-start"
+              style={{ height: '70%' }}
             >
               <img 
                 src="/DelightedByBailey-CursorAI/CDG Usability Testing Image.png" 
                 alt="Usability testing results and interface"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-full object-cover rounded-lg"
               />
             </motion.div>
           </div>
