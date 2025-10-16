@@ -36,7 +36,7 @@ export default function CDGMaintenanceCaseStudy() {
       </section>
 
       {/* Before & After Images */}
-      <section className="py-16 bg-[#f1f3f5]">
+      <section className="pt-0 pb-16 bg-[#f1f3f5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
             <div className="flex flex-col">
@@ -188,12 +188,12 @@ export default function CDGMaintenanceCaseStudy() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <p className="text-[#decfd5] text-lg mb-8">Project Phases</p>
+            <p className="text-[#decfd5] text-lg mb-8 mb-14">Project Phases</p>
             <div className="relative max-w-6xl mx-auto">
               <img 
                 src="/DelightedByBailey-CursorAI/Double Diamond Approach.png" 
                 alt="Double Diamond Approach - Project Phases"
-                className="w-full h-auto rounded-lg shadow-lg scale-200"
+                className="w-full h-auto rounded-lg shadow-lg scale-150"
               />
             </div>
           </motion.div>
@@ -210,10 +210,17 @@ export default function CDGMaintenanceCaseStudy() {
             viewport={{ once: true }}
             className="mb-16"
           >
-            <p className="text-[#a40047] text-lg mb-4">Discovery Workshops</p>
-            <p className="text-[#2c3441] text-lg mb-8">
-              I designed probing, structured conversations to effectively steer group discussions through a user-centric lens.
-            </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <p className="text-[#a40047] text-lg mb-4">Discovery Workshops</p>
+                <p className="text-[#2c3441] text-lg mb-8">
+                  I designed probing, structured conversations to effectively steer group discussions.
+                </p>
+              </div>
+              <div>
+                {/* Empty right column */}
+              </div>
+            </div>
           </motion.div>
 
           {/* Tab Navigation */}
