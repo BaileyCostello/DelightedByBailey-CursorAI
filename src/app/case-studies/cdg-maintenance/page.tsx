@@ -105,7 +105,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <p className="text-[#a40047] text-lg mb-4">Overview</p>
               <p className="text-[#2c3441] text-lg leading-relaxed">
-                My client&apos;s SaaS solution for managing maintenance team&apos;s work in warehouses, hospitals, and municipalities was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
+                My client&apos;s SaaS solution for managing maintenance team&apos;s work was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
               </p>
             </motion.div>
             
@@ -201,7 +201,7 @@ export default function CDGMaintenanceCaseStudy() {
       </section>
 
       {/* Discovery Workshops Section */}
-      <section className="h-screen bg-white pt-14">
+      <section className="lg:h-screen bg-white pt-14 pb-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

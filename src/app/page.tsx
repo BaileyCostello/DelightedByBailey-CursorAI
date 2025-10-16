@@ -44,11 +44,11 @@ const AnimatedTestimonials = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`flex flex-col gap-4 h-full ${testimonials[currentIndex].quote.length > 100 ? 'justify-start' : 'justify-center'}`}
+      className="flex flex-col gap-4 min-h-[500px] justify-center"
     >
       {/* Quote text */}
-      <div className="flex flex-col font-bold">
-        <p className="text-5xl font-bold text-pink-500 leading-normal">
+      <div className="flex flex-col font-bold w-full">
+        <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-500 leading-normal break-words">
           &ldquo;{testimonials[currentIndex].quote}&rdquo;
         </p>
       </div>
@@ -107,7 +107,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-white h-[90vh] flex items-center pt-8 pb-14 px-6 lg:px-32 lg:pt-8 lg:pb-14">
+      <section className="relative bg-white lg:h-[90vh] flex items-center pt-8 pb-14 px-6 lg:px-32 lg:pt-8 lg:pb-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -635,14 +635,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-[#eee2d8] py-14 pb-[112px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+      <section className="bg-[#eee2d8] py-14 pb-14 md:pb-[112px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-6 h-[400px]"
+            className="flex flex-col gap-6"
           >
             <AnimatedTestimonials />
           </motion.div>

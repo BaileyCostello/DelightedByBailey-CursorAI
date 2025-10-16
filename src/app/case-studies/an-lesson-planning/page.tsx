@@ -149,7 +149,7 @@ export default function ANetLessonPlanning() {
       </section>
 
       {/* Scrolling Text Section */}
-      <section className="min-h-screen flex flex-col pt-32 pb-32">
+      <section className="lg:min-h-screen flex flex-col pt-32 pb-32">
         <div className="w-full">
           <div className="wrapper">
             <div ref={slowMarqueeRef} className="marquee marquee-slow">
