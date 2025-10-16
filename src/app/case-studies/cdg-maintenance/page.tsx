@@ -187,14 +187,13 @@ export default function CDGMaintenanceCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center"
           >
             <p className="text-[#decfd5] text-lg mb-8">Project Phases</p>
-            <div className="relative max-w-4xl mx-auto">
+            <div className="relative max-w-6xl mx-auto">
               <img 
                 src="/DelightedByBailey-CursorAI/Double Diamond Approach.png" 
                 alt="Double Diamond Approach - Project Phases"
-                className="w-full h-auto rounded-lg shadow-lg"
+                className="w-full h-auto rounded-lg shadow-lg scale-200"
               />
             </div>
           </motion.div>
