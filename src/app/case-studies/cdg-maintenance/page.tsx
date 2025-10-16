@@ -515,7 +515,7 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="grid grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-4 self-start"
             >
               {/* Top row - two images side by side */}
               <div className="aspect-video">
@@ -539,12 +539,50 @@ export default function CDGMaintenanceCaseStudy() {
               
               {/* Bottom row - single image spanning full width */}
               <div className="col-span-2">
-                <img 
-                  src="/DelightedByBailey-CursorAI/CDG Usability Testing.JPG" 
-                  alt="Usability testing session with technicians"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+                <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
+                  <img 
+                    src="/DelightedByBailey-CursorAI/CDG Usability Testing.JPG" 
+                    alt="Usability testing session with technicians"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* On-site & Usability Testing Results Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                We tested the principle workflow, where 4 of 5 technicians completed it with little to no help
+              </h2>
+              <p className="text-lg text-[#2c3441] max-w-3xl">
+                Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="self-start"
+            >
+              <img 
+                src="/DelightedByBailey-CursorAI/CDG Usability Testing Image.png" 
+                alt="Usability testing results and interface"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
             </motion.div>
           </div>
         </div>
