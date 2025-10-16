@@ -45,7 +45,7 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Page Header */}
       <section className="bg-yellow-200 px-6 lg:px-32 pt-18 pb-6">
         <div className="max-w-7xl mx-auto">

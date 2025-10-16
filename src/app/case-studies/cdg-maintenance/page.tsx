@@ -8,7 +8,7 @@ export default function CDGMaintenanceCaseStudy() {
   const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
       <section className="bg-[#f1f3f5] pt-18 pb-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
