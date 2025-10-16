@@ -23,6 +23,7 @@ export default function About() {
     accessibility: { rotateX: 0, rotateY: 0 }
   });
   const [cardsInView, setCardsInView] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   // Create refs for each card
   const brightIdeasRef = useRef<HTMLDivElement>(null);
@@ -39,6 +40,17 @@ export default function About() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Detect screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
   // Viewport detection for cards
@@ -189,8 +201,8 @@ export default function About() {
                   className="bg-[#a40047] p-4 rounded-2xl shadow-lg relative overflow-hidden"
                   style={{ 
                     transformStyle: "preserve-3d",
-                    transform: `perspective(1000px) rotateX(${cardTilts.brightIdeas.rotateX}deg) rotateY(${cardTilts.brightIdeas.rotateY}deg) scale(1.02)`,
-                    boxShadow: `${Math.sin(cardTilts.brightIdeas.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.brightIdeas.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.brightIdeas.rotateX) + Math.abs(cardTilts.brightIdeas.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transform: isDesktop ? `perspective(1000px) rotateX(${cardTilts.brightIdeas.rotateX}deg) rotateY(${cardTilts.brightIdeas.rotateY}deg) scale(1.02)` : 'none',
+                    boxShadow: isDesktop ? `${Math.sin(cardTilts.brightIdeas.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.brightIdeas.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.brightIdeas.rotateX) + Math.abs(cardTilts.brightIdeas.rotateY)}px rgba(0, 0, 0, 0.3)` : '0 10px 25px rgba(0, 0, 0, 0.3)',
                     transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
                   }}
                 >
@@ -202,8 +214,8 @@ export default function About() {
                   className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden"
                   style={{ 
                     transformStyle: "preserve-3d",
-                    transform: `perspective(1000px) rotateX(${cardTilts.leanResearch.rotateX}deg) rotateY(${cardTilts.leanResearch.rotateY}deg) scale(1.02)`,
-                    boxShadow: `${Math.sin(cardTilts.leanResearch.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.leanResearch.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.leanResearch.rotateX) + Math.abs(cardTilts.leanResearch.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transform: isDesktop ? `perspective(1000px) rotateX(${cardTilts.leanResearch.rotateX}deg) rotateY(${cardTilts.leanResearch.rotateY}deg) scale(1.02)` : 'none',
+                    boxShadow: isDesktop ? `${Math.sin(cardTilts.leanResearch.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.leanResearch.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.leanResearch.rotateX) + Math.abs(cardTilts.leanResearch.rotateY)}px rgba(0, 0, 0, 0.3)` : '0 10px 25px rgba(0, 0, 0, 0.3)',
                     transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
                   }}
                 >
@@ -215,8 +227,8 @@ export default function About() {
                   className="bg-[#420920] p-4 rounded-2xl shadow-lg relative overflow-hidden"
                   style={{ 
                     transformStyle: "preserve-3d",
-                    transform: `perspective(1000px) rotateX(${cardTilts.clientRelationships.rotateX}deg) rotateY(${cardTilts.clientRelationships.rotateY}deg) scale(1.02)`,
-                    boxShadow: `${Math.sin(cardTilts.clientRelationships.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.clientRelationships.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.clientRelationships.rotateX) + Math.abs(cardTilts.clientRelationships.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transform: isDesktop ? `perspective(1000px) rotateX(${cardTilts.clientRelationships.rotateX}deg) rotateY(${cardTilts.clientRelationships.rotateY}deg) scale(1.02)` : 'none',
+                    boxShadow: isDesktop ? `${Math.sin(cardTilts.clientRelationships.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.clientRelationships.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.clientRelationships.rotateX) + Math.abs(cardTilts.clientRelationships.rotateY)}px rgba(0, 0, 0, 0.3)` : '0 10px 25px rgba(0, 0, 0, 0.3)',
                     transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
                   }}
                 >
@@ -232,8 +244,8 @@ export default function About() {
                   className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden"
                   style={{ 
                     transformStyle: "preserve-3d",
-                    transform: `perspective(1000px) rotateX(${cardTilts.adaptableLearner.rotateX}deg) rotateY(${cardTilts.adaptableLearner.rotateY}deg) scale(1.02)`,
-                    boxShadow: `${Math.sin(cardTilts.adaptableLearner.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.adaptableLearner.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.adaptableLearner.rotateX) + Math.abs(cardTilts.adaptableLearner.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transform: isDesktop ? `perspective(1000px) rotateX(${cardTilts.adaptableLearner.rotateX}deg) rotateY(${cardTilts.adaptableLearner.rotateY}deg) scale(1.02)` : 'none',
+                    boxShadow: isDesktop ? `${Math.sin(cardTilts.adaptableLearner.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.adaptableLearner.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.adaptableLearner.rotateX) + Math.abs(cardTilts.adaptableLearner.rotateY)}px rgba(0, 0, 0, 0.3)` : '0 10px 25px rgba(0, 0, 0, 0.3)',
                     transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
                   }}
                 >
@@ -245,8 +257,8 @@ export default function About() {
                   className="bg-[#2f0616] p-4 rounded-2xl shadow-lg flex-1 flex flex-col justify-between relative overflow-hidden"
                   style={{ 
                     transformStyle: "preserve-3d",
-                    transform: `perspective(1000px) rotateX(${cardTilts.accessibility.rotateX}deg) rotateY(${cardTilts.accessibility.rotateY}deg) scale(1.02)`,
-                    boxShadow: `${Math.sin(cardTilts.accessibility.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.accessibility.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.accessibility.rotateX) + Math.abs(cardTilts.accessibility.rotateY)}px rgba(0, 0, 0, 0.3)`,
+                    transform: isDesktop ? `perspective(1000px) rotateX(${cardTilts.accessibility.rotateX}deg) rotateY(${cardTilts.accessibility.rotateY}deg) scale(1.02)` : 'none',
+                    boxShadow: isDesktop ? `${Math.sin(cardTilts.accessibility.rotateY * Math.PI / 180) * 20}px ${Math.sin(cardTilts.accessibility.rotateX * Math.PI / 180) * 20}px ${20 + Math.abs(cardTilts.accessibility.rotateX) + Math.abs(cardTilts.accessibility.rotateY)}px rgba(0, 0, 0, 0.3)` : '0 10px 25px rgba(0, 0, 0, 0.3)',
                     transition: "transform 0.1s ease-out, box-shadow 0.1s ease-out"
                   }}
                 >
