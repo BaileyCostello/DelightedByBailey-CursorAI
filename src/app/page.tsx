@@ -215,45 +215,31 @@ export default function Home() {
       </section>
 
       {/* Mockups Section */}
-      <section className="bg-yellow-200 py-14 pb-[144px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+      <section className="bg-yellow-200 pt-20 pb-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem] lg:min-h-screen">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex flex-col"
-          >
-            {/* Section Title */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
+            {/* Left Column - Section Title */}
             <motion.div 
               initial={{ opacity: 0, y: -40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0, ease: "easeOut" }}
               viewport={{ once: true, margin: "-200px" }}
-              className="flex flex-col items-start pb-4 mb-[-16px] relative z-10"
+              className="flex flex-col items-start pb-4 mb-[-16px] relative z-10 lg:w-1/2 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:self-start lg:pt-20"
             >
               <h2 className="text-4xl font-bold text-pink-500 leading-tight text-left">
                 Design Meet Product Strategy
               </h2>
             </motion.div>
 
-            {/* Mockups Container with Overlapping Layout */}
-            <div className="relative">
+            {/* Right Column - Mockups Container with Overlapping Layout */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative lg:w-1/2"
+            >
               {/* First Mockup - Dr.Treat */}
-              <div className="flex items-end justify-between mb-[-144px]">
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                  viewport={{ once: true, margin: "5%" }}
-                  style={{
-                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, 100])
-                  }}
-                  className="flex flex-col gap-2 items-end justify-end flex-1 mr-[-48px]"
-                >
-                  <p className="text-pink-700 text-sm text-right max-w-[188px] pb-6">
-                    Pet Telehealth App,<br />Dr.Treat
-                  </p>
-                </motion.div>
+              <div className="flex items-end justify-center mb-[-144px]">
                 <motion.div 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -262,7 +248,7 @@ export default function Home() {
                   style={{
                     x: useTransform(useScroll().scrollYProgress, [0, 1], [0, 80])
                   }}
-                  className="h-[520px] w-[310px] relative shrink-0"
+                  className="h-[520px] w-[310px] relative shrink-0 lg:ml-0"
                 >
                   <motion.div
                     initial={{ y: 0 }}
@@ -284,7 +270,7 @@ export default function Home() {
               </div>
 
               {/* Second Mockup - VolunTime */}
-              <div className="flex items-end justify-between">
+              <div className="flex items-end justify-center lg:pr-[30%]">
                 <motion.div 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -293,7 +279,7 @@ export default function Home() {
                   style={{
                     x: useTransform(useScroll().scrollYProgress, [0, 1], [0, -80])
                   }}
-                  className="h-[520px] w-[310px] relative shrink-0"
+                  className="h-[520px] w-[310px] relative shrink-0 -ml-[60px]"
                 >
                   <motion.div
                     initial={{ y: 0 }}
@@ -312,23 +298,9 @@ export default function Home() {
                     />
                   </motion.div>
                 </motion.div>
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  viewport={{ once: true, margin: "5%" }}
-                  style={{
-                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, -100])
-                  }}
-                  className="flex flex-col gap-2 items-start justify-end flex-1 ml-[-48px]"
-                >
-                  <p className="text-pink-700 text-sm max-w-[188px] pb-6">
-                    Student Volunteering App,<br />VolunTIME Keepers
-                  </p>
-                </motion.div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

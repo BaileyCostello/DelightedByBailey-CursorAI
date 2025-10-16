@@ -165,7 +165,7 @@ export default function About() {
             </div>
             <div className="flex-1">
               <p className="text-pink-700 text-base mb-4">Industries</p>
-              <p className="text-[#63082b] text-4xl font-bold leading-tight">10+</p>
+              <p className="text-[#63082b] text-4xl font-bold leading-tight">15+</p>
             </div>
           </div>
           <div className="flex-1">
@@ -178,40 +178,8 @@ export default function About() {
       {/* What makes me a great fit & Why my peers love working with me */}
       <section className="bg-[#eee2d8] px-6 lg:px-32 py-14">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
-          {/* Left Column - What makes me a great fit */}
-          <div className="flex-1 order-2 lg:order-1">
-            <h2 className="text-base font-bold text-black mb-6 pb-4">What makes me a great fit</h2>
-            <div className="space-y-4 text-[#2c3441] text-base">
-              <p>
-                I&apos;m a product-focused designer and ideas person. I believe great design is equal parts creativity, usability, and strategic thinking - and I bring all three to the table.
-              </p>
-              <p>
-                <span className="font-bold">Competitive</span><br />
-                I am my mother&apos;s daughter <span className="text-lg">😂</span>. Driven by strategy and differentiation - I love building brands that stand out.
-              </p>
-              <p>
-                <span className="font-bold">Analytical</span><br />
-                I love solving usability problems - some of my favorite work relates to quickly understanding and simplifying technical systems that leave room for confusion.
-              </p>
-              <p>
-                <span className="font-bold">Curious</span><br />
-                I love learning about unique, sometimes complex industries, business strategies, and how to delight audiences.
-              </p>
-            </div>
-            <div className="mt-6 pt-4">
-              <Button 
-                href="/contact/" 
-                variant="secondary" 
-                size="medium"
-                trailingIcon={true}
-              >
-                Let&apos;s Talk
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Column - Why my peers love working with me */}
-          <div className="flex-1 order-1 lg:order-2">
+          {/* Left Column - Why my peers love working with me */}
+          <div className="flex-1 order-1 lg:order-1">
             <h2 className="text-base font-bold text-black mb-6 pb-4">Why my peers love working with me</h2>
             <div ref={cardsContainerRef} className="grid grid-cols-2 gap-2 mb-4">
               {/* Left Column Cards */}
@@ -302,6 +270,35 @@ export default function About() {
             <p className="text-gray-500 text-base">
               <span className="font-bold"> </span>I know because I asked  <span className="text-lg">😉</span>
             </p>
+          </div>
+
+          {/* Right Column - What makes me a great fit */}
+          <div className="flex-1 order-2 lg:order-2">
+            <h2 className="text-base font-bold text-black mb-6 pb-4">What makes me a great fit</h2>
+            <div className="space-y-4 text-[#2c3441] text-base">
+              <p>
+                <span className="font-bold">Product and Brand Strategy</span><br />
+                With diverse industry experience, I expertly translate ambiguous goals into creative product strategies and beloved designs - built to stand out in the market.
+              </p>
+              <p>
+                <span className="font-bold">Systems Thinking and Clarity</span><br />
+                Stemming from my background in computer science, I love simplifying technical or convoluted processes (SaaS, internal tools, complex data flows) and tailoring elegant, scalable solutions.
+              </p>
+              <p>
+                <span className="font-bold">Relationships and Collaboration</span><br />
+                Coworkers and clients love working with me, the process is fun, and I excel at achieving alignment. I believe in leveraging good ideas from everywhere, leading collaboration across teams, and an advocate for research.
+              </p>
+            </div>
+            <div className="mt-6 pt-4">
+              <Button 
+                href="/contact/" 
+                variant="secondary" 
+                size="medium"
+                trailingIcon={true}
+              >
+                Let&apos;s Talk
+              </Button>
+            </div>
           </div>
         </div>
       </section>

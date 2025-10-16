@@ -61,7 +61,7 @@ export default function CDGMaintenanceCaseStudy() {
                 </div>
               </div>
               <p className="text-gray-500 pl-6" style={{ marginTop: '-56px' }}>
-                <span className="font-bold">Before:</span> A blank canvas, created by a single developer
+                <span className="font-bold">Before:</span> A blank canvas, created by a single developer <br />
               </p>
             </div>
             <div className="flex flex-col">

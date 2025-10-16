@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { Square2StackIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
-  const [activeTab, setActiveTab] = useState<'call' | 'email'>('call');
+  const [activeTab, setActiveTab] = useState<'call' | 'email'>('email');
   const [showToast] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -72,16 +72,6 @@ export default function Contact() {
             {/* Tabs */}
             <div className="flex gap-4">
               <button
-                onClick={() => setActiveTab('call')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'call'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
-              >
-                Schedule a Call
-              </button>
-              <button
                 onClick={() => setActiveTab('email')}
                 className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
                   activeTab === 'email'
@@ -90,6 +80,16 @@ export default function Contact() {
                 }`}
               >
                 Send an Email
+              </button>
+              <button
+                onClick={() => setActiveTab('call')}
+                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
+                  activeTab === 'call'
+                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
+                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
+                }`}
+              >
+                Schedule a Call
               </button>
             </div>
 
