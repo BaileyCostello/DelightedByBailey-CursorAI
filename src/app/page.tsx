@@ -107,7 +107,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-white lg:h-[90vh] flex items-center pt-8 pb-14 px-6 lg:px-32 lg:pt-8 lg:pb-14">
+      <section className="relative bg-white lg:h-[90vh] flex items-center pt-10 pb-14 px-6 lg:px-32 lg:pt-10 lg:pb-14">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
