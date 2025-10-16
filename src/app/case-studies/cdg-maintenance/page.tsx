@@ -716,12 +716,11 @@ export default function CDGMaintenanceCaseStudy() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center"
           >
-            <blockquote className="text-3xl lg:text-4xl font-bold text-[#fb006d] mb-8 max-w-4xl mx-auto">
+            <blockquote className="text-3xl lg:text-4xl font-bold text-[#fb006d] mb-8 max-w-4xl">
               &quot;We were highly impressed with Bailey&apos;s communication, thoroughness, and willingness to collaborate. The process was fun, and it was energizing to work with her.&quot;
             </blockquote>
-            <div className="flex items-center justify-center space-x-4">
+            <div className="flex items-center space-x-4">
               <div className="text-left">
                 <p className="font-semibold text-[#a40047] text-lg">Alexis Lellios</p>
                 <p className="text-[#a40047]">Product Manager</p>
@@ -732,31 +731,6 @@ export default function CDGMaintenanceCaseStudy() {
         </div>
       </section>
 
-      {/* Navigation */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <Link
-              href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
-              className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold mb-4 sm:mb-0"
-            >
-              <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Previous Case Study
-            </Link>
-            <Link
-              href="/work/"
-              className="flex items-center text-indigo-600 hover:text-indigo-700 font-semibold"
-            >
-              Back to My Work
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }
