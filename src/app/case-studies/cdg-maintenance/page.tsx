@@ -38,7 +38,7 @@ export default function CDGMaintenanceCaseStudy() {
       {/* Before & After Images */}
       <section className="pt-0 pb-16 bg-[#f1f3f5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-32">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
             <div className="flex flex-col">
               <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
                 <img 
@@ -46,8 +46,8 @@ export default function CDGMaintenanceCaseStudy() {
                   alt="iPad device frame"
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
+                <div className="absolute inset-0 flex items-start justify-center">
+                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-16">
                     <video
                       autoPlay
                       loop
