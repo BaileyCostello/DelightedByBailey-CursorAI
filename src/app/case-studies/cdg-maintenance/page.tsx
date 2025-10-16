@@ -225,7 +225,7 @@ export default function CDGMaintenanceCaseStudy() {
 
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
               <button
                 onClick={() => setActiveTab('audience')}
                 className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
