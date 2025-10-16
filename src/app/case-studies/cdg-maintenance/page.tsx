@@ -577,12 +577,11 @@ export default function CDGMaintenanceCaseStudy() {
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
               className="self-start"
-              style={{ height: '70%' }}
             >
               <img 
                 src="/DelightedByBailey-CursorAI/CDG Usability Testing Image.png" 
                 alt="Usability testing results and interface"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-auto rounded-lg"
               />
             </motion.div>
           </div>
