@@ -157,7 +157,7 @@ export default function Home() {
             </div>
             
             {/* Right Column - Description and Buttons */}
-            <div className="flex flex-col gap-10 mt-16">
+            <div className="flex flex-col gap-10 mt-2 lg:mt-16">
               <motion.div 
                 className="text-base text-gray-700 leading-6 max-w-md"
                 initial={{ opacity: 0, y: 20 }}
@@ -185,7 +185,7 @@ export default function Home() {
               </motion.div>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4"
+                className="hidden lg:flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 2.0 }}
@@ -215,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* Mockups Section */}
-      <section className="bg-yellow-200 pt-20 pb-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem] lg:min-h-screen">
+      <section className="bg-yellow-200 pt-20 pb-14 px-6 lg:px-32 lg:min-h-screen">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             {/* Left Column - Section Title */}
@@ -227,7 +227,7 @@ export default function Home() {
               className="flex flex-col items-start pb-4 mb-[-16px] relative z-10 lg:w-1/2 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:self-start lg:pt-20"
             >
               <h2 className="text-4xl font-bold text-pink-500 leading-tight text-left">
-                Design Meet Product Strategy
+                Design Meet <br /> Product Strategy
               </h2>
             </motion.div>
 
