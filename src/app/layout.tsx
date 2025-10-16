@@ -36,10 +36,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${plusJakartaSans.variable} antialiased`}
+        className={`${plusJakartaSans.variable} antialiased overflow-x-hidden`}
       >
         <Navigation />
-               <main className="pt-18">
+        <main>
           {children}
         </main>
         <Footer />

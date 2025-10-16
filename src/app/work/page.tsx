@@ -7,9 +7,9 @@ import Button from '@/components/Button';
 export default function Work() {
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Page Header */}
-      <section className="bg-white px-6 lg:px-32 pt-10 pb-6">
+      <section className="bg-white px-6 lg:px-32 pt-18 pb-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-7xl font-semibold text-black leading-none">
             My Work
@@ -268,7 +268,7 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-            className="relative -mx-6 lg:-mx-32"
+            className="relative -mx-6 lg:-mx-32 overflow-x-hidden"
           >
             <div 
               className="flex gap-8 animate-scroll-smooth"

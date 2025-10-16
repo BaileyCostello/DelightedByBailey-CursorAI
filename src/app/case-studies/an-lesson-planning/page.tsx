@@ -12,7 +12,7 @@ export default function ANetLessonPlanning() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gray-100 pt-10 pb-14 px-6 lg:px-32">
+      <section className="bg-gray-100 pt-18 pb-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
