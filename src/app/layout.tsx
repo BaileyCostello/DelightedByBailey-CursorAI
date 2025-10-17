@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   keywords: "UX Design, Product Design, User Experience, Portfolio, Bailey Costello",
   authors: [{ name: "Bailey Costello" }],
   icons: {
-    icon: "/DelightedByBailey-CursorAI/favicon.png",
-    shortcut: "/DelightedByBailey-CursorAI/favicon.png",
-    apple: "/DelightedByBailey-CursorAI/favicon.png",
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
   },
   openGraph: {
     title: "Delighted By Bailey - Senior UX & Product Designer",

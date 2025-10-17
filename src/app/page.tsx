@@ -434,25 +434,25 @@ export default function Home() {
                     <img 
                       alt="" 
                       className="block max-w-none size-full -rotate-90" 
-                      src="/DelightedByBailey-CursorAI/globe.svg" 
+                      src="/globe.svg" 
                     />
                   ) : index === 2 ? (
                     <img 
                       alt="" 
                       className="block max-w-none size-full -rotate-90" 
-                      src="/DelightedByBailey-CursorAI/window.svg" 
+                      src="/window.svg" 
                     />
                   ) : index === 3 ? (
                     <img 
                       alt="" 
                       className="block max-w-none size-full -rotate-90" 
-                      src="/DelightedByBailey-CursorAI/file.svg" 
+                      src="/file.svg" 
                     />
                   ) : (
                     <img 
                       alt="" 
                       className="block max-w-none size-full -rotate-90" 
-                      src="/DelightedByBailey-CursorAI/next.svg" 
+                      src="/next.svg" 
                     />
                   )}
                 </motion.div>

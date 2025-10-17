@@ -42,7 +42,7 @@ export default function CDGMaintenanceCaseStudy() {
             <div className="flex flex-col">
               <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
                 <img 
-                  src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
+                  src="/Flat-iPad.png" 
                   alt="iPad device frame"
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
@@ -55,7 +55,7 @@ export default function CDGMaintenanceCaseStudy() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="/DelightedByBailey-CursorAI/CDG-Before-Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Before-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -67,7 +67,7 @@ export default function CDGMaintenanceCaseStudy() {
             <div className="flex flex-col">
               <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
                 <img 
-                  src="/DelightedByBailey-CursorAI/Flat-iPad.png" 
+                  src="/Flat-iPad.png" 
                   alt="iPad device frame"
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
@@ -80,7 +80,7 @@ export default function CDGMaintenanceCaseStudy() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="/DelightedByBailey-CursorAI/CDG-Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export default function CDGMaintenanceCaseStudy() {
             <p className="text-[#decfd5] text-lg mb-8 mb-14">Project Phases</p>
             <div className="relative max-w-6xl mx-auto">
               <img 
-                src="/DelightedByBailey-CursorAI/Double Diamond Approach.png" 
+                src="/Double Diamond Approach.png" 
                 alt="Double Diamond Approach - Project Phases"
                 className="w-full h-auto rounded-lg shadow-lg scale-150"
               />
@@ -313,14 +313,14 @@ export default function CDGMaintenanceCaseStudy() {
               <div className="relative h-[434px] w-[591px]">
                 <div className="absolute bg-white h-[343px] left-0 overflow-hidden rounded-lg shadow-lg top-0 w-[567px]">
                   <img
-                    src="/DelightedByBailey-CursorAI/Audience Analysis Questions 1-3.png"
+                    src="/Audience Analysis Questions 1-3.png"
                     alt="Audience Analysis Questions 1-3"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bg-white h-[343px] left-[86px] overflow-hidden rounded-lg shadow-lg top-[90px] w-[567px]">
                   <img
-                    src="/DelightedByBailey-CursorAI/Audience Analysis Questions 4-6.png"
+                    src="/Audience Analysis Questions 4-6.png"
                     alt="Audience Analysis Questions 4-6"
                     className="w-full h-full object-cover"
                   />
@@ -372,14 +372,14 @@ export default function CDGMaintenanceCaseStudy() {
               <div className="relative h-[500px] w-[580px]">
                 <div className="absolute h-[400px] left-0 top-0 w-[480px]">
                   <img
-                    src="/DelightedByBailey-CursorAI/30 - Persona_Clerk.png"
+                    src="/30 - Persona_Clerk.png"
                     alt="Persona - Clerk"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute bottom-[-1px] h-[390px] right-[-1px] w-[480px]">
                   <img
-                    src="/DelightedByBailey-CursorAI/30 - Persona_Tech.png"
+                    src="/30 - Persona_Tech.png"
                     alt="Persona - Tech"
                     className="w-full h-full object-cover"
                   />
@@ -430,7 +430,7 @@ export default function CDGMaintenanceCaseStudy() {
 
               <div className="absolute inset-0 w-full h-full -z-10" style={{ top: '144px' }}>
                 <img
-                  src="/DelightedByBailey-CursorAI/CDG User Flow.png"
+                  src="/CDG User Flow.png"
                   alt="CDG User Flow"
                   className="w-full h-full object-cover"
                 />
@@ -480,7 +480,7 @@ export default function CDGMaintenanceCaseStudy() {
 
               <div className="relative w-[150%] overflow-hidden">
                 <img
-                  src="/DelightedByBailey-CursorAI/CDG Wireframes.png"
+                  src="/CDG Wireframes.png"
                   alt="CDG Wireframes"
                   className="h-auto"
                   style={{ 
@@ -532,12 +532,12 @@ export default function CDGMaintenanceCaseStudy() {
                   playsInline
                   className="w-full h-full object-cover rounded-lg shadow-lg"
                 >
-                  <source src="/DelightedByBailey-CursorAI/CDG DistributionLine.mp4" type="video/mp4" />
+                  <source src="/CDG DistributionLine.mp4" type="video/mp4" />
                 </video>
               </div>
               <div className="aspect-video">
                 <img 
-                  src="/DelightedByBailey-CursorAI/CDG On-site Computer.png" 
+                  src="/CDG On-site Computer.png" 
                   alt="On-site computer setup"
                   className="w-full h-full object-cover rounded-lg shadow-lg"
                 />
@@ -547,7 +547,7 @@ export default function CDGMaintenanceCaseStudy() {
               <div className="col-span-2">
                 <div className="aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                   <img 
-                    src="/DelightedByBailey-CursorAI/CDG Usability Testing.JPG" 
+                    src="/CDG Usability Testing.JPG" 
                     alt="Usability testing session with technicians"
                     className="w-full h-full object-cover object-center"
                   />
@@ -585,7 +585,7 @@ export default function CDGMaintenanceCaseStudy() {
               className="self-start"
             >
               <img 
-                src="/DelightedByBailey-CursorAI/CDG Usability Testing Image.png" 
+                src="/CDG Usability Testing Image.png" 
                 alt="Usability testing results and interface"
                 className="w-full h-auto rounded-lg"
               />
@@ -615,7 +615,7 @@ export default function CDGMaintenanceCaseStudy() {
               viewport={{ once: true }}
             >
               <img 
-                src="/DelightedByBailey-CursorAI/CDG Solution Mockup 1.png" 
+                src="/CDG Solution Mockup 1.png" 
                 alt="CDG Solution Mockup 1"
                 className="w-full h-auto rounded-lg"
               />
@@ -629,7 +629,7 @@ export default function CDGMaintenanceCaseStudy() {
               viewport={{ once: true }}
             >
               <img 
-                src="/DelightedByBailey-CursorAI/CDG Solution Mockup 2.png" 
+                src="/CDG Solution Mockup 2.png" 
                 alt="CDG Solution Mockup 2"
                 className="w-full h-auto rounded-lg"
               />
@@ -643,7 +643,7 @@ export default function CDGMaintenanceCaseStudy() {
               viewport={{ once: true }}
             >
               <img 
-                src="/DelightedByBailey-CursorAI/CDG Solution Mockup 3.png" 
+                src="/CDG Solution Mockup 3.png" 
                 alt="CDG Solution Mockup 3"
                 className="w-full h-auto rounded-lg"
               />
@@ -704,7 +704,7 @@ export default function CDGMaintenanceCaseStudy() {
               className="self-start"
             >
               <img 
-                src="/DelightedByBailey-CursorAI/CDG Login Held.png" 
+                src="/CDG Login Held.png" 
                 alt="Mobile app login screen showing the final design"
                 className="w-full h-auto"
               />

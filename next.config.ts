@@ -7,8 +7,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/DelightedByBailey-CursorAI' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/DelightedByBailey-CursorAI' : '',
+  basePath: '',
+  assetPrefix: '',
 };
 
 export default nextConfig;

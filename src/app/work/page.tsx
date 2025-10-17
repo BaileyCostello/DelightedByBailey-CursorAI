@@ -124,7 +124,7 @@ export default function Work() {
                 <img 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
-                  src="/DelightedByBailey-CursorAI/Flat-iPad.png"
+                  src="/Flat-iPad.png"
                 />
                 {/* Video Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -136,7 +136,7 @@ export default function Work() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="/DelightedByBailey-CursorAI/CDG-Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export default function Work() {
                 <img 
                   alt="CDG iPad Mockup" 
                   className="w-full h-full object-contain object-center" 
-                  src="/DelightedByBailey-CursorAI/Flat-iPad.png"
+                  src="/Flat-iPad.png"
                 />
                 {/* Video Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -214,7 +214,7 @@ export default function Work() {
                       playsInline
                       className="w-full h-full object-cover"
                     >
-                      <source src="/DelightedByBailey-CursorAI/CDG-Movie.mp4" type="video/mp4" />
+                      <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>

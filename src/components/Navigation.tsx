@@ -55,7 +55,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image 
-              src="/DelightedByBailey-CursorAI/Logo-Light.png"
+              src="/Logo-Light.png"
               alt="Delighted By Bailey Logo"
               width={32}
               height={32}
