@@ -2,10 +2,92 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function CDGMaintenanceCaseStudy() {
   const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedAssets, setLoadedAssets] = useState(0);
+  const totalAssets = 18; // Total number of heavy assets
+
+  useEffect(() => {
+    const preloadAssets = async () => {
+      const assetUrls = [
+        '/Flat-iPad.png',
+        '/CDG-Movie.mp4',
+        '/CDG-Before-Movie.mp4',
+        '/Double Diamond Approach.png',
+        '/Audience Analysis Questions 1-3.png',
+        '/Audience Analysis Questions 4-6.png',
+        '/30 - Persona_Clerk.png',
+        '/30 - Persona_Tech.png',
+        '/CDG User Flow.png',
+        '/CDG Wireframes.png',
+        '/CDG DistributionLine.mp4',
+        '/CDG On-site Computer.png',
+        '/CDG Usability Testing.JPG',
+        '/CDG Usability Testing Image.png',
+        '/CDG Solution Mockup 1.png',
+        '/CDG Solution Mockup 2.png',
+        '/CDG Solution Mockup 3.png',
+        '/CDG Login Held.png'
+      ];
+
+      const loadAsset = (url: string) => {
+        return new Promise((resolve) => {
+          if (url.endsWith('.mp4')) {
+            const video = document.createElement('video');
+            video.preload = 'metadata';
+            video.onloadedmetadata = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            video.onerror = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            video.src = url;
+          } else {
+            const img = new Image();
+            img.onload = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            img.onerror = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            img.src = url;
+          }
+        });
+      };
+
+      // Load all assets in parallel
+      await Promise.all(assetUrls.map(loadAsset));
+      
+      // Small delay to ensure smooth transition
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    };
+
+    preloadAssets();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="relative">
+            <div className="w-16 h-16 border-4 border-gray-200 border-t-pink-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="text-sm text-gray-600">
+              Loading assets...
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
