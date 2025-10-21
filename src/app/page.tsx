@@ -4,8 +4,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
 import { useState, useEffect } from 'react';
+import { RocketLaunchIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
-// Animated testimonials cycling component
+// Animated testimonials cycling component with dots
 const AnimatedTestimonials = () => {
   const testimonials = [
     {
@@ -24,8 +25,11 @@ const AnimatedTestimonials = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
+    if (!isAutoPlaying) return;
+    
     const interval = setInterval(() => {
       setIsVisible(false);
       
@@ -36,32 +40,66 @@ const AnimatedTestimonials = () => {
     }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [testimonials.length, isAutoPlaying]);
+
+  const handleDotClick = (index: number) => {
+    setIsAutoPlaying(false);
+    setIsVisible(false);
+    
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsVisible(true);
+    }, 300);
+    
+    // Restart auto-playing after 6 seconds
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 6000);
+  };
 
   return (
-    <motion.div
-      key={currentIndex}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="flex flex-col gap-4 min-h-[500px] justify-center"
-    >
-      {/* Quote text */}
-      <div className="flex flex-col font-bold w-full">
-        <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-pink-500 leading-normal break-words">
-          &ldquo;{testimonials[currentIndex].quote}&rdquo;
-        </p>
-      </div>
-      
-      {/* Author info */}
-      <div className="flex justify-between items-center">
-        <div className="text-pink-700 font-normal leading-6 text-sm">
-          <p className="font-semibold mb-0">{testimonials[currentIndex].name}</p>
-          <p className="mb-0">{testimonials[currentIndex].title}</p>
-          <p>{testimonials[currentIndex].company}</p>
+    <div className="flex flex-col gap-3 min-h-[400px] justify-center text-left">
+      {/* Quote content */}
+      <motion.div
+        key={currentIndex}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVisible ? 1 : 0 }}
+        transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="flex flex-col gap-4 text-left"
+      >
+        {/* Quote text */}
+        <div className="flex flex-col font-bold w-full text-left">
+          <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-pink-500 break-words w-full max-w-none">
+            &ldquo;{testimonials[currentIndex].quote}&rdquo;
+          </p>
         </div>
+        
+        {/* Author info */}
+        <div className="flex justify-start items-start text-left">
+          <div className="text-pink-700 font-normal leading-4 text-sm text-left">
+            <p className="font-semibold mb-0.5">{testimonials[currentIndex].name}</p>
+            <p className="mb-0.5">{testimonials[currentIndex].title}</p>
+            <p className="mb-0">{testimonials[currentIndex].company}</p>
+          </div>
+        </div>
+      </motion.div>
+
+        {/* Navigation dots */}
+        <div className="flex justify-start gap-2 py-4 px-1">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handleDotClick(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              currentIndex === index 
+                ? 'bg-pink-500 scale-125' 
+                : 'bg-pink-300 hover:bg-pink-400'
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -107,7 +145,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative bg-white lg:h-[90vh] flex items-center pt-20 lg:pt-18 pb-14 px-6 lg:px-32">
+      <section className="relative bg-white lg:h-[90vh] flex items-center pt-32 lg:pt-26 pb-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -612,22 +650,110 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+        </section>
 
-      {/* Testimonials Section */}
-      <section className="bg-[#eee2d8] py-14 pb-14 md:pb-[112px] px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex flex-col gap-6"
-          >
-            <AnimatedTestimonials />
-          </motion.div>
-        </div>
-      </section>
+        {/* My Design Superpowers Section */}
+        <section className="bg-[#eee2d8] py-14 px-6 lg:px-32">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="flex flex-col gap-6"
+            >
+              {/* Section Header */}
+              <div className="text-left">
+                <h2 className="text-base font-bold text-black">
+                  My Design Superpowers
+                </h2>
+              </div>
+
+              {/* Cards Grid - 3 cards in a row */}
+              <div className="flex flex-col lg:flex-row gap-2 justify-start w-full">
+                {/* Card 1 - Product Design */}
+                <motion.div 
+                  className="bg-[#a40047] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="w-6 h-6 text-white">
+                      <LightBulbIcon className="w-full h-full" />
+                    </div>
+                    <p className="text-white text-base font-bold">Product Design</p>
+                    <div className="text-white/80 text-base">
+                      <p className="mb-0">Branding & Vision</p>
+                      <p className="mb-0">UX Research & Validation</p>
+                      <p className="mb-0">Facilitation</p>
+                      <p>Marketing & Business Strategy</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 2 - Complex Problems */}
+                <motion.div 
+                  className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="w-6 h-6 text-white">
+                      <img src="/conversion_path.png" alt="Conversion Path" className="w-full h-full" />
+                    </div>
+                    <p className="text-white text-base font-bold">Complex Problems</p>
+                    <div className="text-white/80 text-base">
+                      <p className="mb-0">Reducing Cognitive Load</p>
+                      <p className="mb-0">Systems Thinking</p>
+                      <p className="mb-0">Data Models & Logic</p>
+                      <p>Technical Constraints & Debt</p>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Card 3 - Design Influence */}
+                <motion.div 
+                  className="bg-[#2f0616] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <div className="relative z-10 flex flex-col gap-4">
+                    <div className="w-6 h-6 text-white">
+                      <RocketLaunchIcon className="w-full h-full" />
+                    </div>
+                    <p className="text-white text-base font-bold">Design Influence</p>
+                    <div className="text-white/80 text-base">
+                      <p className="mb-0">Executive Alignment</p>
+                      <p className="mb-0">Team Collaboration</p>
+                      <p className="mb-0">Cross-Functional Leadership</p>
+                      <p>High Velocity Execution</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="bg-[#eee2d8] pt-0 pb-14 md:pb-[112px] px-6 lg:px-32">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-3 gap-8"
+            >
+              <div className="col-span-2">
+                <AnimatedTestimonials />
+              </div>
+              <div className="col-span-1">
+                {/* Empty column for spacing */}
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
       {/* Final CTA Section */}
       <section className="bg-black py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
