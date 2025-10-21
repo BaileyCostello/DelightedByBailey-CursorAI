@@ -428,7 +428,7 @@ export default function Home() {
                     ease: "easeOut"
                   }}
                   viewport={{ once: true }}
-                  className="w-12 h-12 -ml-3 relative shrink-0"
+                  className="w-8 h-8 -ml-2 relative shrink-0"
                 >
                   <img 
                     alt={`Circle ${index}`}
