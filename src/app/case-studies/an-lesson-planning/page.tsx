@@ -41,7 +41,7 @@ export default function ANetLessonPlanning() {
           <Image
             alt="ANet Hero Image"
             className="w-full h-auto rounded-2xl shadow-2xl"
-            src="/DelightedByBailey-CursorAI/ANet Hero Image.png"
+            src="/ANet Hero Image.png"
             width={1200}
             height={800}
           />
@@ -136,7 +136,7 @@ export default function ANetLessonPlanning() {
               <Image
                 alt="Teacher Persona"
                 className="w-full h-auto rounded-2xl mb-6"
-                src="/DelightedByBailey-CursorAI/ANet Persona.png"
+                src="/ANet Persona.png"
                 width={600}
                 height={400}
               />
@@ -234,7 +234,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Video Library Concept"
                   className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Concept 1.png"
+                  src="/ANet Concept 1.png"
                   width={600}
                   height={400}
                 />
@@ -269,7 +269,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Chat Bot Concept"
                   className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Concept 2.png"
+                  src="/ANet Concept 2.png"
                   width={600}
                   height={400}
                 />
@@ -304,7 +304,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Mobile App Concept"
                   className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Concept 3.png"
+                  src="/ANet Concept 3.png"
                   width={600}
                   height={400}
                 />
@@ -343,7 +343,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="ANet Concept 4"
                   className="w-full h-auto rounded-2xl"
-                  src="/DelightedByBailey-CursorAI/ANet Concept 4.png"
+                  src="/ANet Concept 4.png"
                   width={600}
                   height={400}
                 />
@@ -400,7 +400,7 @@ export default function ANetLessonPlanning() {
               <Image
                 alt="ANet FOCUS - Standards Page"
                 className="w-full h-auto rounded-2xl shadow-2xl"
-                src="/DelightedByBailey-CursorAI/ANet FOCUS - Standards Page.png"
+                src="/ANet FOCUS - Standards Page.png"
                 width={1200}
                 height={800}
               />
@@ -428,7 +428,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Old Vertical Progression"
                   className="w-full h-auto rounded relative z-10"
-                  src="/DelightedByBailey-CursorAI/OLD Vertical Progression.png"
+                  src="/OLD Vertical Progression.png"
                   width={200}
                   height={150}
                 />
@@ -442,7 +442,7 @@ export default function ANetLessonPlanning() {
                 <Image
                   alt="Helpful Solution"
                   className="w-full h-auto rounded relative z-10"
-                  src="/DelightedByBailey-CursorAI/Helpful Solution.png"
+                  src="/Helpful Solution.png"
                   width={200}
                   height={100}
                 />
