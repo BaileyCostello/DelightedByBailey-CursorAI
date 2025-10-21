@@ -428,33 +428,13 @@ export default function Home() {
                     ease: "easeOut"
                   }}
                   viewport={{ once: true }}
-                  className="w-8 h-8 -ml-2 relative shrink-0"
+                  className="w-12 h-12 -ml-3 relative shrink-0"
                 >
-                  {index === 1 ? (
-                    <img 
-                      alt="" 
-                      className="block max-w-none size-full -rotate-90" 
-                      src="/globe.svg" 
-                    />
-                  ) : index === 2 ? (
-                    <img 
-                      alt="" 
-                      className="block max-w-none size-full -rotate-90" 
-                      src="/window.svg" 
-                    />
-                  ) : index === 3 ? (
-                    <img 
-                      alt="" 
-                      className="block max-w-none size-full -rotate-90" 
-                      src="/file.svg" 
-                    />
-                  ) : (
-                    <img 
-                      alt="" 
-                      className="block max-w-none size-full -rotate-90" 
-                      src="/next.svg" 
-                    />
-                  )}
+                  <img 
+                    alt={`Circle ${index}`}
+                    className="block w-full h-full object-contain" 
+                    src={`/Circle ${index}.png`}
+                  />
                 </motion.div>
               ))}
             </motion.div>
