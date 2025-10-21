@@ -9,7 +9,7 @@ export default function Work() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Page Header */}
-      <section className="bg-white px-6 lg:px-32 pt-18 pb-6">
+      <section className="bg-white px-6 lg:px-32 pt-20 lg:pt-18 pb-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-7xl font-semibold text-black leading-none">
             My Work

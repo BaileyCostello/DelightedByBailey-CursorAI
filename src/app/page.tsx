@@ -107,7 +107,7 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative bg-white lg:h-[90vh] flex items-center pt-18 pb-14 px-6 lg:px-32 lg:pt-18 lg:pb-14">
+      <section className="relative bg-white lg:h-[90vh] flex items-center pt-20 lg:pt-18 pb-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
