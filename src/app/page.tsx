@@ -534,18 +534,9 @@ export default function Home() {
             </motion.div>
 
             {/* Project Description */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              viewport={{ once: true }}
-              className="text-sm text-red-200 font-normal leading-6"
-              style={{
-                y: useTransform(useScroll().scrollYProgress, [0, 0.16, 1], [0, 0, 124])
-              }}
-            >
+            <p className="text-sm text-red-200 font-normal leading-6 mt-16">
               Climate Risk Analysis, Jupiter Intel
-            </motion.p>
+            </p>
           </motion.div>
         </div>
       </section>
