@@ -1,10 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
 
 export default function Work() {
+  const { scrollYProgress } = useScroll();
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -37,7 +38,7 @@ export default function Work() {
               <Image
                 alt="ANet FOCUS - Standards Page"
                 className="w-full h-auto"
-                src="./ANet FOCUS - Standards Page.png"
+                    src="/ANet FOCUS - Standards Page.png"
                 width={400}
                 height={300}
               />
@@ -68,7 +69,7 @@ export default function Work() {
               <Image
                 alt="ANet FOCUS - Standards Page"
                 className="w-full h-full object-cover object-center"
-                src="./ANet FOCUS - Standards Page.png"
+                    src="/ANet FOCUS - Standards Page.png"
                 width={600}
                 height={600}
               />
@@ -241,25 +242,36 @@ export default function Work() {
         <div 
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url("./Mountains.png")',
+            backgroundImage: 'url("/Mountain.png")',
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 56%',
             backgroundRepeat: 'no-repeat'
           }}
         />
         
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto">
+          {/* Header Section - Centered at Top */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-left -mb-5 relative z-20"
+            className="text-left mb-32 relative z-20"
           >
-            <h2 className="text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight">
+            <h2 className="text-4xl font-bold text-pink-800 leading-tight mb-8">
               Throw something new at me
             </h2>
+            <Button
+              href="/contact/"
+              variant="secondary"
+              size="medium"
+              background="light"
+              trailingIcon={true}
+              className="inline-flex"
+            >
+              Tell Me About Your Project
+            </Button>
           </motion.div>
 
           {/* Preview Images Carousel */}
@@ -271,120 +283,120 @@ export default function Work() {
             className="relative -mx-6 lg:-mx-32 overflow-x-hidden"
           >
             <div 
-              className="flex gap-8 animate-scroll-smooth"
+              className="flex gap-2 animate-scroll-smooth"
               style={{
-                width: 'calc(450px * 14 + 32px * 13)' // 7 cards duplicated + 13 gaps
+                width: 'calc(380px * 12 + 760px * 2 + 8px * 13)' // 5 small cards + 2 large cards + 13 gaps
               }}
             >
               {/* First Set of Cards */}
               {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[760px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Dr.Treat App Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Dr-Treat-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Dr-Treat-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
                   </div>
                 </div>
               </div>
 
               {/* Exago Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Exago Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Exago-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Exago-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
                   </div>
                 </div>
               </div>
 
               {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[760px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Hanover Research Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Hanover-Research-Brand-Preview-Image.png"
-                    width={400}
-                    height={300}
+                    className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
+                    src="/Hanover-Research-Brand-Preview-Image.png"
+                    width={372}
+                    height={297}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
                   </div>
                 </div>
               </div>
 
               {/* First Mid Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="First Mid Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./First-Mid-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/First-Mid-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
                   </div>
                 </div>
               </div>
 
               {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Morgan-Lewis-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Morgan-Lewis-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
                   </div>
                 </div>
               </div>
 
               {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="RISA Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./RISA-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/RISA-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
                   </div>
                 </div>
               </div>
 
               {/* Survey Platform Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Survey Platform Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Hanover-Research-Brand-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
                   </div>
                 </div>
               </div>
@@ -392,113 +404,113 @@ export default function Work() {
 
               {/* Duplicate Set for Seamless Loop */}
               {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Dr.Treat App Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Dr-Treat-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Dr-Treat-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
                   </div>
                 </div>
               </div>
 
               {/* Exago Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Exago Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Exago-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Exago-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
                   </div>
                 </div>
               </div>
 
               {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[760px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Hanover Research Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Hanover-Research-Brand-Preview-Image.png"
-                    width={400}
-                    height={300}
+                    className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
+                    src="/Hanover-Research-Brand-Preview-Image.png"
+                    width={372}
+                    height={297}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
                   </div>
                 </div>
               </div>
 
               {/* First Mid Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="First Mid Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./First-Mid-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/First-Mid-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
                   </div>
                 </div>
               </div>
 
               {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Morgan-Lewis-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Morgan-Lewis-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
                   </div>
                 </div>
               </div>
 
               {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="RISA Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./RISA-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/RISA-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
                   </div>
                 </div>
               </div>
 
               {/* Survey Platform Preview */}
-              <div className="group flex-shrink-0 w-[450px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/20 backdrop-blur-sm h-[400px] px-6 py-5">
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Survey Platform Preview"
-                    className="w-full h-full object-contain rounded-xl group-hover:scale-[1.1] group-hover:z-20 transition-transform duration-300"
-                    src="./Hanover-Research-Brand-Preview-Image.png"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Hanover-Research-Brand-Preview-Image.png"
                     width={400}
                     height={300}
                   />
-                  <div className="absolute bottom-6 left-6 right-6 text-left pb-2">
-                    <p className="text-sm text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
                   </div>
                 </div>
               </div>
@@ -506,24 +518,6 @@ export default function Work() {
               </div>
             </motion.div>
 
-          {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-            className="text-left mt-12"
-          >
-            <Button
-              href="/contact/"
-              variant="primary"
-              size="medium"
-              background="light"
-              trailingIcon={true}
-            >
-              Tell Me About Your Project
-            </Button>
-            </motion.div>
         </div>
       </section>
     </div>
