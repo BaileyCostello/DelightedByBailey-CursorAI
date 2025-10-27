@@ -258,7 +258,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             {/* Left Column - Section Title */}
             <div 
-              className="flex flex-col items-start pb-4 mb-[-16px] relative z-10 lg:w-1/2 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:self-start lg:pt-20"
+              className="flex flex-col items-start pb-4 mb-[-16px] relative z-10 lg:w-1/2 lg:sticky lg:top-[30%] lg:-translate-y-1/2 lg:self-start"
             >
               {/* Desktop - Animated Text */}
               <div className="hidden lg:block text-5xl font-bold leading-none text-black max-w-2xl">
@@ -275,7 +275,7 @@ export default function Home() {
                   className="mb-0 text-gray-900"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                   viewport={{ once: true, margin: "-25%" }}
                 >
                   Meet
@@ -284,7 +284,7 @@ export default function Home() {
                   className="mb-0 text-pink-500 whitespace-nowrap"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
                   viewport={{ once: true, margin: "-25%" }}
                 >
                   Product Strategy

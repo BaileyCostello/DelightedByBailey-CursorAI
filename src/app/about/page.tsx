@@ -8,7 +8,9 @@ import {
   BeakerIcon,
   RocketLaunchIcon,
   HandRaisedIcon,
-  FaceSmileIcon
+  FaceSmileIcon,
+  ChevronDownIcon,
+  ChevronUpIcon
 } from '@heroicons/react/24/outline';
 
 export default function About() {
@@ -24,6 +26,8 @@ export default function About() {
   });
   const [cardsInView, setCardsInView] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [showIndustries, setShowIndustries] = useState(false);
+  const [brooklynImageLoaded, setBrooklynImageLoaded] = useState(false);
 
   // Create refs for each card
   const brightIdeasRef = useRef<HTMLDivElement>(null);
@@ -40,6 +44,14 @@ export default function About() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Preload Brooklyn image
+  useEffect(() => {
+    const img = document.createElement('img');
+    img.onload = () => setBrooklynImageLoaded(true);
+    img.onerror = () => setBrooklynImageLoaded(true); // Still set to true to avoid infinite loading
+    img.src = '/Brooklyn Image.png';
   }, []);
 
   // Detect screen size
@@ -136,14 +148,21 @@ export default function About() {
 
       {/* Hero Image Section */}
       <section className="relative h-[500px] px-6 lg:px-32 py-20 overflow-hidden">
-            <motion.div
+        {!brooklynImageLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center">
+            <div className="text-gray-500">Loading...</div>
+          </div>
+        )}
+        <motion.div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: 'url("./Brooklyn Image.png")',
+            backgroundImage: 'url("/Brooklyn Image.png")',
             backgroundSize: 'cover',
             backgroundPosition: 'center 60%',
             backgroundRepeat: 'no-repeat',
-            y: y
+            y: y,
+            opacity: brooklynImageLoaded ? 1 : 0,
+            transition: 'opacity 0.3s ease-in-out'
           }}
         />
         
@@ -167,31 +186,94 @@ export default function About() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-[#eee2d8] px-6 lg:px-32 py-14">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10">
-          <div className="flex flex-row gap-10 flex-1">
-            <div className="flex-1">
-              <p className="text-pink-700 text-base mb-4">Experience</p>
-              <p className="text-[#63082b] text-4xl font-bold leading-tight">8 Years</p>
-            </div>
-            <div className="flex-1">
-              <p className="text-pink-700 text-base mb-4">Industries</p>
-              <p className="text-[#63082b] text-4xl font-bold leading-tight">15+</p>
-            </div>
-          </div>
-          <div className="flex-1">
-            <p className="text-pink-700 text-base mb-4">Projects</p>
-            <p className="text-[#63082b] text-4xl font-bold leading-tight">30+</p>
-          </div>
-        </div>
-      </section>
-
-      {/* What makes me a great fit & Why my peers love working with me */}
+      {/* KPI Section & Why my peers love working with me */}
       <section className="bg-[#eee2d8] px-6 lg:px-32 py-14">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20">
-          {/* Left Column - Why my peers love working with me */}
+          {/* Left Column - KPI Section */}
           <div className="flex-1 order-1 lg:order-1">
+            <div className="space-y-8">
+              {/* First Row - Experience and Industries */}
+              <div className="flex flex-row gap-10">
+                <div className="flex-1">
+                  <p className="text-pink-700 text-base mb-4">Experience</p>
+                  <p className="text-[#63082b] text-4xl font-bold leading-tight">8 Years</p>
+                </div>
+                <div className="flex-1 relative">
+                  <p className="text-pink-700 text-base mb-4">Industries</p>
+                  <p className="text-[#63082b] text-4xl font-bold leading-tight">15+</p>
+                  <button
+                    onClick={() => setShowIndustries(!showIndustries)}
+                    className="flex items-center gap-1 text-pink-700 text-sm underline hover:text-pink-800 transition-colors mt-2"
+                  >
+                    {showIndustries ? 'Hide Industries' : 'Show Industries'}
+                    {showIndustries ? (
+                      <ChevronUpIcon className="w-4 h-4" />
+                    ) : (
+                      <ChevronDownIcon className="w-4 h-4" />
+                    )}
+                  </button>
+                  
+                  {/* Industries Dropdown - Absolute positioned to not affect layout */}
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: showIndustries ? 'auto' : 0,
+                      opacity: showIndustries ? 1 : 0
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="absolute top-full left-0 right-0 z-10 overflow-hidden"
+                  >
+                    <div className="pt-4 bg-[#eee2d8]">
+                      <div className="flex flex-col gap-2 text-sm text-[#63082b]">
+                        <div>B2B / SaaS</div>
+                        <div>B2C</div>
+                        <div>Start Ups</div>
+                        <div>BI & Data Analytics</div>
+                        <div>Marketing & Sales</div>
+                        <div>Law</div>
+                        <div>Education</div>
+                        <div>Accounting, Lending & Banks</div>
+                        <div>Operations & Management</div>
+                        <div>Travel</div>
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+              
+              {/* Second Row - Projects */}
+              <div className="lg:py-10">
+                <p className="text-pink-700 text-base mb-4">Projects</p>
+                <p className="text-[#63082b] text-4xl font-bold leading-tight">30+</p>
+              </div>
+              
+              {/* Let's Talk Button */}
+              <div className="mt-6 pt-4 lg:block hidden">
+                <Button 
+                  href="/contact/" 
+                  variant="secondary" 
+                  size="medium"
+                  trailingIcon={true}
+                >
+                  Let&apos;s Talk
+                </Button>
+              </div>
+              
+              {/* Mobile padding for industries dropdown space - only when expanded */}
+              <motion.div
+                className="lg:hidden"
+                initial={false}
+                animate={{
+                  height: showIndustries ? 120 : 0
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                style={{ overflow: 'hidden' }}
+              />
+            </div>
+          </div>
+
+          {/* Right Column - Why my peers love working with me */}
+          <div className="flex-1 order-2 lg:order-2">
             <h2 className="text-base font-bold text-black mb-6 pb-4">Why my peers love working with me</h2>
             <div ref={cardsContainerRef} className="grid grid-cols-2 gap-2 mb-4">
               {/* Left Column Cards */}
@@ -279,29 +361,12 @@ export default function About() {
                 </motion.div>
               </div>
           </div>
-            <p className="text-gray-500 text-base">
+            <p className="text-[#63082b] text-base">
               <span className="font-bold"> </span>I know because I asked  <span className="text-lg">😉</span>
             </p>
-          </div>
-
-          {/* Right Column - What makes me a great fit */}
-          <div className="flex-1 order-2 lg:order-2">
-            <h2 className="text-base font-bold text-black mb-6 pb-4">What makes me a great fit</h2>
-            <div className="space-y-4 text-[#2c3441] text-base">
-              <p>
-                <span className="font-bold">Product and Brand Strategy</span><br />
-                With diverse industry experience, I expertly translate ambiguous goals into creative product strategies and beloved designs - built to stand out in the market.
-              </p>
-              <p>
-                <span className="font-bold">Systems Thinking and Clarity</span><br />
-                Stemming from my background in computer science, I love simplifying technical or convoluted processes (SaaS, internal tools, complex data flows) and tailoring elegant, scalable solutions.
-              </p>
-              <p>
-                <span className="font-bold">Relationships and Collaboration</span><br />
-                Coworkers and clients love working with me, the process is fun, and I excel at achieving alignment. I believe in leveraging good ideas from everywhere, leading collaboration across teams, and an advocate for research.
-              </p>
-            </div>
-            <div className="mt-6 pt-4">
+            
+            {/* Mobile Let's Talk Button */}
+            <div className="lg:hidden mt-6 pt-4">
               <Button 
                 href="/contact/" 
                 variant="secondary" 

@@ -364,7 +364,7 @@ export default function Work() {
             <div 
               className="flex gap-2 animate-scroll-smooth"
               style={{
-                width: 'calc(380px * 12 + 760px * 2 + 8px * 13)' // 5 small cards + 2 large cards + 13 gaps
+                width: 'calc(380px * 8 + 570px * 2 + 760px * 2 + 8px * 15)' // 8 small cards + 2 medium cards + 2 large cards + 15 gaps
               }}
             >
               {/* First Set of Cards */}
@@ -416,6 +416,22 @@ export default function Work() {
                 </div>
               </div>
 
+              {/* EvoJets Preview */}
+              <div className="group flex-shrink-0 w-[570px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                  <Image
+                    alt="EvoJets Preview"
+                    className="w-5/6 h-5/6 object-contain rounded-xl mx-auto mt-2"
+                    src="/EvoJets Preview Image.png"
+                    width={400}
+                    height={300}
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Private Jet Charter App, EvoJets</p>
+                  </div>
+                </div>
+              </div>
+
               {/* First Mid Preview */}
               <div className="group flex-shrink-0 w-[380px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
@@ -428,22 +444,6 @@ export default function Work() {
                   />
                   <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
                     <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
-                  <Image
-                    alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Morgan-Lewis-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
                   </div>
                 </div>
               </div>
@@ -470,7 +470,7 @@ export default function Work() {
                   <Image
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl"
-                    src="/Hanover-Research-Brand-Preview-Image.png"
+                    src="/Hanover Research Survey Platform Preview Image.png"
                     width={400}
                     height={300}
                   />
@@ -480,10 +480,26 @@ export default function Work() {
                 </div>
               </div>
 
+              {/* Morgan Lewis Preview */}
+              <div className="group flex-shrink-0 w-[380px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                  <Image
+                    alt="Morgan Lewis Preview"
+                    className="w-full h-full object-contain rounded-xl"
+                    src="/Morgan-Lewis-Preview-Image.png"
+                    width={400}
+                    height={300}
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
+                  </div>
+                </div>
+              </div>
+
 
               {/* Duplicate Set for Seamless Loop */}
               {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
+              <div className="group flex-shrink-0 w-[760px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Dr.Treat App Preview"
@@ -530,6 +546,22 @@ export default function Work() {
                 </div>
               </div>
 
+              {/* EvoJets Preview */}
+              <div className="group flex-shrink-0 w-[570px]">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                  <Image
+                    alt="EvoJets Preview"
+                    className="w-5/6 h-5/6 object-contain rounded-xl mx-auto mt-2"
+                    src="/EvoJets Preview Image.png"
+                    width={400}
+                    height={300}
+                  />
+                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
+                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Private Jet Charter App, EvoJets</p>
+                  </div>
+                </div>
+              </div>
+
               {/* First Mid Preview */}
               <div className="group flex-shrink-0 w-[380px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
@@ -584,7 +616,7 @@ export default function Work() {
                   <Image
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl"
-                    src="/Hanover-Research-Brand-Preview-Image.png"
+                    src="/Hanover Research Survey Platform Preview Image.png"
                     width={400}
                     height={300}
                   />
