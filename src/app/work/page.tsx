@@ -9,21 +9,14 @@ export default function Work() {
   const { scrollYProgress } = useScroll();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 11; // Total number of heavy assets (including Mountain.png)
+  const totalAssets = 3; // Only preload essential assets (videos and featured case study images)
 
   useEffect(() => {
     const preloadAssets = async () => {
       const assetUrls = [
         '/ANet Preview Video.mp4',
         '/CDG-Movie.mp4',
-        '/Flat-iPad.png',
-        '/Dr-Treat-Preview-Image.png',
-        '/Exago-Preview-Image.png',
-        '/Hanover-Research-Brand-Preview-Image.png',
-        '/First-Mid-Preview-Image.png',
-        '/Morgan-Lewis-Preview-Image.png',
-        '/RISA-Preview-Image.png',
-        '/Mountain.png'
+        '/Flat-iPad.png'
       ];
 
       const loadAsset = (url: string) => {
@@ -66,6 +59,29 @@ export default function Work() {
 
     preloadAssets();
   }, []);
+
+  // Background load gallery section assets after main page loads
+  useEffect(() => {
+    if (!isLoading) {
+      const galleryAssets = [
+        '/Dr-Treat-Preview-Image.png',
+        '/Exago-Preview-Image.png',
+        '/Hanover-Research-Brand-Preview-Image.png',
+        '/First-Mid-Preview-Image.png',
+        '/Morgan-Lewis-Preview-Image.png',
+        '/RISA-Preview-Image.png',
+        '/EvoJets Preview Image.png',
+        '/Hanover Research Survey Platform Preview Image.png',
+        '/Mountain.png'
+      ];
+
+      // Load gallery assets in background without blocking UI
+      galleryAssets.forEach(url => {
+        const img = document.createElement('img');
+        img.src = url;
+      });
+    }
+  }, [isLoading]);
 
   if (isLoading) {
     return (

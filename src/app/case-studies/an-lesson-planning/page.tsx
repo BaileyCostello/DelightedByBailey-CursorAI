@@ -38,7 +38,7 @@ export default function ANetLessonPlanning() {
       {/* Hero Video */}
       <section className="bg-gray-100 py-8 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full lg:w-[calc(100%-288px)] mx-auto">
+          <div className="w-full max-w-[656px] mx-auto">
             <video
               className="w-full h-[600px] rounded-2xl shadow-lg border-[20px] border-gray-800 object-cover"
               autoPlay
