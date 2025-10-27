@@ -332,7 +332,7 @@ export default function ANetLessonPlanning() {
                   We continued to tweak the solution for another 5 rounds of feedback.
                 </p>
                 <p className="text-base text-gray-700 leading-6 text-left">
-                  The only reason we stopped testing was because, after the sixth round of testing, the designs received an incredible response:
+                  We only stopped testing when the designs received an incredible response:
                 </p>
               </motion.div>
               
