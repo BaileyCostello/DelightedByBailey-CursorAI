@@ -9,7 +9,7 @@ export default function Work() {
   const { scrollYProgress } = useScroll();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 10; // Total number of heavy assets
+  const totalAssets = 11; // Total number of heavy assets (including Mountain.png)
 
   useEffect(() => {
     const preloadAssets = async () => {
@@ -305,7 +305,7 @@ export default function Work() {
       </section>
 
       {/* Portfolio Preview Section */}
-      <section className="relative py-32 px-6 lg:px-32">
+      <section id="gallery-section" className="relative py-32 px-6 lg:px-32">
         <style jsx>{`
           .card {
             transition: transform 0.3s ease;
@@ -417,11 +417,11 @@ export default function Work() {
               </div>
 
               {/* EvoJets Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
+              <div className="group flex-shrink-0 w-[380px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="EvoJets Preview"
-                    className="w-5/6 h-5/6 object-contain rounded-xl mx-auto mt-2"
+                    className="w-full h-full object-contain rounded-xl pb-2"
                     src="/EvoJets Preview Image.png"
                     width={400}
                     height={300}
@@ -449,11 +449,11 @@ export default function Work() {
               </div>
 
               {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
+              <div className="group flex-shrink-0 w-[570px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="RISA Preview"
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
                     src="/RISA-Preview-Image.png"
                     width={400}
                     height={300}
@@ -547,11 +547,11 @@ export default function Work() {
               </div>
 
               {/* EvoJets Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
+              <div className="group flex-shrink-0 w-[380px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="EvoJets Preview"
-                    className="w-5/6 h-5/6 object-contain rounded-xl mx-auto mt-2"
+                    className="w-full h-full object-contain rounded-xl pb-2"
                     src="/EvoJets Preview Image.png"
                     width={400}
                     height={300}
@@ -595,11 +595,11 @@ export default function Work() {
               </div>
 
               {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
+              <div className="group flex-shrink-0 w-[570px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="RISA Preview"
-                    className="w-full h-full object-contain rounded-xl"
+                    className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
                     src="/RISA-Preview-Image.png"
                     width={400}
                     height={300}
