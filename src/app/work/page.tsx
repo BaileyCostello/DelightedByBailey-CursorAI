@@ -364,7 +364,7 @@ export default function Work() {
             <div 
               className="flex gap-2 animate-scroll-smooth"
               style={{
-                width: 'calc(380px * 8 + 570px * 2 + 760px * 2 + 8px * 15)' // 8 small cards + 2 medium cards + 2 large cards + 15 gaps
+                width: 'calc(380px * 8 + 570px * 4 + 8px * 15)' // 8 small cards + 4 medium cards + 15 gaps
               }}
             >
               {/* First Set of Cards */}
@@ -401,7 +401,7 @@ export default function Work() {
               </div>
 
               {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[760px]">
+              <div className="group flex-shrink-0 w-[570px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Hanover Research Preview"
@@ -531,7 +531,7 @@ export default function Work() {
               </div>
 
               {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[760px]">
+              <div className="group flex-shrink-0 w-[570px]">
                 <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
                   <Image
                     alt="Hanover Research Preview"
