@@ -37,7 +37,7 @@ const AnimatedTestimonials = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
         setIsVisible(true);
       }, 1000); // Wait for complete fade out before fade in
-    }, 5000); // Change every 5 seconds
+    }, 7000); // Change every 7 seconds
 
     return () => clearInterval(interval);
   }, [testimonials.length, isAutoPlaying]);
@@ -124,7 +124,7 @@ const AnimatedHeadlines = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % headlines.length);
         setIsVisible(true);
       }, 1000); // Wait for complete fade out before fade in
-    }, 5000); // Change every 5 seconds
+    }, 7000); // Change every 7 seconds
 
     return () => clearInterval(interval);
   }, [headlines.length]);
@@ -257,17 +257,45 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
             {/* Left Column - Section Title */}
-            <motion.div 
-              initial={{ opacity: 0, y: -40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 0, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-200px" }}
+            <div 
               className="flex flex-col items-start pb-4 mb-[-16px] relative z-10 lg:w-1/2 lg:sticky lg:top-1/2 lg:-translate-y-1/2 lg:self-start lg:pt-20"
             >
-              <h2 className="text-4xl font-bold text-pink-500 leading-tight text-left">
+              {/* Desktop - Animated Text */}
+              <div className="hidden lg:block text-5xl font-bold leading-none text-black max-w-2xl">
+                <motion.p 
+                  className="mb-0 text-gray-900"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0 }}
+                  viewport={{ once: true, margin: "-25%" }}
+                >
+                  Design
+                </motion.p>
+                <motion.p 
+                  className="mb-0 text-gray-900"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true, margin: "-25%" }}
+                >
+                  Meet
+                </motion.p>
+                <motion.p 
+                  className="mb-0 text-pink-500 whitespace-nowrap"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.0 }}
+                  viewport={{ once: true, margin: "-25%" }}
+                >
+                  Product Strategy
+                </motion.p>
+              </div>
+              
+              {/* Mobile - Original Text */}
+              <h2 className="lg:hidden text-4xl font-bold text-pink-500 leading-tight text-left">
                 Design Meet <br /> Product Strategy
               </h2>
-            </motion.div>
+            </div>
 
             {/* Right Column - Mockups Container with Overlapping Layout */}
             <motion.div 
@@ -360,19 +388,21 @@ export default function Home() {
             </p>
 
             {/* Mobile Layout - H2 Title */}
-            <p className="text-4xl font-bold text-pink-500 leading-tight order-2 lg:hidden">
+            <p className="text-4xl font-semibold text-gray-900 leading-tight order-2 lg:hidden">
               &ldquo;I feel like every teacher across the country could use this.&rdquo;
             </p>
 
-            {/* Mobile Layout - Image */}
+            {/* Mobile Layout - Video */}
             <div className="order-3 lg:hidden overflow-visible">
-              <Image
-                alt="ANet FOCUS - Standards Page"
-                className="w-full h-auto"
-                src="./ANet FOCUS - Standards Page.png"
-                width={400}
-                height={300}
-              />
+              <video
+                className="w-full h-auto rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* Mobile Layout - Description */}
@@ -395,15 +425,17 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Desktop Layout - Image */}
-            <div className="hidden lg:block h-[600px] relative order-2 overflow-visible">
-              <Image
-                alt="ANet FOCUS - Standards Page"
-                className="w-full h-full object-cover object-center"
-                src="./ANet FOCUS - Standards Page.png"
-                width={600}
-                height={600}
-              />
+            {/* Desktop Layout - Video */}
+            <div className="hidden lg:block h-[600px] w-[624px] relative order-2 overflow-visible flex items-center justify-center">
+              <video
+                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800 mx-auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
             </div>
 
             {/* Desktop Layout - Left Column (Text Content) */}
@@ -411,7 +443,7 @@ export default function Home() {
               <p className="text-base text-pink-700 font-normal leading-6">
                 Featured Case Study
               </p>
-              <p className="text-4xl font-bold text-pink-500 leading-tight">
+              <p className="text-4xl font-semibold text-gray-900 leading-tight">
                 &ldquo;I feel like every teacher across the country could use this.&rdquo;
               </p>
               <p className="text-sm text-pink-700 font-normal leading-6">
@@ -558,7 +590,7 @@ export default function Home() {
             </p>
 
             {/* Mobile Layout - H2 Title */}
-            <p className="text-4xl font-bold text-pink-500 leading-tight order-2 lg:hidden">
+            <p className="text-4xl font-semibold text-gray-900 leading-tight order-2 lg:hidden">
               Driving operations most valued metric - efficiency
             </p>
 
@@ -604,7 +636,7 @@ export default function Home() {
               <p className="text-base text-pink-700 font-normal leading-6">
                 Featured Case Study
               </p>
-              <p className="text-4xl font-bold text-pink-500 leading-tight">
+              <p className="text-4xl font-semibold text-gray-900 leading-tight">
                 Driving operations most valued metric - efficiency
               </p>
               <div className="flex flex-wrap gap-2">

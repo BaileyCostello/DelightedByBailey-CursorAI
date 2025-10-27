@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { Square2StackIcon } from '@heroicons/react/24/outline';
 
 export default function Contact() {
-  const [activeTab, setActiveTab] = useState<'call' | 'email'>('email');
   const [showToast] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -26,23 +25,6 @@ export default function Contact() {
     // Handle form submission here
     console.log('Form submitted:', formData);
   };
-
-
-  // Load Calendly script
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]');
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -69,41 +51,8 @@ export default function Contact() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            {/* Tabs */}
-            <div className="flex gap-4">
-              <button
-                onClick={() => setActiveTab('email')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'email'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
-              >
-                Send an Email
-              </button>
-              <button
-                onClick={() => setActiveTab('call')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'call'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
-              >
-                Schedule a Call
-              </button>
-            </div>
-
-            {/* Tab Content */}
-            {activeTab === 'call' ? (
-              <div className="mt-6">
-                <div 
-                  className="calendly-inline-widget" 
-                  data-url="https://calendly.com/bailey-costello/15min" 
-                  style={{minWidth: '320px', height: '700px'}}
-                />
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Email Form */}
+            <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Mobile Form Layout */}
                 <div className="lg:hidden space-y-6">
                   <div className="space-y-1">
@@ -260,7 +209,6 @@ export default function Contact() {
                   </div>
                 </div>
               </form>
-            )}
           </motion.div>
         </div>
       </section>

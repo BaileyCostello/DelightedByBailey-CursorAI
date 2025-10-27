@@ -3,9 +3,84 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
+import { useState, useEffect } from 'react';
 
 export default function Work() {
   const { scrollYProgress } = useScroll();
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedAssets, setLoadedAssets] = useState(0);
+  const totalAssets = 10; // Total number of heavy assets
+
+  useEffect(() => {
+    const preloadAssets = async () => {
+      const assetUrls = [
+        '/ANet Preview Video.mp4',
+        '/CDG-Movie.mp4',
+        '/Flat-iPad.png',
+        '/Dr-Treat-Preview-Image.png',
+        '/Exago-Preview-Image.png',
+        '/Hanover-Research-Brand-Preview-Image.png',
+        '/First-Mid-Preview-Image.png',
+        '/Morgan-Lewis-Preview-Image.png',
+        '/RISA-Preview-Image.png',
+        '/Mountain.png'
+      ];
+
+      const loadAsset = (url: string) => {
+        return new Promise((resolve) => {
+          if (url.endsWith('.mp4')) {
+            const video = document.createElement('video');
+            video.preload = 'metadata';
+            video.onloadedmetadata = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            video.onerror = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            video.src = url;
+          } else {
+            const img = document.createElement('img');
+            img.onload = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            img.onerror = () => {
+              setLoadedAssets(prev => prev + 1);
+              resolve(true);
+            };
+            img.src = url;
+          }
+        });
+      };
+
+      // Load all assets in parallel
+      await Promise.all(assetUrls.map(loadAsset));
+      
+      // Small delay to ensure smooth transition
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 500);
+    };
+
+    preloadAssets();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="relative">
+            <div className="w-16 h-16 border-4 border-gray-200 border-t-pink-500 rounded-full animate-spin mx-auto mb-4"></div>
+            <div className="text-sm text-gray-600">
+              Loading assets...
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
@@ -33,16 +108,18 @@ export default function Work() {
               Helping Teachers Reclaim Time to Focus on Student Outcomes
             </p>
 
-            {/* Mobile Layout - Image */}
+            {/* Mobile Layout - Video */}
             <div className="order-2 lg:hidden overflow-visible">
-              <Image
-                alt="ANet FOCUS - Standards Page"
-                className="w-full h-auto"
-                    src="/ANet FOCUS - Standards Page.png"
-                width={400}
-                height={300}
-              />
-        </div>
+              <video
+                className="w-full h-auto rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
+            </div>
 
             {/* Mobile Layout - Description */}
             <div className="order-3 lg:hidden">
@@ -64,16 +141,18 @@ export default function Work() {
               </Button>
                       </div>
 
-            {/* Desktop Layout - Image */}
-            <div className="hidden lg:block h-[600px] relative order-2 overflow-visible">
-              <Image
-                alt="ANet FOCUS - Standards Page"
-                className="w-full h-full object-cover object-center"
-                    src="/ANet FOCUS - Standards Page.png"
-                width={600}
-                height={600}
-              />
-                      </div>
+            {/* Desktop Layout - Video */}
+            <div className="hidden lg:block h-[600px] w-[624px] relative order-2 overflow-visible flex items-center justify-center">
+              <video
+                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800 mx-auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
+            </div>
 
             {/* Desktop Layout - Left Column (Text Content) */}
             <div className="hidden lg:flex flex-col gap-6 py-5 order-1">

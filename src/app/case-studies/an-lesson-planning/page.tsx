@@ -35,16 +35,20 @@ export default function ANetLessonPlanning() {
         </div>
       </section>
 
-      {/* Hero Image */}
+      {/* Hero Video */}
       <section className="bg-gray-100 py-8 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <Image
-            alt="ANet Hero Image"
-            className="w-full h-auto rounded-2xl shadow-2xl"
-            src="/ANet Hero Image.png"
-            width={1200}
-            height={800}
-          />
+          <div className="w-full lg:w-[calc(100%-288px)] mx-auto">
+            <video
+              className="w-full h-[600px] rounded-2xl shadow-lg border-[20px] border-gray-800 object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/ANet Preview Video.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
       </section>
 
@@ -485,20 +489,16 @@ export default function ANetLessonPlanning() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-12"
           >
-            <div className="text-left">
-              <blockquote className="text-4xl lg:text-5xl font-bold text-pink-500 leading-tight mb-8">
-                &quot;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&quot;
-              </blockquote>
-              <div className="text-base text-pink-700">
-                <p className="font-semibold">Gillian Kradin</p>
-                <p>Director of Product</p>
-                <p>Achievement Network, Client</p>
+            <blockquote className="text-3xl lg:text-4xl font-bold text-pink-500 mb-8 max-w-4xl">
+              &quot;You&apos;re a very good listener. If only we had been able to work with you full time - the possibilities would have been endless.&quot;
+            </blockquote>
+            <div className="flex items-center space-x-4">
+              <div className="text-left">
+                <p className="font-semibold text-pink-700 text-lg">Gillian Kradin</p>
+                <p className="text-pink-700">Director of Product</p>
+                <p className="text-pink-700">Achievement Network, Client</p>
               </div>
-            </div>
-            <div>
-              {/* Empty right column for better text wrapping */}
             </div>
           </motion.div>
         </div>

@@ -102,7 +102,7 @@ export default function CDGMaintenanceCaseStudy() {
             className="max-w-4xl"
           >
             <h1 className="text-4xl lg:text-5xl font-semibold text-black leading-tight mb-6">
-              Driving Operations Most Valued Metric, Efficiency
+              Driving Operations Most Valued Metric - Efficiency
             </h1>
             <p className="text-sm text-[#a40047] font-normal leading-6 mb-6">
               Maintenance Management App, CMMS Data Group
@@ -128,8 +128,8 @@ export default function CDGMaintenanceCaseStudy() {
                   alt="iPad device frame"
                   className="absolute inset-0 w-full h-full object-contain object-center"
                 />
-                <div className="absolute inset-0 flex items-start justify-center">
-                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-16">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
                     <video
                       autoPlay
                       loop
@@ -579,7 +579,7 @@ export default function CDGMaintenanceCaseStudy() {
       {/* On-site & Usability Testing Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -587,13 +587,13 @@ export default function CDGMaintenanceCaseStudy() {
               viewport={{ once: true }}
             >
               <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 lg:max-w-2xl">
                 I was invited to one of the most efficient operations in the country
               </h2>
-              <p className="text-lg text-[#2c3441] max-w-3xl">
+              <p className="text-lg text-[#2c3441] max-w-2xl">
                 An American Eagle distribution center, boasting 97.3% efficiency and our client&apos;s biggest champion of the app.
               </p>
-              <p className="text-lg text-[#2c3441] mt-4">
+              <p className="text-lg text-[#2c3441] mt-4 max-w-2xl">
                 Previously unplanned, I organized our team to take full advantage of meeting the technicians and performed moderated usability testing.
               </p>
             </motion.div>
@@ -643,7 +643,7 @@ export default function CDGMaintenanceCaseStudy() {
       {/* On-site & Usability Testing Results Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -652,10 +652,10 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <p className="text-[#a40047] text-lg mb-4">On-site & Usability Testing</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                We tested the principle workflow, where 4 of 5 technicians completed it with little to no help
+                4 of 5 technicians completed the principle workflow with little to no help
               </h2>
-              <p className="text-lg text-[#2c3441] max-w-3xl">
-                Keeping consistent terminology helped technicians adjust to the updates, while we vastly improved the find-ability of options and the flexibility to jump between steps.
+              <p className="text-lg text-[#2c3441] max-w-2xl">
+                Keeping consistent terminology helped technicians adjust to the changes, and they loved the added flexibility to jump between steps. We left confident in the core solution and made incremental improvements for finding high traffic options.
               </p>
             </motion.div>
 
