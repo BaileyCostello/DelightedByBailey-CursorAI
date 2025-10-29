@@ -330,14 +330,18 @@ export default function ExagoBI() {
             </div>
           </div>
 
-          <p className="text-base text-gray-700 leading-6 max-w-4xl">
-            The sales evaluation process suffered from drop-off at two key points:
+          <div className="max-w-4xl">
+            <p className="text-base text-gray-700 leading-6">
+              The sales evaluation process suffered from drop-off at two key points:
+            </p>
             <ul className="list-disc list-outside mt-4 mb-4 space-y-2 ml-6">
               <li>Buyers trying to build their first report, especially when they went ahead of the sales team and tried it without guidance</li>
               <li>Internal demos, where buyers tried to convince the business to allocate budget</li>
             </ul>
-            These efforts quickly devolved into frustration and distrust with the salesperson, making buyers skeptical that they, let alone their organization, could get value out of the product.
-          </p>
+            <p className="text-base text-gray-700 leading-6">
+              These efforts quickly devolved into frustration and distrust with the salesperson, making buyers skeptical that they, let alone their organization, could get value out of the product.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -331,7 +331,7 @@ export default function Work() {
           >
             {/* Mobile Layout - H2 Title */}
             <p className="text-4xl font-semibold text-gray-900 leading-tight order-1 lg:hidden">
-              Improving Usability to Drive Sales
+              Winning Deals Through Simple Design
             </p>
 
             {/* Mobile Layout - Image */}
@@ -373,7 +373,7 @@ export default function Work() {
             {/* Desktop Layout - Left Column (Text Content) */}
             <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
               <p className="text-4xl font-semibold text-gray-900 leading-tight">
-                Improving Usability to Drive Sales
+                Winning Deals Through Simple Design
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
