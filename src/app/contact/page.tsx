@@ -29,7 +29,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Page Header */}
-      <section className="bg-yellow-200 px-6 lg:px-32 pt-32 lg:pt-26 pb-6">
+      <section className="bg-yellow-200 px-6 lg:px-32 pt-[216px] lg:pt-[216px] pb-6">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-7xl font-bold text-gray-900 leading-none mb-6">
             Contact

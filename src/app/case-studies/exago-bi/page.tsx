@@ -7,7 +7,7 @@ export default function ExagoBI() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="bg-gray-100 pt-32 lg:pt-26 pb-14 px-6 lg:px-32 min-h-screen flex flex-col justify-center">
+      <section className="bg-gray-100 pt-[216px] lg:pt-[216px] pb-14 px-6 lg:px-32 min-h-screen flex flex-col justify-center">
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
