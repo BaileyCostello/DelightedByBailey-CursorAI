@@ -35,8 +35,8 @@ export default function Contact() {
             Contact
           </h1>
           <div className="space-y-2">
-            <p className="text-gray-600 text-lg">bqacos@gmail.com</p>
-            <p className="text-gray-600 text-lg">+1 (402) 769-5766</p>
+            <p className="text-pink-700 text-base">bqacos@gmail.com</p>
+            <p className="text-pink-700 text-base">+1 (402) 769-5766</p>
           </div>
         </div>
       </section>
