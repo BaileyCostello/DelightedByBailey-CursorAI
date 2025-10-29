@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
           {/* Logo */}
           <div className="flex flex-col gap-6">
-            <div className="h-8 w-auto">
+            <Link href="/" className="h-8 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-200">
               <Image 
                 src="/Logo-Dark.png"
                 alt="Delighted By Bailey Logo"
@@ -17,7 +17,7 @@ export default function Footer() {
                 height={32}
                 className="h-8 w-auto"
               />
-            </div>
+            </Link>
           </div>
 
           {/* Pages Section */}
