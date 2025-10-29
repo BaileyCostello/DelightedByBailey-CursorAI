@@ -61,7 +61,7 @@ export default function ExagoBI() {
               <div>
                 <p className="text-base font-normal text-pink-700 mb-6">Overview</p>
                 <p className="text-base text-gray-700 leading-6">
-                  After a year-long lull in sales, the CEO decided to make a dramatic change to the roadmap, dropping everything to elevate core product offerings, including Exago's most valuable and best selling report building platform.
+                  After a year-long lull in sales, the CEO decided to make a dramatic change to the roadmap, dropping everything to elevate core product offerings, including Exago&apos;s most valuable and best selling report building platform.
                 </p>
               </div>
               <div>
@@ -103,7 +103,7 @@ export default function ExagoBI() {
                 />
               </div>
               <p className="text-base text-gray-500 leading-6">
-                2018 and 2019 were Exago's best years for gaining new clients, but that momentum crashed in 2020.
+                2018 and 2019 were Exago&apos;s best years for gaining new clients, but that momentum crashed in 2020.
               </p>
             </motion.div>
           </div>
@@ -231,7 +231,7 @@ export default function ExagoBI() {
             className="mb-12"
           >
             <p className="text-base text-gray-700 leading-6 max-w-3xl mb-8">
-              I met with Exago's senior sales engineer to understand what was causing people to say no to Exago's report creation tool. During our conversation, two unforgiving comments stood out and summarized the first problem well:
+              I met with Exago&apos;s senior sales engineer to understand what was causing people to say no to Exago&apos;s report creation tool. During our conversation, two unforgiving comments stood out and summarized the first problem well:
             </p>
           </motion.div>
 
@@ -244,7 +244,7 @@ export default function ExagoBI() {
               className="bg-gray-50 p-8 rounded-2xl"
             >
               <blockquote className="text-xl font-semibold text-gray-900 mb-6">
-                "There's an immediate negative reaction when sales introduces the advanced report designer to prospects."
+                &quot;There&apos;s an immediate negative reaction when sales introduces the advanced report designer to prospects.&quot;
               </blockquote>
               <p className="text-base text-gray-600">
                 Nick Avossa<br />
@@ -260,7 +260,7 @@ export default function ExagoBI() {
               className="bg-gray-50 p-8 rounded-2xl"
             >
               <blockquote className="text-xl font-semibold text-gray-900 mb-6">
-                "This looks like the product we're trying to leave - if it hadn't been updated in 3 years."
+                &quot;This looks like the product we&apos;re trying to leave - if it hadn&apos;t been updated in 3 years.&quot;
               </blockquote>
               <p className="text-base text-gray-600">
                 One buyer during a sales call
@@ -281,7 +281,7 @@ export default function ExagoBI() {
               viewport={{ once: true }}
             >
               <p className="text-base text-gray-700 leading-6">
-                These comments weren't all that surprising; the tool's style hadn't been updated since it's inception in 2006.<br /><br />
+                These comments weren&apos;t all that surprising; the tool&apos;s style hadn&apos;t been updated since it&apos;s inception in 2006.<br /><br />
                 It was, however, surprising to hear that more than half of lost deals specifically mentioned the outdated interface as one of the reasons they chose a competitor over Exago.
               </p>
             </motion.div>
@@ -318,7 +318,7 @@ export default function ExagoBI() {
           >
             <p className="text-base font-normal text-pink-700 mb-6">User Journey</p>
             <p className="text-base text-gray-700 leading-6 mb-8">
-              Next, I asked Nick to walk me through the entire buyer's journey and point out where the biggest issues arose.
+              Next, I asked Nick to walk me through the entire buyer&apos;s journey and point out where the biggest issues arose.
             </p>
           </motion.div>
 
@@ -424,13 +424,13 @@ export default function ExagoBI() {
             <div className="flex flex-col">
               <div className="bg-gray-100 p-8 rounded-2xl h-full flex flex-col">
                 <img
-                  alt="After: A cleaner, more breathable look that maintained it's core structure for long time existing users"
+                  alt="After: A cleaner, more breathable look that maintained it&apos;s core structure for long time existing users"
                   className="w-full h-auto rounded-xl flex-1 object-contain"
                   src="/Advanced Reports/NewARGrid.png"
                 />
               </div>
                 <p className="text-base text-gray-500 leading-6 mt-4 min-h-[3rem]">
-                  <span className="font-bold">After:</span> A cleaner, more breathable look that maintained it's core structure for long time existing users. I also introduced signifiers for previously hidden, important actions that user's failed to find during usability testing.
+                  <span className="font-bold">After:</span> A cleaner, more breathable look that maintained it&apos;s core structure for long time existing users. I also introduced signifiers for previously hidden, important actions that user&apos;s failed to find during usability testing.
                 </p>
             </div>
           </div>
@@ -451,7 +451,7 @@ export default function ExagoBI() {
           </motion.div>
 
           <p className="text-base text-gray-700 leading-6 max-w-4xl mb-8">
-            According to Jakob's Law, users spend most of their time on other sites and therefore prefer your site to work the same way. We updated interactions to behave more predictably by mirroring Microsoft Excel and Google Sheets, further easing the learning curve.
+            According to Jakob&apos;s Law, users spend most of their time on other sites and therefore prefer your site to work the same way. We updated interactions to behave more predictably by mirroring Microsoft Excel and Google Sheets, further easing the learning curve.
           </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 items-stretch">
@@ -559,7 +559,7 @@ export default function ExagoBI() {
           <div className="mb-16">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Desire Path Blocked by an Error State</h3>
             <p className="text-base text-gray-700 leading-6 mb-8 max-w-4xl">
-              New and experienced users alike would run into an annoying error over and over, indicating a "desire path."
+              New and experienced users alike would run into an annoying error over and over, indicating a &quot;desire path.&quot;
             </p>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
@@ -585,13 +585,13 @@ export default function ExagoBI() {
               <div className="flex flex-col">
                 <div className="bg-gray-100 px-8 py-6 rounded-2xl h-full flex flex-col">
                   <img
-                    alt="Updated Flow: We couldn't fully eliminate the step, but integrated it into the workflow and prevented the error."
+                    alt="Updated Flow: We couldn&apos;t fully eliminate the step, but integrated it into the workflow and prevented the error."
                     className="w-full h-auto rounded-xl flex-1 object-contain max-w-md mx-auto"
                     src="/Advanced Reports/New and Old Workflow.png"
                   />
                 </div>
                 <p className="text-base text-gray-500 leading-6 mt-4">
-                  <span className="font-bold">Updated Flow:</span> We couldn't fully eliminate the step, but integrated it into the workflow and prevented the error.
+                  <span className="font-bold">Updated Flow:</span> We couldn&apos;t fully eliminate the step, but integrated it into the workflow and prevented the error.
                 </p>
               </div>
             </div>
@@ -658,7 +658,7 @@ export default function ExagoBI() {
                 Sensitive to those with years of muscle memory, I was determined to test toolbar changes with existing users - despite having no allocated time for it.
               </p>
               <p className="text-base text-gray-700 leading-6 mb-8">
-                I was handed the perfect opportunity, a chance to present at Exago's client conference.
+                I was handed the perfect opportunity, a chance to present at Exago&apos;s client conference.
               </p>
               <p className="text-4xl font-bold text-gray-900 leading-tight mb-6">
                 In 4 hours total, I achieved testing with 20+ clients and the highest rated presentation of 8 speakers.
@@ -762,7 +762,7 @@ export default function ExagoBI() {
                 Fewer questions during sales calls, reduced support tickets, and more upgrades.
               </h3>
               <p className="text-base text-gray-700 leading-6 mb-6">
-                Nick noticed buyers stopped having a severe negative reaction to the interface, but people still needed at least some training to use the tool effectively. The usability improvements helped, but weren't quite enough for first timers to build a realistic report without help.
+                Nick noticed buyers stopped having a severe negative reaction to the interface, but people still needed at least some training to use the tool effectively. The usability improvements helped, but weren&apos;t quite enough for first timers to build a realistic report without help.
               </p>
             </motion.div>
             <motion.div
@@ -808,10 +808,10 @@ export default function ExagoBI() {
             >
               <p className="text-base font-normal text-pink-700 mb-6">Sales Numbers</p>
               <p className="text-lg text-gray-700 leading-7">
-                We released these improvements in Q1 of 2021, but by Q3, Exago was acquired. We can only look at the first two quarters, where Q1 and Q2 had better results than 2020 and were comparable to Exago's best years - indicating that we were poised for a great year in sales.
+                We released these improvements in Q1 of 2021, but by Q3, Exago was acquired. We can only look at the first two quarters, where Q1 and Q2 had better results than 2020 and were comparable to Exago&apos;s best years - indicating that we were poised for a great year in sales.
               </p>
               <p className="text-base text-gray-500 leading-6">
-                This data is unfortunately not enough to qualify the project's impact, nor does it tell the story of outside factors - like turnover in the sales department, the COVID-19 pandemic, and fluctuations in the BI market.
+                This data is unfortunately not enough to qualify the project&apos;s impact, nor does it tell the story of outside factors - like turnover in the sales department, the COVID-19 pandemic, and fluctuations in the BI market.
               </p>
             </motion.div>
           </div>
