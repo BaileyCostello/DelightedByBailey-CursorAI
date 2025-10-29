@@ -211,7 +211,7 @@ export default function Work() {
           >
             {/* Mobile Layout - H2 Title */}
             <p className="text-4xl font-semibold text-gray-900 leading-tight order-1 lg:hidden">
-              Driving operations most valued metric - efficiency
+              Driving Operations Most Valued Metric - Efficiency
             </p>
 
             {/* Mobile Layout - Image with Video Overlay (appears after title, before badges) */}
@@ -268,7 +268,7 @@ export default function Work() {
             {/* Desktop Layout - Left Column (Text Content) */}
             <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
               <p className="text-4xl font-semibold text-gray-900 leading-tight">
-                Driving operations most valued metric - efficiency
+                Driving Operations Most Valued Metric - Efficiency
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
@@ -320,6 +320,97 @@ export default function Work() {
         </div>
       </section>
 
+      {/* Featured Case Study - Exago Section */}
+      <section className="bg-white py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+          >
+            {/* Mobile Layout - H2 Title */}
+            <p className="text-4xl font-semibold text-gray-900 leading-tight order-1 lg:hidden">
+              Improving Usability to Drive Sales
+            </p>
+
+            {/* Mobile Layout - Image */}
+            <div className="h-[520px] relative order-2 lg:hidden">
+              <div className="relative w-full h-full">
+                <img 
+                  alt="Exago AR Preview Screen" 
+                  className="w-full h-full object-contain object-center" 
+                  src="/Advanced Reports/Exago AR Preview Screen.png"
+                />
+              </div>
+            </div>
+
+            {/* Mobile Layout - Badges */}
+            <div className="flex flex-wrap gap-2 order-3 lg:hidden">
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+            </div>
+
+            {/* Mobile Layout - Description */}
+            <p className="text-sm text-pink-700 font-normal leading-6 order-4 lg:hidden">
+              Data Reporting Tool, Exago BI
+            </p>
+
+            {/* Mobile Layout - Button */}
+            <div className="flex lg:hidden justify-start order-5">
+              <Button
+                href="/case-studies/exago-bi"
+                variant="secondary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
+              >
+                Read Case Study
+              </Button>
+            </div>
+
+            {/* Desktop Layout - Left Column (Text Content) */}
+            <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
+              <p className="text-4xl font-semibold text-gray-900 leading-tight">
+                Improving Usability to Drive Sales
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              </div>
+              <p className="text-sm text-pink-700 font-normal leading-6">
+                Data Reporting Tool, Exago BI
+              </p>
+              <div className="flex justify-start">
+                <Button
+                  href="/case-studies/exago-bi"
+                  variant="secondary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
+                >
+                  Read Case Study
+                </Button>
+              </div>
+            </div>
+
+            {/* Desktop Layout - Right Column (Image) */}
+            <div className="hidden lg:block h-[700px] relative order-2">
+              <div className="relative w-full h-full">
+                <img 
+                  alt="Exago AR Preview Screen" 
+                  className="w-full h-full object-contain object-center" 
+                  src="/Advanced Reports/Exago AR Preview Screen.png"
+                />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Portfolio Preview Section */}
       <section id="gallery-section" className="relative py-32 px-6 lg:px-32">
         <style jsx>{`
@@ -355,7 +446,7 @@ export default function Work() {
             className="text-left mb-32 relative z-20"
           >
             <h2 className="text-4xl font-bold text-pink-800 leading-tight mb-8">
-              Throw something new at me
+              Throw Something New at Me
             </h2>
             <Button
               href="/contact/"

@@ -616,14 +616,14 @@ export default function CDGMaintenanceCaseStudy() {
                 >
                   <source src="/CDG DistributionLine.mp4" type="video/mp4" />
                 </video>
-              </div>
+                    </div>
               <div className="aspect-video">
                 <img 
                   src="/CDG On-site Computer.png" 
                   alt="On-site computer setup"
                   className="w-full h-full object-cover rounded-lg shadow-lg"
                 />
-              </div>
+                    </div>
               
               {/* Bottom row - single image spanning full width */}
               <div className="col-span-2">
