@@ -11,13 +11,12 @@ export default function ExagoBI() {
         <div className="max-w-7xl mx-auto w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
             className="max-w-4xl mb-8"
           >
             <h1 className="text-4xl lg:text-5xl font-semibold text-gray-900 leading-tight mb-6">
-              Improving Usability to Drive Sales
+              Winning Deals Through Design: Simplifying Exago&apos;s Core Report Builder
             </h1>
             <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
               Data Reporting Tool, Exago BI
@@ -30,9 +29,8 @@ export default function ExagoBI() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
             className="w-full flex justify-center"
           >
             <div className="w-full max-w-4xl">

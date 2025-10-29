@@ -109,96 +109,6 @@ export default function Work() {
         </div>
       </section>
 
-      {/* Featured Case Study - ANet Section */}
-      <section className="bg-yellow-50 py-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
-          >
-            {/* Mobile Layout - H2 Title */}
-            <p className="text-4xl font-semibold text-gray-900 leading-tight order-1 lg:hidden">
-              Helping Teachers Reclaim Time to Focus on Student Outcomes
-            </p>
-
-            {/* Mobile Layout - Video */}
-            <div className="order-2 lg:hidden overflow-visible">
-              <video
-                className="w-full h-auto rounded-[32px] shadow-lg border-[20px] border-gray-800"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src="/ANet Preview Video.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            {/* Mobile Layout - Description */}
-            <div className="order-3 lg:hidden">
-              <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
-                Lesson Planning Assistant, Achievement Network
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              </div>
-              <Button
-                href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
-                variant="secondary"
-                size="medium"
-                background="light"
-                trailingIcon={true}
-              >
-                Read Case Study
-              </Button>
-                      </div>
-
-            {/* Desktop Layout - Video */}
-            <div className="hidden lg:block h-[600px] w-[624px] relative order-2 overflow-visible flex items-center justify-center">
-              <video
-                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800 mx-auto"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src="/ANet Preview Video.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            {/* Desktop Layout - Left Column (Text Content) */}
-            <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
-              <p className="text-4xl font-semibold text-gray-900 leading-tight">
-                Helping Teachers Reclaim Time to Focus on Student Outcomes
-              </p>
-              <p className="text-sm text-pink-700 font-normal leading-6">
-                Lesson Planning Assistant, Achievement Network
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              </div>
-              <div className="flex justify-start">
-                <Button
-                  href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
-                  variant="secondary"
-                  size="medium"
-                  background="light"
-                  trailingIcon={true}
-                >
-                  Read Case Study
-                </Button>
-                    </div>
-                  </div>
-              </motion.div>
-        </div>
-      </section>
-
-
       {/* Featured Case Study - CDG Section */}
       <section className="bg-gray-50 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -316,6 +226,95 @@ export default function Work() {
                 </div>
               </div>
             </div>
+              </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Case Study - ANet Section */}
+      <section className="bg-yellow-50 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+          >
+            {/* Mobile Layout - H2 Title */}
+            <p className="text-4xl font-semibold text-gray-900 leading-tight order-1 lg:hidden">
+              Helping Teachers Reclaim Time to Focus on Student Outcomes
+            </p>
+
+            {/* Mobile Layout - Video */}
+            <div className="order-2 lg:hidden overflow-visible">
+              <video
+                className="w-full h-auto rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Mobile Layout - Description */}
+            <div className="order-3 lg:hidden">
+              <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
+                Lesson Planning Assistant, Achievement Network
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              </div>
+              <Button
+                href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
+                variant="secondary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
+              >
+                Read Case Study
+              </Button>
+                      </div>
+
+            {/* Desktop Layout - Video */}
+            <div className="hidden lg:block h-[600px] w-[624px] relative order-2 overflow-visible flex items-center justify-center">
+              <video
+                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800 mx-auto"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Desktop Layout - Left Column (Text Content) */}
+            <div className="hidden lg:flex flex-col gap-6 py-5 order-1">
+              <p className="text-4xl font-semibold text-gray-900 leading-tight">
+                Helping Teachers Reclaim Time to Focus on Student Outcomes
+              </p>
+              <p className="text-sm text-pink-700 font-normal leading-6">
+                Lesson Planning Assistant, Achievement Network
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
+              </div>
+              <div className="flex justify-start">
+                <Button
+                  href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
+                  variant="secondary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
+                >
+                  Read Case Study
+                </Button>
+                    </div>
+                  </div>
               </motion.div>
         </div>
       </section>

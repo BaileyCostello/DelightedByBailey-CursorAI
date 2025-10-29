@@ -44,16 +44,22 @@ export default function Footer() {
             <h4 className="text-yellow-50 font-semibold text-base">Case Studies</h4>
             <div className="flex flex-col gap-4">
               <Link 
+                href="/case-studies/cdg-maintenance" 
+                className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
+              >
+                Driving Operations Most Valued Metric: A Maintenance Management App
+              </Link>
+              <Link 
                 href="/case-studies/an-lesson-planning" 
                 className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
               >
                 Helping Teachers Reclaim Time to Focus on Student Outcomes: A Lesson Planning Resource
               </Link>
               <Link 
-                href="/case-studies/cdg-maintenance" 
+                href="/case-studies/exago-bi" 
                 className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
               >
-                Driving Operations Most Valued Metric: A Maintenance Management App
+                Winning Deals Through Design: Simplifying Exago&apos;s Core Report Builder
               </Link>
             </div>
           </div>
