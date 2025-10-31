@@ -411,6 +411,7 @@ export default function Home() {
                 Lesson Planning Assistant, Achievement Network
               </p>
               <div className="flex flex-wrap gap-2 mb-4">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">0 to 1</span>
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
               </div>
@@ -450,6 +451,7 @@ export default function Home() {
                 Lesson Planning Assistant, Achievement Network
               </p>
               <div className="flex flex-wrap gap-2">
+                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">0 to 1</span>
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
                 <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
               </div>
@@ -706,10 +708,10 @@ export default function Home() {
                     </div>
                     <p className="text-white text-base font-bold">Product Design</p>
                     <div className="text-white/80 text-base">
-                      <p className="mb-0">Branding & Vision</p>
-                      <p className="mb-0">UX Research & Validation</p>
-                      <p className="mb-0">Facilitation</p>
-                      <p>Marketing & Business Strategy</p>
+                      <p className="leading-[22px] mb-2">Branding & Vision</p>
+                      <p className="leading-[22px] mb-2">UX Research & Validation</p>
+                      <p className="leading-[22px] mb-2">Facilitation</p>
+                      <p className="leading-[22px]">Marketing & Business Strategy</p>
                     </div>
                   </div>
                 </motion.div>
@@ -726,10 +728,10 @@ export default function Home() {
                     </div>
                     <p className="text-white text-base font-bold">Complex Problems</p>
                     <div className="text-white/80 text-base">
-                      <p className="mb-0">Reducing Cognitive Load</p>
-                      <p className="mb-0">Systems Thinking</p>
-                      <p className="mb-0">Data Models & Logic</p>
-                      <p>Technical Constraints & Debt</p>
+                      <p className="leading-[22px] mb-2">Reducing Cognitive Load</p>
+                      <p className="leading-[22px] mb-2">Systems Thinking</p>
+                      <p className="leading-[22px] mb-2">Data Models & Logic</p>
+                      <p className="leading-[22px]">Technical Constraints & Debt</p>
                     </div>
                   </div>
                 </motion.div>
@@ -746,10 +748,10 @@ export default function Home() {
                     </div>
                     <p className="text-white text-base font-bold">Design Influence</p>
                     <div className="text-white/80 text-base">
-                      <p className="mb-0">Executive Alignment</p>
-                      <p className="mb-0">Team Collaboration</p>
-                      <p className="mb-0">Cross-Functional Leadership</p>
-                      <p>High Velocity Execution</p>
+                      <p className="leading-[22px] mb-2">Executive Alignment</p>
+                      <p className="leading-[22px] mb-2">Collaboration & Cross-Functional Leadership</p>
+                      <p className="leading-[22px] mb-2">High Velocity Execution</p>
+                      <p className="leading-[22px]">Process Improvement</p>
                     </div>
                   </div>
                 </motion.div>
