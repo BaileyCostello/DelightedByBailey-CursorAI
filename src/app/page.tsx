@@ -124,7 +124,7 @@ const AnimatedHeadlines = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % headlines.length);
         setIsVisible(true);
       }, 1000); // Wait for complete fade out before fade in
-    }, 7000); // Change every 7 seconds
+    }, 5250); // Change every 5 seconds
 
     return () => clearInterval(interval);
   }, [headlines.length]);
@@ -171,7 +171,7 @@ export default function Home() {
                   className="mb-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+                  transition={{ duration: 0.8, delay: 0.25 }}
                 >
                   Analytical
                 </motion.p>
@@ -179,7 +179,7 @@ export default function Home() {
                   className="mb-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
                 >
                   Curious
                 </motion.p>
@@ -187,7 +187,7 @@ export default function Home() {
                   className="text-pink-500 mb-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.5 }}
+                  transition={{ duration: 0.8, delay: 0.75 }}
                 >
                   Designer
                 </motion.p>
@@ -200,14 +200,18 @@ export default function Home() {
                 className="text-base text-gray-700 leading-6 max-w-md"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 2.0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
               >
                 <p className="mb-0">
-                  8 years experience as a UX and Product Designer - last seen leading projects and delighting clients with compelling solutions backed by research.
+                  8 years experience as a UX and Product Designer
+                </p>
+                <p className="mb-0">&nbsp;</p>
+                <p className="mb-0">
+                  Last seen leading projects and delighting clients at DOOR3, a design and development agency
                 </p>
                 <p className="mb-0">&nbsp;</p>
                 <p>
-                  <span>I am also proudly a </span>
+                  <span>Proudly a </span>
                   <span className="underline font-semibold">
                     <a 
                       href="https://www.accessibilityassociation.org/cpacc" 
@@ -226,7 +230,7 @@ export default function Home() {
                 className="hidden lg:flex flex-col sm:flex-row gap-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 2.0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
               >
                 <Button
                   href="/work/"

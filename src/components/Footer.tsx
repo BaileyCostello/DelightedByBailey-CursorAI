@@ -69,9 +69,6 @@ export default function Footer() {
         <div className="flex flex-col gap-6 mt-10">
           <div className="bg-gray-600 h-px w-full"></div>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <p className="text-red-300 text-sm">
-              Created with love and Cursor AI
-            </p>
             <div className="flex gap-4 items-center">
               <a
                 href="https://github.com/BaileyCostello"
@@ -98,6 +95,9 @@ export default function Footer() {
                 </div>
               </a>
             </div>
+            <p className="text-red-300 text-sm">
+              Created with love and Cursor AI
+            </p>
           </div>
         </div>
       </div>
