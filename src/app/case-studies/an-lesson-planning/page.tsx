@@ -39,7 +39,30 @@ export default function ANetLessonPlanning() {
       {/* Hero Video */}
       <section className="bg-gray-100 py-8 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="w-full max-w-[656px] mx-auto">
+          {/* Mobile Layout - Video */}
+          <div className="w-full lg:hidden overflow-hidden rounded-[32px]">
+            <div style={{ paddingTop: '20%', paddingBottom: '20%', paddingLeft: '5%', paddingRight: '5%', overflow: 'hidden' }}>
+              <video
+                className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
+                style={{ 
+                  width: '100%',
+                  height: 'auto',
+                  transform: 'scale(1.8)',
+                  transformOrigin: 'center',
+                  display: 'block'
+                }}
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/ANet Preview Video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          {/* Desktop Layout - Video */}
+          <div className="hidden lg:block w-full max-w-[656px] mx-auto">
             <video
               className="w-full h-[600px] rounded-2xl shadow-lg border-[20px] border-gray-800 object-cover"
               autoPlay

@@ -246,16 +246,25 @@ export default function Work() {
             </p>
 
             {/* Mobile Layout - Video */}
-            <div className="order-2 lg:hidden overflow-visible">
-              <video
-                className="w-full h-auto rounded-[32px] shadow-lg border-[20px] border-gray-800"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src="/ANet Preview Video.mp4" type="video/mp4" />
-              </video>
+            <div className="order-2 lg:hidden w-full overflow-hidden rounded-[32px]">
+              <div style={{ paddingTop: '20%', paddingBottom: '20%', paddingLeft: '5%', paddingRight: '5%', overflow: 'hidden' }}>
+                <video
+                  className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
+                  style={{ 
+                    width: '100%',
+                    height: 'auto',
+                    transform: 'scale(1.8)',
+                    transformOrigin: 'center',
+                    display: 'block'
+                  }}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/ANet Preview Video.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
 
             {/* Mobile Layout - Description */}
