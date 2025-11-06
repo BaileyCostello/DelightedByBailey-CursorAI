@@ -334,6 +334,7 @@ export default function Home() {
                       src="./Dr-Treat-Mockup.png"
                       width={310}
                       height={520}
+                      unoptimized
                     />
                   </motion.div>
                 </motion.div>
@@ -365,6 +366,7 @@ export default function Home() {
                       src="./VolunTime-Mockup.png"
                       width={310}
                       height={520}
+                      unoptimized
                     />
                   </motion.div>
                 </motion.div>
@@ -556,6 +558,7 @@ export default function Home() {
                   width={800}
                   height={483}
                   className="w-full h-auto"
+                  unoptimized
                 />
                 
                 {/* Video Overlay */}
@@ -617,6 +620,7 @@ export default function Home() {
                 src="./CDG Mockup.png"
                 width={600}
                 height={520}
+                unoptimized
               />
             </div>
 
@@ -819,6 +823,7 @@ export default function Home() {
                     src="./Headshot.png"
                     width={286}
                     height={289}
+                    unoptimized
                   />
                 </div>
 
