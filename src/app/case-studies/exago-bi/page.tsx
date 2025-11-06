@@ -141,27 +141,27 @@ export default function ExagoBI() {
       {/* Project Phases */}
       <section className="bg-yellow-200 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-pink-800 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-yellow-50">1</span>
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">1</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Research</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Research</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">2</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">2</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Design</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Design</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">3</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">3</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Impact</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Impact</span>
               </div>
             </div>
           </div>
@@ -370,27 +370,27 @@ export default function ExagoBI() {
       {/* Design Phase */}
       <section className="bg-yellow-200 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">1</span>
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">1</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Research</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Research</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-pink-800 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-yellow-50">2</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">2</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Design</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Design</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">3</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">3</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Impact</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Impact</span>
               </div>
             </div>
           </div>
@@ -700,27 +700,27 @@ export default function ExagoBI() {
       {/* Impact Phase */}
       <section className="bg-yellow-200 py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-center">
-            <div className="flex items-center space-x-4">
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">1</span>
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">1</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Research</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Research</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-yellow-50 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-pink-800">2</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">2</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Design</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Design</span>
               </div>
-              <div className="w-[104px] h-px bg-red-300"></div>
-              <div className="flex flex-col items-center gap-1">
-                <div className="bg-pink-800 px-4 py-2 rounded-full">
-                  <span className="text-base font-normal text-yellow-50">3</span>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">3</span>
                 </div>
-                <span className="text-base font-normal text-pink-700">Impact</span>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Impact</span>
               </div>
             </div>
           </div>
