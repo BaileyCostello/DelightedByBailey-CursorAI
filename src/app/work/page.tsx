@@ -124,27 +124,26 @@ export default function Work() {
               Driving Operations Most Valued Metric - Efficiency
             </p>
 
-            {/* Mobile Layout - Image with Video Overlay (appears after title, before badges) */}
-            <div className="h-[520px] relative order-2 lg:hidden">
-              <div className="relative w-full h-full">
-                <img 
-                  alt="CDG iPad Mockup" 
-                  className="w-full h-full object-contain object-center" 
-                  src="/Flat-iPad.png"
-                />
-                {/* Video Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/CDG-Movie.mp4" type="video/mp4" />
-                    </video>
-                  </div>
+            {/* Mobile Layout - Video */}
+            <div className="order-2 lg:hidden w-full">
+              <div className="rounded-[16px] border-[12px] border-gray-800 shadow-lg overflow-hidden">
+                <div style={{ padding: '42% 0%', overflow: 'hidden' }}>
+                  <video
+                    className="rounded-[16px] w-full h-auto"
+                    style={{ 
+                      width: '100%',
+                      height: 'auto',
+                      transform: 'scale(2.5)',
+                      transformOrigin: 'center',
+                      display: 'block'
+                    }}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src="/CDG-Movie.mp4" type="video/mp4" />
+                  </video>
                 </div>
               </div>
             </div>
@@ -202,29 +201,17 @@ export default function Work() {
               </div>
             </div>
 
-            {/* Desktop Layout - Right Column (Image with Video Overlay) */}
-            <div className="hidden lg:block h-[700px] relative order-2">
-              <div className="relative w-full h-full">
-                <img 
-                  alt="CDG iPad Mockup" 
-                  className="w-full h-full object-contain object-center" 
-                  src="/Flat-iPad.png"
-                />
-                {/* Video Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[68%] h-[81%] relative overflow-hidden rounded-2xl -translate-y-11">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/CDG-Movie.mp4" type="video/mp4" />
-                    </video>
-                  </div>
-                </div>
-              </div>
+            {/* Desktop Layout - Right Column (Video with Black Border) */}
+            <div className="hidden lg:block relative order-2 overflow-visible flex items-center justify-center" style={{ width: '428.72px', minWidth: '428.72px', maxWidth: '428.72px', height: '600px' }}>
+              <video
+                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src="/CDG-Movie.mp4" type="video/mp4" />
+              </video>
             </div>
               </motion.div>
         </div>
@@ -246,24 +233,26 @@ export default function Work() {
             </p>
 
             {/* Mobile Layout - Video */}
-            <div className="order-2 lg:hidden w-full overflow-hidden rounded-[32px]">
-              <div style={{ paddingTop: '20%', paddingBottom: '20%', paddingLeft: '5%', paddingRight: '5%', overflow: 'hidden' }}>
-                <video
-                  className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
-                  style={{ 
-                    width: '100%',
-                    height: 'auto',
-                    transform: 'scale(1.8)',
-                    transformOrigin: 'center',
-                    display: 'block'
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src="/ANet Preview Video.mp4" type="video/mp4" />
-                </video>
+            <div className="order-2 lg:hidden w-full">
+              <div className="rounded-[16px] border-[12px] border-gray-800 shadow-lg overflow-hidden">
+                <div style={{ padding: '20% 4%', overflow: 'hidden' }}>
+                  <video
+                    className="rounded-[16px] w-full h-auto"
+                    style={{ 
+                      width: '100%',
+                      height: 'auto',
+                      transform: 'scale(1.8)',
+                      transformOrigin: 'center',
+                      display: 'block'
+                    }}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src="/ANet Preview Video.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </div>
             </div>
 

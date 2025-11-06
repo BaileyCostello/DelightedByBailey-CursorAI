@@ -398,7 +398,7 @@ export default function Home() {
 
             {/* Mobile Layout - Video */}
             <div className="order-3 lg:hidden w-full overflow-hidden rounded-[32px]">
-              <div style={{ paddingTop: '20%', paddingBottom: '20%', paddingLeft: '5%', paddingRight: '5%', overflow: 'hidden' }}>
+              <div style={{ padding: '20% 4%', overflow: 'hidden' }}>
                 <video
                   className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
                   style={{ 

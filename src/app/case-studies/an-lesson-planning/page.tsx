@@ -40,8 +40,8 @@ export default function ANetLessonPlanning() {
       <section className="bg-gray-100 py-8 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           {/* Mobile Layout - Video */}
-          <div className="w-full lg:hidden overflow-hidden rounded-[32px]">
-            <div style={{ paddingTop: '20%', paddingBottom: '20%', paddingLeft: '5%', paddingRight: '5%', overflow: 'hidden' }}>
+          <div className="w-full lg:hidden" style={{ overflowX: 'hidden', overflowY: 'visible' }}>
+            <div style={{ padding: '20% 4%', overflow: 'hidden' }}>
               <video
                 className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
                 style={{ 

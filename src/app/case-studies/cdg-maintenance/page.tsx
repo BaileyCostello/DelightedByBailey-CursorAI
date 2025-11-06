@@ -121,53 +121,85 @@ export default function CDGMaintenanceCaseStudy() {
       <section className="pt-0 pb-16 bg-[#f1f3f5]">
         <div className="max-w-7xl mx-auto px-6 lg:px-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            <div className="flex flex-col">
-              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
-                <img 
-                  src="/Flat-iPad.png" 
-                  alt="iPad device frame"
-                  className="absolute inset-0 w-full h-full object-contain object-center"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
+            {/* Before Video */}
+            <div className="flex flex-col items-center">
+              {/* Mobile Layout */}
+              <div className="lg:hidden w-full mb-4">
+                <div className="rounded-[16px] border-[12px] border-gray-800 shadow-lg overflow-hidden">
+                  <div style={{ padding: '42% 0%', overflow: 'hidden' }}>
                     <video
+                      className="rounded-[16px] w-full h-auto"
+                      style={{ 
+                        width: '100%',
+                        height: 'auto',
+                        transform: 'scale(2.5)',
+                        transformOrigin: 'center',
+                        display: 'block'
+                      }}
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
                     >
                       <source src="/CDG-Before-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
               </div>
-              <p className="text-gray-500 pl-6" style={{ marginTop: '-56px' }}>
+              {/* Desktop Layout */}
+              <div className="hidden lg:block relative overflow-visible flex items-center justify-center mb-4" style={{ width: '428.72px', minWidth: '428.72px', maxWidth: '428.72px', height: '600px' }}>
+                <video
+                  className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/CDG-Before-Movie.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <p className="text-gray-500 text-center">
                 <span className="font-bold">Before:</span> A blank canvas, created by a single developer <br />
               </p>
             </div>
-            <div className="flex flex-col">
-              <div className="bg-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden mb-4 relative h-[700px]">
-                <img 
-                  src="/Flat-iPad.png" 
-                  alt="iPad device frame"
-                  className="absolute inset-0 w-full h-full object-contain object-center"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[75%] h-[70%] relative overflow-hidden rounded-2xl -translate-y-11">
+            {/* After Video */}
+            <div className="flex flex-col items-center">
+              {/* Mobile Layout */}
+              <div className="lg:hidden w-full mb-4">
+                <div className="rounded-[16px] border-[12px] border-gray-800 shadow-lg overflow-hidden">
+                  <div style={{ padding: '42% 0%', overflow: 'hidden' }}>
                     <video
+                      className="rounded-[16px] w-full h-auto"
+                      style={{ 
+                        width: '100%',
+                        height: 'auto',
+                        transform: 'scale(2.5)',
+                        transformOrigin: 'center',
+                        display: 'block'
+                      }}
                       autoPlay
                       loop
                       muted
                       playsInline
-                      className="w-full h-full object-cover"
                     >
                       <source src="/CDG-Movie.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
               </div>
-              <p className="text-gray-500 pl-6" style={{ marginTop: '-56px' }}>
+              {/* Desktop Layout */}
+              <div className="hidden lg:block relative overflow-visible flex items-center justify-center mb-4" style={{ width: '428.72px', minWidth: '428.72px', maxWidth: '428.72px', height: '600px' }}>
+                <video
+                  className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/CDG-Movie.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <p className="text-gray-500 text-center">
                 <span className="font-bold">After:</span> A simple app that conforms neatly into technicians workflows, saves time, and improves response rates
               </p>
             </div>
@@ -701,7 +733,7 @@ export default function CDGMaintenanceCaseStudy() {
                 alt="CDG Solution Mockup 1"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-sm text-gray-600 mt-2">Gamify completed work to engage and motivate teams</p>
+              <p className="text-sm text-gray-600" style={{ padding: '0% 8%', marginBottom: '48px' }}>Gamify completed work to engage and motivate teams</p>
             </motion.div>
 
             <motion.div
@@ -715,7 +747,7 @@ export default function CDGMaintenanceCaseStudy() {
                 alt="CDG Solution Mockup 2"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-sm text-gray-600 mt-2">Large buttons and inputs for technicians often wearing gloves</p>
+              <p className="text-sm text-gray-600" style={{ padding: '0% 8%', marginBottom: '48px' }}>Large buttons and inputs for technicians often wearing gloves</p>
             </motion.div>
 
             <motion.div
@@ -729,7 +761,7 @@ export default function CDGMaintenanceCaseStudy() {
                 alt="CDG Solution Mockup 3"
                 className="w-full h-auto rounded-lg"
               />
-              <p className="text-sm text-gray-600 mt-2">Offline mode and timers for warehouses with limited connectivity</p>
+              <p className="text-sm text-gray-600" style={{ padding: '0% 8%', marginBottom: '48px' }}>Offline mode and timers for warehouses with limited connectivity</p>
             </motion.div>
           </div>
         </div>
