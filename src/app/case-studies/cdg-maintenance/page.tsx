@@ -8,12 +8,11 @@ export default function CDGMaintenanceCaseStudy() {
   const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 18; // Total number of heavy assets
+  const totalAssets = 17; // Total number of heavy assets
 
   useEffect(() => {
     const preloadAssets = async () => {
       const assetUrls = [
-        '/Flat-iPad.png',
         '/CDG-Movie.mp4',
         '/CDG-Before-Movie.mp4',
         '/Double Diamond Approach.png',

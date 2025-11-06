@@ -9,14 +9,23 @@ export default function Work() {
   const { scrollYProgress } = useScroll();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 3; // Only preload essential assets (videos and featured case study images)
+  const totalAssets = 14; // Preload all essential assets (videos and images)
 
   useEffect(() => {
     const preloadAssets = async () => {
       const assetUrls = [
         '/ANet Preview Video.mp4',
         '/CDG-Movie.mp4',
-        '/Flat-iPad.png'
+        '/Advanced Reports/Exago AR Preview Screen.png',
+        '/Dr-Treat-Preview-Image.png',
+        '/Exago-Preview-Image.png',
+        '/Hanover-Research-Brand-Preview-Image.png',
+        '/EvoJets Preview Image.png',
+        '/First-Mid-Preview-Image.png',
+        '/RISA-Preview-Image.png',
+        '/Hanover Research Survey Platform Preview Image.png',
+        '/Morgan-Lewis-Preview-Image.png',
+        '/Mountain.png'
       ];
 
       const loadAsset = (url: string) => {
