@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export default function CDGMaintenanceCaseStudy() {
-  const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow' | 'wireframes'>('audience');
+  const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow'>('audience');
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
   const totalAssets = 17; // Total number of heavy assets
@@ -218,7 +218,7 @@ export default function CDGMaintenanceCaseStudy() {
             >
               <p className="text-[#a40047] text-lg mb-4">Overview</p>
               <p className="text-[#2c3441] text-lg leading-relaxed">
-                My client&apos;s SaaS solution for managing maintenance team&apos;s work was second to none for their feature-rich desktop app, but they consistently lost deals to buyers reliant on the complimentary mobile app for technicians.
+                Our client&apos;s maintenance management software offered a feature-rich desktop experience, but they consistently lost deals to buyers reliant on the low-quality, companion app for technicians.
               </p>
             </motion.div>
             
@@ -243,7 +243,7 @@ export default function CDGMaintenanceCaseStudy() {
       </section>
 
       {/* Role Highlights Section */}
-      <section className="py-20 bg-[#e8d7c8]">
+      <section className="py-20 bg-yellow-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div
@@ -292,30 +292,46 @@ export default function CDGMaintenanceCaseStudy() {
         </div>
       </section>
 
-      {/* Double Diamond Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-[#decfd5] text-lg mb-8 mb-14">Project Phases</p>
-            <div className="relative max-w-6xl mx-auto">
-              <img 
-                src="/Double Diamond Approach.png" 
-                alt="Double Diamond Approach - Project Phases"
-                className="w-full h-auto rounded-lg shadow-lg scale-150"
-              />
+      {/* Discover Phase */}
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">1</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Discover</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">2</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Wireframe</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">3</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Test</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">4</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Deliver</span>
+              </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Discovery Workshops Section */}
-      <section className="lg:h-screen bg-white pt-14 pb-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-white overflow-visible" style={{ paddingTop: '80px', paddingBottom: activeTab === 'userflow' ? '264px' : '128px', minHeight: '100vh' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-visible">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -326,8 +342,8 @@ export default function CDGMaintenanceCaseStudy() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <p className="text-[#a40047] text-lg mb-4">Discovery Workshops</p>
-                <p className="text-[#2c3441] text-lg mb-8">
-                  I designed probing, structured conversations to effectively steer group discussions.
+                <p className="text-[#2c3441] text-lg">
+                  I designed probing, structured conversations to steer group discussions.
                 </p>
               </div>
               <div>
@@ -367,22 +383,13 @@ export default function CDGMaintenanceCaseStudy() {
                     : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
                 }`}
               >
-                User Flow
-              </button>
-              <button
-                onClick={() => setActiveTab('wireframes')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'wireframes'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
-              >
-                Wireframes
+                User Flows
               </button>
             </div>
           </div>
 
           {/* Tab Content */}
+          <div style={{ minHeight: '280px' }}>
           {activeTab === 'audience' && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -448,7 +455,7 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12 overflow-visible"
             >
               <div>
                 <p className="text-lg text-gray-700 mb-6">
@@ -507,7 +514,7 @@ export default function CDGMaintenanceCaseStudy() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="relative z-10"
+              className="relative z-10 overflow-visible"
             >
               <div className="backdrop-blur-sm bg-white/80 rounded-2xl p-6 w-[596px]">
                 <p className="text-lg text-gray-700 mb-6">
@@ -550,65 +557,137 @@ export default function CDGMaintenanceCaseStudy() {
               </div>
             </motion.div>
           )}
-
-          {activeTab === 'wireframes' && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
-            >
-              <div>
-                <p className="text-lg text-gray-700 mb-6">
-                  Used as a discussion tool to:
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">Build mutual understanding of concepts</p>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">Experiment with ideas</p>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">Quickly shape the bones of the app</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative w-[150%] overflow-hidden">
-                <img
-                  src="/CDG Wireframes.png"
-                  alt="CDG Wireframes"
-                  className="h-auto"
-                  style={{ 
-                    width: '1000px',
-                    marginLeft: '0px'
-                  }}
-                />
           </div>
-            </motion.div>
-          )}
+
+        </div>
+      </section>
+
+      {/* Wireframe Phase */}
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">1</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Discover</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">2</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Wireframe</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">3</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Test</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">4</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Deliver</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Wireframes Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex flex-wrap gap-4 mb-12 max-w-full justify-center">
+              <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="text-yellow-900 font-normal">Build a mutual understanding of concepts</p>
+              </div>
+              <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="text-yellow-900 font-normal">Experiment with ideas</p>
+              </div>
+              <div className="flex items-center space-x-4 p-4 rounded-2xl">
+                <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <p className="text-yellow-900 font-normal">Quickly shape the bones of the app</p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <img
+                src="/CDG Wireframes.png"
+                alt="CDG Wireframes"
+                className="h-auto max-w-full"
+                style={{ 
+                  width: '1000px',
+                  maxWidth: '100%'
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Test Phase */}
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">1</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Discover</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">2</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Wireframe</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">3</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Test</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">4</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Deliver</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* On-site & Usability Testing Section */}
-      <section className="pt-64 pb-20 bg-white">
+      <section className="pb-20 bg-white" style={{ paddingTop: '128px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32">
             <motion.div
@@ -703,6 +782,43 @@ export default function CDGMaintenanceCaseStudy() {
                 className="w-full h-auto rounded-lg"
               />
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Deliver Phase */}
+      <section className="bg-yellow-200 py-14 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-center overflow-x-auto">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">1</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Discover</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">2</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Wireframe</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-yellow-50 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-pink-800">3</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Test</span>
+              </div>
+              <div className="w-[40px] lg:w-[104px] h-px bg-red-300 shrink-0"></div>
+              <div className="flex flex-col items-center gap-1 shrink-0">
+                <div className="bg-pink-800 w-[40px] h-[40px] min-h-[40px] lg:w-auto lg:h-auto lg:px-4 lg:py-2 rounded-full flex items-center justify-center">
+                  <span className="text-sm lg:text-base font-normal text-yellow-50">4</span>
+                </div>
+                <span className="text-sm lg:text-base font-normal text-pink-700">Deliver</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

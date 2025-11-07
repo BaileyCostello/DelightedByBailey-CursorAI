@@ -495,7 +495,7 @@ export default function ANetLessonPlanning() {
                 An undeniable differentiator in the education market
               </h3>
               <p className="text-base text-gray-700 leading-6">
-                Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom.<br /><br /> The success of the project reached Achievement Network&apos;s Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept.<br /><br /> Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning over 50k in revenue.
+                Relief! This is what we heard most from teachers, who felt that our concept would free up hours from their busy schedules and come more prepared to help students engage in the classroom.<br /><br /> The success of the project reached Achievement Network&apos;s Board of Directors, who were so impressed it sparked a large company initiative to develop the content needed for a working proof of concept.<br /><br /> Pleased with my work, they hired my agency to do the development work for the project while I continued working with them regularly for two years, earning $50,000 in revenue.
               </p>
             </div>
             <div>
