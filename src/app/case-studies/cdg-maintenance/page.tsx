@@ -458,35 +458,9 @@ export default function CDGMaintenanceCaseStudy() {
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 overflow-visible"
             >
               <div>
-                <p className="text-lg text-gray-700 mb-6">
-                  Next, we used personas to dig into our primary users, <span className="font-bold">old-school technicians</span>:
+                <p className="text-lg text-gray-700">
+                  Next, we used personas to dig into our primary users, <span className="font-bold">old-school technicians</span>. We learned they were not tech-savvy, easily frustrated by tech, and interacted with the app even while they were wrenching and fixing machinery - carrying a cart of tools and a small tablet with them everywhere.
                 </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">Not tech-savvy and easily frustrated by tech</p>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">On-the-go environment, carrying a cart of tools and a small tablet</p>
-                  </div>
-                  <div className="flex items-center space-x-4 p-4 rounded-2xl">
-                    <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-yellow-900 font-normal">Poor usability meant low team adoption, resulting in disorganization</p>
-                  </div>
-                </div>
               </div>
 
               <div className="relative h-[500px] w-[580px]">
