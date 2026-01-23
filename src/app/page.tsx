@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
+import CaseStudyCard from '@/components/CaseStudyCard';
+import QuoteCardsCarousel from '@/components/QuoteCardsCarousel';
 import { useState, useEffect } from 'react';
 import { RocketLaunchIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
@@ -104,155 +106,275 @@ const AnimatedTestimonials = () => {
 };
 
 // Animated text cycling component
-const AnimatedHeadlines = () => {
-  const headlines = [
+// Scrolling accomplishments carousel component
+const AccomplishmentsCarousel = () => {
+  const accomplishments = [
     "Helped rescue a client's project to meet a critical deadline",
     "Reduced usability related support tickets by 18%",
-    "Helped secure funding for multiple start-ups", 
+    "Helped secure funding and partnerships for multiple start-ups",
     "Turned a conference presentation into a first-click test",
     "Turned successful projects into long-term partnerships",
+    "Created the flagship UX internship role where I worked in college",
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsVisible(false);
-      
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % headlines.length);
-        setIsVisible(true);
-      }, 1000); // Wait for complete fade out before fade in
-    }, 5250); // Change every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [headlines.length]);
+  // Calculate card width and total width for animation
+  const cardWidthMobile = 264; // Narrower width for mobile (280 - 16)
+  const cardWidthDesktop = 334; // Base width for desktop (350 - 16)
+  const gap = 16; // gap-4 = 16px
+  const singleSetWidthMobile = accomplishments.length * (cardWidthMobile + gap);
+  const singleSetWidthDesktop = accomplishments.length * (cardWidthDesktop + gap);
 
   return (
-    <motion.p 
-      className="text-xl font-bold text-yellow-50 max-w-[356px]"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: isVisible ? 1 : 0 }}
-      transition={{ duration: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
-      {headlines[currentIndex]}
-    </motion.p>
+    <div className="relative -mx-6 lg:-mx-32 overflow-x-hidden">
+      {/* Fade gradients at edges - smaller on mobile */}
+      <div className="absolute left-0 top-0 bottom-0 w-16 lg:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-16 lg:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+      
+      <div 
+        className="flex gap-4 animate-scroll-accomplishments lg:w-auto"
+        style={{
+          width: `${singleSetWidthMobile * 2}px`,
+          '--desktop-width': `${singleSetWidthDesktop * 2}px`
+        } as React.CSSProperties & { '--desktop-width': string }}
+      >
+        {/* Render cards twice for seamless loop */}
+        {[...accomplishments, ...accomplishments].map((accomplishment, index) => (
+          <div
+            key={index}
+            className="flex-shrink-0 bg-gray-800 text-white rounded-2xl w-[264px] lg:w-[334px] flex items-center"
+            style={{
+              padding: '16px 24px'
+            }}
+          >
+            <p className="text-base font-medium leading-6">
+              {accomplishment}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-white lg:h-[90vh] flex items-center pt-32 lg:pt-26 pb-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-end"
-          >
-            {/* Left Column - Main Heading */}
-            <div className="flex flex-col">
-              <p className="text-base text-gray-700 mb-0 leading-6">
-                Hi, I am a
-              </p>
-              <div className="text-7xl font-bold leading-none text-black">
-                <motion.p 
-                  className="mb-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0 }}
-                >
-                  Strategic
-                </motion.p>
-                <motion.p 
-                  className="mb-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.25 }}
-                >
-                  Analytical
-                </motion.p>
-                <motion.p 
-                  className="mb-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                >
-                  Curious
-                </motion.p>
-                <motion.p 
-                  className="text-pink-500 mb-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.75 }}
-                >
-                  Designer
-                </motion.p>
+      <section className="relative bg-white min-h-screen flex flex-col pt-32 pb-14 px-6 sm:px-12 md:px-12 lg:px-32">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col">
+          {/* Mobile: Headshot first, then text. Desktop: 12-column grid layout */}
+          <div className="flex flex-col md:grid md:grid-cols-12 md:items-start md:gap-6 lg:gap-8 mb-12 md:mb-16 flex-1 mt-12 md:mt-16">
+            {/* Mobile: Headshot (Above text) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="md:hidden flex-shrink-0 mb-6"
+            >
+              <div className="w-24 h-24 rounded-full overflow-hidden">
+                <Image
+                  src="/Headshot.png"
+                  alt="Bailey Costello"
+                  width={96}
+                  height={96}
+                  className="w-full h-full object-cover"
+                  style={{ borderRadius: '999px' }}
+                />
               </div>
+            </motion.div>
+            
+            {/* Text Content - 7 columns on desktop */}
+            <div className="flex flex-col md:col-span-7 mb-8 md:mb-0">
+              {/* Header Text */}
+              <motion.h1
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-[40px] sm:text-[48px] md:text-[56px] leading-[1.1] font-bold text-black mb-6"
+              >
+                Make bets. Validate.
+                <br />
+                <span className="text-pink-500">Win people over.</span>
+              </motion.h1>
+              
+              {/* Subtext - wraps after "by" on desktop */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-[16px] text-gray-600 leading-6"
+              >
+                <span className="md:block">Hi, I&apos;m Bailey - a multidisciplinary designer driven by</span>
+                <span className="md:block"> curiosity, competition, and complexity.</span>
+              </motion.p>
             </div>
             
-            {/* Right Column - Description and Buttons */}
-            <div className="flex flex-col gap-10 mt-2 lg:mt-16">
-              <motion.div 
-                className="text-base text-gray-700 leading-6 max-w-md"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+            {/* Desktop: Headshot - 5 columns, centered, max 244px */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="hidden md:flex md:col-span-5 items-center justify-center"
+            >
+              <div className="w-[244px] h-[244px] rounded-full overflow-hidden flex-shrink-0">
+                <Image
+                  src="/Headshot.png"
+                  alt="Bailey Costello"
+                  width={244}
+                  height={244}
+                  className="w-full h-full object-cover"
+                  style={{ borderRadius: '999px' }}
+                />
+              </div>
+            </motion.div>
+          </div>
+          
+          {/* Line Separator */}
+          <div className="w-full h-px bg-[#d9d9d9] mb-12 md:mb-16" />
+          
+          {/* KPIs Section - Mobile: 2 rows (3+2), Desktop: 1 row (5) */}
+          <div className="flex flex-col md:block">
+            {/* First Row - 3 KPIs on mobile, all 5 on desktop */}
+            <div className="grid grid-cols-3 md:grid-cols-12 gap-6 md:gap-6 lg:gap-8 mb-6 md:mb-0">
+              {/* KPI 1: Years Experience */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.2,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="flex flex-col md:col-span-2"
               >
-                <p className="mb-0">
-                  8 years experience as a UX and Product Designer
-                </p>
-                <p className="mb-0">&nbsp;</p>
-                <p className="mb-0">
-                  Last seen leading projects and delighting clients at DOOR3, a design and development agency
-                </p>
-                <p className="mb-0">&nbsp;</p>
-                <p>
-                  <span>Proudly a </span>
-                  <span className="underline font-semibold">
-                    <a 
-                      href="https://www.accessibilityassociation.org/cpacc" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-pink-700 hover:text-pink-600 underline"
-                    >
-                      Certified Professional in Accessibility Core Competencies
-                    </a>
-                  </span>
-                  <span> (IAAP)</span>
-                </p>
+                <span className="text-[36px] font-bold text-black mb-1 leading-[1.1]">8</span>
+                <span className="text-[16px] text-gray-600">Years Experience</span>
               </motion.div>
               
-              <motion.div 
-                className="hidden lg:flex flex-col sm:flex-row gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
+              {/* KPI 2: Industries */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.3,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="flex flex-col md:col-span-2"
               >
-                <Button
-                  href="/work/"
-                  variant="primary"
-                  size="medium"
-                  background="light"
-                  trailingIcon={true}
-                >
-                  View My Work
-                </Button>
-                <Button
-                  href="/contact/"
-                  variant="outline"
-                  size="medium"
-                  background="light"
-                  trailingIcon={true}
-                >
-                  Let&apos;s Talk
-                </Button>
+                <span className="text-[36px] font-bold text-black mb-1 leading-[1.1]">15+</span>
+                <span className="text-[16px] text-gray-600">Industries</span>
+              </motion.div>
+              
+              {/* KPI 3: Design Awards */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.4,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="flex flex-col md:col-span-2"
+              >
+                <span className="text-[36px] font-bold text-black mb-1 leading-[1.1]">3</span>
+                <span className="text-[16px] text-gray-600">Design Awards</span>
+              </motion.div>
+              
+              {/* KPI 4: IAAP Certification - Hidden on mobile first row, shown on desktop */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.5,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="hidden md:flex flex-col md:col-span-4"
+              >
+                <div className="mb-1 h-[39.6px] flex items-center">
+                  <Image
+                    src="/IAAP Logo.png"
+                    alt="IAAP"
+                    width={80}
+                    height={40}
+                    className="h-[39.6px] w-auto object-contain"
+                  />
+                </div>
+                <span className="text-[16px] text-gray-600">Certified Professional in Accessibility Core Competencies</span>
+              </motion.div>
+              
+              {/* KPI 5: Location - Hidden on mobile first row, shown on desktop */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.6,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="hidden md:flex flex-col md:col-span-2"
+              >
+                <span className="text-[36px] font-bold text-black mb-1 inline-flex items-center leading-[1.1]">
+                  <span 
+                    className="material-symbols-outlined text-[48px] leading-[1.1]" 
+                    style={{ fontVariationSettings: '"FILL" 1', height: '39.6px', display: 'inline-flex', alignItems: 'center', overflow: 'visible' }}
+                  >
+                    location_on
+                  </span>
+                </span>
+                <span className="text-[16px] text-gray-600">Brooklyn, NY</span>
               </motion.div>
             </div>
-          </motion.div>
+            
+            {/* Second Row - Mobile only: 2 KPIs */}
+            <div className="grid grid-cols-3 md:hidden gap-6">
+              {/* KPI 4: IAAP Certification - Mobile */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.5,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="flex flex-col col-span-2"
+              >
+                <div className="mb-1 h-[39.6px] flex items-center">
+                  <Image
+                    src="/IAAP Logo.png"
+                    alt="IAAP"
+                    width={80}
+                    height={40}
+                    className="h-[39.6px] w-auto object-contain"
+                  />
+                </div>
+                <span className="text-[16px] text-gray-600">Certified Professional in Accessibility Core Competencies</span>
+              </motion.div>
+              
+              {/* KPI 5: Location - Mobile */}
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: 0.6,
+                  ease: [0.34, 1.56, 0.64, 1]
+                }}
+                className="flex flex-col col-span-1"
+              >
+                <span className="text-[36px] font-bold text-black mb-1 inline-flex items-center leading-[1.1]">
+                  <span 
+                    className="material-symbols-outlined text-[48px] leading-[1.1]" 
+                    style={{ fontVariationSettings: '"FILL" 1', height: '39.6px', display: 'inline-flex', alignItems: 'center', overflow: 'visible' }}
+                  >
+                    location_on
+                  </span>
+                </span>
+                <span className="text-[16px] text-gray-600">Brooklyn, NY</span>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -378,114 +500,6 @@ export default function Home() {
 
       {/* Complex Projects Callout Section */}
 
-      {/* Featured Case Study - ANet Section */}
-      <section className="bg-gray-50 py-14 px-6 lg:px-32">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
-          >
-            {/* Mobile Layout - Featured Case Study Label */}
-            <p className="text-base text-pink-700 font-normal leading-6 order-1 lg:hidden">
-              Featured Case Study
-            </p>
-
-            {/* Mobile Layout - H2 Title */}
-            <p className="text-4xl font-semibold text-gray-900 leading-tight order-2 lg:hidden">
-              &ldquo;I feel like every teacher across the country could use this.&rdquo;
-            </p>
-
-            {/* Mobile Layout - Video */}
-            <div className="order-3 lg:hidden w-full overflow-hidden rounded-[32px]">
-              <div style={{ padding: '20% 4%', overflow: 'hidden' }}>
-                <video
-                  className="rounded-[16px] shadow-lg border-[20px] border-gray-800"
-                  style={{ 
-                    width: '100%',
-                    height: 'auto',
-                    transform: 'scale(1.8)',
-                    transformOrigin: 'center',
-                    display: 'block'
-                  }}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src="/ANet Preview Video.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-
-            {/* Mobile Layout - Description */}
-            <div className="order-4 lg:hidden">
-              <p className="text-sm text-pink-700 font-normal leading-6 mb-6">
-                Lesson Planning Assistant, Achievement Network
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">0 to 1</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              </div>
-              <Button
-                href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
-                variant="secondary"
-                size="medium"
-                background="light"
-                trailingIcon={true}
-              >
-                Read Case Study
-              </Button>
-            </div>
-
-            {/* Desktop Layout - Video */}
-            <div className="hidden lg:block h-[600px] w-[624px] relative order-2 overflow-visible flex items-center justify-center">
-              <video
-                className="w-full h-full object-cover object-center rounded-[32px] shadow-lg border-[20px] border-gray-800 mx-auto"
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                <source src="/ANet Preview Video.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            {/* Desktop Layout - Left Column (Text Content) */}
-            <div className="hidden lg:flex flex-col gap-6 order-1">
-              <p className="text-base text-pink-700 font-normal leading-6">
-                Featured Case Study
-              </p>
-              <p className="text-4xl font-semibold text-gray-900 leading-tight">
-                &ldquo;I feel like every teacher across the country could use this.&rdquo;
-              </p>
-              <p className="text-sm text-pink-700 font-normal leading-6">
-                Lesson Planning Assistant, Achievement Network
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">0 to 1</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Product Ideation</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              </div>
-              <div className="flex justify-start">
-                <Button
-                  href="https://baileycostello.github.io/DelightedByBailey-CursorAI/case-studies/an-lesson-planning"
-                  variant="secondary"
-                  size="medium"
-                  background="light"
-                  trailingIcon={true}
-                >
-                  Read Case Study
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Jupiter Prototype Section */}
       <section className="bg-black py-42 px-6 lg:py-32 lg:px-32">
         <div className="max-w-7xl mx-auto">
@@ -553,7 +567,7 @@ export default function Home() {
                 }}
               >
                 <Image
-                  src="./MacBook Pro Dark Device Screen.png"
+                  src="/MacBook Pro Dark Device Screen.png"
                   alt="MacBook Pro Device"
                   width={800}
                   height={483}
@@ -565,7 +579,7 @@ export default function Home() {
                 <motion.div 
                   className="absolute inset-0 flex items-center justify-center"
                   style={{
-                    opacity: useTransform(useScroll().scrollYProgress, [0, 0.2, 0.5, 1], [0, 0, 1, 1])
+                    opacity: useTransform(useScroll().scrollYProgress, [0, 0.1, 0.3, 1], [0, 0, 1, 1])
                   }}
                 >
                   <div className="w-[79.5%] h-[85.5%] relative overflow-hidden rounded-lg -translate-y-[5px]">
@@ -576,278 +590,149 @@ export default function Home() {
                       playsInline
                       className="w-full h-full object-contain"
                     >
-                      <source src="./JupiterAnimated.mp4" type="video/mp4" />
+                      <source src="/JupiterAnimated.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </motion.div>
               </motion.div>
             </motion.div>
 
-            {/* Project Description */}
-            <p className="text-sm text-red-200 font-normal leading-6 mt-16">
-              Climate Risk Analysis, Jupiter Intel
-            </p>
           </motion.div>
         </div>
       </section>
 
 
-      {/* Featured Case Study - CDG Section */}
-      <section className="bg-gray-50 py-14 px-6 lg:px-32">
+      {/* My Favorite Stories Section */}
+      <section className="bg-white py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+            className="flex flex-col gap-12"
           >
-            {/* Mobile Layout - Featured Case Study Label */}
-            <p className="text-base text-pink-700 font-normal leading-6 order-1 lg:hidden">
-              Featured Case Study
-            </p>
+            {/* Section Header */}
+            <h2 className="text-[36px] font-bold text-black leading-tight">
+              My Favorite Stories
+            </h2>
 
-            {/* Mobile Layout - H2 Title */}
-            <p className="text-4xl font-semibold text-gray-900 leading-tight order-2 lg:hidden">
-              Driving operations most valued metric - efficiency
-            </p>
-
-            {/* Mobile Layout - Image (appears after title, before badges) */}
-            <div className="h-[520px] relative order-3 lg:hidden">
-              <Image 
-                alt="CDG iPad Mockup" 
-                className="w-full h-full object-contain object-center" 
-                src="./CDG Mockup.png"
-                width={600}
-                height={520}
-                unoptimized
-              />
-            </div>
-
-            {/* Mobile Layout - Badges */}
-            <div className="flex flex-wrap gap-2 order-4 lg:hidden">
-              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
-              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
-              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-              <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
-            </div>
-
-            {/* Mobile Layout - Description */}
-            <p className="text-sm text-pink-700 font-normal leading-6 order-5 lg:hidden">
-              Maintenance Operations App, CMMS Data Group
-            </p>
-
-            {/* Mobile Layout - Button */}
-            <div className="flex lg:hidden justify-start order-6">
-              <Button
+            {/* Case Study Cards */}
+            <div className="flex flex-col gap-8">
+              {/* CDG Case Study */}
+              <CaseStudyCard
+                previewImage="/CDG Mockup.png"
+                previewImageAlt="CDG Maintenance Operations App"
+                companyLogo="/MVPOne Logo.png"
+                companyLogoAlt="MVPOne"
+                title="Driving Operations Most Valued Metric - Efficiency"
+                subtitle="Maintenance Management App, CMMS Data Group"
+                kpis={[
+                  { value: "8-12%", label: "Projected increase in Monthly Recurring Revenue (MRR)" },
+                  { value: "15-25%", label: "Projected increase in Daily Active Users (DAU)" }
+                ]}
                 href="/case-studies/cdg-maintenance"
-                variant="secondary"
-                size="medium"
-                background="light"
-                trailingIcon={true}
-              >
-                Read Case Study
-              </Button>
-            </div>
+                index={0}
+              />
 
-            {/* Desktop Layout - Left Column (Text Content) */}
-            <div className="hidden lg:flex flex-col gap-6 order-1">
-              <p className="text-base text-pink-700 font-normal leading-6">
-                Featured Case Study
-              </p>
-              <p className="text-4xl font-semibold text-gray-900 leading-tight">
-                Driving operations most valued metric - efficiency
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Technical</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">UX Design</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Research</span>
-                <span className="bg-pink-800/16 px-2 pt-1 pb-0.5 rounded-lg font-['Plus_Jakarta_Sans:Regular',_sans-serif] font-normal leading-[1.7] text-[#63082b] text-[14px] text-nowrap whitespace-pre">Team Management</span>
-              </div>
-              <p className="text-sm text-pink-700 font-normal leading-6">
-                Maintenance Operations App, CMMS Data Group
-              </p>
-              <div className="flex justify-start">
-                <Button
-                  href="/case-studies/cdg-maintenance"
-                  variant="secondary"
-                  size="medium"
-                  background="light"
-                  trailingIcon={true}
-                >
-                  Read Case Study
-                </Button>
-              </div>
-            </div>
+              {/* ANet Case Study */}
+              <CaseStudyCard
+                previewImage="/ANet Hero Image.png"
+                previewImageAlt="ANet Lesson Planning Assistant"
+                companyLogo="/ANet Logo.png"
+                companyLogoAlt="Achievement Network"
+                title="&ldquo;I feel like every teacher across the country could use this.&rdquo;"
+                subtitle="Lesson Planning Concept, Achievement Network"
+                kpis={[
+                  { value: "$50,000", label: "Increase in Annual Recurring Revenue (ARR)" }
+                ]}
+                href="/case-studies/an-lesson-planning"
+                graphicOverlay="/ANet Graphic.png"
+                graphicOverlayAlt="ANet Graphic"
+                index={1}
+              />
 
-            {/* Desktop Layout - Right Column (Image) */}
-            <div className="hidden lg:block h-[700px] relative order-2">
-              <Image 
-                alt="CDG iPad Mockup" 
-                className="w-full h-full object-contain object-center" 
-                src="./CDG Mockup.png"
-                width={700}
-                height={700}
+              {/* Exago Case Study */}
+              <CaseStudyCard
+                previewImage="/Advanced Reports/Exago AR Preview Screen.png"
+                previewImageAlt="Exago Advanced Reports"
+                companyLogo="/Exago Logo.png"
+                companyLogoAlt="Exago BI"
+                title="Winning Deals Through Design"
+                subtitle="Reporting and Dashboard Builder Platform, Exago BI"
+                kpis={[
+                  { value: "11%", label: "Projected increase in Annual Recurring Revenue (ARR)" },
+                  { value: "18%", label: "Reduction in usability related support tickets" },
+                  { value: "3.5x", label: "Increase in upgrades to newest release" }
+                ]}
+                href="/case-studies/exago-bi"
+                index={2}
               />
             </div>
           </motion.div>
         </div>
+      </section>
+
+        {/* Why People Love Working With Me Section */}
+        <section className="bg-yellow-200 relative">
+          {/* Quote Cards - Horizontal Scroll Container */}
+          <QuoteCardsCarousel />
         </section>
 
-        {/* My Design Superpowers Section */}
-        <section className="bg-[#eee2d8] py-14 px-6 lg:px-32">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="flex flex-col gap-6"
-            >
-              {/* Section Header */}
-              <div className="text-left">
-                <h2 className="text-base font-bold text-black">
-                  My Design Superpowers
-                </h2>
-              </div>
-
-              {/* Cards Grid - 3 cards in a row */}
-              <div className="flex flex-col lg:flex-row gap-2 justify-start w-full">
-                {/* Card 1 - Product Design */}
-                <motion.div 
-                  className="bg-[#a40047] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="relative z-10 flex flex-col gap-4">
-                    <div className="w-6 h-6 text-white">
-                      <LightBulbIcon className="w-full h-full" />
-                    </div>
-                    <p className="text-white text-base font-bold">Product Design</p>
-                    <div className="text-white/80 text-base">
-                      <p className="leading-[22px] mb-2">Branding & Vision</p>
-                      <p className="leading-[22px] mb-2">UX Research & Validation</p>
-                      <p className="leading-[22px] mb-2">Facilitation</p>
-                      <p className="leading-[22px]">Marketing & Business Strategy</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 2 - Complex Problems */}
-                <motion.div 
-                  className="bg-[#63082b] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="relative z-10 flex flex-col gap-4">
-                    <div className="w-6 h-6 text-white">
-                      <img src="/conversion_path.png" alt="Conversion Path" className="w-full h-full" />
-                    </div>
-                    <p className="text-white text-base font-bold">Complex Problems</p>
-                    <div className="text-white/80 text-base">
-                      <p className="leading-[22px] mb-2">Reducing Cognitive Load</p>
-                      <p className="leading-[22px] mb-2">Systems Thinking</p>
-                      <p className="leading-[22px] mb-2">Data Models & Logic</p>
-                      <p className="leading-[22px]">Technical Constraints & Debt</p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Card 3 - Design Influence */}
-                <motion.div 
-                  className="bg-[#2f0616] p-4 rounded-2xl shadow-lg relative overflow-hidden flex-1"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="relative z-10 flex flex-col gap-4">
-                    <div className="w-6 h-6 text-white">
-                      <RocketLaunchIcon className="w-full h-full" />
-                    </div>
-                    <p className="text-white text-base font-bold">Design Influence</p>
-                    <div className="text-white/80 text-base">
-                      <p className="leading-[22px] mb-2">Executive Alignment</p>
-                      <p className="leading-[22px] mb-2">Collaboration & Cross-Functional Leadership</p>
-                      <p className="leading-[22px] mb-2">High Velocity Execution</p>
-                      <p className="leading-[22px]">Process Improvement</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Testimonials Section */}
-        <section className="bg-[#eee2d8] pt-0 pb-14 md:pb-[112px] px-6 lg:px-32">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="grid grid-cols-3 gap-8"
-            >
-              <div className="col-span-2">
-                <AnimatedTestimonials />
-              </div>
-              <div className="col-span-1">
-                {/* Empty column for spacing */}
-              </div>
-            </motion.div>
-          </div>
-        </section>
 
       {/* Final CTA Section */}
-      <section className="bg-black py-14 px-6 md:px-20 lg:px-56 xl:px-96 2xl:px-[28rem]">
+      <section className="bg-black py-14 px-6 lg:px-32">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col gap-10"
+            className="flex flex-col gap-1"
           >
-            {/* Header Text and Image Row */}
-            <div className="flex flex-col isolate items-start pb-4 pt-0 px-0 relative shrink-0 w-full">
-              <div className="flex flex-col gap-4 mb-[-16px] relative shrink-0 w-full z-[2]">
-                <p className="text-4xl font-bold text-yellow-50 leading-tight max-w-[400px]">
-                  There&apos;s so much more to talk about
+            {/* Header Row */}
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 md:gap-8">
+              <div className="flex flex-col gap-6">
+                <h2 className="text-[56px] font-bold text-yellow-50 leading-tight">
+                  There&apos;s so much<span className="hidden md:inline"><br /></span> more to talk about
+                </h2>
+                <p className="text-base text-red-200 font-normal">
+                  Like that time I ...
                 </p>
               </div>
-              <div className="flex flex-col gap-10 lg:flex-row lg:gap-10 lg:items-end">
-                {/* Image */}
-                <div className="h-[289px] w-[286px] rounded-3xl overflow-hidden relative shrink-0 z-[1]">
-                  <Image 
-                    alt="Bailey Costello Headshot" 
-                    className="w-full h-full object-cover" 
-                    src="./Headshot.png"
-                    width={286}
-                    height={289}
-                    unoptimized
-                  />
-                </div>
-
-                {/* Text and Button */}
-                <div className="flex flex-col gap-10 items-start justify-end h-[289px] relative flex-1">
-                  <div className="flex flex-col gap-1 items-start leading-6 relative shrink-0 w-full">
-                    <p className="text-base text-red-200 font-normal">
-                      Like that time I
-                    </p>
-                    <AnimatedHeadlines />
-                  </div>
-                  <div className="flex justify-start">
-                    <Button
-                      href="/contact/"
-                      variant="primary"
-                      size="medium"
-                      background="light"
-                      trailingIcon={true}
-                    >
-                      Let&apos;s Talk
-                    </Button>
-                  </div>
-                </div>
+              
+              {/* Button - Tablet and Desktop */}
+              <div className="hidden md:flex justify-end">
+                <Button
+                  href="/contact/"
+                  variant="primary"
+                  size="medium"
+                  background="light"
+                  trailingIcon={true}
+                  className="w-[240px] px-8 py-6 text-[24px] font-semibold"
+                >
+                  Let&apos;s Talk
+                </Button>
               </div>
+            </div>
+
+            {/* Accomplishments Carousel */}
+            <div className="mt-4">
+              <AccomplishmentsCarousel />
+            </div>
+
+            {/* Button - Mobile only, centered below cards */}
+            <div className="flex justify-center mt-10 md:hidden">
+              <Button
+                href="/contact/"
+                variant="primary"
+                size="medium"
+                background="light"
+                trailingIcon={true}
+                className="w-full md:w-[240px] px-8 py-6 text-[24px] font-semibold"
+              >
+                Let&apos;s Talk
+              </Button>
             </div>
           </motion.div>
         </div>

@@ -104,6 +104,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Material Symbols */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
 /* Auto-scrolling carousel animation */
 @keyframes scroll-smooth {
   0% {
@@ -116,6 +133,36 @@ body {
 
 .animate-scroll-smooth {
   animation: scroll-smooth 45s linear infinite;
+}
+
+/* Accomplishments carousel animation */
+@keyframes scroll-accomplishments {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-334px * 6 - 16px * 6));
+  }
+}
+
+@keyframes scroll-accomplishments-mobile {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-264px * 6 - 16px * 6));
+  }
+}
+
+.animate-scroll-accomplishments {
+  animation: scroll-accomplishments-mobile 24s linear infinite;
+}
+
+@media (min-width: 1024px) {
+  .animate-scroll-accomplishments {
+    animation: scroll-accomplishments 24s linear infinite;
+    width: var(--desktop-width, auto) !important;
+  }
 }
 
 /* Scrolling text animations */
@@ -162,5 +209,10 @@ body {
 /* Faster marquee for "But now I think..." */
 .marquee-fast {
   animation: marquee 50s linear infinite;
+}
+
+/* Add 2% letter spacing to all 16px text (text-base) */
+.text-base {
+  letter-spacing: 0.02em;
 }
 

@@ -39,8 +39,8 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'My Work', href: '/work/' },
-    { name: 'About', href: '/about/' },
+    { name: 'Gallery', href: '/work/' },
+    { name: 'Resume', href: '/Bailey Costello Sr Resume.pdf', isExternal: true },
   ];
 
   return (
@@ -66,16 +66,32 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center pr-6">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || pathname === item.href + '/';
+              const isActive = !item.isExternal && (pathname === item.href || pathname === item.href + '/');
+              const linkClasses = `px-9 py-6 text-base font-normal transition-all duration-200 border-b-2 ${
+                isActive 
+                  ? 'text-gray-700 font-semibold border-pink-500' 
+                  : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
+              }`;
+              
+              if (item.isExternal) {
+                return (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClasses}
+                  >
+                    {item.name}
+                  </a>
+                );
+              }
+              
               return (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-9 py-6 text-base font-normal transition-all duration-200 border-b-2 ${
-                    isActive 
-                      ? 'text-gray-700 font-semibold border-pink-500' 
-                      : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
-                  }`}
+                  className={linkClasses}
                 >
                   {item.name}
                 </Link>
@@ -150,16 +166,33 @@ export default function Navigation() {
       >
         <div className="px-6 py-6 space-y-2">
           {navItems.map((item) => {
-            const isActive = pathname === item.href || pathname === item.href + '/';
+            const isActive = !item.isExternal && (pathname === item.href || pathname === item.href + '/');
+            const linkClasses = `block px-6 py-4 text-base font-normal transition-all duration-200 border-l-4 ${
+              isActive 
+                ? 'text-gray-700 font-semibold border-pink-500' 
+                : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
+            }`;
+            
+            if (item.isExternal) {
+              return (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={linkClasses}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </a>
+              );
+            }
+            
             return (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block px-6 py-4 text-base font-normal transition-all duration-200 border-l-4 ${
-                  isActive 
-                    ? 'text-gray-700 font-semibold border-pink-500' 
-                    : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
-                }`}
+                className={linkClasses}
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

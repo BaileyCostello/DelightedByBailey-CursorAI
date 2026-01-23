@@ -3,12 +3,15 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-          {/* Logo */}
-          <div className="flex flex-col gap-6">
+    <footer className="bg-black text-white pb-6 px-6 lg:px-32" style={{ paddingTop: 0 }}>
+      <div className="max-w-7xl mx-auto">
+        {/* Line Separator */}
+        <div className="bg-gray-600 h-px w-full mb-6"></div>
+        
+        {/* Single Row Footer */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
+          {/* Left: Logo and Text */}
+          <div className="flex items-center gap-4">
             <Link href="/" className="h-8 w-auto cursor-pointer hover:opacity-80 transition-opacity duration-200">
               <Image 
                 src="/Logo-Dark.png"
@@ -18,58 +21,36 @@ export default function Footer() {
                 className="h-8 w-auto"
               />
             </Link>
+            <p className="text-red-200 text-base">
+              Created with love and Cursor AI
+            </p>
           </div>
 
-          {/* Pages Section */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-yellow-50 font-semibold text-base">Pages</h4>
-            <div className="flex flex-col gap-4">
-              <Link href="/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
+          {/* Right: Navigation Links and Social Icons */}
+          <div className="flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-6">
+            {/* Navigation Links */}
+            <div className="flex items-center gap-6 flex-wrap justify-center md:justify-start">
+              <Link href="/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Home
               </Link>
-              <Link href="/work/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
-                My Work
+              <Link href="/work/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
+                Gallery
               </Link>
-              <Link href="/about/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
-                About
-              </Link>
-              <Link href="/contact/" className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base">
+              <a
+                href="/Bailey Costello Sr Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base"
+              >
+                Resume
+              </a>
+              <Link href="/contact/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Contact
               </Link>
             </div>
-          </div>
 
-          {/* Case Studies Section */}
-          <div className="flex flex-col gap-4">
-            <h4 className="text-yellow-50 font-semibold text-base">Case Studies</h4>
-            <div className="flex flex-col gap-4">
-              <Link 
-                href="/case-studies/cdg-maintenance" 
-                className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
-              >
-                Driving Operations Most Valued Metric: A Maintenance Management App
-              </Link>
-              <Link 
-                href="/case-studies/an-lesson-planning" 
-                className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
-              >
-                Helping Teachers Reclaim Time to Focus on Student Outcomes: A Lesson Planning Resource
-              </Link>
-              <Link 
-                href="/case-studies/exago-bi" 
-                className="text-red-200 hover:text-pink-400 hover:underline transition-all duration-200 text-base max-w-md"
-              >
-                Winning Deals Through Design: Simplifying Exago&apos;s Core Report Builder
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="flex flex-col gap-6 mt-10">
-          <div className="bg-gray-600 h-px w-full"></div>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-            <div className="flex gap-4 items-center">
+            {/* Social Icons */}
+            <div className="flex items-center gap-4">
               <a
                 href="https://github.com/BaileyCostello"
                 className="text-red-200 hover:text-yellow-50 transition-colors duration-200"
@@ -95,9 +76,6 @@ export default function Footer() {
                 </div>
               </a>
             </div>
-            <p className="text-red-300 text-sm">
-              Created with love and Cursor AI
-            </p>
           </div>
         </div>
       </div>
