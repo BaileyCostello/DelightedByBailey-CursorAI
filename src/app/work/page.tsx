@@ -3,13 +3,14 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import Button from '@/components/Button';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 export default function Work() {
   const { scrollYProgress } = useScroll();
   const [isLoading, setIsLoading] = useState(true);
   const [loadedAssets, setLoadedAssets] = useState(0);
   const totalAssets = 14; // Preload all essential assets (videos and images)
+  const [modalImage, setModalImage] = useState<{ src: string; alt: string; label: string } | null>(null);
 
   useEffect(() => {
     const preloadAssets = async () => {
@@ -93,6 +94,34 @@ export default function Work() {
     }
   }, [isLoading]);
 
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && modalImage) {
+        setModalImage(null);
+      }
+    };
+
+    if (modalImage) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [modalImage]);
+
+  const openModal = useCallback((src: string, alt: string, label: string) => {
+    setModalImage({ src, alt, label });
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setModalImage(null);
+  }, []);
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
@@ -109,7 +138,7 @@ export default function Work() {
   }
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-black overflow-x-hidden">
       {/* Portfolio Preview Section */}
       <section id="gallery-section" className="relative py-32 px-6 lg:px-32">
         <style jsx>{`
@@ -176,7 +205,10 @@ export default function Work() {
               {/* First Set of Cards */}
               {/* Dr.Treat Preview */}
               <div className="group flex-shrink-0 w-[760px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
+                >
                   <Image
                     alt="Dr.Treat App Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -192,7 +224,10 @@ export default function Work() {
 
               {/* Exago Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
+                >
                   <Image
                     alt="Exago Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -209,7 +244,10 @@ export default function Work() {
 
               {/* Hanover Research Preview */}
               <div className="group flex-shrink-0 w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
+                >
                   <Image
                     alt="Hanover Research Preview"
                     className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
@@ -226,7 +264,10 @@ export default function Work() {
 
               {/* EvoJets Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
+                >
                   <Image
                     alt="EvoJets Preview"
                     className="w-full h-full object-contain rounded-xl pb-2"
@@ -242,7 +283,10 @@ export default function Work() {
 
               {/* First Mid Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
+                >
                   <Image
                     alt="First Mid Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -258,7 +302,10 @@ export default function Work() {
 
               {/* RISA Preview */}
               <div className="group flex-shrink-0 w-[570px] min-w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
+                >
                   <img
                     alt="RISA Preview"
                     className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
@@ -273,7 +320,10 @@ export default function Work() {
 
               {/* Survey Platform Preview */}
               <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
+                >
                   <img
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -288,7 +338,10 @@ export default function Work() {
 
               {/* Morgan Lewis Preview */}
               <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
+                >
                   <img
                     alt="Morgan Lewis Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -305,7 +358,10 @@ export default function Work() {
               {/* Duplicate Set for Seamless Loop */}
               {/* Dr.Treat Preview */}
               <div className="group flex-shrink-0 w-[760px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
+                >
                   <Image
                     alt="Dr.Treat App Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -321,7 +377,10 @@ export default function Work() {
 
               {/* Exago Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
+                >
                   <Image
                     alt="Exago Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -337,7 +396,10 @@ export default function Work() {
 
               {/* Hanover Research Preview */}
               <div className="group flex-shrink-0 w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
+                >
                   <Image
                     alt="Hanover Research Preview"
                     className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
@@ -353,7 +415,10 @@ export default function Work() {
 
               {/* EvoJets Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
+                >
                   <Image
                     alt="EvoJets Preview"
                     className="w-full h-full object-contain rounded-xl pb-2"
@@ -369,7 +434,10 @@ export default function Work() {
 
               {/* First Mid Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
+                >
                   <Image
                     alt="First Mid Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -385,7 +453,10 @@ export default function Work() {
 
               {/* Morgan Lewis Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
+                >
                   <Image
                     alt="Morgan Lewis Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -401,7 +472,10 @@ export default function Work() {
 
               {/* RISA Preview */}
               <div className="group flex-shrink-0 w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
+                >
                   <Image
                     alt="RISA Preview"
                     className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
@@ -417,7 +491,10 @@ export default function Work() {
 
               {/* Survey Platform Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
+                >
                   <img
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -433,7 +510,10 @@ export default function Work() {
               {/* Third Set for Seamless Loop */}
               {/* Dr.Treat Preview */}
               <div className="group flex-shrink-0 w-[760px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
+                >
                   <Image
                     alt="Dr.Treat App Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -449,7 +529,10 @@ export default function Work() {
 
               {/* Exago Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
+                >
                   <Image
                     alt="Exago Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -465,7 +548,10 @@ export default function Work() {
 
               {/* Hanover Research Preview */}
               <div className="group flex-shrink-0 w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
+                >
                   <Image
                     alt="Hanover Research Preview"
                     className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
@@ -481,7 +567,10 @@ export default function Work() {
 
               {/* EvoJets Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
+                >
                   <Image
                     alt="EvoJets Preview"
                     className="w-full h-full object-contain rounded-xl pb-2"
@@ -497,7 +586,10 @@ export default function Work() {
 
               {/* First Mid Preview */}
               <div className="group flex-shrink-0 w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
+                >
                   <Image
                     alt="First Mid Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -513,7 +605,10 @@ export default function Work() {
 
               {/* RISA Preview */}
               <div className="group flex-shrink-0 w-[570px] min-w-[570px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
+                >
                   <img
                     alt="RISA Preview"
                     className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
@@ -528,7 +623,10 @@ export default function Work() {
 
               {/* Survey Platform Preview */}
               <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
+                >
                   <img
                     alt="Survey Platform Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -543,7 +641,10 @@ export default function Work() {
 
               {/* Morgan Lewis Preview */}
               <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4">
+                <div 
+                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
+                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
+                >
                   <img
                     alt="Morgan Lewis Preview"
                     className="w-full h-full object-contain rounded-xl"
@@ -561,6 +662,63 @@ export default function Work() {
 
         </div>
       </section>
+
+      {/* Image Modal */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center"
+          onClick={closeModal}
+          style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
+        >
+          {/* Close Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              closeModal();
+            }}
+            className="absolute z-60 text-white hover:text-gray-300 transition-colors duration-200"
+            style={{ top: '80px', right: '80px' }}
+            aria-label="Close modal"
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Header */}
+          <div className="absolute z-60 left-1/2 -translate-x-1/2" style={{ top: '80px' }}>
+            <h3 className="text-white text-[24px] font-semibold tracking-wide whitespace-nowrap">
+              {modalImage.label}
+            </h3>
+          </div>
+
+          {/* Image Container */}
+          <div
+            className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
+            style={{ marginTop: 'calc(80px + 24px + 32px)' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={modalImage.src}
+              alt={modalImage.alt}
+              width={1200}
+              height={800}
+              className="max-w-full max-h-[90vh] object-contain"
+              unoptimized
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
