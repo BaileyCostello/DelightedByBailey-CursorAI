@@ -705,7 +705,7 @@ export default function Work() {
           {/* Image Container */}
           <div
             className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
-            style={{ marginTop: 'calc(80px + 24px + 32px)' }}
+            style={{ marginTop: 'calc(80px + 24px + 24px)' }}
             onClick={(e) => e.stopPropagation()}
           >
             <Image
