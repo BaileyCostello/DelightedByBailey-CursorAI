@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Button from '@/components/Button';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import QuoteCardsCarousel from '@/components/QuoteCardsCarousel';
+import IndustryExposureModal from '@/components/IndustryExposureModal';
+import DesignAwardsModal from '@/components/DesignAwardsModal';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { RocketLaunchIcon, LightBulbIcon } from '@heroicons/react/24/outline';
@@ -159,6 +161,8 @@ const AccomplishmentsCarousel = () => {
 
 export default function Home() {
   const pathname = usePathname();
+  const [industriesModalOpen, setIndustriesModalOpen] = useState(false);
+  const [designAwardsModalOpen, setDesignAwardsModalOpen] = useState(false);
 
   // Scroll to case-studies section when navigating to /#case-studies
   useEffect(() => {
@@ -176,8 +180,22 @@ export default function Home() {
     }
   }, [pathname]);
 
+  // Lock body scroll when any modal is open
+  useEffect(() => {
+    if (industriesModalOpen || designAwardsModalOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [industriesModalOpen, designAwardsModalOpen]);
+
   return (
     <div className="min-h-screen">
+      <IndustryExposureModal isOpen={industriesModalOpen} onClose={() => setIndustriesModalOpen(false)} />
+      <DesignAwardsModal isOpen={designAwardsModalOpen} onClose={() => setDesignAwardsModalOpen(false)} />
       {/* Hero Section */}
       <section className="relative bg-white min-h-screen flex flex-col pt-32 pb-14 px-6 sm:px-12 md:px-12 lg:px-32">
         <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col">
@@ -282,7 +300,13 @@ export default function Home() {
                 className="flex flex-col md:col-span-2"
               >
                 <span className="text-[36px] font-bold text-black mb-1 leading-[1.1]">15+</span>
-                <span className="text-[16px] text-gray-600">Industries</span>
+                <button
+                  type="button"
+                  onClick={() => setIndustriesModalOpen(true)}
+                  className="text-[16px] text-gray-600 underline hover:text-gray-700 text-left cursor-pointer"
+                >
+                  Industries
+                </button>
               </motion.div>
               
               {/* KPI 3: Design Awards */}
@@ -297,7 +321,13 @@ export default function Home() {
                 className="flex flex-col md:col-span-2"
               >
                 <span className="text-[36px] font-bold text-black mb-1 leading-[1.1]">3</span>
-                <span className="text-[16px] text-gray-600">Design Awards</span>
+                <button
+                  type="button"
+                  onClick={() => setDesignAwardsModalOpen(true)}
+                  className="text-[16px] text-gray-600 underline hover:text-gray-700 text-left cursor-pointer"
+                >
+                  Design Awards
+                </button>
               </motion.div>
               
               {/* KPI 4: IAAP Certification - Hidden on mobile first row, shown on desktop */}
