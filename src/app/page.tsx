@@ -6,6 +6,7 @@ import Button from '@/components/Button';
 import CaseStudyCard from '@/components/CaseStudyCard';
 import QuoteCardsCarousel from '@/components/QuoteCardsCarousel';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { RocketLaunchIcon, LightBulbIcon } from '@heroicons/react/24/outline';
 
 // Animated testimonials cycling component with dots
@@ -157,6 +158,24 @@ const AccomplishmentsCarousel = () => {
 };
 
 export default function Home() {
+  const pathname = usePathname();
+
+  // Scroll to case-studies section when navigating to /#case-studies
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#case-studies') {
+      const scrollToSection = () => {
+        const el = document.getElementById('case-studies');
+        if (el) {
+          const navHeight = 72; // match nav h-18
+          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      };
+      // Small delay when navigating from another page so layout is complete
+      requestAnimationFrame(() => requestAnimationFrame(scrollToSection));
+    }
+  }, [pathname]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -205,7 +224,7 @@ export default function Home() {
                 className="text-[16px] text-gray-600 leading-6"
               >
                 <span className="md:block">Hi, I&apos;m Bailey - a multidisciplinary designer driven by</span>
-                <span className="md:block"> curiosity, competition, and complexity.</span>
+                <span className="md:block"> curiosity, competition, and complex challenges.</span>
               </motion.p>
             </div>
             
@@ -419,7 +438,7 @@ export default function Home() {
               
               {/* Mobile - Original Text */}
               <h2 className="lg:hidden text-4xl font-bold text-pink-500 leading-tight text-left">
-                Design Meet <br /> Product Strategy
+                Design Meets <br /> Product Strategy
               </h2>
             </div>
 
@@ -500,8 +519,8 @@ export default function Home() {
 
       {/* Complex Projects Callout Section */}
 
-      {/* Jupiter Prototype Section */}
-      <section className="bg-black py-42 px-6 lg:py-32 lg:px-32">
+      {/* Jupiter Prototype Section - overflow-x-hidden only here so 108vw MacBook doesn't cause page scrollbar */}
+      <section className="bg-black py-42 px-6 lg:py-32 lg:px-32 overflow-x-hidden">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -603,7 +622,7 @@ export default function Home() {
 
 
       {/* My Favorite Stories Section */}
-      <section className="bg-white py-14 px-6 lg:px-32">
+      <section id="case-studies" className="bg-white py-14 px-6 lg:px-32 scroll-mt-[72px]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -625,7 +644,7 @@ export default function Home() {
                 previewImageAlt="CDG Maintenance Operations App"
                 companyLogo="/MVPOne Logo.png"
                 companyLogoAlt="MVPOne"
-                title="Driving Operations Most Valued Metric - Efficiency"
+                title="Driving Operational Efficiency"
                 subtitle="Maintenance Management App, CMMS Data Group"
                 kpis={[
                   { value: "8-12%", label: "Projected increase in Monthly Recurring Revenue (MRR)" },

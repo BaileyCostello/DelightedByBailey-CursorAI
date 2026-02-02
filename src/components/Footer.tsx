@@ -1,7 +1,25 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isOnHome = pathname === '/' || pathname === '';
+
+  const scrollToCaseStudies = (e: React.MouseEvent) => {
+    if (isOnHome) {
+      e.preventDefault();
+      const el = document.getElementById('case-studies');
+      if (el) {
+        const navHeight = 72;
+        const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="bg-black text-white pb-6 px-6 lg:px-32" style={{ paddingTop: 0 }}>
       <div className="max-w-7xl mx-auto">
@@ -33,17 +51,16 @@ export default function Footer() {
               <Link href="/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Home
               </Link>
+              <a
+                href="/#case-studies"
+                onClick={scrollToCaseStudies}
+                className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base"
+              >
+                Case Studies
+              </a>
               <Link href="/work/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Gallery
               </Link>
-              <a
-                href="/Bailey Costello Sr Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base"
-              >
-                Resume
-              </a>
               <Link href="/contact/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Contact
               </Link>

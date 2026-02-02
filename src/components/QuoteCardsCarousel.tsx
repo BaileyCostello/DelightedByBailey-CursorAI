@@ -117,23 +117,27 @@ export default function QuoteCardsCarousel() {
     
     const currentX = xMobile.get();
     const velocity = info.velocity.x;
-    const threshold = 500; // Velocity threshold for directional snapping
+    const velocityThreshold = 380; // Slightly lower so a lighter swipe advances one card (was 500)
+    const progress = -currentX / (cardWidthMobile + gapMobile);
+    // Slight bias (0.1) so you don't need to drag full 50% to snap to next card
+    const snapBias = 0.1;
     
     let cardIndex: number;
     
-    // If there's significant velocity, move in that direction
-    if (Math.abs(velocity) > threshold) {
-      const currentIndex = Math.round(-currentX / (cardWidthMobile + gapMobile));
+    // If there's significant velocity, move one card in that direction
+    if (Math.abs(velocity) > velocityThreshold) {
+      const currentIndex = Math.floor(progress + snapBias);
+      const clampedCurrent = Math.min(Math.max(0, currentIndex), quotes.length - 1);
       if (velocity < 0) {
         // Dragging left (negative velocity) = moving to next card
-        cardIndex = Math.min(currentIndex + 1, quotes.length - 1);
+        cardIndex = Math.min(clampedCurrent + 1, quotes.length - 1);
       } else {
         // Dragging right (positive velocity) = moving to previous card
-        cardIndex = Math.max(currentIndex - 1, 0);
+        cardIndex = Math.max(clampedCurrent - 1, 0);
       }
     } else {
-      // No significant velocity, snap to nearest card
-      cardIndex = Math.round(-currentX / (cardWidthMobile + gapMobile));
+      // No significant velocity, snap to nearest card (bias makes next card easier to reach)
+      cardIndex = Math.round(progress + snapBias);
     }
     
     const clampedIndex = Math.min(Math.max(0, cardIndex), quotes.length - 1);

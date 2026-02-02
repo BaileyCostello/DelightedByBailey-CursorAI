@@ -101,7 +101,7 @@ export default function CDGMaintenanceCaseStudy() {
             className="max-w-4xl"
           >
             <h1 className="text-4xl lg:text-5xl font-semibold text-black leading-tight mb-6">
-              Driving Operations Most Valued Metric - Efficiency
+              Driving Operational Efficiency
             </h1>
             <p className="text-sm text-[#a40047] font-normal leading-6 mb-6">
               Maintenance Management App, CMMS Data Group

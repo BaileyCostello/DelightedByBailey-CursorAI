@@ -46,7 +46,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${plusJakartaSans.variable} antialiased overflow-x-hidden`}
+        className={`${plusJakartaSans.variable} antialiased`}
       >
         <Navigation />
         <main>

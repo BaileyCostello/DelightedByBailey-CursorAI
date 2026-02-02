@@ -39,8 +39,8 @@ export default function Navigation() {
 
   const navItems = [
     { name: 'Home', href: '/' },
+    { name: 'Case Studies', href: '/#case-studies', isHashLink: true },
     { name: 'Gallery', href: '/work/' },
-    { name: 'Resume', href: '/Bailey Costello Sr Resume.pdf', isExternal: true },
   ];
 
   return (
@@ -66,21 +66,32 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center pr-6">
             {navItems.map((item) => {
-              const isActive = !item.isExternal && (pathname === item.href || pathname === item.href + '/');
+              const isActive = !item.isHashLink && (pathname === item.href || pathname === (item.href.split('#')[0] || item.href) + '/');
               const linkClasses = `px-9 py-6 text-base font-normal transition-all duration-200 border-b-2 ${
                 isActive 
                   ? 'text-gray-700 font-semibold border-pink-500' 
                   : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
               }`;
               
-              if (item.isExternal) {
+              if (item.isHashLink) {
+                const hash = item.href.split('#')[1];
+                const isOnHome = pathname === '/' || pathname === '';
                 return (
                   <a
                     key={item.name}
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className={linkClasses}
+                    onClick={(e) => {
+                      if (isOnHome) {
+                        e.preventDefault();
+                        const el = document.getElementById(hash);
+                        if (el) {
+                          const navHeight = 72; // match nav h-18
+                          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+                          window.scrollTo({ top, behavior: 'smooth' });
+                        }
+                      }
+                    }}
                   >
                     {item.name}
                   </a>
@@ -166,22 +177,39 @@ export default function Navigation() {
       >
         <div className="px-6 py-6 space-y-2">
           {navItems.map((item) => {
-            const isActive = !item.isExternal && (pathname === item.href || pathname === item.href + '/');
+            const isActive = !item.isHashLink && (pathname === item.href || pathname === (item.href.split('#')[0] || item.href) + '/');
             const linkClasses = `block px-6 py-4 text-base font-normal transition-all duration-200 border-l-4 ${
               isActive 
                 ? 'text-gray-700 font-semibold border-pink-500' 
                 : 'text-gray-700 hover:bg-yellow-50 border-transparent hover:border-yellow-200'
             }`;
             
-            if (item.isExternal) {
+            if (item.isHashLink) {
+              const hash = item.href.split('#')[1];
+              const isOnHome = pathname === '/' || pathname === '';
               return (
                 <a
                   key={item.name}
                   href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className={linkClasses}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    if (isOnHome) {
+                      e.preventDefault();
+                      setIsOpen(false);
+                      // Wait for mobile menu to close so layout is settled before measuring
+                      const menuCloseMs = 350;
+                      setTimeout(() => {
+                        const el = document.getElementById(hash);
+                        if (el) {
+                          const navHeight = 72; // match nav h-18
+                          const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+                          window.scrollTo({ top, behavior: 'smooth' });
+                        }
+                      }, menuCloseMs);
+                    } else {
+                      setIsOpen(false);
+                    }
+                  }}
                 >
                   {item.name}
                 </a>
