@@ -51,13 +51,13 @@ export default function Footer() {
               <Link href="/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Home
               </Link>
-              <a
+              <Link
                 href="/#case-studies"
                 onClick={scrollToCaseStudies}
                 className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base"
               >
                 Case Studies
-              </a>
+              </Link>
               <Link href="/work/" className="text-red-200 hover:text-pink-400 underline transition-all duration-200 text-base">
                 Gallery
               </Link>
