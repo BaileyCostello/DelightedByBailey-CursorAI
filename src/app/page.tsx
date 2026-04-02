@@ -164,6 +164,15 @@ export default function Home() {
   const [industriesModalOpen, setIndustriesModalOpen] = useState(false);
   const [designAwardsModalOpen, setDesignAwardsModalOpen] = useState(false);
 
+  const { scrollYProgress } = useScroll();
+  const mockupDrTreatX = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const mockupDrTreatInnerY = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const mockupVolunTimeX = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const mockupVolunTimeInnerY = useTransform(scrollYProgress, [0, 1], [0, -30]);
+  const macbookFrameOpacity = useTransform(scrollYProgress, [0, 0.1, 0.15, 1], [0, 0, 1, 1]);
+  const macbookFrameScale = useTransform(scrollYProgress, [0, 0.05, 0.16, 1], [0.4, 0.4, 1, 1.5]);
+  const macbookVideoOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 1], [0, 0, 1, 1]);
+
   // Scroll to case-studies section when navigating to /#case-studies
   useEffect(() => {
     if (typeof window !== 'undefined' && window.location.hash === '#case-studies') {
@@ -487,7 +496,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-100px" }}
                   style={{
-                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, 80])
+                    x: mockupDrTreatX
                   }}
                   className="h-[520px] w-[310px] relative shrink-0 lg:ml-0"
                 >
@@ -495,7 +504,7 @@ export default function Home() {
                     initial={{ y: 0 }}
                     animate={{ y: 0 }}
                     style={{
-                      y: useTransform(useScroll().scrollYProgress, [0, 1], [0, -50])
+                      y: mockupDrTreatInnerY
                     }}
                     className="w-full h-full"
                   >
@@ -519,7 +528,7 @@ export default function Home() {
                   transition={{ duration: 0.6, delay: 1.0, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-88px" }}
                   style={{
-                    x: useTransform(useScroll().scrollYProgress, [0, 1], [0, -80])
+                    x: mockupVolunTimeX
                   }}
                   className="h-[520px] w-[310px] relative shrink-0 -ml-[60px]"
                 >
@@ -527,7 +536,7 @@ export default function Home() {
                     initial={{ y: 0 }}
                     animate={{ y: 0 }}
                     style={{
-                      y: useTransform(useScroll().scrollYProgress, [0, 1], [0, -30])
+                      y: mockupVolunTimeInnerY
                     }}
                     className="w-full h-full"
                   >
@@ -611,8 +620,8 @@ export default function Home() {
               <motion.div 
                 className="relative"
                 style={{
-                  opacity: useTransform(useScroll().scrollYProgress, [0, 0.1, 0.15, 1], [0, 0, 1, 1]),
-                  scale: useTransform(useScroll().scrollYProgress, [0, 0.05, 0.16, 1], [0.4, 0.4, 1, 1.5])
+                  opacity: macbookFrameOpacity,
+                  scale: macbookFrameScale
                 }}
               >
                 <Image
@@ -628,7 +637,7 @@ export default function Home() {
                 <motion.div 
                   className="absolute inset-0 flex items-center justify-center"
                   style={{
-                    opacity: useTransform(useScroll().scrollYProgress, [0, 0.1, 0.3, 1], [0, 0, 1, 1])
+                    opacity: macbookVideoOpacity
                   }}
                 >
                   <div className="w-[79.5%] h-[85.5%] relative overflow-hidden rounded-lg -translate-y-[5px]">

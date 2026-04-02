@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import TabButton from '@/components/TabButton';
 
 export default function CDGMaintenanceCaseStudy() {
   const [activeTab, setActiveTab] = useState<'audience' | 'personas' | 'userflow'>('audience');
@@ -355,36 +356,27 @@ export default function CDGMaintenanceCaseStudy() {
           {/* Tab Navigation */}
           <div className="mb-8">
             <div className="flex flex-wrap gap-4">
-              <button
+              <TabButton
+                selected={activeTab === 'audience'}
                 onClick={() => setActiveTab('audience')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'audience'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
+                className="font-['Plus_Jakarta_Sans',_sans-serif]"
               >
                 Audience Analysis
-              </button>
-              <button
+              </TabButton>
+              <TabButton
+                selected={activeTab === 'personas'}
                 onClick={() => setActiveTab('personas')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'personas'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
+                className="font-['Plus_Jakarta_Sans',_sans-serif]"
               >
                 Personas
-              </button>
-              <button
+              </TabButton>
+              <TabButton
+                selected={activeTab === 'userflow'}
                 onClick={() => setActiveTab('userflow')}
-                className={`px-3 py-3 rounded-lg font-['Plus_Jakarta_Sans',_sans-serif] text-base transition-colors ${
-                  activeTab === 'userflow'
-                    ? 'bg-[rgba(222,207,213,0.88)] text-[#63082b] font-semibold'
-                    : 'bg-[rgba(222,207,213,0.2)] text-[#63082b] font-normal'
-                }`}
+                className="font-['Plus_Jakarta_Sans',_sans-serif]"
               >
                 User Flows
-              </button>
+              </TabButton>
             </div>
           </div>
 
