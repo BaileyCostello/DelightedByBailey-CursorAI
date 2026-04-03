@@ -486,10 +486,19 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="relative lg:w-1/2"
+              className="relative isolate lg:w-1/2"
             >
+              {/* Soft peach / terracotta glow behind phones only (section bg unchanged) */}
+              <div
+                className="pointer-events-none absolute left-[52%] top-[32%] z-0 h-[min(720px,105vw)] w-[min(540px,110%)] -translate-x-1/2 -translate-y-1/2 scale-[1.35] blur-3xl sm:left-[50%] sm:top-[36%] sm:h-[760px] sm:w-[580px] lg:left-[46%] lg:top-[40%]"
+                style={{
+                  background:
+                    'radial-gradient(ellipse 68% 54% at 50% 50%, rgba(232, 140, 108, 0.42) 0%, rgba(245, 178, 148, 0.22) 38%, rgba(255, 210, 185, 0.08) 56%, transparent 76%)',
+                }}
+                aria-hidden
+              />
               {/* First Mockup - Dr.Treat */}
-              <div className="flex items-end justify-center mb-[-144px]">
+              <div className="relative z-10 flex items-end justify-center mb-[-144px]">
                 <motion.div 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -521,7 +530,7 @@ export default function Home() {
               </div>
 
               {/* Second Mockup - VolunTime */}
-              <div className="flex items-end justify-center lg:pr-[30%]">
+              <div className="relative z-10 flex items-end justify-center lg:pr-[30%]">
                 <motion.div 
                   initial={{ opacity: 0, y: -100 }}
                   whileInView={{ opacity: 1, y: 0 }}
