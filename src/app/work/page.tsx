@@ -1,720 +1,336 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
-import Button from '@/components/Button';
-import { useState, useEffect, useCallback } from 'react';
+import Link from 'next/link';
+import { useMemo, useState, useCallback, useEffect, useRef, type CSSProperties } from 'react';
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import TabButton from '@/components/TabButton';
 
-export default function Work() {
-  const { scrollYProgress } = useScroll();
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadedAssets, setLoadedAssets] = useState(0);
-  const totalAssets = 14; // Preload all essential assets (videos and images)
-  const [modalImage, setModalImage] = useState<{ src: string; alt: string; label: string } | null>(null);
+type GallerySegment = 'enterprise' | 'b2b' | 'consumer';
 
-  useEffect(() => {
-    const preloadAssets = async () => {
-      const assetUrls = [
-        '/ANet Preview Video.mp4',
-        '/CDG-Movie.mp4',
-        '/Advanced Reports/Exago AR Preview Screen.png',
-        '/Dr-Treat-Preview-Image.png',
-        '/Exago-Preview-Image.png',
-        '/Hanover-Research-Brand-Preview-Image.png',
-        '/EvoJets Preview Image.png',
-        '/First-Mid-Preview-Image.png',
-        '/RISA-Preview-Image.png',
-        '/Hanover Research Survey Platform Preview Image.png',
-        '/Morgan-Lewis-Preview-Image.png',
-        '/Mountain.png'
-      ];
+type GalleryItem = {
+  id: string;
+  title: string;
+  subtext: string;
+  segment: GallerySegment;
+  image: string;
+  logo: string;
+  /** Extra classes on the preview <Image> (e.g. scale) while card stays 434px tall. */
+  previewImageClassName?: string;
+  /** Optional positioning for fill images (merged onto Next/Image; overrides default inset). */
+  previewImageStyle?: CSSProperties;
+  /** Optional Tailwind classes for the client logo (defaults to max-h-10 sm:max-h-12). */
+  logoImageClassName?: string;
+};
 
-      const loadAsset = (url: string) => {
-        return new Promise((resolve) => {
-          if (url.endsWith('.mp4')) {
-            const video = document.createElement('video');
-            video.preload = 'auto';
-            video.oncanplaythrough = () => {
-              setLoadedAssets(prev => prev + 1);
-              resolve(true);
-            };
-            video.onerror = () => {
-              setLoadedAssets(prev => prev + 1);
-              resolve(true);
-            };
-            video.src = url;
-            video.load();
-          } else {
-            const img = document.createElement('img');
-            img.onload = () => {
-              setLoadedAssets(prev => prev + 1);
-              resolve(true);
-            };
-            img.onerror = () => {
-              setLoadedAssets(prev => prev + 1);
-              resolve(true);
-            };
-            img.src = url;
-          }
-        });
-      };
+const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 'first-mid',
+    title: 'Accounting Platform',
+    subtext: 'Banking   |   Enterprise',
+    segment: 'enterprise',
+    image: '/Gallery/First Mid Preview Image.png',
+    logo: '/Gallery/First Mid Logo.png',
+  },
+  {
+    id: 'jupiter',
+    title: 'Climate Risk Intelligence',
+    subtext: 'Insurance   |   B2B',
+    segment: 'b2b',
+    image: '/Gallery/Jupiter Preview Image.png',
+    logo: '/Gallery/Jupiter Logo.png',
+  },
+  {
+    id: 'evojets',
+    title: 'Private Jet Chartering App',
+    subtext: 'Travel   |   Consumer',
+    segment: 'consumer',
+    image: '/Gallery/EvoJets Preview Image.png',
+    logo: '/Gallery/EvoJets Logo.png',
+    previewImageClassName: 'scale-[1.14]',
+    previewImageStyle: { inset: '30px 0 0 -1px' },
+  },
+  {
+    id: 'risa',
+    title: 'Structural Design Platform',
+    subtext: 'Engineering   |   B2B',
+    segment: 'b2b',
+    image: '/Gallery/RISA Preview Image.png',
+    logo: '/Gallery/RISA logo.png',
+    previewImageClassName: 'scale-[1.07]',
+    logoImageClassName: 'max-h-8 sm:max-h-9 w-auto object-contain object-right',
+  },
+  {
+    id: 'arnold-porter',
+    title: 'Corporate Intranet',
+    subtext: 'Legal   |   Enterprise',
+    segment: 'enterprise',
+    image: '/Gallery/ASpace Preview Image.png',
+    logo: '/Gallery/Arnold & Porter Logo.png',
+  },
+  {
+    id: 'hanover-market',
+    title: 'Market Research Intelligence',
+    subtext: 'Sales & Marketing   |   B2B',
+    segment: 'b2b',
+    image: '/Gallery/Hanover Research Brand Preview Image.png',
+    logo: '/Gallery/Hanover Research Logo.png',
+  },
+  {
+    id: 'dr-treat',
+    title: 'Personalized Veterinary Services',
+    subtext: 'Health Tech   |   Consumer',
+    segment: 'consumer',
+    image: '/Gallery/Dr Treat Preview Image.png',
+    logo: '/Gallery/Dr.Treat Logo.png',
+  },
+  {
+    id: 'exago',
+    title: 'Reporting & Dashboard Platform',
+    subtext: 'Data Analytics   |   B2B',
+    segment: 'b2b',
+    image: '/Gallery/Exago Preview Image.png',
+    logo: '/Gallery/Exago.png',
+  },
+  {
+    id: 'morgan-lewis',
+    title: 'Client Matter Intelligence',
+    subtext: 'Legal   |   Enterprise',
+    segment: 'enterprise',
+    image: '/Gallery/Morgan Lewis Preview Image.png',
+    logo: '/Gallery/Morgan Lewis Logo.png',
+  },
+  {
+    id: 'hanover-survey',
+    title: 'Survey Research Platform',
+    subtext: 'Data Analytics   |   B2B',
+    segment: 'b2b',
+    image: '/Gallery/Hanover Research Survey Platform Preview Image.png',
+    logo: '/Gallery/Hanover Research Logo.png',
+  },
+  {
+    id: 'voluntime',
+    title: 'Student Volunteering App',
+    subtext: 'Lifestyle   |   Consumer',
+    segment: 'consumer',
+    image: '/Gallery/VolunTIME Preview Image.png',
+    logo: '/Gallery/VoluntTIME Keeper Logo.png',
+  },
+];
 
-      // Load all assets in parallel
-      await Promise.all(assetUrls.map(loadAsset));
-      
-      // Small delay to ensure smooth transition
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 500);
-    };
+const FILTERS: { key: 'all' | GallerySegment; label: string }[] = [
+  { key: 'all', label: 'All' },
+  { key: 'enterprise', label: 'Enterprise' },
+  { key: 'b2b', label: 'B2B' },
+  { key: 'consumer', label: 'Consumer' },
+];
 
-    preloadAssets();
-  }, []);
+/** Max vertical drift (px) for each column while the gallery section crosses the viewport (Dann Petty–style). */
+const GALLERY_PARALLAX_SHIFT = 185;
 
-  // Background load gallery section assets after main page loads
-  useEffect(() => {
-    if (!isLoading) {
-      const galleryAssets = [
-        '/Dr-Treat-Preview-Image.png',
-        '/Exago-Preview-Image.png',
-        '/Hanover-Research-Brand-Preview-Image.png',
-        '/First-Mid-Preview-Image.png',
-        '/Morgan-Lewis-Preview-Image.png',
-        '/RISA-Preview-Image.png',
-        '/EvoJets Preview Image.png',
-        '/Hanover Research Survey Platform Preview Image.png',
-        '/Mountain.png'
-      ];
-
-      // Load gallery assets in background without blocking UI
-      galleryAssets.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-      });
-    }
-  }, [isLoading]);
-
-  // Handle ESC key to close modal
-  useEffect(() => {
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && modalImage) {
-        setModalImage(null);
-      }
-    };
-
-    if (modalImage) {
-      document.addEventListener('keydown', handleEscape);
-      // Prevent body scroll when modal is open
-      document.body.style.overflow = 'hidden';
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
-    };
-  }, [modalImage]);
-
-  const openModal = useCallback((src: string, alt: string, label: string) => {
-    setModalImage({ src, alt, label });
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setModalImage(null);
-  }, []);
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="relative">
-            <div className="w-16 h-16 border-4 border-gray-200 border-t-pink-500 rounded-full animate-spin mx-auto mb-4"></div>
-            <div className="text-sm text-gray-600">
-              Loading assets...
-            </div>
+function GalleryCard({
+  item,
+  onOpen,
+}: {
+  item: GalleryItem;
+  onOpen: (item: GalleryItem) => void;
+}) {
+  return (
+    <article className="flex h-[434px] flex-col rounded-[20px] bg-white p-4 sm:p-5 shadow-[0_4px_24px_rgba(0,0,0,0.06)]">
+      <button
+        type="button"
+        onClick={() => onOpen(item)}
+        className="flex min-h-0 flex-1 flex-col text-left cursor-pointer group"
+      >
+        <div className="relative min-h-0 w-full flex-1 overflow-hidden rounded-2xl">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className={`object-contain object-center ${item.previewImageClassName ?? ''}`}
+            style={item.previewImageStyle}
+            sizes="(max-width: 640px) 100vw, 50vw"
+          />
+        </div>
+        <div className="mt-3 shrink-0 flex items-end justify-between gap-4 pt-1">
+          <div className="min-w-0">
+            <h2 className="text-sm font-bold text-neutral-900 leading-snug">{item.title}</h2>
+            <p className="text-sm text-neutral-500 mt-1 whitespace-pre-wrap">{item.subtext}</p>
+          </div>
+          <div className="shrink-0 flex items-center justify-end w-[100px] sm:w-[120px] h-10 sm:h-12 relative">
+            <Image
+              src={item.logo}
+              alt=""
+              width={120}
+              height={48}
+              className={
+                item.logoImageClassName ??
+                'max-h-10 sm:max-h-12 w-auto object-contain object-right'
+              }
+            />
           </div>
         </div>
-      </div>
-    );
-  }
+      </button>
+    </article>
+  );
+}
+
+export default function Work() {
+  const [filter, setFilter] = useState<'all' | GallerySegment>('all');
+  const [modal, setModal] = useState<{ src: string; alt: string; label: string } | null>(null);
+  const gallerySectionRef = useRef<HTMLElement | null>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: gallerySectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const leftColumnY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [GALLERY_PARALLAX_SHIFT, -GALLERY_PARALLAX_SHIFT],
+  );
+  const rightColumnY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-GALLERY_PARALLAX_SHIFT, GALLERY_PARALLAX_SHIFT],
+  );
+
+  const visibleItems = useMemo(() => {
+    if (filter === 'all') return GALLERY_ITEMS;
+    return GALLERY_ITEMS.filter((item) => item.segment === filter);
+  }, [filter]);
+
+  const openModal = useCallback((item: GalleryItem) => {
+    setModal({ src: item.image, alt: item.title, label: `${item.title} — ${item.subtext}` });
+  }, []);
+
+  const closeModal = useCallback(() => setModal(null), []);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeModal();
+    };
+    if (modal) {
+      document.addEventListener('keydown', onKey);
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [modal, closeModal]);
 
   return (
-    <div className="min-h-screen bg-black overflow-x-hidden">
-      {/* Portfolio Preview Section */}
-      <section id="gallery-section" className="relative py-32 px-6 lg:px-32">
-        <style jsx>{`
-          .card {
-            transition: transform 0.3s ease;
-          }
-          .card:hover ~ .card {
-            transform: translateX(112px);
-          }
-          .card:has(~ .card:hover) {
-            transform: translateX(-112px);
-          }
-        `}</style>
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: 'url("/Mountain.png")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center 56%',
-            backgroundRepeat: 'no-repeat'
-          }}
-        />
-        
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Header Section - Centered at Top */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-left mb-16 relative z-20"
-          >
-            <h2 className="text-4xl font-bold text-pink-800 leading-tight mb-8">
-              Throw Something New at Me
-            </h2>
-            <Button
-              href="/contact/"
-              variant="secondary"
-              size="medium"
-              background="light"
-              trailingIcon={true}
-              className="inline-flex"
-            >
-              Tell Me About Your Project
-            </Button>
-          </motion.div>
+    <div className="min-h-screen bg-[#F5F5F5] overflow-x-hidden">
+      <section className="bg-white px-6 lg:px-32 pt-[216px] lg:pt-[216px] pb-6">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-7xl font-bold text-gray-900 leading-none mb-8">Gallery</h1>
 
-          {/* Preview Images Carousel */}
-            <motion.div
-            initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-            className="relative -mx-6 lg:-mx-32 overflow-x-hidden"
-          >
-            <div 
-              className="flex gap-2 animate-scroll-smooth"
-              style={{
-                width: 'calc(380px * 8 + 570px * 4 + 8px * 15)' // 8 small cards + 4 medium cards + 15 gaps (per set, 3 sets total)
-              }}
-            >
-              {/* First Set of Cards */}
-              {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[760px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
-                >
-                  <Image
-                    alt="Dr.Treat App Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Dr-Treat-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Exago Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
-                >
-                  <Image
-                    alt="Exago Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Exago-Preview-Image.png"
-                    width={400}
-                    height={300}
-                    priority
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
-                >
-                  <Image
-                    alt="Hanover Research Preview"
-                    className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
-                    src="/Hanover-Research-Brand-Preview-Image.png"
-                    width={372}
-                    height={297}
-                    priority
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* EvoJets Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
-                >
-                  <Image
-                    alt="EvoJets Preview"
-                    className="w-full h-full object-contain rounded-xl pb-2"
-                    src="/EvoJets Preview Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Private Jet Charter App, EvoJets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* First Mid Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
-                >
-                  <Image
-                    alt="First Mid Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/First-Mid-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[570px] min-w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
-                >
-                  <img
-                    alt="RISA Preview"
-                    className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
-                    src="/RISA-Preview-Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Survey Platform Preview */}
-              <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
-                >
-                  <img
-                    alt="Survey Platform Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Hanover Research Survey Platform Preview Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
-                >
-                  <img
-                    alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Morgan-Lewis-Preview-Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
-                  </div>
-                </div>
-              </div>
-
-
-              {/* Duplicate Set for Seamless Loop */}
-              {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[760px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
-                >
-                  <Image
-                    alt="Dr.Treat App Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Dr-Treat-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Exago Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
-                >
-                  <Image
-                    alt="Exago Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Exago-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
-                >
-                  <Image
-                    alt="Hanover Research Preview"
-                    className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
-                    src="/Hanover-Research-Brand-Preview-Image.png"
-                    width={372}
-                    height={297}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* EvoJets Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
-                >
-                  <Image
-                    alt="EvoJets Preview"
-                    className="w-full h-full object-contain rounded-xl pb-2"
-                    src="/EvoJets Preview Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Private Jet Charter App, EvoJets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* First Mid Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
-                >
-                  <Image
-                    alt="First Mid Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/First-Mid-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
-                >
-                  <Image
-                    alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Morgan-Lewis-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
-                >
-                  <Image
-                    alt="RISA Preview"
-                    className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
-                    src="/RISA-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Survey Platform Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
-                >
-                  <img
-                    alt="Survey Platform Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Hanover Research Survey Platform Preview Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Third Set for Seamless Loop */}
-              {/* Dr.Treat Preview */}
-              <div className="group flex-shrink-0 w-[760px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Dr-Treat-Preview-Image.png', 'Dr.Treat App Preview', 'Pet Telehealth App, Dr.Treat')}
-                >
-                  <Image
-                    alt="Dr.Treat App Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Dr-Treat-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Pet Telehealth App, Dr.Treat</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Exago Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Exago-Preview-Image.png', 'Exago Preview', 'Business Intelligence (BI) & Reporting Software, Exago')}
-                >
-                  <Image
-                    alt="Exago Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Exago-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Business Intelligence (BI) & Reporting Software, Exago</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Hanover Research Preview */}
-              <div className="group flex-shrink-0 w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover-Research-Brand-Preview-Image.png', 'Hanover Research Preview', 'Brand & Win / Loss Analysis, Hanover Research')}
-                >
-                  <Image
-                    alt="Hanover Research Preview"
-                    className="w-3/4 h-3/4 object-contain rounded-xl mx-auto"
-                    src="/Hanover-Research-Brand-Preview-Image.png"
-                    width={372}
-                    height={297}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Brand & Win / Loss Analysis, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* EvoJets Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/EvoJets Preview Image.png', 'EvoJets Preview', 'Private Jet Charter App, EvoJets')}
-                >
-                  <Image
-                    alt="EvoJets Preview"
-                    className="w-full h-full object-contain rounded-xl pb-2"
-                    src="/EvoJets Preview Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Private Jet Charter App, EvoJets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* First Mid Preview */}
-              <div className="group flex-shrink-0 w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/First-Mid-Preview-Image.png', 'First Mid Preview', 'Accounting Software, First Mid Ag Services')}
-                >
-                  <Image
-                    alt="First Mid Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/First-Mid-Preview-Image.png"
-                    width={400}
-                    height={300}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Accounting Software, First Mid Ag Services</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* RISA Preview */}
-              <div className="group flex-shrink-0 w-[570px] min-w-[570px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/RISA-Preview-Image.png', 'RISA Preview', 'Structural Engineering Software, RISA')}
-                >
-                  <img
-                    alt="RISA Preview"
-                    className="w-11/12 h-11/12 object-contain rounded-xl mx-auto"
-                    src="/RISA-Preview-Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Structural Engineering Software, RISA</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Survey Platform Preview */}
-              <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Hanover Research Survey Platform Preview Image.png', 'Survey Platform Preview', 'Survey Platform, Hanover Research')}
-                >
-                  <img
-                    alt="Survey Platform Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Hanover Research Survey Platform Preview Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Survey Platform, Hanover Research</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Morgan Lewis Preview */}
-              <div className="group flex-shrink-0 w-[380px] min-w-[380px]">
-                <div 
-                  className="relative overflow-hidden rounded-2xl shadow-2xl bg-white/36 backdrop-blur-sm h-[320px] px-4 py-4 cursor-pointer"
-                  onClick={() => openModal('/Morgan-Lewis-Preview-Image.png', 'Morgan Lewis Preview', 'Client Matter Resource, Morgan Lewis')}
-                >
-                  <img
-                    alt="Morgan Lewis Preview"
-                    className="w-full h-full object-contain rounded-xl"
-                    src="/Morgan-Lewis-Preview-Image.png"
-                    loading="eager"
-                  />
-                  <div className="absolute bottom-4 left-4 right-4 text-left pb-2">
-                    <p className="text-xs text-gray-900 whitespace-nowrap font-semibold tracking-wide">Client Matter Resource, Morgan Lewis</p>
-                  </div>
-                </div>
-              </div>
-
-              </div>
-            </motion.div>
-
+          <div className="flex flex-wrap gap-3">
+            {FILTERS.map(({ key, label }) => (
+              <TabButton key={key} selected={filter === key} onClick={() => setFilter(key)}>
+                {label}
+              </TabButton>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Image Modal */}
-      {modalImage && (
-        <div
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center"
-          onClick={closeModal}
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
-        >
-          {/* Close Button */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              closeModal();
-            }}
-            className="absolute z-60 text-white hover:text-gray-300 transition-colors duration-200"
-            style={{ top: '80px', right: '80px' }}
-            aria-label="Close modal"
-          >
-            <svg
-              className="w-8 h-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+      <section
+        ref={gallerySectionRef}
+        className="relative left-[-1px] mt-[30px] px-6 lg:px-32 py-10"
+      >
+        <div className="max-w-7xl mx-auto">
+          <AnimatePresence mode="popLayout">
+            <motion.div
+              key={filter}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <div className="flex flex-col gap-6 sm:hidden">
+                {visibleItems.map((item) => (
+                  <GalleryCard key={item.id} item={item} onOpen={openModal} />
+                ))}
+              </div>
+              <div className="hidden sm:flex gap-6 lg:gap-8">
+                <motion.div
+                  className="flex min-w-0 flex-1 flex-col gap-6 lg:gap-8 will-change-transform"
+                  style={{ y: prefersReducedMotion ? 0 : leftColumnY }}
+                >
+                  {visibleItems
+                    .filter((_, i) => i % 2 === 0)
+                    .map((item) => (
+                      <GalleryCard key={item.id} item={item} onOpen={openModal} />
+                    ))}
+                </motion.div>
+                <motion.div
+                  className="flex min-w-0 flex-1 flex-col gap-6 lg:gap-8 pt-[114px] will-change-transform"
+                  style={{ y: prefersReducedMotion ? 0 : rightColumnY }}
+                >
+                  {visibleItems
+                    .filter((_, i) => i % 2 === 1)
+                    .map((item) => (
+                      <GalleryCard key={item.id} item={item} onOpen={openModal} />
+                    ))}
+                </motion.div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {visibleItems.length === 0 && (
+            <p className="text-neutral-500 text-center py-16">No projects in this category yet.</p>
+          )}
+        </div>
+      </section>
+
+      <section className="bg-black text-white py-16 sm:py-20 px-6 lg:px-32">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+          <h2 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold leading-tight max-w-xl">
+            Throw something new at me, I&apos;m listening.
+          </h2>
+          <Link
+            href="/contact/"
+            className="inline-flex items-center justify-center shrink-0 rounded-full bg-[#E8C4B8] px-10 py-3.5 text-base font-semibold text-neutral-900 hover:bg-[#ddb4a8] transition-colors duration-200"
+          >
+            Let&apos;s Talk
+          </Link>
+        </div>
+      </section>
+
+      {modal && (
+        <div
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/80 px-4"
+          onClick={closeModal}
+          role="presentation"
+        >
+          <button
+            type="button"
+            onClick={closeModal}
+            className="absolute top-20 right-6 sm:right-12 text-white hover:text-neutral-300 transition-colors"
+            aria-label="Close"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-
-          {/* Header */}
-          <div className="absolute z-60 left-1/2 -translate-x-1/2" style={{ top: '80px' }}>
-            <h3 className="text-white text-[24px] font-semibold tracking-wide whitespace-nowrap">
-              {modalImage.label}
-            </h3>
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 max-w-[90vw] text-center">
+            <p className="text-white text-lg font-semibold whitespace-pre-wrap">{modal.label}</p>
           </div>
-
-          {/* Image Container */}
           <div
-            className="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center"
-            style={{ marginTop: 'calc(80px + 24px + 24px)' }}
+            className="mt-24 max-w-[min(90vw,1200px)] max-h-[min(75vh,800px)] w-full flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
+            role="presentation"
           >
             <Image
-              src={modalImage.src}
-              alt={modalImage.alt}
+              src={modal.src}
+              alt={modal.alt}
               width={1200}
-              height={800}
-              className="max-w-full max-h-[90vh] object-contain"
-              unoptimized
+              height={900}
+              className="max-w-full max-h-[min(75vh,800px)] w-auto h-auto object-contain"
             />
           </div>
         </div>
